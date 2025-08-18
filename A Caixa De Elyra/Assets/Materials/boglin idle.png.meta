@@ -1,0 +1,892 @@
+fileFormatVersion: 2
+guid: dc442f8ce10eb134f8413fd72a296f47
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 6373832957627538557
+    second: boglin idle_0
+  - first:
+      213: -7786218666556675634
+    second: boglin idle_1
+  - first:
+      213: 1060877319251782435
+    second: boglin idle_2
+  - first:
+      213: -3290583304068732761
+    second: boglin idle_3
+  - first:
+      213: 706078128751766413
+    second: boglin idle_4
+  - first:
+      213: -2865297130590236143
+    second: boglin idle_5
+  - first:
+      213: -2947583992456138575
+    second: boglin idle_6
+  - first:
+      213: -3723517703346369339
+    second: boglin idle_7
+  - first:
+      213: 1846910101826085571
+    second: boglin idle_8
+  - first:
+      213: -8568647700493106055
+    second: boglin idle_9
+  - first:
+      213: 2664994219904097679
+    second: boglin idle_10
+  - first:
+      213: -9193818588287548898
+    second: boglin idle_11
+  - first:
+      213: 6688764129725482800
+    second: boglin idle_12
+  - first:
+      213: -1810069918308224637
+    second: boglin idle_13
+  - first:
+      213: 5012191789850462389
+    second: boglin idle_14
+  - first:
+      213: -7691832319369612370
+    second: boglin idle_15
+  - first:
+      213: 1018889525089643555
+    second: boglin idle_16
+  - first:
+      213: -6334368344163711921
+    second: boglin idle_17
+  - first:
+      213: 1579924396592777014
+    second: boglin idle_18
+  - first:
+      213: -2549876834630902615
+    second: boglin idle_19
+  - first:
+      213: 5450045207785645211
+    second: boglin idle_20
+  - first:
+      213: -9102457315635260684
+    second: boglin idle_21
+  - first:
+      213: 2112424812260002137
+    second: boglin idle_22
+  - first:
+      213: -3435061558815278098
+    second: boglin idle_23
+  - first:
+      213: 8733326283673091610
+    second: boglin idle_24
+  - first:
+      213: -4376318026512017152
+    second: boglin idle_25
+  - first:
+      213: -4325927238281971786
+    second: boglin idle_26
+  - first:
+      213: -7554644945565781573
+    second: boglin idle_27
+  - first:
+      213: 9112607707321416730
+    second: boglin idle_28
+  - first:
+      213: 3038373502202046290
+    second: boglin idle_29
+  - first:
+      213: -5110464348339811244
+    second: boglin idle_30
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: boglin idle_0
+      rect:
+        serializedVersion: 2
+        x: 214
+        y: 954
+        width: 17
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d7c11111e47647850800000000000000
+      internalID: 6373832957627538557
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: boglin idle_1
+      rect:
+        serializedVersion: 2
+        x: 239
+        y: 934
+        width: 27
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ec9af5c306bc1f390800000000000000
+      internalID: -7786218666556675634
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: boglin idle_2
+      rect:
+        serializedVersion: 2
+        x: 714
+        y: 949
+        width: 17
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 32b65441d4ef8be00800000000000000
+      internalID: 1060877319251782435
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: boglin idle_3
+      rect:
+        serializedVersion: 2
+        x: 739
+        y: 929
+        width: 27
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7a8e6215bef7552d0800000000000000
+      internalID: -3290583304068732761
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: boglin idle_4
+      rect:
+        serializedVersion: 2
+        x: 119
+        y: 884
+        width: 42
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d8bebef215e7cc900800000000000000
+      internalID: 706078128751766413
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: boglin idle_5
+      rect:
+        serializedVersion: 2
+        x: 139
+        y: 919
+        width: 27
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1121933d07b6c38d0800000000000000
+      internalID: -2865297130590236143
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: boglin idle_6
+      rect:
+        serializedVersion: 2
+        x: 204
+        y: 914
+        width: 42
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1b03600d9f31817d0800000000000000
+      internalID: -2947583992456138575
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: boglin idle_7
+      rect:
+        serializedVersion: 2
+        x: 319
+        y: 874
+        width: 47
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5cc49297068635cc0800000000000000
+      internalID: -3723517703346369339
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: boglin idle_8
+      rect:
+        serializedVersion: 2
+        x: 639
+        y: 914
+        width: 27
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3c2ac67c3fa81a910800000000000000
+      internalID: 1846910101826085571
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: boglin idle_9
+      rect:
+        serializedVersion: 2
+        x: 704
+        y: 909
+        width: 42
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 97404a6a05c061980800000000000000
+      internalID: -8568647700493106055
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: boglin idle_10
+      rect:
+        serializedVersion: 2
+        x: 819
+        y: 869
+        width: 47
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f8d5add8f16fbf420800000000000000
+      internalID: 2664994219904097679
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: boglin idle_11
+      rect:
+        serializedVersion: 2
+        x: 104
+        y: 874
+        width: 22
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e12ccb374bef86080800000000000000
+      internalID: -9193818588287548898
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: boglin idle_12
+      rect:
+        serializedVersion: 2
+        x: 119
+        y: 539
+        width: 272
+        height: 362
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 03789a2998343dc50800000000000000
+      internalID: 6688764129725482800
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: boglin idle_13
+      rect:
+        serializedVersion: 2
+        x: 604
+        y: 869
+        width: 22
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3813e9cdff651e6e0800000000000000
+      internalID: -1810069918308224637
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: boglin idle_14
+      rect:
+        serializedVersion: 2
+        x: 619
+        y: 879
+        width: 42
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5b88a2c80e1ee8540800000000000000
+      internalID: 5012191789850462389
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: boglin idle_15
+      rect:
+        serializedVersion: 2
+        x: 624
+        y: 539
+        width: 262
+        height: 357
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ea3fa14324f114590800000000000000
+      internalID: -7691832319369612370
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: boglin idle_16
+      rect:
+        serializedVersion: 2
+        x: 214
+        y: 454
+        width: 17
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 32ca550ff92d32e00800000000000000
+      internalID: 1018889525089643555
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: boglin idle_17
+      rect:
+        serializedVersion: 2
+        x: 239
+        y: 434
+        width: 27
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f4484a94d8dc718a0800000000000000
+      internalID: -6334368344163711921
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: boglin idle_18
+      rect:
+        serializedVersion: 2
+        x: 639
+        y: 424
+        width: 27
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 637c2ee2ed40de510800000000000000
+      internalID: 1579924396592777014
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: boglin idle_19
+      rect:
+        serializedVersion: 2
+        x: 714
+        y: 454
+        width: 22
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9acd3da57840d9cd0800000000000000
+      internalID: -2549876834630902615
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: boglin idle_20
+      rect:
+        serializedVersion: 2
+        x: 739
+        y: 439
+        width: 32
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b9422ebad3372ab40800000000000000
+      internalID: 5450045207785645211
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: boglin idle_21
+      rect:
+        serializedVersion: 2
+        x: 119
+        y: 384
+        width: 42
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4f2976e5c439da180800000000000000
+      internalID: -9102457315635260684
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: boglin idle_22
+      rect:
+        serializedVersion: 2
+        x: 139
+        y: 419
+        width: 27
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9598a75bc27d05d10800000000000000
+      internalID: 2112424812260002137
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: boglin idle_23
+      rect:
+        serializedVersion: 2
+        x: 204
+        y: 414
+        width: 42
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: eeb373546b53450d0800000000000000
+      internalID: -3435061558815278098
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: boglin idle_24
+      rect:
+        serializedVersion: 2
+        x: 319
+        y: 374
+        width: 47
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a1ebaeddbf1033970800000000000000
+      internalID: 8733326283673091610
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: boglin idle_25
+      rect:
+        serializedVersion: 2
+        x: 604
+        y: 379
+        width: 57
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 009dc9d01f13443c0800000000000000
+      internalID: -4376318026512017152
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: boglin idle_26
+      rect:
+        serializedVersion: 2
+        x: 704
+        y: 414
+        width: 42
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6b73406b81837f3c0800000000000000
+      internalID: -4325927238281971786
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: boglin idle_27
+      rect:
+        serializedVersion: 2
+        x: 819
+        y: 379
+        width: 52
+        height: 67
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bb1f95fb272882790800000000000000
+      internalID: -7554644945565781573
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: boglin idle_28
+      rect:
+        serializedVersion: 2
+        x: 104
+        y: 374
+        width: 22
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a1c316cdd6c767e70800000000000000
+      internalID: 9112607707321416730
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: boglin idle_29
+      rect:
+        serializedVersion: 2
+        x: 119
+        y: 39
+        width: 272
+        height: 362
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 25766bd2a987a2a20800000000000000
+      internalID: 3038373502202046290
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: boglin idle_30
+      rect:
+        serializedVersion: 2
+        x: 609
+        y: 39
+        width: 287
+        height: 367
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 45c48e760cbf319b0800000000000000
+      internalID: -5110464348339811244
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable: {}
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
