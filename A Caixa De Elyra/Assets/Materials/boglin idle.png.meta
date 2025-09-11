@@ -884,7 +884,38 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      boglin idle_0: 6373832957627538557
+      boglin idle_1: -7786218666556675634
+      boglin idle_10: 2664994219904097679
+      boglin idle_11: -9193818588287548898
+      boglin idle_12: 6688764129725482800
+      boglin idle_13: -1810069918308224637
+      boglin idle_14: 5012191789850462389
+      boglin idle_15: -7691832319369612370
+      boglin idle_16: 1018889525089643555
+      boglin idle_17: -6334368344163711921
+      boglin idle_18: 1579924396592777014
+      boglin idle_19: -2549876834630902615
+      boglin idle_2: 1060877319251782435
+      boglin idle_20: 5450045207785645211
+      boglin idle_21: -9102457315635260684
+      boglin idle_22: 2112424812260002137
+      boglin idle_23: -3435061558815278098
+      boglin idle_24: 8733326283673091610
+      boglin idle_25: -4376318026512017152
+      boglin idle_26: -4325927238281971786
+      boglin idle_27: -7554644945565781573
+      boglin idle_28: 9112607707321416730
+      boglin idle_29: 3038373502202046290
+      boglin idle_3: -3290583304068732761
+      boglin idle_30: -5110464348339811244
+      boglin idle_4: 706078128751766413
+      boglin idle_5: -2865297130590236143
+      boglin idle_6: -2947583992456138575
+      boglin idle_7: -3723517703346369339
+      boglin idle_8: 1846910101826085571
+      boglin idle_9: -8568647700493106055
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

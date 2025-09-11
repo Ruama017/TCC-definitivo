@@ -234,7 +234,12 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      pilar da ponte_0: 7305844462179333617
+      pilar da ponte_1: 6550138665536766365
+      pilar da ponte_2: 3721747783056523929
+      pilar da ponte_3: -2866240455295975940
+      pilar da ponte_4: -3915227613647250648
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

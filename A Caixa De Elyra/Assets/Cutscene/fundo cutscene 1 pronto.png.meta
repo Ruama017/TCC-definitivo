@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      fundo cutscene 1 pronto_0: -594431620445474943
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

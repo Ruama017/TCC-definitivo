@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      bloco de ponte quebrado_0: 2571459890445130137
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

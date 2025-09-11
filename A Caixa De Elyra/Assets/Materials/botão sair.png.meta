@@ -159,7 +159,9 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      "bot\xE3o sair_0": -2466904495225369286
+      "bot\xE3o sair_1": -1353173506649787882
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

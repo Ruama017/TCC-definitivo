@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      logo tcc definitiva_0: -7507691960424322163
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
