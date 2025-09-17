@@ -56,5 +56,11 @@ TagManager:
   - name: Player
     uniqueID: 4024215425
     locked: 0
+  - name: Middleground
+    uniqueID: 131151463
+    locked: 0
+  - name: Player2
+    uniqueID: 2217966919
+    locked: 0
   m_RenderingLayers:
   - Default

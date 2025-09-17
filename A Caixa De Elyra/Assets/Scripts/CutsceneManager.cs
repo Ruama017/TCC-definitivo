@@ -10,21 +10,23 @@ public class CutsceneManager : MonoBehaviour
     public class Cena
     {
         public Sprite imagem;
-        [TextArea] public string texto;
+        [TextArea] public string[] textos;      // múltiplos textos
+        public float delayEntreTextos = 2f;     // tempo que cada texto fica visível
+        public float fadeTexto = 0.5f;          // duração do fade do texto
     }
 
-    public Image cutsceneImage;          // onde as imagens aparecem
-    public TextMeshProUGUI cutsceneText; // texto da cutscene
-    public Image fadePanel;              // painel preto para fade
-    public AudioSource musicaFundo;      // música de fundo
-    public float tempoCena = 3f;         // tempo de cada cena
-    public float tempoFade = 1f;         // duração do fade
-    public Cena[] cenas = new Cena[4];   // 4 imagens com texto
+    public Image cutsceneImage;           // onde as imagens aparecem
+    public TextMeshProUGUI cutsceneText;  // texto da cutscene
+    public Image fadePanel;               // painel preto para fade
+    public AudioSource musicaFundo;       // música de fundo
+    public float tempoFade = 1f;          // duração do fade da imagem
 
     [Header("Logo final")]
-    public Image logoImage;              // logo do jogo
-    public float tempoLogo = 2f;         // tempo que a logo fica visível
+    public Image logoImage;               // logo do jogo
+    public float tempoLogo = 2f;          // tempo que a logo fica visível
     public string nomeCenaJogo = "Nivel1"; // nome da cena do jogo
+
+    public Cena[] cenas = new Cena[4];    // 4 imagens com múltiplos textos
 
     void Start()
     {
@@ -35,18 +37,21 @@ public class CutsceneManager : MonoBehaviour
     {
         if (musicaFundo != null) musicaFundo.Play();
 
-        // Mostra as 4 cenas
-        for (int i = 0; i < cenas.Length; i++)
+        // Percorre todas as cenas
+        foreach (var cena in cenas)
         {
-            cutsceneImage.sprite = cenas[i].imagem;
-            cutsceneText.text = cenas[i].texto;
+            cutsceneImage.sprite = cena.imagem;
 
-            // Fade in
+            // Fade in da imagem
             yield return StartCoroutine(Fade(1, 0, tempoFade));
 
-            yield return new WaitForSeconds(tempoCena);
+            // Mostra os textos com fade
+            foreach (var texto in cena.textos)
+            {
+                yield return StartCoroutine(FadeText(texto, cena.fadeTexto, cena.delayEntreTextos));
+            }
 
-            // Fade out
+            // Fade out da imagem
             yield return StartCoroutine(Fade(0, 1, tempoFade));
         }
 
@@ -70,6 +75,36 @@ public class CutsceneManager : MonoBehaviour
         SceneManager.LoadScene(nomeCenaJogo);
     }
 
+    // Faz fade do texto
+    IEnumerator FadeText(string texto, float fadeDuration, float displayTime)
+    {
+        cutsceneText.text = texto;
+        Color c = cutsceneText.color;
+
+        // Fade in
+        float t = 0;
+        while (t < 1)
+        {
+            t += Time.deltaTime / fadeDuration;
+            c.a = Mathf.Lerp(0, 1, t);
+            cutsceneText.color = c;
+            yield return null;
+        }
+
+        // Mantém o texto visível
+        yield return new WaitForSeconds(displayTime);
+
+        // Fade out
+        t = 0;
+        while (t < 1)
+        {
+            t += Time.deltaTime / fadeDuration;
+            c.a = Mathf.Lerp(1, 0, t);
+            cutsceneText.color = c;
+            yield return null;
+        }
+    }
+
     // Fade da tela preta
     IEnumerator Fade(float startAlpha, float endAlpha, float duration)
     {
@@ -84,7 +119,7 @@ public class CutsceneManager : MonoBehaviour
         }
     }
 
-    // Fade da logo (independente da tela preta)
+    // Fade da logo
     IEnumerator FadeImage(Image img, float startAlpha, float endAlpha, float duration)
     {
         float t = 0;
@@ -98,5 +133,6 @@ public class CutsceneManager : MonoBehaviour
         }
     }
 }
+
 
 
