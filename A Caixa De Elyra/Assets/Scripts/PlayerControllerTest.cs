@@ -18,8 +18,11 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
         rb = GetComponent<Rigidbody2D>();
 =======
+=======
+>>>>>>> Stashed changes
         // Pega o Rigidbody2D se já existir, senão adiciona
         rb = gameObject.GetComponent<Rigidbody2D>();
         if (rb == null)
@@ -35,6 +38,9 @@ public class PlayerController : MonoBehaviour
         {
             gameObject.AddComponent<BoxCollider2D>();
         }
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
     }
 
@@ -63,6 +69,9 @@ public class PlayerController : MonoBehaviour
 }
 
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 
+=======
+>>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes

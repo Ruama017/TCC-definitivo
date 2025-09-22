@@ -3,6 +3,7 @@ using UnityEngine;
 public class CameraFollow : MonoBehaviour
 {
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
     public Transform target; // Player
     public float smoothSpeed = 0.15f;
     public Vector2 minBounds; // limite mínimo (x,y)
@@ -13,11 +14,17 @@ public class CameraFollow : MonoBehaviour
     public float smoothSpeed = 0.125f;
     public Vector3 offset = new Vector3(0, 0, -10);
 >>>>>>> Stashed changes
+=======
+    public Transform target;
+    public float smoothSpeed = 0.125f;
+    public Vector3 offset = new Vector3(0, 0, -10);
+>>>>>>> Stashed changes
 
     void LateUpdate()
     {
         if (target == null) return;
 
+<<<<<<< Updated upstream
 <<<<<<< Updated upstream
         // Posição desejada
         Vector3 desiredPosition = target.position + offset;
@@ -36,11 +43,21 @@ public class CameraFollow : MonoBehaviour
         Vector3 smoothedPosition = Vector3.Lerp(transform.position, desiredPosition, smoothSpeed);
         transform.position = smoothedPosition;
 >>>>>>> Stashed changes
+=======
+        Vector3 desiredPosition = target.position + offset;
+        Vector3 smoothedPosition = Vector3.Lerp(transform.position, desiredPosition, smoothSpeed);
+        transform.position = smoothedPosition;
+>>>>>>> Stashed changes
     }
 }
 
 
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+=======
+
+
+>>>>>>> Stashed changes
 =======
 
 

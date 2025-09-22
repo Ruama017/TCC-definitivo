@@ -5612,8 +5612,13 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
   m_LocalPosition: {x: -2.429, y: -0.407, z: 0.017742077}
   m_LocalScale: {x: 0.21903338, y: 0.21903338, z: 0.21903338}
+=======
+  m_LocalPosition: {x: -8.41, y: -2.4, z: 0.017742077}
+  m_LocalScale: {x: 1.4082594, y: 1.4082594, z: 1.4082594}
+>>>>>>> Stashed changes
 =======
   m_LocalPosition: {x: -8.41, y: -2.4, z: 0.017742077}
   m_LocalScale: {x: 1.4082594, y: 1.4082594, z: 1.4082594}
