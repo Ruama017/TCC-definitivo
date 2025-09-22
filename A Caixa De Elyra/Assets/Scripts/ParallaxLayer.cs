@@ -3,24 +3,28 @@ using UnityEngine;
 public class ParallaxLayer : MonoBehaviour
 {
     public Transform cameraTransform;
-    public float parallaxEffect; // Quanto menor, mais devagar (ex: fundo = 0.1, árvores = 0.6)
+    public float parallaxEffect;
 
-    private Vector3 lastCameraPosition;
+    private Vector3 startPosition;
 
     void Start()
     {
         if (cameraTransform == null)
             cameraTransform = Camera.main.transform;
 
-        lastCameraPosition = cameraTransform.position;
+        startPosition = transform.position;
     }
 
     void LateUpdate()
     {
-        Vector3 delta = cameraTransform.position - lastCameraPosition;
-        transform.position += new Vector3(delta.x * parallaxEffect, 0, 0);
-        lastCameraPosition = cameraTransform.position;
+        if (cameraTransform == null) return;
+
+        float deltaX = cameraTransform.position.x * parallaxEffect;
+        transform.position = new Vector3(startPosition.x + deltaX, startPosition.y, startPosition.z);
     }
 }
+
+
+
 
 

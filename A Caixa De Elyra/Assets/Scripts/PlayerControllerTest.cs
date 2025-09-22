@@ -17,7 +17,25 @@ public class PlayerController : MonoBehaviour
 
     void Start()
     {
+<<<<<<< Updated upstream
         rb = GetComponent<Rigidbody2D>();
+=======
+        // Pega o Rigidbody2D se já existir, senão adiciona
+        rb = gameObject.GetComponent<Rigidbody2D>();
+        if (rb == null)
+        {
+            rb = gameObject.AddComponent<Rigidbody2D>();
+        }
+
+        rb.gravityScale = 0; // não cai
+        rb.freezeRotation = true;
+
+        // Adiciona um BoxCollider2D se ainda não existir
+        if (gameObject.GetComponent<BoxCollider2D>() == null)
+        {
+            gameObject.AddComponent<BoxCollider2D>();
+        }
+>>>>>>> Stashed changes
     }
 
     void Update()
@@ -44,4 +62,7 @@ public class PlayerController : MonoBehaviour
     }
 }
 
+<<<<<<< Updated upstream
 
+=======
+>>>>>>> Stashed changes

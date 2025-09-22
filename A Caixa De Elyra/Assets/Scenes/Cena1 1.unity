@@ -146,8 +146,13 @@ Transform:
   m_GameObject: {fileID: 65405110}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+<<<<<<< Updated upstream
   m_LocalPosition: {x: -3.69, y: -3.76, z: 0.0177}
   m_LocalScale: {x: 0.64174473, y: 0.64174473, z: 0.64174473}
+=======
+  m_LocalPosition: {x: -1.723, y: -0.74, z: 0.017742077}
+  m_LocalScale: {x: 0.1680708, y: 0.1680708, z: 0.1680708}
+>>>>>>> Stashed changes
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1610518300}
@@ -247,8 +252,13 @@ Transform:
   m_GameObject: {fileID: 70245038}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+<<<<<<< Updated upstream
   m_LocalPosition: {x: -4.22, y: -0.05, z: 0.0177}
   m_LocalScale: {x: 2.2522507, y: 2.2522507, z: 2.2522507}
+=======
+  m_LocalPosition: {x: 3.21, y: 0.25, z: 0.017742077}
+  m_LocalScale: {x: 0.34037852, y: 0.34037852, z: 0.34037852}
+>>>>>>> Stashed changes
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1971532612}
@@ -334,8 +344,13 @@ Transform:
   m_GameObject: {fileID: 77721898}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+<<<<<<< Updated upstream
   m_LocalPosition: {x: -16.72, y: -6.22, z: 0.0177}
   m_LocalScale: {x: 0.8402625, y: 0.8402625, z: 0.8402625}
+=======
+  m_LocalPosition: {x: -0.368, y: -0.469, z: 0.017742077}
+  m_LocalScale: {x: 0.1496487, y: 0.1496487, z: 0.1496487}
+>>>>>>> Stashed changes
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 209185641}
@@ -395,6 +410,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+<<<<<<< Updated upstream
 --- !u!1 &94871337
 GameObject:
   m_ObjectHideFlags: 0
@@ -426,6 +442,8 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1936234014}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+=======
+>>>>>>> Stashed changes
 --- !u!1 &138187196
 GameObject:
   m_ObjectHideFlags: 0
@@ -452,7 +470,11 @@ Transform:
   m_GameObject: {fileID: 138187196}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+<<<<<<< Updated upstream
   m_LocalPosition: {x: -13.21, y: -5.43, z: 0.017742077}
+=======
+  m_LocalPosition: {x: 1.287, y: -0.903, z: 0.017742077}
+>>>>>>> Stashed changes
   m_LocalScale: {x: 0.8046487, y: 0.8046487, z: 0.8046487}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -595,8 +617,13 @@ Transform:
   m_GameObject: {fileID: 249195167}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+<<<<<<< Updated upstream
   m_LocalPosition: {x: -15.69, y: -3.12, z: 0.0177}
   m_LocalScale: {x: 0.8364484, y: 0.8364484, z: 0.8364484}
+=======
+  m_LocalPosition: {x: -1.045, y: -0.591, z: 0.0177}
+  m_LocalScale: {x: 0.14313923, y: 0.14313923, z: 0.14313923}
+>>>>>>> Stashed changes
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 209185641}
@@ -656,6 +683,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+<<<<<<< Updated upstream
 --- !u!1 &266784047
 GameObject:
   m_ObjectHideFlags: 0
@@ -790,6 +818,8 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 0.5873333, y: 0.22433333}
   m_EdgeRadius: 0
+=======
+>>>>>>> Stashed changes
 --- !u!1 &309748109
 GameObject:
   m_ObjectHideFlags: 0
@@ -817,7 +847,11 @@ Transform:
   m_GameObject: {fileID: 309748109}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+<<<<<<< Updated upstream
   m_LocalPosition: {x: 10.54, y: 6.21, z: 0.0177}
+=======
+  m_LocalPosition: {x: 4.31, y: -0.8, z: 0.0177}
+>>>>>>> Stashed changes
   m_LocalScale: {x: 0.3876931, y: 0.3876931, z: 0.3876931}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -918,7 +952,11 @@ Transform:
   m_GameObject: {fileID: 340007390}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+<<<<<<< Updated upstream
   m_LocalPosition: {x: -0.2, y: 6.34, z: 0.0177}
+=======
+  m_LocalPosition: {x: -1.73, y: 1.92, z: 0.0177}
+>>>>>>> Stashed changes
   m_LocalScale: {x: 0.03856766, y: 0.03856766, z: 0.03856766}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1005,8 +1043,13 @@ Transform:
   m_GameObject: {fileID: 342572755}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+<<<<<<< Updated upstream
   m_LocalPosition: {x: 4.49, y: -3.76, z: 0.0177}
   m_LocalScale: {x: 0.47962147, y: 0.47962147, z: 0.47962147}
+=======
+  m_LocalPosition: {x: -1.122, y: -0.75, z: 0.0177}
+  m_LocalScale: {x: 0.11676724, y: 0.11676724, z: 0.11676724}
+>>>>>>> Stashed changes
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 789325192}
@@ -1092,8 +1135,13 @@ Transform:
   m_GameObject: {fileID: 357665086}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+<<<<<<< Updated upstream
   m_LocalPosition: {x: 2.4, y: -0.79, z: 0.017742077}
   m_LocalScale: {x: 0.95768, y: 0.95768, z: 0.95768}
+=======
+  m_LocalPosition: {x: 0.524, y: -0.385, z: 0.017742077}
+  m_LocalScale: {x: 0.18078645, y: 0.18078645, z: 0.18078645}
+>>>>>>> Stashed changes
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 209185641}
@@ -1245,7 +1293,10 @@ GameObject:
   - component: {fileID: 519420030}
   - component: {fileID: 519420033}
   - component: {fileID: 519420034}
+<<<<<<< Updated upstream
   - component: {fileID: 519420035}
+=======
+>>>>>>> Stashed changes
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -1402,6 +1453,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
+<<<<<<< Updated upstream
   m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ed173307dc9974a4ca7bfc0db18903f4, type: 3}
@@ -1419,16 +1471,24 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
+=======
+>>>>>>> Stashed changes
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ed173307dc9974a4ca7bfc0db18903f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+<<<<<<< Updated upstream
   target: {fileID: 1936234014}
   smoothSpeed: 0.125
   minBounds: {x: 0, y: 0}
   maxBounds: {x: 0, y: 0}
   offset: {x: 0, y: 0, z: 0}
+=======
+  target: {fileID: 1912423872}
+  smoothSpeed: 0.125
+  offset: {x: 0, y: 0, z: -10}
+>>>>>>> Stashed changes
 --- !u!1 &529682656
 GameObject:
   m_ObjectHideFlags: 0
@@ -1455,7 +1515,11 @@ Transform:
   m_GameObject: {fileID: 529682656}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+<<<<<<< Updated upstream
   m_LocalPosition: {x: -1.21, y: 6.41, z: 0.0177}
+=======
+  m_LocalPosition: {x: -1.5858, y: 2.6618, z: 0.0177}
+>>>>>>> Stashed changes
   m_LocalScale: {x: 0.047669798, y: 0.047669798, z: 0.047669798}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1617,8 +1681,13 @@ Transform:
   m_GameObject: {fileID: 576279752}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+<<<<<<< Updated upstream
   m_LocalPosition: {x: 9.42, y: -1.24, z: 0.017742077}
   m_LocalScale: {x: 0.8958067, y: 0.8958067, z: 0.8958067}
+=======
+  m_LocalPosition: {x: 0.987, y: -0.448, z: 0.017742077}
+  m_LocalScale: {x: 0.157108, y: 0.157108, z: 0.157108}
+>>>>>>> Stashed changes
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 209185641}
@@ -1940,7 +2009,11 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
+<<<<<<< Updated upstream
   m_Offset: {x: 6.789809, y: -0.46297747}
+=======
+  m_Offset: {x: 6.7303123, y: -0.32414824}
+>>>>>>> Stashed changes
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -1950,7 +2023,11 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
+<<<<<<< Updated upstream
   m_Size: {x: 17.68314, y: 0.5715083}
+=======
+  m_Size: {x: 16.215515, y: 0.29384983}
+>>>>>>> Stashed changes
   m_EdgeRadius: 0
 --- !u!4 &648830696
 Transform:
@@ -1961,7 +2038,11 @@ Transform:
   m_GameObject: {fileID: 648830694}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+<<<<<<< Updated upstream
   m_LocalPosition: {x: -6.84, y: 5.36, z: 0.08208636}
+=======
+  m_LocalPosition: {x: -0.61, y: 1.388, z: 0.08208636}
+>>>>>>> Stashed changes
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1977,7 +2058,10 @@ GameObject:
   m_Component:
   - component: {fileID: 682840147}
   - component: {fileID: 682840148}
+<<<<<<< Updated upstream
   - component: {fileID: 682840149}
+=======
+>>>>>>> Stashed changes
   m_Layer: 0
   m_Name: Chao3 (11)
   m_TagString: Untagged
@@ -1994,7 +2078,11 @@ Transform:
   m_GameObject: {fileID: 682840146}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+<<<<<<< Updated upstream
   m_LocalPosition: {x: 2.651, y: -4.6, z: 0.017742077}
+=======
+  m_LocalPosition: {x: -1.21, y: -1.14, z: 0.017742077}
+>>>>>>> Stashed changes
   m_LocalScale: {x: 4.846586, y: 4.846586, z: 4.846586}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2055,6 +2143,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+<<<<<<< Updated upstream
 --- !u!61 &682840149
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2101,6 +2190,8 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 0.5873333, y: 0.22433333}
   m_EdgeRadius: 0
+=======
+>>>>>>> Stashed changes
 --- !u!1 &698102394
 GameObject:
   m_ObjectHideFlags: 0
@@ -2127,7 +2218,11 @@ Transform:
   m_GameObject: {fileID: 698102394}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+<<<<<<< Updated upstream
   m_LocalPosition: {x: -14.8, y: -4.76, z: 0.017742077}
+=======
+  m_LocalPosition: {x: -0.127, y: -0.903, z: 0.017742077}
+>>>>>>> Stashed changes
   m_LocalScale: {x: 0.8046487, y: 0.8046487, z: 0.8046487}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2347,7 +2442,11 @@ Transform:
   m_GameObject: {fileID: 733475106}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+<<<<<<< Updated upstream
   m_LocalPosition: {x: 11.46, y: 3.33, z: 0.017742077}
+=======
+  m_LocalPosition: {x: 6.92, y: 0.43, z: 0.017742077}
+>>>>>>> Stashed changes
   m_LocalScale: {x: 0.3944206, y: 0.3944206, z: 0.3944206}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2572,7 +2671,11 @@ Transform:
   m_GameObject: {fileID: 800045290}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+<<<<<<< Updated upstream
   m_LocalPosition: {x: 11.58, y: 2.65, z: 0.017742077}
+=======
+  m_LocalPosition: {x: 9.05, y: 0.39, z: 0.017742077}
+>>>>>>> Stashed changes
   m_LocalScale: {x: 0.3944206, y: 0.3944206, z: 0.3944206}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2676,7 +2779,10 @@ Transform:
   - {fileID: 1105587402}
   - {fileID: 682840147}
   - {fileID: 1523290522}
+<<<<<<< Updated upstream
   - {fileID: 266784048}
+=======
+>>>>>>> Stashed changes
   - {fileID: 912669699}
   - {fileID: 1304776536}
   - {fileID: 1088230141}
@@ -2772,7 +2878,11 @@ Transform:
   m_GameObject: {fileID: 824949044}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+<<<<<<< Updated upstream
   m_LocalPosition: {x: 5.75, y: 6.26, z: 0.017742077}
+=======
+  m_LocalPosition: {x: 5.18, y: 1.2, z: 0.017742077}
+>>>>>>> Stashed changes
   m_LocalScale: {x: 0.2403, y: 0.2403, z: 0.2403}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3142,8 +3252,13 @@ Transform:
   m_GameObject: {fileID: 868501687}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+<<<<<<< Updated upstream
   m_LocalPosition: {x: 5.52, y: 2.23, z: 0.0177}
   m_LocalScale: {x: 3.0294082, y: 3.0294082, z: 3.0294082}
+=======
+  m_LocalPosition: {x: -0.13, y: 0.47, z: 0.017742077}
+  m_LocalScale: {x: 0.3944206, y: 0.3944206, z: 0.3944206}
+>>>>>>> Stashed changes
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1971532612}
@@ -3213,7 +3328,10 @@ GameObject:
   m_Component:
   - component: {fileID: 912669699}
   - component: {fileID: 912669700}
+<<<<<<< Updated upstream
   - component: {fileID: 912669701}
+=======
+>>>>>>> Stashed changes
   m_Layer: 0
   m_Name: Chao3 (13)
   m_TagString: Untagged
@@ -3230,7 +3348,11 @@ Transform:
   m_GameObject: {fileID: 912669698}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+<<<<<<< Updated upstream
   m_LocalPosition: {x: -5.85, y: -4.6, z: 0.017742077}
+=======
+  m_LocalPosition: {x: -5.795, y: -4.48, z: 0.017742077}
+>>>>>>> Stashed changes
   m_LocalScale: {x: 4.846586, y: 4.846586, z: 4.846586}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3291,6 +3413,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+<<<<<<< Updated upstream
 --- !u!61 &912669701
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3337,6 +3460,8 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 0.5873333, y: 0.22433333}
   m_EdgeRadius: 0
+=======
+>>>>>>> Stashed changes
 --- !u!1 &1014779411
 GameObject:
   m_ObjectHideFlags: 0
@@ -3486,8 +3611,13 @@ Transform:
   m_GameObject: {fileID: 1085560542}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+<<<<<<< Updated upstream
   m_LocalPosition: {x: -14.97, y: -3.86, z: 0.017742077}
   m_LocalScale: {x: 0.8325938, y: 0.8325938, z: 0.8325938}
+=======
+  m_LocalPosition: {x: -0.106, y: -0.537, z: 0.017742077}
+  m_LocalScale: {x: 0.157108, y: 0.157108, z: 0.157108}
+>>>>>>> Stashed changes
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 209185641}
@@ -3573,7 +3703,11 @@ Transform:
   m_GameObject: {fileID: 1088230140}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+<<<<<<< Updated upstream
   m_LocalPosition: {x: -16.49, y: -0.8, z: 0.017742077}
+=======
+  m_LocalPosition: {x: -1.076, y: -0.901, z: 0.017742077}
+>>>>>>> Stashed changes
   m_LocalScale: {x: 0.8046487, y: 0.8046487, z: 0.8046487}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3719,7 +3853,10 @@ GameObject:
   m_Component:
   - component: {fileID: 1105587402}
   - component: {fileID: 1105587403}
+<<<<<<< Updated upstream
   - component: {fileID: 1105587404}
+=======
+>>>>>>> Stashed changes
   m_Layer: 0
   m_Name: Chao3 (10)
   m_TagString: Untagged
@@ -3736,7 +3873,11 @@ Transform:
   m_GameObject: {fileID: 1105587401}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+<<<<<<< Updated upstream
   m_LocalPosition: {x: -0.169, y: -4.6, z: 0.017742077}
+=======
+  m_LocalPosition: {x: 2.17, y: -2.55, z: 0.017742077}
+>>>>>>> Stashed changes
   m_LocalScale: {x: 4.846586, y: 4.846586, z: 4.846586}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3797,6 +3938,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+<<<<<<< Updated upstream
 --- !u!61 &1105587404
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3843,6 +3985,8 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 0.5873333, y: 0.22433333}
   m_EdgeRadius: 0
+=======
+>>>>>>> Stashed changes
 --- !u!1 &1176284227
 GameObject:
   m_ObjectHideFlags: 0
@@ -3869,8 +4013,13 @@ Transform:
   m_GameObject: {fileID: 1176284227}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+<<<<<<< Updated upstream
   m_LocalPosition: {x: -0.43, y: 3.1477, z: 0.0177}
   m_LocalScale: {x: 2.589552, y: 2.589552, z: 2.589552}
+=======
+  m_LocalPosition: {x: -1.565, y: -0.201, z: 0.017742077}
+  m_LocalScale: {x: 0.34037852, y: 0.34037852, z: 0.34037852}
+>>>>>>> Stashed changes
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1971532612}
@@ -3940,7 +4089,10 @@ GameObject:
   m_Component:
   - component: {fileID: 1189371612}
   - component: {fileID: 1189371613}
+<<<<<<< Updated upstream
   - component: {fileID: 1189371614}
+=======
+>>>>>>> Stashed changes
   m_Layer: 0
   m_Name: Chao3 (9)
   m_TagString: Untagged
@@ -3957,7 +4109,11 @@ Transform:
   m_GameObject: {fileID: 1189371611}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+<<<<<<< Updated upstream
   m_LocalPosition: {x: -3.01, y: -4.6, z: 0.017742077}
+=======
+  m_LocalPosition: {x: 1.75, y: -3.87, z: 0.017742077}
+>>>>>>> Stashed changes
   m_LocalScale: {x: 4.846586, y: 4.846586, z: 4.846586}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4018,6 +4174,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+<<<<<<< Updated upstream
 --- !u!61 &1189371614
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4064,6 +4221,8 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 0.5873333, y: 0.22433333}
   m_EdgeRadius: 0
+=======
+>>>>>>> Stashed changes
 --- !u!1 &1191601182
 GameObject:
   m_ObjectHideFlags: 0
@@ -4090,7 +4249,11 @@ Transform:
   m_GameObject: {fileID: 1191601182}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+<<<<<<< Updated upstream
   m_LocalPosition: {x: -14.47, y: -2.77, z: 0.017742077}
+=======
+  m_LocalPosition: {x: 0.344, y: -0.903, z: 0.017742077}
+>>>>>>> Stashed changes
   m_LocalScale: {x: 0.8046487, y: 0.8046487, z: 0.8046487}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4339,8 +4502,13 @@ Transform:
   m_GameObject: {fileID: 1240582859}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+<<<<<<< Updated upstream
   m_LocalPosition: {x: -14.99, y: -4.91, z: 0.0177}
   m_LocalScale: {x: 0.75681984, y: 0.75681984, z: 0.75681984}
+=======
+  m_LocalPosition: {x: -0.692, y: -0.436, z: 0.0177}
+  m_LocalScale: {x: 0.1525662, y: 0.1525662, z: 0.1525662}
+>>>>>>> Stashed changes
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 209185641}
@@ -4426,8 +4594,13 @@ Transform:
   m_GameObject: {fileID: 1268242243}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+<<<<<<< Updated upstream
   m_LocalPosition: {x: 1.29, y: -1.22, z: 0.017742077}
   m_LocalScale: {x: 0.8422579, y: 0.8422579, z: 0.8422579}
+=======
+  m_LocalPosition: {x: 0.337, y: -0.4, z: 0.017742077}
+  m_LocalScale: {x: 0.18078645, y: 0.18078645, z: 0.18078645}
+>>>>>>> Stashed changes
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 209185641}
@@ -4513,7 +4686,11 @@ Transform:
   m_GameObject: {fileID: 1304776535}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+<<<<<<< Updated upstream
   m_LocalPosition: {x: -19.96, y: -0.16, z: 0.017742077}
+=======
+  m_LocalPosition: {x: -14.22, y: -1.19, z: 0.017742077}
+>>>>>>> Stashed changes
   m_LocalScale: {x: 4.968415, y: 4.968415, z: 4.968415}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4600,8 +4777,13 @@ Transform:
   m_GameObject: {fileID: 1304879556}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+<<<<<<< Updated upstream
   m_LocalPosition: {x: 5.1, y: -1.13, z: 0.0177}
   m_LocalScale: {x: 0.7996847, y: 0.7996847, z: 0.7996847}
+=======
+  m_LocalPosition: {x: 1.88, y: -0.481, z: 0.0177}
+  m_LocalScale: {x: 0.1525662, y: 0.1525662, z: 0.1525662}
+>>>>>>> Stashed changes
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 209185641}
@@ -4687,8 +4869,13 @@ Transform:
   m_GameObject: {fileID: 1331014545}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+<<<<<<< Updated upstream
   m_LocalPosition: {x: -0.6437, y: -0.2013, z: 0.0177}
   m_LocalScale: {x: 3.0646696, y: 3.0646696, z: 3.0646696}
+=======
+  m_LocalPosition: {x: -0.5568, y: -0.2447, z: 0.0177}
+  m_LocalScale: {x: 2.6768997, y: 2.6768997, z: 2.6768997}
+>>>>>>> Stashed changes
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1610518300}
@@ -4774,8 +4961,13 @@ Transform:
   m_GameObject: {fileID: 1361377003}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+<<<<<<< Updated upstream
   m_LocalPosition: {x: -7.19, y: 3.46, z: 0.017742077}
   m_LocalScale: {x: 2.6378884, y: 2.9521508, z: 3.4196115}
+=======
+  m_LocalPosition: {x: -2.2, y: 0.55, z: 0.017742077}
+  m_LocalScale: {x: 0.5130581, y: 0.57418084, z: 0.6651}
+>>>>>>> Stashed changes
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1971532612}
@@ -4845,7 +5037,10 @@ GameObject:
   m_Component:
   - component: {fileID: 1419682803}
   - component: {fileID: 1419682804}
+<<<<<<< Updated upstream
   - component: {fileID: 1419682805}
+=======
+>>>>>>> Stashed changes
   m_Layer: 0
   m_Name: Chao3 (1)
   m_TagString: Untagged
@@ -4862,7 +5057,11 @@ Transform:
   m_GameObject: {fileID: 1419682802}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+<<<<<<< Updated upstream
   m_LocalPosition: {x: -8.67, y: -4.59, z: 0.017742077}
+=======
+  m_LocalPosition: {x: -8.62, y: -4.47, z: 0.017742077}
+>>>>>>> Stashed changes
   m_LocalScale: {x: 4.846586, y: 4.846586, z: 4.846586}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4923,6 +5122,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+<<<<<<< Updated upstream
 --- !u!61 &1419682805
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4969,6 +5169,8 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 0.5873333, y: 0.22433333}
   m_EdgeRadius: 0
+=======
+>>>>>>> Stashed changes
 --- !u!1 &1523290521
 GameObject:
   m_ObjectHideFlags: 0
@@ -4979,7 +5181,10 @@ GameObject:
   m_Component:
   - component: {fileID: 1523290522}
   - component: {fileID: 1523290523}
+<<<<<<< Updated upstream
   - component: {fileID: 1523290524}
+=======
+>>>>>>> Stashed changes
   m_Layer: 0
   m_Name: Chao3 (12)
   m_TagString: Untagged
@@ -4996,7 +5201,11 @@ Transform:
   m_GameObject: {fileID: 1523290521}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+<<<<<<< Updated upstream
   m_LocalPosition: {x: 5.49, y: -4.6, z: 0.017742077}
+=======
+  m_LocalPosition: {x: -1.73, y: -2.26, z: 0.017742077}
+>>>>>>> Stashed changes
   m_LocalScale: {x: 4.846586, y: 4.846586, z: 4.846586}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -5057,6 +5266,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+<<<<<<< Updated upstream
 --- !u!61 &1523290524
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -5103,6 +5313,8 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 0.5873333, y: 0.22433333}
   m_EdgeRadius: 0
+=======
+>>>>>>> Stashed changes
 --- !u!1 &1566481785
 GameObject:
   m_ObjectHideFlags: 0
@@ -5130,8 +5342,13 @@ Transform:
   m_GameObject: {fileID: 1566481785}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+<<<<<<< Updated upstream
   m_LocalPosition: {x: 2.97, y: -2.2448, z: 0.017742077}
   m_LocalScale: {x: 1.9534098, y: 1.9534098, z: 1.9534098}
+=======
+  m_LocalPosition: {x: 1.6397, y: -2.2393, z: 0.017742077}
+  m_LocalScale: {x: 1.3799468, y: 1.3799468, z: 1.3799468}
+>>>>>>> Stashed changes
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1610518300}
@@ -5231,7 +5448,11 @@ Transform:
   m_GameObject: {fileID: 1573819843}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+<<<<<<< Updated upstream
   m_LocalPosition: {x: -16.41, y: -2.21, z: 0.017742077}
+=======
+  m_LocalPosition: {x: -1.548, y: -0.901, z: 0.017742077}
+>>>>>>> Stashed changes
   m_LocalScale: {x: 0.8046487, y: 0.8046487, z: 0.8046487}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -5397,8 +5618,13 @@ Transform:
   m_GameObject: {fileID: 1590509147}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+<<<<<<< Updated upstream
   m_LocalPosition: {x: 6.99, y: -0.8873, z: 0.0177}
   m_LocalScale: {x: 0.9474792, y: 0.9474792, z: 0.9474792}
+=======
+  m_LocalPosition: {x: 2.322, y: -0.493, z: 0.017742077}
+  m_LocalScale: {x: 0.1496487, y: 0.1496487, z: 0.1496487}
+>>>>>>> Stashed changes
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 209185641}
@@ -5652,7 +5878,11 @@ Transform:
   m_GameObject: {fileID: 1719658410}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+<<<<<<< Updated upstream
   m_LocalPosition: {x: 1, y: 6.51, z: 0.0177}
+=======
+  m_LocalPosition: {x: -1.3199, y: 3.2369, z: 0.0177}
+>>>>>>> Stashed changes
   m_LocalScale: {x: 0.038105905, y: 0.038105905, z: 0.038105905}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -5739,8 +5969,13 @@ Transform:
   m_GameObject: {fileID: 1731869195}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+<<<<<<< Updated upstream
   m_LocalPosition: {x: 3.24, y: -1.22, z: 0.0177}
   m_LocalScale: {x: 0.7630568, y: 0.7630568, z: 0.7630568}
+=======
+  m_LocalPosition: {x: 1.405, y: -0.472, z: 0.0177}
+  m_LocalScale: {x: 0.14313923, y: 0.14313923, z: 0.14313923}
+>>>>>>> Stashed changes
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 209185641}
@@ -5826,7 +6061,11 @@ Transform:
   m_GameObject: {fileID: 1744740009}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+<<<<<<< Updated upstream
   m_LocalPosition: {x: -17.8, y: -4.23, z: 0.017742077}
+=======
+  m_LocalPosition: {x: -2.019, y: -0.901, z: 0.017742077}
+>>>>>>> Stashed changes
   m_LocalScale: {x: 0.8046487, y: 0.8046487, z: 0.8046487}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -5938,7 +6177,11 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
+<<<<<<< Updated upstream
   m_Offset: {x: 0.61343074, y: -4.130173}
+=======
+  m_Offset: {x: 0.23972028, y: -0.019343615}
+>>>>>>> Stashed changes
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -5948,7 +6191,11 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
+<<<<<<< Updated upstream
   m_Size: {x: 0.943007, y: 10.266217}
+=======
+  m_Size: {x: 0.19558609, y: 2.0445566}
+>>>>>>> Stashed changes
   m_EdgeRadius: 0
 --- !u!4 &1762355392
 Transform:
@@ -5959,7 +6206,11 @@ Transform:
   m_GameObject: {fileID: 1762355390}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+<<<<<<< Updated upstream
   m_LocalPosition: {x: -9.2, y: 4.1, z: 0.08208636}
+=======
+  m_LocalPosition: {x: -1.933, y: -0.005, z: 0.08208636}
+>>>>>>> Stashed changes
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -5991,8 +6242,13 @@ Transform:
   m_GameObject: {fileID: 1787145535}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+<<<<<<< Updated upstream
   m_LocalPosition: {x: -6.03, y: -3.69, z: 0.0177}
   m_LocalScale: {x: 0.55674475, y: 0.55674475, z: 0.55674475}
+=======
+  m_LocalPosition: {x: -2.605, y: -0.776, z: 0.0177}
+  m_LocalScale: {x: 0.10331325, y: 0.10331325, z: 0.10331325}
+>>>>>>> Stashed changes
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 789325192}
@@ -6079,8 +6335,13 @@ Transform:
   m_GameObject: {fileID: 1846466004}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+<<<<<<< Updated upstream
   m_LocalPosition: {x: -7.9, y: -0.89, z: 0.017742077}
   m_LocalScale: {x: 1.9689119, y: 1.9689119, z: 1.9689119}
+=======
+  m_LocalPosition: {x: -8.41, y: -2.4, z: 0.017742077}
+  m_LocalScale: {x: 1.4082594, y: 1.4082594, z: 1.4082594}
+>>>>>>> Stashed changes
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1610518300}
@@ -6267,7 +6528,11 @@ Transform:
   m_GameObject: {fileID: 1868879088}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+<<<<<<< Updated upstream
   m_LocalPosition: {x: -15.71, y: -4.26, z: 0.017742077}
+=======
+  m_LocalPosition: {x: 0.815, y: -0.903, z: 0.017742077}
+>>>>>>> Stashed changes
   m_LocalScale: {x: 0.8046487, y: 0.8046487, z: 0.8046487}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -6355,7 +6620,11 @@ Transform:
   m_GameObject: {fileID: 1877181073}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+<<<<<<< Updated upstream
   m_LocalPosition: {x: 12.65, y: -1.86, z: 0.017742077}
+=======
+  m_LocalPosition: {x: 1.7, y: -0.72, z: 0.017742077}
+>>>>>>> Stashed changes
   m_LocalScale: {x: 0.2965545, y: 0.2965545, z: 0.2965545}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -6551,7 +6820,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1878951684}
   m_CullTransparentMesh: 1
+<<<<<<< Updated upstream
 --- !u!1 &1936234012
+=======
+--- !u!1 &1912423869
+>>>>>>> Stashed changes
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -6559,11 +6832,19 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
+<<<<<<< Updated upstream
   - component: {fileID: 1936234014}
   - component: {fileID: 1936234013}
   - component: {fileID: 1936234016}
   - component: {fileID: 1936234015}
   - component: {fileID: 1936234017}
+=======
+  - component: {fileID: 1912423872}
+  - component: {fileID: 1912423871}
+  - component: {fileID: 1912423870}
+  - component: {fileID: 1912423874}
+  - component: {fileID: 1912423873}
+>>>>>>> Stashed changes
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -6571,13 +6852,34 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+<<<<<<< Updated upstream
 --- !u!212 &1936234013
+=======
+--- !u!114 &1912423870
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1912423869}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b897b25f344fff45bfa172861b63976, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveSpeed: 2
+--- !u!212 &1912423871
+>>>>>>> Stashed changes
 SpriteRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+<<<<<<< Updated upstream
   m_GameObject: {fileID: 1936234012}
+=======
+  m_GameObject: {fileID: 1912423869}
+>>>>>>> Stashed changes
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -6626,12 +6928,17 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+<<<<<<< Updated upstream
 --- !u!4 &1936234014
+=======
+--- !u!4 &1912423872
+>>>>>>> Stashed changes
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+<<<<<<< Updated upstream
   m_GameObject: {fileID: 1936234012}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
@@ -6643,12 +6950,55 @@ Transform:
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &1936234015
+=======
+  m_GameObject: {fileID: 1912423869}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -6.1, y: -3.71, z: 0.077653915}
+  m_LocalScale: {x: 0.7354, y: 0.7354, z: 0.7354}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!50 &1912423873
+Rigidbody2D:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1912423869}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDamping: 0
+  m_AngularDamping: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
+--- !u!61 &1912423874
+>>>>>>> Stashed changes
 BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+<<<<<<< Updated upstream
   m_GameObject: {fileID: 1936234012}
+=======
+  m_GameObject: {fileID: 1912423869}
+>>>>>>> Stashed changes
   m_Enabled: 1
   serializedVersion: 3
   m_Density: 1
@@ -6688,6 +7038,7 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 0.452, y: 0.457}
   m_EdgeRadius: 0
+<<<<<<< Updated upstream
 --- !u!50 &1936234016
 Rigidbody2D:
   serializedVersion: 5
@@ -6734,6 +7085,8 @@ MonoBehaviour:
   groundLayer:
     serializedVersion: 2
     m_Bits: 0
+=======
+>>>>>>> Stashed changes
 --- !u!1 &1971437829
 GameObject:
   m_ObjectHideFlags: 0
@@ -7022,7 +7375,11 @@ Transform:
   m_GameObject: {fileID: 2023345051}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+<<<<<<< Updated upstream
   m_LocalPosition: {x: -3.33, y: 6.44, z: 0.0177}
+=======
+  m_LocalPosition: {x: -2.42, y: 2.4, z: 0.0177}
+>>>>>>> Stashed changes
   m_LocalScale: {x: 0.025982633, y: 0.025982633, z: 0.025982633}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -7229,7 +7586,11 @@ Transform:
   m_GameObject: {fileID: 2136844999}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+<<<<<<< Updated upstream
   m_LocalPosition: {x: 11.69, y: 1.48, z: 0.017742077}
+=======
+  m_LocalPosition: {x: 5.19, y: 0.22, z: 0.017742077}
+>>>>>>> Stashed changes
   m_LocalScale: {x: 0.34037852, y: 0.34037852, z: 0.34037852}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -7299,6 +7660,12 @@ SceneRoots:
   - {fileID: 579969076}
   - {fileID: 1589063085}
   - {fileID: 1610518300}
+<<<<<<< Updated upstream
   - {fileID: 1762355392}
   - {fileID: 648830696}
   - {fileID: 1936234014}
+=======
+  - {fileID: 1912423872}
+  - {fileID: 1762355392}
+  - {fileID: 648830696}
+>>>>>>> Stashed changes
