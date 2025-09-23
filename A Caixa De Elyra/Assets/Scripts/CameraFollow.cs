@@ -2,63 +2,30 @@ using UnityEngine;
 
 public class CameraFollow : MonoBehaviour
 {
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-    public Transform target; // Player
-    public float smoothSpeed = 0.15f;
-    public Vector2 minBounds; // limite mínimo (x,y)
-    public Vector2 maxBounds; // limite máximo (x,y)
-    public Vector3 offset;    // ajuste da posição da câmera
-=======
-    public Transform target;
-    public float smoothSpeed = 0.125f;
-    public Vector3 offset = new Vector3(0, 0, -10);
->>>>>>> Stashed changes
-=======
-    public Transform target;
-    public float smoothSpeed = 0.125f;
-    public Vector3 offset = new Vector3(0, 0, -10);
->>>>>>> Stashed changes
+    public Transform target;           // Player
+    public float smoothSpeed = 0.125f; // Velocidade da suavização
+    public Vector3 offset = new Vector3(0, 0, -10); // Ajuste da posição da câmera
+
+    [Header("Limites da câmera (opcional)")]
+    public Vector2 minBounds; // Limite mínimo (x,y)
+    public Vector2 maxBounds; // Limite máximo (x,y)
 
     void LateUpdate()
     {
         if (target == null) return;
 
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
         // Posição desejada
         Vector3 desiredPosition = target.position + offset;
 
         // Suavização
         Vector3 smoothedPosition = Vector3.Lerp(transform.position, desiredPosition, smoothSpeed);
 
-        // Limita a câmera dentro dos bounds
+        // Limita a câmera dentro dos bounds, se quiser usar
         float clampX = Mathf.Clamp(smoothedPosition.x, minBounds.x, maxBounds.x);
         float clampY = Mathf.Clamp(smoothedPosition.y, minBounds.y, maxBounds.y);
 
-        // Atualiza posição
-        transform.position = new Vector3(clampX, clampY, -10f);
-=======
-        Vector3 desiredPosition = target.position + offset;
-        Vector3 smoothedPosition = Vector3.Lerp(transform.position, desiredPosition, smoothSpeed);
-        transform.position = smoothedPosition;
->>>>>>> Stashed changes
-=======
-        Vector3 desiredPosition = target.position + offset;
-        Vector3 smoothedPosition = Vector3.Lerp(transform.position, desiredPosition, smoothSpeed);
-        transform.position = smoothedPosition;
->>>>>>> Stashed changes
+        // Atualiza posição da câmera
+        transform.position = new Vector3(clampX, clampY, smoothedPosition.z);
     }
 }
 
-
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-=======
-
-
->>>>>>> Stashed changes
-=======
-
-
->>>>>>> Stashed changes
