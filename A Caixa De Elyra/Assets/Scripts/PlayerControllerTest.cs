@@ -17,12 +17,6 @@ public class PlayerController : MonoBehaviour
 
     void Start()
     {
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-        rb = GetComponent<Rigidbody2D>();
-=======
-=======
->>>>>>> Stashed changes
         // Pega o Rigidbody2D se já existir, senão adiciona
         rb = gameObject.GetComponent<Rigidbody2D>();
         if (rb == null)
@@ -30,7 +24,7 @@ public class PlayerController : MonoBehaviour
             rb = gameObject.AddComponent<Rigidbody2D>();
         }
 
-        rb.gravityScale = 0; // não cai
+        rb.gravityScale = 2f; // faz o player cair normalmente
         rb.freezeRotation = true;
 
         // Adiciona um BoxCollider2D se ainda não existir
@@ -38,15 +32,11 @@ public class PlayerController : MonoBehaviour
         {
             gameObject.AddComponent<BoxCollider2D>();
         }
-<<<<<<< Updated upstream
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
     }
 
     void Update()
     {
-        // Movimento horizontal
+        // Movimento horizontal pelas teclas Home e End
         moveInput = 0f;
         if (Input.GetKey(KeyCode.Home)) moveInput = -1f;
         if (Input.GetKey(KeyCode.End)) moveInput = 1f;
@@ -68,10 +58,3 @@ public class PlayerController : MonoBehaviour
     }
 }
 
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
