@@ -6,6 +6,7 @@ public class ParallaxLayer : MonoBehaviour
     public float parallaxEffect;
 
     private Vector3 startPosition;
+    private Vector3 lastCameraPosition;
 
     void Start()
     {
@@ -13,15 +14,22 @@ public class ParallaxLayer : MonoBehaviour
             cameraTransform = Camera.main.transform;
 
         startPosition = transform.position;
+        lastCameraPosition = cameraTransform.position;
     }
 
     void LateUpdate()
     {
         if (cameraTransform == null) return;
 
-        float deltaX = cameraTransform.position.x * parallaxEffect;
-        transform.position = new Vector3(startPosition.x + deltaX, startPosition.y, startPosition.z);
-    }
+        // Calcula quanto a câmera se moveu desde o último frame
+        Vector3 delta = cameraTransform.position - lastCameraPosition;
+
+        // Aplica o parallax proporcional
+        transform.position += new Vector3(delta.x * parallaxEffect, delta.y * parallaxEffect, 0);
+
+        // Atualiza a última posição da câmera
+        lastCameraPosition = cameraTransform.position;
+    }
 }
 
 
