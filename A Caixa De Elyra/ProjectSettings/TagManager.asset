@@ -65,5 +65,8 @@ TagManager:
   - name: Ground
     uniqueID: 905142115
     locked: 0
+  - name: Collectables
+    uniqueID: 148777821
+    locked: 0
   m_RenderingLayers:
   - Default
