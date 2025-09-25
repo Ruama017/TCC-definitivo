@@ -2,20 +2,28 @@ using UnityEngine;
 
 public class RepetirInfinito : MonoBehaviour
 {
-    public float larguraSprite = 10f; // largura do sprite em Unity units
-    private Vector3 startPosition;
+    private float larguraSprite;
+    private Camera cam;
 
     void Start()
     {
-        startPosition = transform.position;
+        cam = Camera.main;
+
+        // Calcula a largura real do sprite (baseado no tamanho e escala)
+        SpriteRenderer sr = GetComponent<SpriteRenderer>();
+        larguraSprite = sr.bounds.size.x;
     }
 
     void Update()
     {
-        if (Camera.main.transform.position.x - startPosition.x >= larguraSprite)
+        // Se a câmera passar do sprite pela direita
+        if (cam.transform.position.x > transform.position.x + larguraSprite)
         {
-            startPosition.x += larguraSprite;
-            transform.position = startPosition;
-        }
-    }
+            transform.position = new Vector3(
+                transform.position.x + 2 * larguraSprite, // joga pra frente
+                transform.position.y,
+                transform.position.z
+            );
+        }
+    }
 }
