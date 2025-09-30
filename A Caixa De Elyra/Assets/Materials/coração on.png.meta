@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 7f34171832024c642b1dd8679a3e0558
+guid: 3b885b7cb62b1ae488a9c3dd89c2983f
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 3532480523892348524
-    second: "Vetor_de_cora\xE7\xE3o_de_\xEDcone_de_pixel_art_8_bits___Vetor_Premium-removebg-preview_0"
+      213: -5775531179356065306
+    second: "cora\xE7\xE3o on_0"
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: "Vetor_de_cora\xE7\xE3o_de_\xEDcone_de_pixel_art_8_bits___Vetor_Premium-removebg-preview_0"
+      name: "cora\xE7\xE3o on_0"
       rect:
         serializedVersion: 2
-        x: 124
-        y: 128
-        width: 265
-        height: 250
+        x: 299
+        y: 339
+        width: 627
+        height: 577
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: c66d6921254e50130800000000000000
-      internalID: 3532480523892348524
+      spriteID: 6e1f9411ef039dfa0800000000000000
+      internalID: -5775531179356065306
       vertices: []
       indices: 
       edges: []

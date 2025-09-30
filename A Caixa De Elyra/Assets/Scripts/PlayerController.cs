@@ -7,49 +7,70 @@ public class PlayerController : MonoBehaviour
     public float jumpForce = 7f;
 
     private Rigidbody2D rb;
-    private float moveInput;
+    private Animator animator;
     private bool isGrounded;
-
-    [Header("Checagem do chão")]
-    public Transform groundCheck;     // Empty no pé do Player
-    public float checkRadius = 0.1f;  // tamanho do círculo
-    public LayerMask groundLayer;     // Layer do chão
+    private bool isAttacking;
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        if(rb == null) rb = gameObject.AddComponent<Rigidbody2D>();
-        
-        rb.gravityScale = 3; // para poder cair
-        rb.freezeRotation = true;
-
-        if(GetComponent<BoxCollider2D>() == null)
-            gameObject.AddComponent<BoxCollider2D>();
+        animator = GetComponent<Animator>();
     }
 
     void Update()
     {
-        // Movimento horizontal (usa Input Manager: A/D ou setas)
-        moveInput = Input.GetAxisRaw("Horizontal");
+        if (isAttacking) return; // enquanto ataca, não move
 
-        // Checa se está no chão
-        isGrounded = Physics2D.OverlapCircle(groundCheck.position, checkRadius, groundLayer);
+        // Movimento horizontal
+        float moveInput = Input.GetAxisRaw("Horizontal"); // A/D ou setas
+        rb.linearVelocity = new Vector2(moveInput * moveSpeed, rb.linearVelocity.y);
 
-        // Pulo
-        if(Input.GetKeyDown(KeyCode.Space) && isGrounded)
+        // Flip no sprite para olhar na direção certa
+        if (moveInput != 0)
         {
-            rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
+            transform.localScale = new Vector3(Mathf.Sign(moveInput), 1f, 1f);
         }
 
-        // Pulo responsivo: corta altura se soltar espaço
-        if (rb.linearVelocity.y > 0 && !Input.GetKey(KeyCode.Space))
+        // Pular
+        if (Input.GetButtonDown("Jump") && isGrounded)
         {
-            rb.linearVelocity += Vector2.up * Physics2D.gravity.y * (2f * Time.deltaTime);
+            rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpForce);
         }
+
+        // Atacar
+        if (Input.GetKeyDown(KeyCode.F)) // usa a tecla F para atacar
+        {
+            StartAttack();
+        }
+
+        // Atualizar parâmetros do Animator
+        animator.SetBool("isWalking", moveInput != 0);
+        animator.SetBool("isJumping", !isGrounded);
     }
 
-    void FixedUpdate()
+    // Função de ataque
+    private void StartAttack()
     {
-        rb.linearVelocity = new Vector2(moveInput * moveSpeed, rb.linearVelocity.y);
+        isAttacking = true;
+        animator.SetTrigger("Attack");
+    }
+
+    // Chamado pelo final da animação de ataque (Animation Event)
+    public void EndAttack()
+    {
+        isAttacking = false;
+    }
+
+    // Verifica se está no chão
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Ground"))
+            isGrounded = true;
+    }
+
+    private void OnCollisionExit2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Ground"))
+            isGrounded = false;
     }
 }
