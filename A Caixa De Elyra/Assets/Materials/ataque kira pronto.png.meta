@@ -234,7 +234,12 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      ataque kira pronto_0: 2701584446259810626
+      ataque kira pronto_1: 4092499970049864574
+      ataque kira pronto_2: -4732807760938565031
+      ataque kira pronto_3: 7703346680093600647
+      ataque kira pronto_4: 8820057553482350650
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
