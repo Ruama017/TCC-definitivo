@@ -114,6 +114,32 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WindowsStoreApps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -284,7 +310,14 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      "Pulm\xE3o da Morte anima\xE7\xE3o (1) (1)_0": 7767664501671824723
+      "Pulm\xE3o da Morte anima\xE7\xE3o (1) (1)_1": 8886538596215511355
+      "Pulm\xE3o da Morte anima\xE7\xE3o (1) (1)_2": 9137338708661409448
+      "Pulm\xE3o da Morte anima\xE7\xE3o (1) (1)_3": 136176431725293854
+      "Pulm\xE3o da Morte anima\xE7\xE3o (1) (1)_4": 3021621877083959855
+      "Pulm\xE3o da Morte anima\xE7\xE3o (1) (1)_5": 2723915330090673684
+      "Pulm\xE3o da Morte anima\xE7\xE3o (1) (1)_6": -7575259250144209587
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

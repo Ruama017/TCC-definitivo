@@ -246,6 +246,32 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WindowsStoreApps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -1384,7 +1410,58 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      ataque boglin_0: -5932904959860049369
+      ataque boglin_1: 5594023288288795474
+      ataque boglin_10: -3039875494617158978
+      ataque boglin_11: 8519286780723274272
+      ataque boglin_12: -1964910884372225798
+      ataque boglin_13: 3679664874367068181
+      ataque boglin_14: 8883959440462231558
+      ataque boglin_15: -5348114941342920845
+      ataque boglin_16: 7690102565391816230
+      ataque boglin_17: 8235042138705744701
+      ataque boglin_18: -2871874803512645716
+      ataque boglin_19: 7847963475313843151
+      ataque boglin_2: 1228340245213322854
+      ataque boglin_20: 7697288360553165474
+      ataque boglin_21: 5383851896992740018
+      ataque boglin_22: -4434241088654669982
+      ataque boglin_23: -2459323202376323595
+      ataque boglin_24: -9193045250632142372
+      ataque boglin_25: -8737616479884081112
+      ataque boglin_26: -6279694487677870367
+      ataque boglin_27: 1238146382714997899
+      ataque boglin_28: -1818905292950116619
+      ataque boglin_29: 3125782342982806531
+      ataque boglin_3: 3217881283788279032
+      ataque boglin_30: 1362599392204772137
+      ataque boglin_31: 511964018245393479
+      ataque boglin_32: 2990818017315998231
+      ataque boglin_33: 7859805223480356195
+      ataque boglin_34: -2504703337853521377
+      ataque boglin_35: 7514421793727417877
+      ataque boglin_36: -4622868807964779477
+      ataque boglin_37: -6517466895865254825
+      ataque boglin_38: 6104491064217530320
+      ataque boglin_39: -3628724921648934003
+      ataque boglin_4: 4497670817887361848
+      ataque boglin_40: 5631876706492957348
+      ataque boglin_41: -258140681324839972
+      ataque boglin_42: -2999996939396137175
+      ataque boglin_43: -7675349146351323334
+      ataque boglin_44: 7270113068076436161
+      ataque boglin_45: -5400721091460085234
+      ataque boglin_46: 8898124684556441544
+      ataque boglin_47: 3643029317395680281
+      ataque boglin_48: 5708941809047192188
+      ataque boglin_49: -3029918333702139975
+      ataque boglin_5: -1697991894687885988
+      ataque boglin_50: 5806181667978134845
+      ataque boglin_6: 2414627328760251731
+      ataque boglin_7: 2187415940759073742
+      ataque boglin_8: 736326077823045554
+      ataque boglin_9: 4360739639256123388
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

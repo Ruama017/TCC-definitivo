@@ -123,6 +123,32 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WindowsStoreApps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -359,7 +385,17 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      almas dos monstros (1)_0: -7125334470429016977
+      almas dos monstros (1)_1: -3865346259539206982
+      almas dos monstros (1)_2: -1693175745436967241
+      almas dos monstros (1)_3: 3165464506000897936
+      almas dos monstros (1)_4: 7989738212994506403
+      almas dos monstros (1)_5: -512027031457111874
+      almas dos monstros (1)_6: -751927930577495831
+      almas dos monstros (1)_7: -2395012799848890580
+      almas dos monstros (1)_8: 5014121676428877795
+      almas dos monstros (1)_9: 3943313892073845725
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

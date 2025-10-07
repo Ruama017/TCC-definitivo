@@ -267,6 +267,32 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WindowsStoreApps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -1559,7 +1585,65 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      "hera anima\xE7\xE3o (1)_0": 8056133221559712863
+      "hera anima\xE7\xE3o (1)_1": -5688857087224792033
+      "hera anima\xE7\xE3o (1)_10": -3872628536246033721
+      "hera anima\xE7\xE3o (1)_11": -5206331377228619387
+      "hera anima\xE7\xE3o (1)_12": -5473908602165124021
+      "hera anima\xE7\xE3o (1)_13": 3197320222865819202
+      "hera anima\xE7\xE3o (1)_14": -225396562477651838
+      "hera anima\xE7\xE3o (1)_15": 1076522000164834730
+      "hera anima\xE7\xE3o (1)_16": -7335156082229992696
+      "hera anima\xE7\xE3o (1)_17": 2632120379122586332
+      "hera anima\xE7\xE3o (1)_18": -9079400341255749318
+      "hera anima\xE7\xE3o (1)_19": 3678063653285166638
+      "hera anima\xE7\xE3o (1)_2": 100073735353150201
+      "hera anima\xE7\xE3o (1)_20": -366676367346462687
+      "hera anima\xE7\xE3o (1)_21": 2350152486070041085
+      "hera anima\xE7\xE3o (1)_22": -1187959909867785735
+      "hera anima\xE7\xE3o (1)_23": -3916972172425186977
+      "hera anima\xE7\xE3o (1)_24": -5270367841228847901
+      "hera anima\xE7\xE3o (1)_25": 7276687916624594359
+      "hera anima\xE7\xE3o (1)_26": -3729519533315963639
+      "hera anima\xE7\xE3o (1)_27": 6478125654192935686
+      "hera anima\xE7\xE3o (1)_28": -7862226138461437267
+      "hera anima\xE7\xE3o (1)_29": -8523937271510533886
+      "hera anima\xE7\xE3o (1)_3": -7888390191038709201
+      "hera anima\xE7\xE3o (1)_30": -833056836193662070
+      "hera anima\xE7\xE3o (1)_31": 4659830607331218920
+      "hera anima\xE7\xE3o (1)_32": 6070497067078363271
+      "hera anima\xE7\xE3o (1)_33": -2201003504181316696
+      "hera anima\xE7\xE3o (1)_34": 1635020965503827884
+      "hera anima\xE7\xE3o (1)_35": -8561548303391873213
+      "hera anima\xE7\xE3o (1)_36": 8426544162162311227
+      "hera anima\xE7\xE3o (1)_37": 4983043765003068225
+      "hera anima\xE7\xE3o (1)_38": -1587356787696779760
+      "hera anima\xE7\xE3o (1)_39": -8038285506228480079
+      "hera anima\xE7\xE3o (1)_4": 9199368559225472956
+      "hera anima\xE7\xE3o (1)_40": 1188243433879263103
+      "hera anima\xE7\xE3o (1)_41": -2505630593309427330
+      "hera anima\xE7\xE3o (1)_42": -262658549940381925
+      "hera anima\xE7\xE3o (1)_43": -6151860722332037636
+      "hera anima\xE7\xE3o (1)_44": 96761017907175598
+      "hera anima\xE7\xE3o (1)_45": -6982867890962000032
+      "hera anima\xE7\xE3o (1)_46": -8926770452301691048
+      "hera anima\xE7\xE3o (1)_47": -5441397386129202973
+      "hera anima\xE7\xE3o (1)_48": 6933584237458232839
+      "hera anima\xE7\xE3o (1)_49": 6617436842855604846
+      "hera anima\xE7\xE3o (1)_5": 6138036158893142668
+      "hera anima\xE7\xE3o (1)_50": -6147243874535829807
+      "hera anima\xE7\xE3o (1)_51": -7891116917732816356
+      "hera anima\xE7\xE3o (1)_52": 2817536499953140132
+      "hera anima\xE7\xE3o (1)_53": 4156659282117351729
+      "hera anima\xE7\xE3o (1)_54": 6397598537586226583
+      "hera anima\xE7\xE3o (1)_55": -5984697986829186235
+      "hera anima\xE7\xE3o (1)_56": 4885061726750324405
+      "hera anima\xE7\xE3o (1)_57": 6587232146236085552
+      "hera anima\xE7\xE3o (1)_6": -7533888475272398039
+      "hera anima\xE7\xE3o (1)_7": 4015952050324414808
+      "hera anima\xE7\xE3o (1)_8": -3118123662132728896
+      "hera anima\xE7\xE3o (1)_9": 7698581798156576454
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
