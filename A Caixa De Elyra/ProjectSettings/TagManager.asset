@@ -5,6 +5,8 @@ TagManager:
   serializedVersion: 3
   tags:
   - Ground
+  - Gas
+  - BridgePiece
   layers:
   - Default
   - TransparentFX
@@ -54,13 +56,13 @@ TagManager:
   - name: sla
     uniqueID: 3517921929
     locked: 0
-  - name: Player
+  - name: nda7
     uniqueID: 4024215425
     locked: 0
   - name: Middleground
     uniqueID: 131151463
     locked: 0
-  - name: Player2
+  - name: ndaa
     uniqueID: 2217966919
     locked: 0
   - name: Ground
@@ -68,6 +70,12 @@ TagManager:
     locked: 0
   - name: Collectables
     uniqueID: 148777821
+    locked: 0
+  - name: Player
+    uniqueID: 507317801
+    locked: 0
+  - name: Effects
+    uniqueID: 2092630251
     locked: 0
   m_RenderingLayers:
   - Default

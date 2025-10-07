@@ -1,0 +1,1392 @@
+fileFormatVersion: 2
+guid: 7d5bbd15a4e4e754bbd07dca17c26481
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -5932904959860049369
+    second: ataque boglin_0
+  - first:
+      213: 5594023288288795474
+    second: ataque boglin_1
+  - first:
+      213: 1228340245213322854
+    second: ataque boglin_2
+  - first:
+      213: 3217881283788279032
+    second: ataque boglin_3
+  - first:
+      213: 4497670817887361848
+    second: ataque boglin_4
+  - first:
+      213: -1697991894687885988
+    second: ataque boglin_5
+  - first:
+      213: 2414627328760251731
+    second: ataque boglin_6
+  - first:
+      213: 2187415940759073742
+    second: ataque boglin_7
+  - first:
+      213: 736326077823045554
+    second: ataque boglin_8
+  - first:
+      213: 4360739639256123388
+    second: ataque boglin_9
+  - first:
+      213: -3039875494617158978
+    second: ataque boglin_10
+  - first:
+      213: 8519286780723274272
+    second: ataque boglin_11
+  - first:
+      213: -1964910884372225798
+    second: ataque boglin_12
+  - first:
+      213: 3679664874367068181
+    second: ataque boglin_13
+  - first:
+      213: 8883959440462231558
+    second: ataque boglin_14
+  - first:
+      213: -5348114941342920845
+    second: ataque boglin_15
+  - first:
+      213: 7690102565391816230
+    second: ataque boglin_16
+  - first:
+      213: 8235042138705744701
+    second: ataque boglin_17
+  - first:
+      213: -2871874803512645716
+    second: ataque boglin_18
+  - first:
+      213: 7847963475313843151
+    second: ataque boglin_19
+  - first:
+      213: 7697288360553165474
+    second: ataque boglin_20
+  - first:
+      213: 5383851896992740018
+    second: ataque boglin_21
+  - first:
+      213: -4434241088654669982
+    second: ataque boglin_22
+  - first:
+      213: -2459323202376323595
+    second: ataque boglin_23
+  - first:
+      213: -9193045250632142372
+    second: ataque boglin_24
+  - first:
+      213: -8737616479884081112
+    second: ataque boglin_25
+  - first:
+      213: -6279694487677870367
+    second: ataque boglin_26
+  - first:
+      213: 1238146382714997899
+    second: ataque boglin_27
+  - first:
+      213: -1818905292950116619
+    second: ataque boglin_28
+  - first:
+      213: 3125782342982806531
+    second: ataque boglin_29
+  - first:
+      213: 1362599392204772137
+    second: ataque boglin_30
+  - first:
+      213: 511964018245393479
+    second: ataque boglin_31
+  - first:
+      213: 2990818017315998231
+    second: ataque boglin_32
+  - first:
+      213: 7859805223480356195
+    second: ataque boglin_33
+  - first:
+      213: -2504703337853521377
+    second: ataque boglin_34
+  - first:
+      213: 7514421793727417877
+    second: ataque boglin_35
+  - first:
+      213: -4622868807964779477
+    second: ataque boglin_36
+  - first:
+      213: -6517466895865254825
+    second: ataque boglin_37
+  - first:
+      213: 6104491064217530320
+    second: ataque boglin_38
+  - first:
+      213: -3628724921648934003
+    second: ataque boglin_39
+  - first:
+      213: 5631876706492957348
+    second: ataque boglin_40
+  - first:
+      213: -258140681324839972
+    second: ataque boglin_41
+  - first:
+      213: -2999996939396137175
+    second: ataque boglin_42
+  - first:
+      213: -7675349146351323334
+    second: ataque boglin_43
+  - first:
+      213: 7270113068076436161
+    second: ataque boglin_44
+  - first:
+      213: -5400721091460085234
+    second: ataque boglin_45
+  - first:
+      213: 8898124684556441544
+    second: ataque boglin_46
+  - first:
+      213: 3643029317395680281
+    second: ataque boglin_47
+  - first:
+      213: 5708941809047192188
+    second: ataque boglin_48
+  - first:
+      213: -3029918333702139975
+    second: ataque boglin_49
+  - first:
+      213: 5806181667978134845
+    second: ataque boglin_50
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: ataque boglin_0
+      rect:
+        serializedVersion: 2
+        x: 799
+        y: 1459
+        width: 17
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 72a73657f561aada0800000000000000
+      internalID: -5932904959860049369
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ataque boglin_1
+      rect:
+        serializedVersion: 2
+        x: 824
+        y: 1439
+        width: 27
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 25b57b3da86f1ad40800000000000000
+      internalID: 5594023288288795474
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ataque boglin_2
+      rect:
+        serializedVersion: 2
+        x: 1774
+        y: 1459
+        width: 22
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 66e914be1f0fb0110800000000000000
+      internalID: 1228340245213322854
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ataque boglin_3
+      rect:
+        serializedVersion: 2
+        x: 1804
+        y: 1439
+        width: 27
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8fc04918af538ac20800000000000000
+      internalID: 3217881283788279032
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ataque boglin_4
+      rect:
+        serializedVersion: 2
+        x: 704
+        y: 1389
+        width: 42
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 83b11d877cfea6e30800000000000000
+      internalID: 4497670817887361848
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ataque boglin_5
+      rect:
+        serializedVersion: 2
+        x: 724
+        y: 1424
+        width: 27
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c55d2ad3e558f68e0800000000000000
+      internalID: -1697991894687885988
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ataque boglin_6
+      rect:
+        serializedVersion: 2
+        x: 789
+        y: 1419
+        width: 42
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 35584b323ca728120800000000000000
+      internalID: 2414627328760251731
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ataque boglin_7
+      rect:
+        serializedVersion: 2
+        x: 904
+        y: 1379
+        width: 47
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ec3b8fc65334b5e10800000000000000
+      internalID: 2187415940759073742
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ataque boglin_8
+      rect:
+        serializedVersion: 2
+        x: 1699
+        y: 1424
+        width: 27
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2bfcf73aaa4f73a00800000000000000
+      internalID: 736326077823045554
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ataque boglin_9
+      rect:
+        serializedVersion: 2
+        x: 1764
+        y: 1414
+        width: 42
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cf783d30995748c30800000000000000
+      internalID: 4360739639256123388
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ataque boglin_10
+      rect:
+        serializedVersion: 2
+        x: 1874
+        y: 1379
+        width: 57
+        height: 67
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ebaede5f75130d5d0800000000000000
+      internalID: -3039875494617158978
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ataque boglin_11
+      rect:
+        serializedVersion: 2
+        x: 689
+        y: 1379
+        width: 22
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 02221b0a0369a3670800000000000000
+      internalID: 8519286780723274272
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ataque boglin_12
+      rect:
+        serializedVersion: 2
+        x: 704
+        y: 1044
+        width: 267
+        height: 362
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: af0e1b116fb3bb4e0800000000000000
+      internalID: -1964910884372225798
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ataque boglin_13
+      rect:
+        serializedVersion: 2
+        x: 1489
+        y: 1044
+        width: 482
+        height: 362
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 518a12125bbc01330800000000000000
+      internalID: 3679664874367068181
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ataque boglin_14
+      rect:
+        serializedVersion: 2
+        x: 1679
+        y: 1389
+        width: 42
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 608bab7ba0a2a4b70800000000000000
+      internalID: 8883959440462231558
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ataque boglin_15
+      rect:
+        serializedVersion: 2
+        x: 774
+        y: 959
+        width: 22
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 37fcb4fdbcda7c5b0800000000000000
+      internalID: -5348114941342920845
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ataque boglin_16
+      rect:
+        serializedVersion: 2
+        x: 804
+        y: 939
+        width: 27
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 626df701a8bb8ba60800000000000000
+      internalID: 7690102565391816230
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ataque boglin_17
+      rect:
+        serializedVersion: 2
+        x: 1774
+        y: 959
+        width: 22
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d33ddeba13fb84270800000000000000
+      internalID: 8235042138705744701
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ataque boglin_18
+      rect:
+        serializedVersion: 2
+        x: 1804
+        y: 939
+        width: 27
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ca7eb31051d0528d0800000000000000
+      internalID: -2871874803512645716
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ataque boglin_19
+      rect:
+        serializedVersion: 2
+        x: 699
+        y: 924
+        width: 27
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fcb5254533199ec60800000000000000
+      internalID: 7847963475313843151
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ataque boglin_20
+      rect:
+        serializedVersion: 2
+        x: 764
+        y: 914
+        width: 42
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2a235806bf242da60800000000000000
+      internalID: 7697288360553165474
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ataque boglin_21
+      rect:
+        serializedVersion: 2
+        x: 874
+        y: 879
+        width: 57
+        height: 67
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2b2b09386c847ba40800000000000000
+      internalID: 5383851896992740018
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ataque boglin_22
+      rect:
+        serializedVersion: 2
+        x: 1124
+        y: 569
+        width: 532
+        height: 382
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2670c4639396672c0800000000000000
+      internalID: -4434241088654669982
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ataque boglin_23
+      rect:
+        serializedVersion: 2
+        x: 1699
+        y: 924
+        width: 27
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5fdab76d39abeddd0800000000000000
+      internalID: -2459323202376323595
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ataque boglin_24
+      rect:
+        serializedVersion: 2
+        x: 1764
+        y: 914
+        width: 42
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cd1baf72d0ebb6080800000000000000
+      internalID: -9193045250632142372
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ataque boglin_25
+      rect:
+        serializedVersion: 2
+        x: 1874
+        y: 879
+        width: 57
+        height: 67
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 82809ecfa10cdb680800000000000000
+      internalID: -8737616479884081112
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ataque boglin_26
+      rect:
+        serializedVersion: 2
+        x: 269
+        y: 544
+        width: 702
+        height: 362
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1ee5bfb722b0ad8a0800000000000000
+      internalID: -6279694487677870367
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ataque boglin_27
+      rect:
+        serializedVersion: 2
+        x: 679
+        y: 889
+        width: 42
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b8c89a93397ce2110800000000000000
+      internalID: 1238146382714997899
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ataque boglin_28
+      rect:
+        serializedVersion: 2
+        x: 1664
+        y: 879
+        width: 22
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5f661a5e543f1c6e0800000000000000
+      internalID: -1818905292950116619
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ataque boglin_29
+      rect:
+        serializedVersion: 2
+        x: 1679
+        y: 889
+        width: 42
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 30cada6da72016b20800000000000000
+      internalID: 3125782342982806531
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ataque boglin_30
+      rect:
+        serializedVersion: 2
+        x: 1694
+        y: 544
+        width: 277
+        height: 362
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 92357878dece8e210800000000000000
+      internalID: 1362599392204772137
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ataque boglin_31
+      rect:
+        serializedVersion: 2
+        x: 1689
+        y: 869
+        width: 12
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 74c5c45ef8cda1700800000000000000
+      internalID: 511964018245393479
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ataque boglin_32
+      rect:
+        serializedVersion: 2
+        x: 1329
+        y: 564
+        width: 77
+        height: 97
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 71a45f50425818920800000000000000
+      internalID: 2990818017315998231
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ataque boglin_33
+      rect:
+        serializedVersion: 2
+        x: 54
+        y: 324
+        width: 72
+        height: 152
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 36d6e4d2533a31d60800000000000000
+      internalID: 7859805223480356195
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ataque boglin_34
+      rect:
+        serializedVersion: 2
+        x: 119
+        y: 334
+        width: 122
+        height: 152
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f12718fa5918d3dd0800000000000000
+      internalID: -2504703337853521377
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ataque boglin_35
+      rect:
+        serializedVersion: 2
+        x: 314
+        y: 139
+        width: 267
+        height: 357
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 51e839beec6984860800000000000000
+      internalID: 7514421793727417877
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ataque boglin_36
+      rect:
+        serializedVersion: 2
+        x: 774
+        y: 459
+        width: 22
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b2c960aef4548dfb0800000000000000
+      internalID: -4622868807964779477
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ataque boglin_37
+      rect:
+        serializedVersion: 2
+        x: 804
+        y: 439
+        width: 27
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 75c6594a36e4d85a0800000000000000
+      internalID: -6517466895865254825
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ataque boglin_38
+      rect:
+        serializedVersion: 2
+        x: 294
+        y: 354
+        width: 82
+        height: 87
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0df6b39a74287b450800000000000000
+      internalID: 6104491064217530320
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ataque boglin_39
+      rect:
+        serializedVersion: 2
+        x: 699
+        y: 424
+        width: 27
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d831289d8ed24adc0800000000000000
+      internalID: -3628724921648934003
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ataque boglin_40
+      rect:
+        serializedVersion: 2
+        x: 764
+        y: 414
+        width: 42
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4a24f4d8602782e40800000000000000
+      internalID: 5631876706492957348
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ataque boglin_41
+      rect:
+        serializedVersion: 2
+        x: 874
+        y: 379
+        width: 57
+        height: 67
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cdb3e830b66ea6cf0800000000000000
+      internalID: -258140681324839972
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ataque boglin_42
+      rect:
+        serializedVersion: 2
+        x: 664
+        y: 379
+        width: 22
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 92fb804adaedd56d0800000000000000
+      internalID: -2999996939396137175
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ataque boglin_43
+      rect:
+        serializedVersion: 2
+        x: 679
+        y: 389
+        width: 42
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a37b1acfd9eab7590800000000000000
+      internalID: -7675349146351323334
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ataque boglin_44
+      rect:
+        serializedVersion: 2
+        x: 694
+        y: 44
+        width: 277
+        height: 362
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1ca0f931151a4e460800000000000000
+      internalID: 7270113068076436161
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ataque boglin_45
+      rect:
+        serializedVersion: 2
+        x: 689
+        y: 369
+        width: 12
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e0acf8418c8cc05b0800000000000000
+      internalID: -5400721091460085234
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ataque boglin_46
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 34
+        width: 161
+        height: 282
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8c71f1e914d7c7b70800000000000000
+      internalID: 8898124684556441544
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ataque boglin_47
+      rect:
+        serializedVersion: 2
+        x: 124
+        y: 129
+        width: 52
+        height: 192
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 91c04b1dcd3ae8230800000000000000
+      internalID: 3643029317395680281
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ataque boglin_48
+      rect:
+        serializedVersion: 2
+        x: 174
+        y: 4
+        width: 187
+        height: 342
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c7242abf35c3a3f40800000000000000
+      internalID: 5708941809047192188
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ataque boglin_49
+      rect:
+        serializedVersion: 2
+        x: 214
+        y: 274
+        width: 37
+        height: 77
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9bf8d35245193f5d0800000000000000
+      internalID: -3029918333702139975
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ataque boglin_50
+      rect:
+        serializedVersion: 2
+        x: 359
+        y: 34
+        width: 57
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d35c83de673b39050800000000000000
+      internalID: 5806181667978134845
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable: {}
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

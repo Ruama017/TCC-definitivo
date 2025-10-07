@@ -1,0 +1,1567 @@
+fileFormatVersion: 2
+guid: 8f2e4ffec1e3249458005cfd9dff9e79
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 8056133221559712863
+    second: "hera anima\xE7\xE3o (1)_0"
+  - first:
+      213: -5688857087224792033
+    second: "hera anima\xE7\xE3o (1)_1"
+  - first:
+      213: 100073735353150201
+    second: "hera anima\xE7\xE3o (1)_2"
+  - first:
+      213: -7888390191038709201
+    second: "hera anima\xE7\xE3o (1)_3"
+  - first:
+      213: 9199368559225472956
+    second: "hera anima\xE7\xE3o (1)_4"
+  - first:
+      213: 6138036158893142668
+    second: "hera anima\xE7\xE3o (1)_5"
+  - first:
+      213: -7533888475272398039
+    second: "hera anima\xE7\xE3o (1)_6"
+  - first:
+      213: 4015952050324414808
+    second: "hera anima\xE7\xE3o (1)_7"
+  - first:
+      213: -3118123662132728896
+    second: "hera anima\xE7\xE3o (1)_8"
+  - first:
+      213: 7698581798156576454
+    second: "hera anima\xE7\xE3o (1)_9"
+  - first:
+      213: -3872628536246033721
+    second: "hera anima\xE7\xE3o (1)_10"
+  - first:
+      213: -5206331377228619387
+    second: "hera anima\xE7\xE3o (1)_11"
+  - first:
+      213: -5473908602165124021
+    second: "hera anima\xE7\xE3o (1)_12"
+  - first:
+      213: 3197320222865819202
+    second: "hera anima\xE7\xE3o (1)_13"
+  - first:
+      213: -225396562477651838
+    second: "hera anima\xE7\xE3o (1)_14"
+  - first:
+      213: 1076522000164834730
+    second: "hera anima\xE7\xE3o (1)_15"
+  - first:
+      213: -7335156082229992696
+    second: "hera anima\xE7\xE3o (1)_16"
+  - first:
+      213: 2632120379122586332
+    second: "hera anima\xE7\xE3o (1)_17"
+  - first:
+      213: -9079400341255749318
+    second: "hera anima\xE7\xE3o (1)_18"
+  - first:
+      213: 3678063653285166638
+    second: "hera anima\xE7\xE3o (1)_19"
+  - first:
+      213: -366676367346462687
+    second: "hera anima\xE7\xE3o (1)_20"
+  - first:
+      213: 2350152486070041085
+    second: "hera anima\xE7\xE3o (1)_21"
+  - first:
+      213: -1187959909867785735
+    second: "hera anima\xE7\xE3o (1)_22"
+  - first:
+      213: -3916972172425186977
+    second: "hera anima\xE7\xE3o (1)_23"
+  - first:
+      213: -5270367841228847901
+    second: "hera anima\xE7\xE3o (1)_24"
+  - first:
+      213: 7276687916624594359
+    second: "hera anima\xE7\xE3o (1)_25"
+  - first:
+      213: -3729519533315963639
+    second: "hera anima\xE7\xE3o (1)_26"
+  - first:
+      213: 6478125654192935686
+    second: "hera anima\xE7\xE3o (1)_27"
+  - first:
+      213: -7862226138461437267
+    second: "hera anima\xE7\xE3o (1)_28"
+  - first:
+      213: -8523937271510533886
+    second: "hera anima\xE7\xE3o (1)_29"
+  - first:
+      213: -833056836193662070
+    second: "hera anima\xE7\xE3o (1)_30"
+  - first:
+      213: 4659830607331218920
+    second: "hera anima\xE7\xE3o (1)_31"
+  - first:
+      213: 6070497067078363271
+    second: "hera anima\xE7\xE3o (1)_32"
+  - first:
+      213: -2201003504181316696
+    second: "hera anima\xE7\xE3o (1)_33"
+  - first:
+      213: 1635020965503827884
+    second: "hera anima\xE7\xE3o (1)_34"
+  - first:
+      213: -8561548303391873213
+    second: "hera anima\xE7\xE3o (1)_35"
+  - first:
+      213: 8426544162162311227
+    second: "hera anima\xE7\xE3o (1)_36"
+  - first:
+      213: 4983043765003068225
+    second: "hera anima\xE7\xE3o (1)_37"
+  - first:
+      213: -1587356787696779760
+    second: "hera anima\xE7\xE3o (1)_38"
+  - first:
+      213: -8038285506228480079
+    second: "hera anima\xE7\xE3o (1)_39"
+  - first:
+      213: 1188243433879263103
+    second: "hera anima\xE7\xE3o (1)_40"
+  - first:
+      213: -2505630593309427330
+    second: "hera anima\xE7\xE3o (1)_41"
+  - first:
+      213: -262658549940381925
+    second: "hera anima\xE7\xE3o (1)_42"
+  - first:
+      213: -6151860722332037636
+    second: "hera anima\xE7\xE3o (1)_43"
+  - first:
+      213: 96761017907175598
+    second: "hera anima\xE7\xE3o (1)_44"
+  - first:
+      213: -6982867890962000032
+    second: "hera anima\xE7\xE3o (1)_45"
+  - first:
+      213: -8926770452301691048
+    second: "hera anima\xE7\xE3o (1)_46"
+  - first:
+      213: -5441397386129202973
+    second: "hera anima\xE7\xE3o (1)_47"
+  - first:
+      213: 6933584237458232839
+    second: "hera anima\xE7\xE3o (1)_48"
+  - first:
+      213: 6617436842855604846
+    second: "hera anima\xE7\xE3o (1)_49"
+  - first:
+      213: -6147243874535829807
+    second: "hera anima\xE7\xE3o (1)_50"
+  - first:
+      213: -7891116917732816356
+    second: "hera anima\xE7\xE3o (1)_51"
+  - first:
+      213: 2817536499953140132
+    second: "hera anima\xE7\xE3o (1)_52"
+  - first:
+      213: 4156659282117351729
+    second: "hera anima\xE7\xE3o (1)_53"
+  - first:
+      213: 6397598537586226583
+    second: "hera anima\xE7\xE3o (1)_54"
+  - first:
+      213: -5984697986829186235
+    second: "hera anima\xE7\xE3o (1)_55"
+  - first:
+      213: 4885061726750324405
+    second: "hera anima\xE7\xE3o (1)_56"
+  - first:
+      213: 6587232146236085552
+    second: "hera anima\xE7\xE3o (1)_57"
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: "hera anima\xE7\xE3o (1)_0"
+      rect:
+        serializedVersion: 2
+        x: 49
+        y: 504
+        width: 152
+        height: 487
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f5c3a465b722dcf60800000000000000
+      internalID: 8056133221559712863
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "hera anima\xE7\xE3o (1)_1"
+      rect:
+        serializedVersion: 2
+        x: 184
+        y: 504
+        width: 82
+        height: 487
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f1cb00abe9e1d01b0800000000000000
+      internalID: -5688857087224792033
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "hera anima\xE7\xE3o (1)_2"
+      rect:
+        serializedVersion: 2
+        x: 244
+        y: 504
+        width: 77
+        height: 487
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9fa22173888836100800000000000000
+      internalID: 100073735353150201
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "hera anima\xE7\xE3o (1)_3"
+      rect:
+        serializedVersion: 2
+        x: 309
+        y: 504
+        width: 82
+        height: 487
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f22467d6aeec68290800000000000000
+      internalID: -7888390191038709201
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "hera anima\xE7\xE3o (1)_4"
+      rect:
+        serializedVersion: 2
+        x: 524
+        y: 824
+        width: 82
+        height: 117
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cb7088ad6f8baaf70800000000000000
+      internalID: 9199368559225472956
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "hera anima\xE7\xE3o (1)_5"
+      rect:
+        serializedVersion: 2
+        x: 604
+        y: 824
+        width: 87
+        height: 102
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c823455ad5fae2550800000000000000
+      internalID: 6138036158893142668
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "hera anima\xE7\xE3o (1)_6"
+      rect:
+        serializedVersion: 2
+        x: 674
+        y: 864
+        width: 22
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 92bbaf51950427790800000000000000
+      internalID: -7533888475272398039
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "hera anima\xE7\xE3o (1)_7"
+      rect:
+        serializedVersion: 2
+        x: 709
+        y: 819
+        width: 57
+        height: 102
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 851a692cc178bb730800000000000000
+      internalID: 4015952050324414808
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "hera anima\xE7\xE3o (1)_8"
+      rect:
+        serializedVersion: 2
+        x: 769
+        y: 879
+        width: 27
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0cba6d0cc033ab4d0800000000000000
+      internalID: -3118123662132728896
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "hera anima\xE7\xE3o (1)_9"
+      rect:
+        serializedVersion: 2
+        x: 839
+        y: 799
+        width: 77
+        height: 122
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6c629694b5bd6da60800000000000000
+      internalID: 7698581798156576454
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "hera anima\xE7\xE3o (1)_10"
+      rect:
+        serializedVersion: 2
+        x: 689
+        y: 819
+        width: 32
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7c2a3064dd8a14ac0800000000000000
+      internalID: -3872628536246033721
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "hera anima\xE7\xE3o (1)_11"
+      rect:
+        serializedVersion: 2
+        x: 789
+        y: 734
+        width: 17
+        height: 87
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 581615d52356fb7b0800000000000000
+      internalID: -5206331377228619387
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "hera anima\xE7\xE3o (1)_12"
+      rect:
+        serializedVersion: 2
+        x: 584
+        y: 749
+        width: 67
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b442efad025c804b0800000000000000
+      internalID: -5473908602165124021
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "hera anima\xE7\xE3o (1)_13"
+      rect:
+        serializedVersion: 2
+        x: 704
+        y: 709
+        width: 77
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 24607157dc92f5c20800000000000000
+      internalID: 3197320222865819202
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "hera anima\xE7\xE3o (1)_14"
+      rect:
+        serializedVersion: 2
+        x: 754
+        y: 774
+        width: 27
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 288ece7450b3fdcf0800000000000000
+      internalID: -225396562477651838
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "hera anima\xE7\xE3o (1)_15"
+      rect:
+        serializedVersion: 2
+        x: 814
+        y: 744
+        width: 47
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aadc7b43e0390fe00800000000000000
+      internalID: 1076522000164834730
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "hera anima\xE7\xE3o (1)_16"
+      rect:
+        serializedVersion: 2
+        x: 874
+        y: 724
+        width: 27
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 803a2a2186a443a90800000000000000
+      internalID: -7335156082229992696
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "hera anima\xE7\xE3o (1)_17"
+      rect:
+        serializedVersion: 2
+        x: 544
+        y: 684
+        width: 22
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cd21bab0a8b278420800000000000000
+      internalID: 2632120379122586332
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "hera anima\xE7\xE3o (1)_18"
+      rect:
+        serializedVersion: 2
+        x: 649
+        y: 684
+        width: 27
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a3104ed8e7d7ff180800000000000000
+      internalID: -9079400341255749318
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "hera anima\xE7\xE3o (1)_19"
+      rect:
+        serializedVersion: 2
+        x: 709
+        y: 654
+        width: 42
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e2e765bc76b1b0330800000000000000
+      internalID: 3678063653285166638
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "hera anima\xE7\xE3o (1)_20"
+      rect:
+        serializedVersion: 2
+        x: 829
+        y: 644
+        width: 37
+        height: 77
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 12098c069cd49eaf0800000000000000
+      internalID: -366676367346462687
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "hera anima\xE7\xE3o (1)_21"
+      rect:
+        serializedVersion: 2
+        x: 549
+        y: 559
+        width: 37
+        height: 82
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: df9b4340c3b6d9020800000000000000
+      internalID: 2350152486070041085
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "hera anima\xE7\xE3o (1)_22"
+      rect:
+        serializedVersion: 2
+        x: 594
+        y: 624
+        width: 42
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9f1fcec81c4838fe0800000000000000
+      internalID: -1187959909867785735
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "hera anima\xE7\xE3o (1)_23"
+      rect:
+        serializedVersion: 2
+        x: 649
+        y: 564
+        width: 92
+        height: 107
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f51b18bef8e14a9c0800000000000000
+      internalID: -3916972172425186977
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "hera anima\xE7\xE3o (1)_24"
+      rect:
+        serializedVersion: 2
+        x: 604
+        y: 574
+        width: 32
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3e489eb3f54ebd6b0800000000000000
+      internalID: -5270367841228847901
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "hera anima\xE7\xE3o (1)_25"
+      rect:
+        serializedVersion: 2
+        x: 749
+        y: 554
+        width: 47
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7b549cb4b1dfbf460800000000000000
+      internalID: 7276687916624594359
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "hera anima\xE7\xE3o (1)_26"
+      rect:
+        serializedVersion: 2
+        x: 804
+        y: 589
+        width: 32
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 90542d98eb51e3cc0800000000000000
+      internalID: -3729519533315963639
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "hera anima\xE7\xE3o (1)_27"
+      rect:
+        serializedVersion: 2
+        x: 859
+        y: 584
+        width: 17
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 603d38cb5fce6e950800000000000000
+      internalID: 6478125654192935686
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "hera anima\xE7\xE3o (1)_28"
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 409
+        width: 27
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: da20731abf2c3e290800000000000000
+      internalID: -7862226138461437267
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "hera anima\xE7\xE3o (1)_29"
+      rect:
+        serializedVersion: 2
+        x: 34
+        y: 389
+        width: 52
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 209f6eb9634e4b980800000000000000
+      internalID: -8523937271510533886
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "hera anima\xE7\xE3o (1)_30"
+      rect:
+        serializedVersion: 2
+        x: 129
+        y: 399
+        width: 57
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a8b47f0a8336074f0800000000000000
+      internalID: -833056836193662070
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "hera anima\xE7\xE3o (1)_31"
+      rect:
+        serializedVersion: 2
+        x: 209
+        y: 389
+        width: 32
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8e5587f9f3b0ba040800000000000000
+      internalID: 4659830607331218920
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "hera anima\xE7\xE3o (1)_32"
+      rect:
+        serializedVersion: 2
+        x: 299
+        y: 394
+        width: 32
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 788a14d6becbe3450800000000000000
+      internalID: 6070497067078363271
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "hera anima\xE7\xE3o (1)_33"
+      rect:
+        serializedVersion: 2
+        x: 54
+        y: 374
+        width: 12
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8a3f1ef69f67471e0800000000000000
+      internalID: -2201003504181316696
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "hera anima\xE7\xE3o (1)_34"
+      rect:
+        serializedVersion: 2
+        x: 109
+        y: 369
+        width: 22
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: caffb29c7e2c0b610800000000000000
+      internalID: 1635020965503827884
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "hera anima\xE7\xE3o (1)_35"
+      rect:
+        serializedVersion: 2
+        x: 214
+        y: 359
+        width: 12
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 347aaf8dd254f2980800000000000000
+      internalID: -8561548303391873213
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "hera anima\xE7\xE3o (1)_36"
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 299
+        width: 47
+        height: 82
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b3083dd054911f470800000000000000
+      internalID: 8426544162162311227
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "hera anima\xE7\xE3o (1)_37"
+      rect:
+        serializedVersion: 2
+        x: 174
+        y: 359
+        width: 22
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 143ab3927e3572540800000000000000
+      internalID: 4983043765003068225
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "hera anima\xE7\xE3o (1)_38"
+      rect:
+        serializedVersion: 2
+        x: 309
+        y: 309
+        width: 22
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 01e3789696398f9e0800000000000000
+      internalID: -1587356787696779760
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "hera anima\xE7\xE3o (1)_39"
+      rect:
+        serializedVersion: 2
+        x: 89
+        y: 239
+        width: 7
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1b79416bbe5427090800000000000000
+      internalID: -8038285506228480079
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "hera anima\xE7\xE3o (1)_40"
+      rect:
+        serializedVersion: 2
+        x: 94
+        y: 239
+        width: 32
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f7750178b1d7d7010800000000000000
+      internalID: 1188243433879263103
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "hera anima\xE7\xE3o (1)_41"
+      rect:
+        serializedVersion: 2
+        x: 309
+        y: 234
+        width: 22
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e79b07330463a3dd0800000000000000
+      internalID: -2505630593309427330
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "hera anima\xE7\xE3o (1)_42"
+      rect:
+        serializedVersion: 2
+        x: 349
+        y: 234
+        width: 27
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b179591c079da5cf0800000000000000
+      internalID: -262658549940381925
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "hera anima\xE7\xE3o (1)_43"
+      rect:
+        serializedVersion: 2
+        x: 399
+        y: 214
+        width: 22
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cfd88b9544330aaa0800000000000000
+      internalID: -6151860722332037636
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "hera anima\xE7\xE3o (1)_44"
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 179
+        width: 12
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ea0667412a3c75100800000000000000
+      internalID: 96761017907175598
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "hera anima\xE7\xE3o (1)_45"
+      rect:
+        serializedVersion: 2
+        x: 159
+        y: 184
+        width: 27
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0679ab566aed71f90800000000000000
+      internalID: -6982867890962000032
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "hera anima\xE7\xE3o (1)_46"
+      rect:
+        serializedVersion: 2
+        x: 94
+        y: 114
+        width: 22
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 857ca17d19dbd1480800000000000000
+      internalID: -8926770452301691048
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "hera anima\xE7\xE3o (1)_47"
+      rect:
+        serializedVersion: 2
+        x: 259
+        y: 134
+        width: 27
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3e0a70638e54c74b0800000000000000
+      internalID: -5441397386129202973
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "hera anima\xE7\xE3o (1)_48"
+      rect:
+        serializedVersion: 2
+        x: 359
+        y: 149
+        width: 7
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 70612f5d02a093060800000000000000
+      internalID: 6933584237458232839
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "hera anima\xE7\xE3o (1)_49"
+      rect:
+        serializedVersion: 2
+        x: 364
+        y: 139
+        width: 17
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e62adf57fbbd5db50800000000000000
+      internalID: 6617436842855604846
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "hera anima\xE7\xE3o (1)_50"
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 104
+        width: 17
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1de889ef34a90baa0800000000000000
+      internalID: -6147243874535829807
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "hera anima\xE7\xE3o (1)_51"
+      rect:
+        serializedVersion: 2
+        x: 194
+        y: 89
+        width: 12
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c1ac575e8fe1d7290800000000000000
+      internalID: -7891116917732816356
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "hera anima\xE7\xE3o (1)_52"
+      rect:
+        serializedVersion: 2
+        x: 59
+        y: 69
+        width: 12
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4a1876dc486e91720800000000000000
+      internalID: 2817536499953140132
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "hera anima\xE7\xE3o (1)_53"
+      rect:
+        serializedVersion: 2
+        x: 179
+        y: 49
+        width: 62
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1395fea189b6fa930800000000000000
+      internalID: 4156659282117351729
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "hera anima\xE7\xE3o (1)_54"
+      rect:
+        serializedVersion: 2
+        x: 219
+        y: 84
+        width: 12
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 795b26859f5d8c850800000000000000
+      internalID: 6397598537586226583
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "hera anima\xE7\xE3o (1)_55"
+      rect:
+        serializedVersion: 2
+        x: 314
+        y: 74
+        width: 17
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 54b0d07a3e412fca0800000000000000
+      internalID: -5984697986829186235
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "hera anima\xE7\xE3o (1)_56"
+      rect:
+        serializedVersion: 2
+        x: 369
+        y: 74
+        width: 22
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5b63fc022c93bc340800000000000000
+      internalID: 4885061726750324405
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "hera anima\xE7\xE3o (1)_57"
+      rect:
+        serializedVersion: 2
+        x: 239
+        y: 54
+        width: 27
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0359f618cbc8a6b50800000000000000
+      internalID: 6587232146236085552
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable: {}
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
