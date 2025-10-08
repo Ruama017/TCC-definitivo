@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      "plataformas que caem ru\xEDnas_0": 1296092818413419507
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

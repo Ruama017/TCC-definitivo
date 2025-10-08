@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      piso floresta_0: 7924530964188205985
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

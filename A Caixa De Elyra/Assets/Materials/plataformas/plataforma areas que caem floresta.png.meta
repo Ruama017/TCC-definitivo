@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      plataforma areas que caem floresta_0: 1082737321560246352
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

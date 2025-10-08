@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      "plataforma que cai areas subterr\xE3neas_0": -4608671539845543023
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

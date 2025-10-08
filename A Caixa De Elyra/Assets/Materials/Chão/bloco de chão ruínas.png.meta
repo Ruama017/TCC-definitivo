@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      "bloco de ch\xE3o ru\xEDnas_0": -1023058203281586296
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
