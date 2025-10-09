@@ -1,6 +1,6 @@
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.SceneManagement; // para reiniciar a cena
+using UnityEngine.SceneManagement; 
 using TMPro;
 
 public class PlayerHealth : MonoBehaviour
@@ -20,10 +20,10 @@ public class PlayerHealth : MonoBehaviour
     public TMP_Text crystalAmountTMP;
 
     [Header("Escudo")]
-    public bool canTakeDamage = true;       // Se o player pode receber dano
-    public float shieldDuration = 15f;      // duração do escudo
+    public bool canTakeDamage = true;
+    public float shieldDuration = 15f;
     private bool shieldActive = false;
-    public GameObject shieldEffect;         // efeito visual do escudo (brilho)
+    public GameObject shieldEffect;
 
     [Header("Game Over")]
     public GameObject gameOverPanel;
@@ -43,10 +43,9 @@ public class PlayerHealth : MonoBehaviour
             shieldEffect.SetActive(false);
     }
 
-    // Tomar dano
     public void TakeDamage(int damage)
     {
-        if (!canTakeDamage) return; // escudo ativo, ignora dano
+        if (!canTakeDamage) return;
 
         currentHealth -= damage;
         if (currentHealth < 0) currentHealth = 0;
@@ -55,7 +54,15 @@ public class PlayerHealth : MonoBehaviour
         CheckDeath();
     }
 
-    // Curar
+    public void InstantDeath()
+    {
+        currentHealth = 0;
+        currentCrystals = 0;
+        UpdateHearts();
+        UpdateCrystalUI();
+        Die();
+    }
+
     public void Heal(int amount)
     {
         currentHealth += amount;
@@ -65,19 +72,14 @@ public class PlayerHealth : MonoBehaviour
         UpdateHearts();
     }
 
-    // Atualiza UI dos corações
     void UpdateHearts()
     {
         for (int i = 0; i < hearts.Length; i++)
         {
-            if (i < currentHealth)
-                hearts[i].sprite = fullHeart;
-            else
-                hearts[i].sprite = emptyHeart;
+            hearts[i].sprite = (i < currentHealth) ? fullHeart : emptyHeart;
         }
     }
 
-    // Coletar cristais
     public void CollectCrystal(int amount)
     {
         currentCrystals += amount;
@@ -96,31 +98,6 @@ public class PlayerHealth : MonoBehaviour
             crystalAmountTMP.text = currentCrystals.ToString();
     }
 
-    // Ativar escudo temporário
-    public void ActivateShield()
-    {
-        if (shieldActive) return; // já ativo
-
-        shieldActive = true;
-        canTakeDamage = false;
-
-        if (shieldEffect != null)
-            shieldEffect.SetActive(true);
-
-        // Desativa escudo após a duração
-        Invoke(nameof(DeactivateShield), shieldDuration);
-    }
-
-    void DeactivateShield()
-    {
-        shieldActive = false;
-        canTakeDamage = true;
-
-        if (shieldEffect != null)
-            shieldEffect.SetActive(false);
-    }
-
-    // Verifica morte
     void CheckDeath()
     {
         if (currentHealth <= 0 && currentCrystals <= 0)
@@ -138,16 +115,13 @@ public class PlayerHealth : MonoBehaviour
         if (gameOverPanel != null)
             gameOverPanel.SetActive(true);
 
-        // Desabilita controle do player
         PlayerController pc = GetComponent<PlayerController>();
         if (pc != null)
             pc.enabled = false;
     }
 
-    // Funções para botões do Game Over
     public void RestartLevel()
     {
-        // Reinicia vida e cristais
         currentHealth = maxHealth;
         currentCrystals = 0;
         UpdateHearts();
@@ -159,5 +133,27 @@ public class PlayerHealth : MonoBehaviour
     public void BackToMenu(string menuSceneName)
     {
         SceneManager.LoadScene(menuSceneName);
+    }
+
+    public void ActivateShield()
+    {
+        if (shieldActive) return;
+
+        shieldActive = true;
+        canTakeDamage = false;
+
+        if (shieldEffect != null)
+            shieldEffect.SetActive(true);
+
+        Invoke(nameof(DeactivateShield), shieldDuration);
+    }
+
+    void DeactivateShield()
+    {
+        shieldActive = false;
+        canTakeDamage = true;
+
+        if (shieldEffect != null)
+            shieldEffect.SetActive(false);
     }
 }

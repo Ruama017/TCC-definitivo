@@ -17,7 +17,7 @@ public class GameOverManager : MonoBehaviour
         continueButton.onClick.AddListener(RestartLevel);
         menuButton.onClick.AddListener(GoToMenu);
 
-        audioSource = GetComponent<AudioSource>(); // pega o AudioSource
+        audioSource = GetComponent<AudioSource>();
     }
 
     void Update()
@@ -37,18 +37,26 @@ public class GameOverManager : MonoBehaviour
             playerHealth.CollectCrystal(0); // atualiza a UI
 
             gameOverPanel.SetActive(true);
+
+            // Congela a cena
+            Time.timeScale = 0f;
+
             if(audioSource != null)
-                audioSource.Play(); // toca o som de game over
+                audioSource.Play();
         }
     }
 
     void RestartLevel()
     {
+        // Retoma o tempo antes de reiniciar
+        Time.timeScale = 1f;
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
     void GoToMenu()
     {
-        SceneManager.LoadScene("Menu"); // ou o nome da sua cena de menu
+        // Retoma o tempo antes de ir para o menu
+        Time.timeScale = 1f;
+        SceneManager.LoadScene("Menu");
     }
 }
