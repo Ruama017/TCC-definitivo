@@ -161,7 +161,7 @@ TextureImporter:
         width: 157
         height: 207
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -179,11 +179,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 669
-        y: 1144
-        width: 157
-        height: 212
+        y: 1142
+        width: 163
+        height: 214
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -197,28 +197,6 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: almas dos monstros (1)_2
-      rect:
-        serializedVersion: 2
-        x: 824
-        y: 1194
-        width: 7
-        height: 7
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 7be1cee51a1a088e0800000000000000
-      internalID: -1693175745436967241
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
       name: almas dos monstros (1)_3
       rect:
         serializedVersion: 2
@@ -227,7 +205,7 @@ TextureImporter:
         width: 192
         height: 232
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -244,12 +222,12 @@ TextureImporter:
       name: almas dos monstros (1)_4
       rect:
         serializedVersion: 2
-        x: 654
-        y: 639
-        width: 162
-        height: 187
+        x: 649
+        y: 624
+        width: 195
+        height: 248
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -263,59 +241,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: almas dos monstros (1)_5
-      rect:
-        serializedVersion: 2
-        x: 709
-        y: 824
-        width: 37
-        height: 42
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: eb0e992b02ae4e8f0800000000000000
-      internalID: -512027031457111874
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: almas dos monstros (1)_6
-      rect:
-        serializedVersion: 2
-        x: 804
-        y: 769
-        width: 37
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 9e8db31f78d9095f0800000000000000
-      internalID: -751927930577495831
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
       name: almas dos monstros (1)_7
       rect:
         serializedVersion: 2
-        x: 159
-        y: 144
-        width: 152
-        height: 182
+        x: 139
+        y: 121
+        width: 204
+        height: 217
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -329,28 +263,6 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: almas dos monstros (1)_8
-      rect:
-        serializedVersion: 2
-        x: 304
-        y: 239
-        width: 22
-        height: 12
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 3ef1128491db59540800000000000000
-      internalID: 5014121676428877795
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
       name: almas dos monstros (1)_9
       rect:
         serializedVersion: 2
@@ -359,7 +271,7 @@ TextureImporter:
         width: 162
         height: 177
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -376,7 +288,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: f80f4a489edd6094b8cc0e941c7a4d86
     internalID: 0
     vertices: []
     indices: 
