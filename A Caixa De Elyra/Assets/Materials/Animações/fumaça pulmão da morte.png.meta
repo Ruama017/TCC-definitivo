@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: c22e0c5f470fab24eba9d93f41f86b42
+guid: 5bdf0ce718f6dbb4f80b828b45ad7472
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -3301894119004377592
-    second: bloco de ponte quebrado (1)_0
+      213: -5057640502818579166
+    second: "fuma\xE7a pulm\xE3o da morte_0"
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -126,13 +126,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: bloco de ponte quebrado (1)_0
+      name: "fuma\xE7a pulm\xE3o da morte_0"
       rect:
         serializedVersion: 2
-        x: 219
-        y: 802
-        width: 1729
-        height: 673
+        x: 179
+        y: 134
+        width: 162
+        height: 192
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -141,8 +141,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 80eeacefac05d22d0800000000000000
-      internalID: -3301894119004377592
+      spriteID: 22ddedb52c6afc9b0800000000000000
+      internalID: -5057640502818579166
       vertices: []
       indices: 
       edges: []
@@ -160,8 +160,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      bloco de ponte quebrado (1)_0: -3301894119004377592
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
