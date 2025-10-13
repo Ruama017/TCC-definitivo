@@ -33,7 +33,9 @@ public class CounterManager : MonoBehaviour
         UpdateUI();
     }
 
-    // Chamar quando um Boglin morrer e a alma chegar no contador
+    /// <summary>
+    /// Chamar quando um Boglin morrer e a alma chegar no contador
+    /// </summary>
     public void Increment()
     {
         currentCount++;
@@ -52,5 +54,13 @@ public class CounterManager : MonoBehaviour
     {
         if (counterText != null)
             counterText.text = currentCount + " / " + totalCount;
+    }
+
+    /// <summary>
+    /// Retorna true se todas as almas foram coletadas
+    /// </summary>
+    public bool AllSoulsCollected()
+    {
+        return currentCount >= totalCount;
     }
 }

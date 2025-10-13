@@ -9,7 +9,6 @@ public class PainelConfigController : MonoBehaviour
     public Button btnAbrir;
     public Button btnFechar;
     public Button btnMenu; // botão de voltar pro menu
-    public Slider sliderVolume;
 
     [Header("Audio")]
     public AudioSource musicaFundo;  // Trilha sonora
@@ -24,32 +23,28 @@ public class PainelConfigController : MonoBehaviour
         btnAbrir.onClick.AddListener(AbrirPainel);
         btnFechar.onClick.AddListener(FecharPainel);
         btnMenu.onClick.AddListener(VoltarMenu); // adiciona evento ao botão
-        sliderVolume.onValueChanged.AddListener(delegate { AjustaVolume(); });
-        
-        // Música toca automaticamente pelo AudioSource (Play On Awake)
+        // sliderVolume removido
     }
 
     void AbrirPainel()
     {
-        sfxClick.PlayOneShot(somClique);  // toca som sem interferir na trilha
+        if (sfxClick != null && somClique != null)
+            sfxClick.PlayOneShot(somClique);  // toca som sem interferir na trilha
         painelConfig.SetActive(true);
     }
 
     void FecharPainel()
     {
-        sfxClick.PlayOneShot(somClique);  // toca som sem interferir na trilha
+        if (sfxClick != null && somClique != null)
+            sfxClick.PlayOneShot(somClique);  // toca som sem interferir na trilha
         painelConfig.SetActive(false);
     }
 
     void VoltarMenu()
     {
-        sfxClick.PlayOneShot(somClique);  // toca som antes de sair
+        if (sfxClick != null && somClique != null)
+            sfxClick.PlayOneShot(somClique);  // toca som antes de sair
         SceneManager.LoadScene(nomeCenaMenu); // carrega a cena do menu
-    }
-
-    void AjustaVolume()
-    {
-        musicaFundo.volume = sliderVolume.value;
     }
 }
 

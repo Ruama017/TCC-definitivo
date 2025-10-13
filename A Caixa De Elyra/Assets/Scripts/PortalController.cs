@@ -1,45 +1,44 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PortalController : MonoBehaviour
 {
     [Header("Sprites do Portal")]
-    public Sprite inactiveSprite;
-    public Sprite activeSprite;
+    public SpriteRenderer spriteRenderer; // arraste o SpriteRenderer do portal aqui
+    public Sprite activeSprite;           // sprite quando portal ativo
+    public Sprite inactiveSprite;         // sprite quando portal inativo
 
     [Header("Configuração")]
-    public bool isActive = false;  // o portal começa desativado
-
-    private SpriteRenderer sr;
+    public string nextSceneName = "fase2"; // nome da próxima fase
+    [HideInInspector] public bool isActive = false;
 
     void Start()
     {
-        sr = GetComponent<SpriteRenderer>();
-        sr.sprite = inactiveSprite;  // garante que comece inativo
+        // Inicializa portal como inativo
+        isActive = false;
+        if (spriteRenderer != null && inactiveSprite != null)
+            spriteRenderer.sprite = inactiveSprite;
     }
 
-    void Update()
-    {
-        // Apenas atualiza sprite se isActive mudou
-        if (isActive)
-            sr.sprite = activeSprite;
-        else
-            sr.sprite = inactiveSprite;
-    }
-
-    // Função para ativar portal
+    /// <summary>
+    /// Ativa o portal visualmente e funcionalmente
+    /// </summary>
     public void ActivatePortal()
     {
         isActive = true;
-        sr.sprite = activeSprite;
+
+        // Troca o sprite para mostrar que está ativo
+        if (spriteRenderer != null && activeSprite != null)
+            spriteRenderer.sprite = activeSprite;
     }
 
-    // Função chamada quando o player colide com o portal
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        // Só permite passar se estiver ativo e o player entrar
         if (isActive && collision.CompareTag("Player"))
         {
-            Debug.Log("Player passou pelo portal!");
-            // Aqui você pode colocar a lógica de mudar de fase
+            // Carrega a próxima fase
+            SceneManager.LoadScene(nextSceneName);
         }
     }
 }

@@ -140,10 +140,10 @@ TextureImporter:
         serializedVersion: 2
         x: 49
         y: 4
-        width: 152
-        height: 487
+        width: 359
+        height: 496
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -156,77 +156,11 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
-    - serializedVersion: 2
-      name: hera definitiva_1
-      rect:
-        serializedVersion: 2
-        x: 184
-        y: 4
-        width: 82
-        height: 487
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 2f2149098e1130c70800000000000000
-      internalID: 8936005776188904178
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: hera definitiva_2
-      rect:
-        serializedVersion: 2
-        x: 244
-        y: 4
-        width: 77
-        height: 487
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 7e5fd48b6f1d334b0800000000000000
-      internalID: -5461791065486002713
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: hera definitiva_3
-      rect:
-        serializedVersion: 2
-        x: 309
-        y: 4
-        width: 82
-        height: 487
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: b6ddc81b569b8b680800000000000000
-      internalID: -8739031230490813077
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
     outline: []
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 0ea12dd424f4d4c43a37c326c017acf6
     internalID: 0
     vertices: []
     indices: 
