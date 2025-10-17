@@ -160,7 +160,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      "bot\xE3o jogar sem borda_0": 683039929152912510
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

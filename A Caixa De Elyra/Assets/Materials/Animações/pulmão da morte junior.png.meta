@@ -1,10 +1,16 @@
 fileFormatVersion: 2
-guid: 9c05736537845674c9012a36bcc83739
+guid: cb3c33fcdc5ecee4f84a7af511250c9a
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -1698389144243843449
-    second: painel de aviso_0
+      213: 4271369433931894022
+    second: "pulm\xE3o da morte junior_0"
+  - first:
+      213: -5961946043238528996
+    second: "pulm\xE3o da morte junior_1"
+  - first:
+      213: 6203880030261684519
+    second: "pulm\xE3o da morte junior_2"
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -96,43 +102,17 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
-    buildTarget: WebGL
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
-    buildTarget: WindowsStoreApps
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: painel de aviso_0
+      name: "pulm\xE3o da morte junior_0"
       rect:
         serializedVersion: 2
-        x: 11
-        y: 18
-        width: 78
-        height: 63
+        x: 20
+        y: 79
+        width: 19
+        height: 21
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -141,8 +121,52 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 78e47fe521c1e68e0800000000000000
-      internalID: -1698389144243843449
+      spriteID: 60dc8f59ed3f64b30800000000000000
+      internalID: 4271369433931894022
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "pulm\xE3o da morte junior_1"
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 79
+        width: 19
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c18c8b259a9e24da0800000000000000
+      internalID: -5961946043238528996
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "pulm\xE3o da morte junior_2"
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 18
+        width: 19
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 72923e8940c981650800000000000000
+      internalID: 6203880030261684519
       vertices: []
       indices: 
       edges: []
@@ -160,8 +184,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      painel de aviso_0: -1698389144243843449
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

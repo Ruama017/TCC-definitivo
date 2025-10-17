@@ -1,10 +1,16 @@
 fileFormatVersion: 2
-guid: 9c05736537845674c9012a36bcc83739
+guid: e0fc6aa2c3a8dee4fbdbc51bff932af7
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -1698389144243843449
-    second: painel de aviso_0
+      213: -4133013671090201617
+    second: flor gigante (1)_0
+  - first:
+      213: 769334460506644115
+    second: flor gigante (1)_1
+  - first:
+      213: 5777576064796541303
+    second: flor gigante (1)_2
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -96,43 +102,17 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
-    buildTarget: WebGL
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
-    buildTarget: WindowsStoreApps
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: painel de aviso_0
+      name: flor gigante (1)_0
       rect:
         serializedVersion: 2
-        x: 11
-        y: 18
-        width: 78
-        height: 63
+        x: 15
+        y: 61
+        width: 36
+        height: 57
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -141,8 +121,52 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 78e47fe521c1e68e0800000000000000
-      internalID: -1698389144243843449
+      spriteID: febd5dab6f594a6c0800000000000000
+      internalID: -4133013671090201617
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flor gigante (1)_1
+      rect:
+        serializedVersion: 2
+        x: 75
+        y: 61
+        width: 36
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 39e17ff9d993daa00800000000000000
+      internalID: 769334460506644115
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flor gigante (1)_2
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 1
+        width: 36
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7714ffce1d21e2050800000000000000
+      internalID: 5777576064796541303
       vertices: []
       indices: 
       edges: []
@@ -160,8 +184,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      painel de aviso_0: -1698389144243843449
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

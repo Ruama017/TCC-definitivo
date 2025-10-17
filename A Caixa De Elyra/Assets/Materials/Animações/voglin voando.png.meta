@@ -235,7 +235,11 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      voglin voando_0: 8636124872228309449
+      voglin voando_1: 3336734650747589806
+      voglin voando_2: -203209542215999363
+      voglin voando_3: 8314721126232375775
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

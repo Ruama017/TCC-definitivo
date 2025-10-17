@@ -1,0 +1,450 @@
+fileFormatVersion: 2
+guid: 233a30c32acccaf4b98517a4204088dd
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -3850544512186794368
+    second: bloco-ponte-quebrando.anim_0
+  - first:
+      213: 7833851674626920130
+    second: bloco-ponte-quebrando.anim_1
+  - first:
+      213: -3032212495205243851
+    second: bloco-ponte-quebrando.anim_2
+  - first:
+      213: 2466680924125489351
+    second: bloco-ponte-quebrando.anim_3
+  - first:
+      213: -7203792727483208526
+    second: bloco-ponte-quebrando.anim_4
+  - first:
+      213: 8222019403035346813
+    second: bloco-ponte-quebrando.anim_5
+  - first:
+      213: 2449540147891709489
+    second: bloco-ponte-quebrando.anim_6
+  - first:
+      213: 4005893868724347736
+    second: bloco-ponte-quebrando.anim_7
+  - first:
+      213: -6814548562481073993
+    second: bloco-ponte-quebrando.anim_8
+  - first:
+      213: 1589996951477077382
+    second: bloco-ponte-quebrando.anim_9
+  - first:
+      213: 8872675237767929602
+    second: bloco-ponte-quebrando.anim_10
+  - first:
+      213: 3224107768526105072
+    second: bloco-ponte-quebrando.anim_11
+  - first:
+      213: 5172691229050620636
+    second: bloco-ponte-quebrando.anim_12
+  - first:
+      213: -8852649725411004655
+    second: bloco-ponte-quebrando.anim_13
+  - first:
+      213: -4243958062377181370
+    second: bloco-ponte-quebrando.anim_14
+  - first:
+      213: 8328590856427378816
+    second: bloco-ponte-quebrando.anim_15
+  - first:
+      213: 554441818339274044
+    second: bloco-ponte-quebrando.anim_16
+  - first:
+      213: -7199374281374954486
+    second: bloco-ponte-quebrando.anim_17
+  - first:
+      213: 3276522309035831687
+    second: bloco-ponte-quebrando.anim_18
+  - first:
+      213: -1046921946429394499
+    second: bloco-ponte-quebrando.anim_19
+  - first:
+      213: -6374088365330552907
+    second: bloco-ponte-quebrando.anim_20
+  - first:
+      213: 4582652519521030406
+    second: bloco-ponte-quebrando.anim_21
+  - first:
+      213: 2185923502173844432
+    second: bloco-ponte-quebrando.anim_22
+  - first:
+      213: -6394466268462995504
+    second: bloco-ponte-quebrando.anim_23
+  - first:
+      213: 5875444407856076839
+    second: bloco-ponte-quebrando.anim_24
+  - first:
+      213: 3783736947557537320
+    second: bloco-ponte-quebrando.anim_25
+  - first:
+      213: -2621019926848341836
+    second: bloco-ponte-quebrando.anim_26
+  - first:
+      213: 7283001845811821884
+    second: bloco-ponte-quebrando.anim_27
+  - first:
+      213: 6349143946035451335
+    second: bloco-ponte-quebrando.anim_28
+  - first:
+      213: -8196768521018177861
+    second: bloco-ponte-quebrando.anim_29
+  - first:
+      213: 6049050899132578356
+    second: bloco-ponte-quebrando.anim_30
+  - first:
+      213: 6797006153649128931
+    second: bloco-ponte-quebrando.anim_31
+  - first:
+      213: -2499693981661124331
+    second: bloco-ponte-quebrando.anim_32
+  - first:
+      213: -4316145897241971770
+    second: bloco-ponte-quebrando.anim_33
+  - first:
+      213: 6007374671196917710
+    second: bloco-ponte-quebrando.anim_34
+  - first:
+      213: -4592943467893367901
+    second: bloco-ponte-quebrando.anim_35
+  - first:
+      213: 2686909171080287810
+    second: bloco-ponte-quebrando.anim_36
+  - first:
+      213: -7393508862706285359
+    second: bloco-ponte-quebrando.anim_37
+  - first:
+      213: -5230122528316595261
+    second: bloco-ponte-quebrando.anim_38
+  - first:
+      213: 8388692230737713271
+    second: bloco-ponte-quebrando.anim_39
+  - first:
+      213: 8169931187686661672
+    second: bloco-ponte-quebrando.anim_40
+  - first:
+      213: -6299185253211705935
+    second: bloco-ponte-quebrando.anim_41
+  - first:
+      213: 8555464636244363128
+    second: bloco-ponte-quebrando.anim_42
+  - first:
+      213: 4255633967228279730
+    second: bloco-ponte-quebrando.anim_43
+  - first:
+      213: 8616629833746416171
+    second: bloco-ponte-quebrando.anim_44
+  - first:
+      213: 4101219267270929769
+    second: bloco-ponte-quebrando.anim_45
+  - first:
+      213: -5742990645613105072
+    second: bloco-ponte-quebrando.anim_46
+  - first:
+      213: 1189112205779923634
+    second: bloco-ponte-quebrando.anim_47
+  - first:
+      213: -8887626708951078809
+    second: bloco-ponte-quebrando.anim_48
+  - first:
+      213: 5347687703327994313
+    second: bloco-ponte-quebrando.anim_49
+  - first:
+      213: -244234524387608660
+    second: bloco-ponte-quebrando.anim_50
+  - first:
+      213: -7721781982432945730
+    second: bloco-ponte-quebrando.anim_51
+  - first:
+      213: -5662873871661174928
+    second: bloco-ponte-quebrando.anim_52
+  - first:
+      213: -3054350006759106335
+    second: bloco-ponte-quebrando.anim_53
+  - first:
+      213: -2688412455056549379
+    second: bloco-ponte-quebrando.anim_54
+  - first:
+      213: 4579328017633445822
+    second: bloco-ponte-quebrando.anim_55
+  - first:
+      213: 1132612897707315084
+    second: bloco-ponte-quebrando.anim_56
+  - first:
+      213: 460040698769239833
+    second: bloco-ponte-quebrando.anim_57
+  - first:
+      213: 5532159417616262288
+    second: bloco-ponte-quebrando.anim_58
+  - first:
+      213: 8475784872824343619
+    second: bloco-ponte-quebrando.anim_59
+  - first:
+      213: 1740654089463243667
+    second: bloco-ponte-quebrando.anim_60
+  - first:
+      213: 5714897883418716660
+    second: bloco-ponte-quebrando.anim_61
+  - first:
+      213: 5279029198224235878
+    second: bloco-ponte-quebrando.anim_62
+  - first:
+      213: 4841516043197168746
+    second: bloco-ponte-quebrando.anim_63
+  - first:
+      213: -9074991429631787133
+    second: bloco-ponte-quebrando.anim_64
+  - first:
+      213: -2893454587916164613
+    second: bloco-ponte-quebrando.anim_65
+  - first:
+      213: -5750148388256499701
+    second: bloco-ponte-quebrando.anim_66
+  - first:
+      213: -2753948826097864880
+    second: bloco-ponte-quebrando.anim_67
+  - first:
+      213: -566768985857993316
+    second: bloco-ponte-quebrando.anim_68
+  - first:
+      213: 6876573068422167752
+    second: bloco-ponte-quebrando.anim_69
+  - first:
+      213: 3330193707293996118
+    second: bloco-ponte-quebrando.anim_70
+  - first:
+      213: 791524128482766271
+    second: bloco-ponte-quebrando.anim_71
+  - first:
+      213: -6612480112234771724
+    second: bloco-ponte-quebrando.anim_72
+  - first:
+      213: -3713937316979545922
+    second: bloco-ponte-quebrando.anim_73
+  - first:
+      213: 5118484024456829351
+    second: bloco-ponte-quebrando.anim_74
+  - first:
+      213: -1291292979479096989
+    second: bloco-ponte-quebrando.anim_75
+  - first:
+      213: -9169004293043782513
+    second: bloco-ponte-quebrando.anim_76
+  - first:
+      213: -5549780882403973864
+    second: bloco-ponte-quebrando.anim_77
+  - first:
+      213: 5692577279134033323
+    second: bloco-ponte-quebrando.anim_78
+  - first:
+      213: 6051670741375013562
+    second: bloco-ponte-quebrando.anim_79
+  - first:
+      213: -3429979573505338464
+    second: bloco-ponte-quebrando.anim_80
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: bloco-ponte-quebrando.anim_0
+      rect:
+        serializedVersion: 2
+        x: 109
+        y: 1499
+        width: 882
+        height: 337
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 08eb64fca2e109ac0800000000000000
+      internalID: -3850544512186794368
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bloco-ponte-quebrando.anim_1
+      rect:
+        serializedVersion: 2
+        x: 1156
+        y: 1342
+        width: 964
+        height: 494
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2ce8c31b79e67bc60800000000000000
+      internalID: 7833851674626920130
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bloco-ponte-quebrando.anim_2
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 44
+        width: 1049
+        height: 672
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 52dce40cbb170344ba4b908703c63b93
+      internalID: 350903253
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bloco-ponte-quebrando.anim_3
+      rect:
+        serializedVersion: 2
+        x: 1229
+        y: 187
+        width: 971
+        height: 582
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4a34723ba940384438e1228d711cd0f7
+      internalID: -1883847450
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 13e88531e4be3284d9a0bcb143d18dd4
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      bloco-ponte-quebrando.anim_2: 350903253
+      bloco-ponte-quebrando.anim_3: -1883847450
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
