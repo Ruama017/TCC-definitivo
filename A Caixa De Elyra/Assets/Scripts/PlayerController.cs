@@ -1,72 +1,118 @@
 using UnityEngine;
 
-public class PlayerController:MonoBehaviour{
+public class PlayerController : MonoBehaviour
+{
     [Header("Movimento")]
     public float moveSpeed = 5f;
     public float jumpForce = 12f;
 
     [Header("Ataque")]
     public Animator animator;
+    public GameObject attackHitbox; // Arraste aqui o objeto filho da hitbox da espada
+    public float attackDuration = 0.2f; // tempo que a hitbox fica ativa
 
     private Rigidbody2D rb;
     private bool isGrounded;
     private int extraJumps;
-    public int extraJumpValue = 1; 
+    public int extraJumpValue = 1;
 
-    private void Start(){
-        rb= GetComponent<Rigidbody2D>();
+    private bool isAttacking = false; // evita múltiplos ataques ao mesmo tempo
+
+    private void Start()
+    {
+        rb = GetComponent<Rigidbody2D>();
         extraJumps = extraJumpValue;
+
+        if (attackHitbox != null)
+            attackHitbox.SetActive(false); // Começa desativado
     }
 
-    private void Update(){
+    private void Update()
+    {
         Move();
         Jump();
         Attack();
         Flip();
     }
 
-    void Move(){
-        float moveInput=
-        Input.GetAxisRaw("Horizontal");
+    void Move()
+    {
+        float moveInput = Input.GetAxisRaw("Horizontal");
         rb.velocity = new Vector2(moveInput * moveSpeed, rb.velocity.y);
 
-        if(animator !=null)
-        animator.SetFloat("Speed", Mathf.Abs(moveInput));
+        if (animator != null)
+            animator.SetFloat("Speed", Mathf.Abs(moveInput));
     }
 
-    void Jump(){
-        if(isGrounded)
-        extraJumps = extraJumpValue;
+    void Jump()
+    {
+        if (isGrounded)
+            extraJumps = extraJumpValue;
 
-        if(Input.GetKeyDown(KeyCode.Space)){
-            if(isGrounded || extraJumps >0){
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            if (isGrounded || extraJumps > 0)
+            {
                 rb.velocity = new Vector2(rb.velocity.x, jumpForce);
 
-                if(!isGrounded)
-                extraJumps--;
+                if (!isGrounded)
+                    extraJumps--;
 
-                if(animator !=null)
-                animator.SetTrigger("Jump");
+                if (animator != null)
+                    animator.SetBool("IsJumping", true);
+            }
+        }
+
+        // Atualiza IsJumping para false quando o player toca no chão
+        if (isGrounded && animator != null && !isAttacking)
+            animator.SetBool("IsJumping", false);
+    }
+
+    void Attack()
+    {
+        if (Input.GetKeyDown(KeyCode.M) && !isAttacking)
+        {
+            isAttacking = true;
+
+            if (animator != null)
+                animator.SetTrigger("Attack");
+
+            if (attackHitbox != null)
+            {
+                attackHitbox.SetActive(true);
+                Invoke(nameof(DisableHitbox), attackDuration);
             }
         }
     }
-    void Attack(){
-        if (Input.GetKeyDown(KeyCode.M)){
-            if(animator!=null)
-            animator.SetTrigger("Attack");
+
+    void DisableHitbox()
+    {
+        if (attackHitbox != null)
+            attackHitbox.SetActive(false);
+
+        isAttacking = false; // libera para novo ataque
+    }
+
+    void Flip()
+    {
+        float moveInput = Input.GetAxisRaw("Horizontal");
+        if (moveInput != 0)
+            transform.localScale = new Vector3(Mathf.Sign(moveInput) * Mathf.Abs(transform.localScale.x), transform.localScale.y, 1);
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Ground"))
+        {
+            isGrounded = true;
+            if (animator != null && !isAttacking)
+                animator.SetBool("IsJumping", false);
         }
     }
-    void Flip(){
-        float moveInput = Input.GetAxisRaw("Horizontal");
-        if(moveInput !=0)
-        transform.localScale = new Vector3(Mathf.Sign(moveInput)*Mathf.Abs(transform.localScale.x), transform.localScale.y, 1);
-    }
-    private void OnCollisionEnter2D(Collision2D collision){
-        if(collision.gameObject.CompareTag("Ground"))
-        isGrounded = true;
-    }
-    private void OnCollisionExit2D(Collision2D collision){
-        if(collision.gameObject.CompareTag("Ground"))
-        isGrounded = false;
+
+    private void OnCollisionExit2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Ground"))
+            isGrounded = false;
     }
 }

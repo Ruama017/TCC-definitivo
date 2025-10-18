@@ -30,6 +30,9 @@ public class PlayerHealth : MonoBehaviour
     public AudioSource deathSound;
     public ParticleSystem deathEffect;
 
+    [Header("SFX de Dano")]
+    public AudioSource damageSound; // ADICIONE ISSO: toca quando o player perde um coração
+
     void Start()
     {
         currentHealth = maxHealth;
@@ -50,6 +53,10 @@ public class PlayerHealth : MonoBehaviour
 
         currentHealth -= damage;
 
+        // Toca o som de dano
+        if (damageSound != null)
+            damageSound.Play();
+
         // Lógica de cristais como vidas extras
         while (damage > 0 && currentCrystals > 0)
         {
@@ -69,6 +76,11 @@ public class PlayerHealth : MonoBehaviour
     public void InstantDeath()
     {
         currentHealth = 0;
+
+        // Toca o som de dano também
+        if (damageSound != null)
+            damageSound.Play();
+
         UpdateHearts();
         CheckDeath();
     }

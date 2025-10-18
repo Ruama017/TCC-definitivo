@@ -8,6 +8,7 @@ TagManager:
   - Gas
   - BridgePiece
   - Spike
+  - PlayerAttack
   layers:
   - Default
   - TransparentFX

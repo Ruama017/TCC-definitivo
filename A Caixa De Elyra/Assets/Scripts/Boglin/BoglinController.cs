@@ -26,9 +26,9 @@ public class BoglinController : MonoBehaviour
     public int currentHealth;
 
     [Header("Alma")]
-    public GameObject soulPrefab;     // Prefab da alma
-    public Transform soulTarget;      // Posição do contador no Canvas
-    public float soulSpeed = 300f;    // Velocidade da alma indo para o contador
+    public GameObject soulPrefab;
+    public Transform soulTarget;
+    public float soulSpeed = 300f;
 
     [HideInInspector] public Vector3 originalScale;
 
@@ -76,9 +76,22 @@ public class BoglinController : MonoBehaviour
         }
     }
 
+    // --- NOVO: Receber dano do ataque do player ---
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("PlayerAttack"))
+        {
+            TakeDamage(1); // Desconta 1 de vida por ataque
+        }
+    }
+
     public void TakeDamage(int damage)
     {
         currentHealth -= damage;
+
+        if (animator != null)
+            animator.SetTrigger("Hit"); // Opcional: animação de hit
+
         if (currentHealth <= 0)
             Die();
     }
@@ -106,11 +119,8 @@ public class BoglinController : MonoBehaviour
             yield return null;
         }
 
-        // Chegou no contador, atualiza UI
         if (CounterManager.Instance != null)
-        {
             CounterManager.Instance.Increment();
-        }
 
         Destroy(soul);
     }
