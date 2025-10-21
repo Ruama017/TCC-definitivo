@@ -33,6 +33,13 @@ public class PlayerController : MonoBehaviour
         Jump();
         Attack();
         Flip();
+
+        // Atualiza animação de pulo pelo movimento vertical (mais preciso)
+        if (animator != null)
+        {
+            bool isJumpingAnim = rb.velocity.y != 0 && !isGrounded;
+            animator.SetBool("IsJumping", isJumpingAnim);
+        }
     }
 
     void Move()
@@ -57,15 +64,8 @@ public class PlayerController : MonoBehaviour
 
                 if (!isGrounded)
                     extraJumps--;
-
-                if (animator != null)
-                    animator.SetBool("IsJumping", true);
             }
         }
-
-        // Atualiza IsJumping para false quando o player toca no chão
-        if (isGrounded && animator != null && !isAttacking)
-            animator.SetBool("IsJumping", false);
     }
 
     void Attack()
@@ -105,8 +105,6 @@ public class PlayerController : MonoBehaviour
         if (collision.gameObject.CompareTag("Ground"))
         {
             isGrounded = true;
-            if (animator != null && !isAttacking)
-                animator.SetBool("IsJumping", false);
         }
     }
 

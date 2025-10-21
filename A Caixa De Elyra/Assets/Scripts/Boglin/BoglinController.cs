@@ -1,5 +1,4 @@
 using UnityEngine;
-using System.Collections;
 
 public class BoglinController : MonoBehaviour
 {
@@ -7,111 +6,103 @@ public class BoglinController : MonoBehaviour
     public Animator animator;
     public Transform player;
 
-    [Header("Patrulha")]
-    public Transform[] patrolPoints;
-
-    [Header("Distâncias")]
+    [Header("Movimento")]
+    public float moveSpeed = 2f;
     public float chaseDistance = 5f;
     public float attackDistance = 1.5f;
-    public float moveSpeed = 2f;
 
-    [HideInInspector] public BoglinState currentState;
-    [HideInInspector] public BoglinPatrolState patrolState;
-    [HideInInspector] public BoglinChaseState chaseState;
-    [HideInInspector] public BoglinAttackState attackState;
-    [HideInInspector] public BoglinDeadState deadState;
+    [Header("Ataque")]
+    public GameObject smokePrefab; // prefab da fumaça
+    public Transform smokeSpawnPoint; // posição da boca
+    private bool isAttacking = false;
 
-    [Header("Vida")]
+    [Header("Vida e Alma")]
     public int maxHealth = 5;
-    public int currentHealth;
-
-    [Header("Alma")]
+    private int currentHealth;
     public GameObject soulPrefab;
     public Transform soulTarget;
     public float soulSpeed = 300f;
 
-    [HideInInspector] public Vector3 originalScale;
-
-    void Start()
+    private void Start()
     {
-        originalScale = transform.localScale;
-
-        patrolState = new BoglinPatrolState(this);
-        chaseState = new BoglinChaseState(this);
-        attackState = new BoglinAttackState(this);
-        deadState = new BoglinDeadState(this);
-
-        currentState = patrolState;
         currentHealth = maxHealth;
     }
 
-    void Update()
+    private void Update()
     {
-        currentState.LogicUpdate();
-    }
+        if (player == null) return;
 
-    public void ChangeState(BoglinState newState)
-    {
-        currentState.Exit();
-        currentState = newState;
-        currentState.Enter();
-    }
+        float distance = Vector2.Distance(transform.position, player.position);
 
-    public void MoveTowards(Vector2 target)
-    {
-        Vector2 direction = (target - (Vector2)transform.position).normalized;
-        transform.position = Vector2.MoveTowards(transform.position, target, moveSpeed * Time.deltaTime);
-
-        if (direction.x != 0)
-            transform.localScale = new Vector3(originalScale.x * Mathf.Sign(direction.x), originalScale.y, originalScale.z);
-    }
-
-    public void AttackPlayer()
-    {
-        if (Vector2.Distance(transform.position, player.position) <= attackDistance)
+        if (!isAttacking)
         {
-            PlayerHealth ph = player.GetComponent<PlayerHealth>();
-            if (ph != null)
-                ph.TakeDamage(1);
+            if (distance <= attackDistance)
+            {
+                Attack();
+            }
+            else if (distance <= chaseDistance)
+            {
+                MoveTowardsPlayer();
+            }
+            else
+            {
+                animator.SetBool("IsWalking", false);
+            }
         }
     }
 
-    // --- NOVO: Receber dano do ataque do player ---
-    private void OnTriggerEnter2D(Collider2D collision)
+    void MoveTowardsPlayer()
     {
-        if (collision.CompareTag("PlayerAttack"))
+        animator.SetBool("IsWalking", true);
+        Vector2 dir = (player.position - transform.position).normalized;
+        transform.position = Vector2.MoveTowards(transform.position, player.position, moveSpeed * Time.deltaTime);
+        if (dir.x != 0)
+            transform.localScale = new Vector3(Mathf.Sign(dir.x) * Mathf.Abs(transform.localScale.x), transform.localScale.y, 1);
+    }
+
+    void Attack()
+    {
+        isAttacking = true;
+        animator.SetTrigger("IsAttacking");
+
+        // Spawn da fumaça
+        if (smokePrefab != null && smokeSpawnPoint != null)
         {
-            TakeDamage(1); // Desconta 1 de vida por ataque
+            GameObject smoke = Instantiate(smokePrefab, smokeSpawnPoint.position, Quaternion.identity);
+            SmokeAttack sa = smoke.GetComponent<SmokeAttack>();
+            if (sa != null)
+                sa.Init(player);
         }
+
+        // Tempo do ataque baseado na animação
+        Invoke(nameof(EndAttack), 1f); // ajuste conforme duração da animação
+    }
+
+    void EndAttack()
+    {
+        isAttacking = false;
     }
 
     public void TakeDamage(int damage)
     {
         currentHealth -= damage;
-
-        if (animator != null)
-            animator.SetTrigger("Hit"); // Opcional: animação de hit
-
         if (currentHealth <= 0)
             Die();
     }
 
-    private void Die()
+    void Die()
     {
-        ChangeState(deadState);
-
-        // Instancia a alma
+        // Spawn da alma
         if (soulPrefab != null && soulTarget != null)
         {
-            GameObject soul = Instantiate(soulPrefab, transform.position, Quaternion.identity, transform.parent);
+            GameObject soul = Instantiate(soulPrefab, transform.position, Quaternion.identity);
             StartCoroutine(MoveSoulToTarget(soul));
         }
 
-        // Desativa o Boglin visual
-        gameObject.SetActive(false);
+        Destroy(gameObject);
     }
 
-    private IEnumerator MoveSoulToTarget(GameObject soul)
+    private System.Collections.IEnumerator MoveSoulToTarget(GameObject soul)
     {
         while (Vector3.Distance(soul.transform.position, soulTarget.position) > 0.1f)
         {
@@ -119,6 +110,7 @@ public class BoglinController : MonoBehaviour
             yield return null;
         }
 
+        // Atualiza o contador
         if (CounterManager.Instance != null)
             CounterManager.Instance.Increment();
 

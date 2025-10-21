@@ -9,6 +9,7 @@ TagManager:
   - BridgePiece
   - Spike
   - PlayerAttack
+  - Enemy
   layers:
   - Default
   - TransparentFX
