@@ -1,19 +1,19 @@
 fileFormatVersion: 2
-guid: 3931186079293d54d904b17d2c6d87f2
+guid: fbacb4e1f7907f741a19233de18b8155
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 7975743242831253529
-    second: idle tcc 2 tentativa_0
+      213: -6551123495157144775
+    second: voglin atacando_0
   - first:
-      213: -6763436167528331433
-    second: idle tcc 2 tentativa_1
+      213: -1895151536944701668
+    second: voglin atacando_1
   - first:
-      213: -8024366329908070027
-    second: idle tcc 2 tentativa_2
+      213: 4958692690075936428
+    second: voglin atacando_2
   - first:
-      213: 9077393211097934002
-    second: idle tcc 2 tentativa_3
+      213: 5454544526344108479
+    second: voglin atacando_3
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -135,13 +135,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: idle tcc 2 tentativa_0
+      name: voglin atacando_0
       rect:
         serializedVersion: 2
-        x: 149
-        y: 897
+        x: 39
+        y: 519
         width: 452
-        height: 457
+        height: 477
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -150,20 +150,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 910dda8d8388fae60800000000000000
-      internalID: 7975743242831253529
+      spriteID: 9336177f3ebb515a0800000000000000
+      internalID: -6551123495157144775
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: idle tcc 2 tentativa_1
+      name: voglin atacando_1
       rect:
         serializedVersion: 2
-        x: 899
-        y: 894
-        width: 452
-        height: 462
+        x: 539
+        y: 519
+        width: 457
+        height: 477
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -172,20 +172,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 757c17dc3a27322a0800000000000000
-      internalID: -6763436167528331433
+      spriteID: c1f10e4d7b113b5e0800000000000000
+      internalID: -1895151536944701668
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: idle tcc 2 tentativa_2
+      name: voglin atacando_2
       rect:
         serializedVersion: 2
-        x: 149
-        y: 142
+        x: 49
+        y: 19
         width: 452
-        height: 467
+        height: 472
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -194,20 +194,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 579793e7659b3a090800000000000000
-      internalID: -8024366329908070027
+      spriteID: ca66d46bab0d0d440800000000000000
+      internalID: 4958692690075936428
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: idle tcc 2 tentativa_3
+      name: voglin atacando_3
       rect:
         serializedVersion: 2
-        x: 899
-        y: 144
-        width: 452
-        height: 462
+        x: 554
+        y: 19
+        width: 446
+        height: 472
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -216,8 +216,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 2b8e80a080169fd70800000000000000
-      internalID: 9077393211097934002
+      spriteID: fb9ba48e85f62bb40800000000000000
+      internalID: 5454544526344108479
       vertices: []
       indices: 
       edges: []
@@ -235,11 +235,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      idle tcc 2 tentativa_0: 7975743242831253529
-      idle tcc 2 tentativa_1: -6763436167528331433
-      idle tcc 2 tentativa_2: -8024366329908070027
-      idle tcc 2 tentativa_3: 9077393211097934002
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
