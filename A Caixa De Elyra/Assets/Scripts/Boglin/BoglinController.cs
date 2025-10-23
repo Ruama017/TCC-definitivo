@@ -2,118 +2,94 @@ using UnityEngine;
 
 public class BoglinController : MonoBehaviour
 {
-    [Header("Componentes")]
-    public Animator animator;
+    [Header("Referências")]
     public Transform player;
+    public Animator anim;
 
-    [Header("Movimento")]
+    [Header("Estados")]
+    public BoglinBaseState currentState;
+    public BoglinWalkState walkState;
+    public BoglinAttackState attackState;
+
+    [Header("Ataque e Detecção")]
+    public Transform AttackPoint;
+    public Transform SmokeSpawn;
+    public Transform DetectionRange;
+    public float attackRange = 1f;
     public float moveSpeed = 2f;
-    public float chaseDistance = 5f;
-    public float attackDistance = 1.5f;
 
-    [Header("Ataque")]
-    public GameObject smokePrefab; // prefab da fumaça
-    public Transform smokeSpawnPoint; // posição da boca
-    private bool isAttacking = false;
-
-    [Header("Vida e Alma")]
+    [Header("Saúde")]
     public int maxHealth = 5;
-    private int currentHealth;
-    public GameObject soulPrefab;
-    public Transform soulTarget;
-    public float soulSpeed = 300f;
+    public int currentHealth;
 
-    private void Start()
+    [Header("Alma")]
+    public GameObject boglinSoulPrefab; 
+    public MonsterCounter monsterCounter; 
+
+    void Start()
     {
         currentHealth = maxHealth;
+        SwitchState(walkState); // Estado inicial
     }
 
-    private void Update()
+    void Update()
     {
-        if (player == null) return;
-
-        float distance = Vector2.Distance(transform.position, player.position);
-
-        if (!isAttacking)
-        {
-            if (distance <= attackDistance)
-            {
-                Attack();
-            }
-            else if (distance <= chaseDistance)
-            {
-                MoveTowardsPlayer();
-            }
-            else
-            {
-                animator.SetBool("IsWalking", false);
-            }
-        }
-    }
-
-    void MoveTowardsPlayer()
-    {
-        animator.SetBool("IsWalking", true);
-        Vector2 dir = (player.position - transform.position).normalized;
-        transform.position = Vector2.MoveTowards(transform.position, player.position, moveSpeed * Time.deltaTime);
-        if (dir.x != 0)
-            transform.localScale = new Vector3(Mathf.Sign(dir.x) * Mathf.Abs(transform.localScale.x), transform.localScale.y, 1);
-    }
-
-    void Attack()
-    {
-        isAttacking = true;
-        animator.SetTrigger("IsAttacking");
-
-        // Spawn da fumaça
-        if (smokePrefab != null && smokeSpawnPoint != null)
-        {
-            GameObject smoke = Instantiate(smokePrefab, smokeSpawnPoint.position, Quaternion.identity);
-            SmokeAttack sa = smoke.GetComponent<SmokeAttack>();
-            if (sa != null)
-                sa.Init(player);
-        }
-
-        // Tempo do ataque baseado na animação
-        Invoke(nameof(EndAttack), 1f); // ajuste conforme duração da animação
-    }
-
-    void EndAttack()
-    {
-        isAttacking = false;
+        if (currentState != null)
+            currentState.UpdateState(this);
     }
 
     public void TakeDamage(int damage)
     {
         currentHealth -= damage;
+
         if (currentHealth <= 0)
+        {
             Die();
+        }
     }
 
     void Die()
     {
-        // Spawn da alma
-        if (soulPrefab != null && soulTarget != null)
+        // Instancia a alma e manda para o contador
+        if (boglinSoulPrefab != null && monsterCounter != null)
         {
-            GameObject soul = Instantiate(soulPrefab, transform.position, Quaternion.identity);
-            StartCoroutine(MoveSoulToTarget(soul));
+            GameObject soul = Instantiate(boglinSoulPrefab, transform.position, Quaternion.identity);
+            Soul soulScript = soul.GetComponent<Soul>();
+            if (soulScript != null)
+                soulScript.Initialize(monsterCounter.transform.position, monsterCounter);
         }
 
         Destroy(gameObject);
     }
 
-    private System.Collections.IEnumerator MoveSoulToTarget(GameObject soul)
+    public void SwitchState(BoglinBaseState newState)
     {
-        while (Vector3.Distance(soul.transform.position, soulTarget.position) > 0.1f)
-        {
-            soul.transform.position = Vector3.MoveTowards(soul.transform.position, soulTarget.position, soulSpeed * Time.deltaTime);
-            yield return null;
-        }
+        if (currentState != null)
+            currentState.ExitState(this);
 
-        // Atualiza o contador
-        if (CounterManager.Instance != null)
-            CounterManager.Instance.Increment();
+        currentState = newState;
 
-        Destroy(soul);
+        if (currentState != null)
+            currentState.EnterState(this);
+    }
+
+    public void MoveTowards(Vector3 target)
+    {
+        Vector2 direction = (target - transform.position).normalized;
+        transform.position += (Vector3)(direction * moveSpeed * Time.deltaTime);
+
+        if (anim != null)
+            anim.SetBool("isWalking", true);
+
+        if (direction.x > 0)
+            transform.localScale = new Vector3(1, 1, 1);
+        else if (direction.x < 0)
+            transform.localScale = new Vector3(-1, 1, 1);
+    }
+
+    public void StopMoving()
+    {
+        if (anim != null)
+            anim.SetBool("isWalking", false);
     }
 }

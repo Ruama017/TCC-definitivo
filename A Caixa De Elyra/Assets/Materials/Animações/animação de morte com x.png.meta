@@ -1,10 +1,19 @@
 fileFormatVersion: 2
-guid: bf15ba691cca6e348aa1e6a4df111373
+guid: 3ecb98dc5e78d9248befc1c7832e00ff
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 80119588326596589
-    second: "ataque v\xF3glin_0"
+      213: -4854786781699854164
+    second: "anima\xE7\xE3o de morte com x_0"
+  - first:
+      213: 2137065116086480612
+    second: "anima\xE7\xE3o de morte com x_1"
+  - first:
+      213: 5080864694808775621
+    second: "anima\xE7\xE3o de morte com x_2"
+  - first:
+      213: 6584793389075131459
+    second: "anima\xE7\xE3o de morte com x_3"
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -96,43 +105,17 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
-    buildTarget: WebGL
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
-    buildTarget: WindowsStoreApps
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: "ataque v\xF3glin_0"
+      name: "anima\xE7\xE3o de morte com x_0"
       rect:
         serializedVersion: 2
-        x: 124
-        y: 134
-        width: 227
-        height: 192
+        x: 204
+        y: 919
+        width: 442
+        height: 462
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -141,8 +124,74 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: defd1c15754ac1100800000000000000
-      internalID: 80119588326596589
+      spriteID: ca0b480d42550acb0800000000000000
+      internalID: -4854786781699854164
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "anima\xE7\xE3o de morte com x_1"
+      rect:
+        serializedVersion: 2
+        x: 1014
+        y: 924
+        width: 332
+        height: 412
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4eea632866168ad10800000000000000
+      internalID: 2137065116086480612
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "anima\xE7\xE3o de morte com x_2"
+      rect:
+        serializedVersion: 2
+        x: 54
+        y: 194
+        width: 402
+        height: 357
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5cb86e5358bd28640800000000000000
+      internalID: 5080864694808775621
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "anima\xE7\xE3o de morte com x_3"
+      rect:
+        serializedVersion: 2
+        x: 774
+        y: 199
+        width: 457
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 34ce92b13b2e16b50800000000000000
+      internalID: 6584793389075131459
       vertices: []
       indices: 
       edges: []
@@ -160,8 +209,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      "ataque v\xF3glin_0": 80119588326596589
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

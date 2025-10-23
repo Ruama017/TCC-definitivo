@@ -46,6 +46,11 @@ public class GameOverManager : MonoBehaviour
         }
     }
 
+    public void ShowGameOver()
+    {
+        GameOver();
+    }
+
     void RestartLevel()
     {
         // Retoma o tempo antes de reiniciar

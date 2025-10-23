@@ -140,10 +140,10 @@ TextureImporter:
         serializedVersion: 2
         x: 49
         y: 4
-        width: 152
-        height: 487
+        width: 384
+        height: 496
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -156,77 +156,11 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
-    - serializedVersion: 2
-      name: hera (1)_1
-      rect:
-        serializedVersion: 2
-        x: 184
-        y: 4
-        width: 82
-        height: 487
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 6970b7ea108077050800000000000000
-      internalID: 5798111848578090902
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: hera (1)_2
-      rect:
-        serializedVersion: 2
-        x: 244
-        y: 4
-        width: 77
-        height: 487
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: f9c63dd9b4f9209d0800000000000000
-      internalID: -2809508070406525793
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: hera (1)_3
-      rect:
-        serializedVersion: 2
-        x: 309
-        y: 4
-        width: 82
-        height: 487
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 2d28635e1f5753b20800000000000000
-      internalID: 3113524399189689042
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
     outline: []
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 26e14d68164015440934b9a10576e173
     internalID: 0
     vertices: []
     indices: 

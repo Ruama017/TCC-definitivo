@@ -235,7 +235,11 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      voglin atacando_0: -6551123495157144775
+      voglin atacando_1: -1895151536944701668
+      voglin atacando_2: 4958692690075936428
+      voglin atacando_3: 5454544526344108479
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

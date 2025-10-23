@@ -237,12 +237,12 @@ TextureImporter:
       name: boglin andando_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 1000
-        width: 1000
-        height: 500
+        x: 304
+        y: 1025
+        width: 371
+        height: 475
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -259,12 +259,12 @@ TextureImporter:
       name: boglin andando_1
       rect:
         serializedVersion: 2
-        x: 1000
-        y: 1000
-        width: 1000
-        height: 500
+        x: 1325
+        y: 996
+        width: 363
+        height: 504
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -281,12 +281,12 @@ TextureImporter:
       name: boglin andando_2
       rect:
         serializedVersion: 2
-        x: 0
-        y: 500
-        width: 1000
-        height: 500
+        x: 310
+        y: 509
+        width: 375
+        height: 491
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -303,12 +303,12 @@ TextureImporter:
       name: boglin andando_3
       rect:
         serializedVersion: 2
-        x: 1000
-        y: 500
-        width: 1000
-        height: 500
+        x: 1325
+        y: 485
+        width: 363
+        height: 495
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -325,12 +325,12 @@ TextureImporter:
       name: boglin andando_4
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 1000
-        height: 500
+        x: 304
+        y: 17
+        width: 389
+        height: 483
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []

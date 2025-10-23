@@ -31,13 +31,19 @@ public class PlayerHealth : MonoBehaviour
     public ParticleSystem deathEffect;
 
     [Header("SFX de Dano")]
-    public AudioSource damageSound; // ADICIONE ISSO: toca quando o player perde um coração
+    public AudioSource damageSound;
+
+    // 🔹 Referência pro Animator
+    private Animator anim;
+    private bool isDead = false;
 
     void Start()
     {
         currentHealth = maxHealth;
         UpdateHearts();
         UpdateCrystalUI();
+
+        anim = GetComponent<Animator>();
 
         if (gameOverPanel != null)
             gameOverPanel.SetActive(false);
@@ -46,18 +52,15 @@ public class PlayerHealth : MonoBehaviour
             shieldEffect.SetActive(false);
     }
 
-    // Tomar dano
     public void TakeDamage(int damage)
     {
-        if (!canTakeDamage) return;
+        if (!canTakeDamage || isDead) return;
 
         currentHealth -= damage;
 
-        // Toca o som de dano
         if (damageSound != null)
             damageSound.Play();
 
-        // Lógica de cristais como vidas extras
         while (damage > 0 && currentCrystals > 0)
         {
             currentCrystals--;
@@ -72,22 +75,20 @@ public class PlayerHealth : MonoBehaviour
         CheckDeath();
     }
 
-    // Morte instantânea (para espinhos, etc.)
+    // ✅ Método adicionado para morte instantânea (usado pelos espinhos)
     public void InstantDeath()
     {
+        if (isDead) return;
+
         currentHealth = 0;
-
-        // Toca o som de dano também
-        if (damageSound != null)
-            damageSound.Play();
-
         UpdateHearts();
-        CheckDeath();
+        Die();
     }
 
-    // Curar
     public void Heal(int amount)
     {
+        if (isDead) return;
+
         currentHealth += amount;
         if (currentHealth > maxHealth)
             currentHealth = maxHealth;
@@ -95,7 +96,6 @@ public class PlayerHealth : MonoBehaviour
         UpdateHearts();
     }
 
-    // Atualiza corações na UI
     void UpdateHearts()
     {
         for (int i = 0; i < hearts.Length; i++)
@@ -107,9 +107,10 @@ public class PlayerHealth : MonoBehaviour
         }
     }
 
-    // Coletar cristais
     public void CollectCrystal(int amount)
     {
+        if (isDead) return;
+
         currentCrystals += amount;
         if (currentCrystals > maxCrystals)
             currentCrystals = maxCrystals;
@@ -117,7 +118,6 @@ public class PlayerHealth : MonoBehaviour
         UpdateCrystalUI();
     }
 
-    // Atualiza UI de cristais
     void UpdateCrystalUI()
     {
         if (crystalAmountText != null)
@@ -127,10 +127,9 @@ public class PlayerHealth : MonoBehaviour
             crystalAmountTMP.text = currentCrystals.ToString();
     }
 
-    // Ativar escudo temporário
     public void ActivateShield()
     {
-        if (shieldActive) return;
+        if (shieldActive || isDead) return;
 
         shieldActive = true;
         canTakeDamage = false;
@@ -150,36 +149,48 @@ public class PlayerHealth : MonoBehaviour
             shieldEffect.SetActive(false);
     }
 
-    // Verifica morte
     void CheckDeath()
     {
-        if (currentHealth <= 0)
+        if (currentHealth <= 0 && !isDead)
             Die();
     }
 
     void Die()
     {
+        isDead = true;
+
         if (deathSound != null)
             deathSound.Play();
 
         if (deathEffect != null)
             deathEffect.Play();
 
-        if (gameOverPanel != null)
-            gameOverPanel.SetActive(true);
+        // 🔹 Toca a animação de morte
+        if (anim != null)
+            anim.SetTrigger("Death");
 
+        // Desativa o PlayerController
         PlayerController pc = GetComponent<PlayerController>();
         if (pc != null)
             pc.enabled = false;
 
-        // Para o tempo da cena
+        // Mostra Game Over após o delay da animação
+        StartCoroutine(ShowGameOverAfterDelay(1.2f));
+    }
+
+    private System.Collections.IEnumerator ShowGameOverAfterDelay(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+
+        if (gameOverPanel != null)
+            gameOverPanel.SetActive(true);
+
         Time.timeScale = 0f;
     }
 
-    // Funções para botões do Game Over
     public void RestartLevel()
     {
-        Time.timeScale = 1f; // reseta o tempo
+        Time.timeScale = 1f;
         currentHealth = maxHealth;
         currentCrystals = 0;
         UpdateHearts();
@@ -190,7 +201,7 @@ public class PlayerHealth : MonoBehaviour
 
     public void BackToMenu(string menuSceneName)
     {
-        Time.timeScale = 1f; // reseta o tempo
+        Time.timeScale = 1f;
         SceneManager.LoadScene(menuSceneName);
     }
 }
