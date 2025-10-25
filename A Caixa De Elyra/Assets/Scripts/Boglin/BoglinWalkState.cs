@@ -4,7 +4,6 @@ public class BoglinWalkState : BoglinBaseState
 {
     public override void EnterState(BoglinController boglin)
     {
-        // Pode colocar animação de entrar no estado, se quiser
         if (boglin.anim != null)
             boglin.anim.SetBool("isWalking", true);
     }
@@ -21,7 +20,6 @@ public class BoglinWalkState : BoglinBaseState
             return;
         }
 
-        // Move em direção ao player
         boglin.MoveTowards(boglin.player.position);
     }
 

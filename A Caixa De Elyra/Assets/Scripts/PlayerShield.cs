@@ -1,79 +1,50 @@
 using UnityEngine;
-using UnityEngine.UI;
 
 public class PlayerShield : MonoBehaviour
 {
-    [Header("Configuração do Escudo")]
-    public float shieldDuration = 15f;
-    public KeyCode activateShieldKey = KeyCode.A;
+    public ParticleSystem shieldAura; // Arrasta o Particle System aqui no Inspector
+    public float shieldDuration = 15f; // Tempo do escudo
 
-    [Header("Referências")]
-    public PlayerHealth playerHealth;
-    public ParticleSystem shieldAura; // a aura de partículas do escudo
-    public Image shieldIcon;          // ícone no Canvas
-    public Text shieldAmountText;     // quantidade disponível
-
-    private int availableShields = 1; // número de escudos coletados
-    private bool shieldActive = false;
-
-    void Start()
-    {
-        if (shieldAura != null)
-            shieldAura.Stop();
-
-        UpdateShieldUI();
-    }
+    private bool isShieldActive = false;
+    private float shieldTimer = 0f;
+    private int shieldCount = 0;
 
     void Update()
     {
-        // Ativar escudo ao apertar tecla
-        if (Input.GetKeyDown(activateShieldKey) && availableShields > 0 && !shieldActive)
+        if(isShieldActive)
         {
-            ActivateShield();
+            shieldTimer -= Time.deltaTime;
+            if(shieldTimer <= 0f)
+            {
+                DeactivateShield();
+            }
         }
+    }
+
+    public void AddShield(int amount)
+    {
+        shieldCount += amount;
+        ActivateShield();
     }
 
     void ActivateShield()
     {
-        shieldActive = true;
-        availableShields--;
-        UpdateShieldUI();
-
-        // Torna o player imune
-        if (playerHealth != null)
-            playerHealth.canTakeDamage = false;
-
-        // Ativa o efeito visual
-        if (shieldAura != null)
+        isShieldActive = true;
+        shieldTimer = shieldDuration;
+        if(shieldAura != null && !shieldAura.isPlaying)
             shieldAura.Play();
-
-        // Inicia contagem do tempo do escudo
-        StartCoroutine(ShieldDurationCoroutine());
     }
 
-    System.Collections.IEnumerator ShieldDurationCoroutine()
+    void DeactivateShield()
     {
-        yield return new WaitForSeconds(shieldDuration);
-
-        // Desativa o escudo
-        shieldActive = false;
-
-        if (playerHealth != null)
-            playerHealth.canTakeDamage = true;
-
-        if (shieldAura != null)
+        isShieldActive = false;
+        shieldCount = 0;
+        if(shieldAura != null && shieldAura.isPlaying)
             shieldAura.Stop();
     }
 
-    public void CollectShield(int amount = 1)
+    public bool IsShielded()
     {
-        availableShields += amount;
-        UpdateShieldUI();
-    }
-
-    void UpdateShieldUI()
-    {
-        if (shieldAmountText != null)
-            shieldAmountText.text = availableShields.ToString();
+        return isShieldActive;
     }
 }

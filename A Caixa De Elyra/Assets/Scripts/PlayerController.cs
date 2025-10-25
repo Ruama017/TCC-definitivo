@@ -67,7 +67,7 @@ public class PlayerController : MonoBehaviour
         // Atualiza animação de pulo pelo movimento vertical (mais preciso)
         if (animator != null)
         {
-            bool isJumpingAnim = rb.velocity.y != 0 && !isGrounded;
+            bool isJumpingAnim = rb.linearVelocity.y != 0 && !isGrounded;
             animator.SetBool("IsJumping", isJumpingAnim);
         }
 
@@ -81,7 +81,7 @@ public class PlayerController : MonoBehaviour
     void Move()
     {
         float moveInput = Input.GetAxisRaw("Horizontal");
-        rb.velocity = new Vector2(moveInput * moveSpeed, rb.velocity.y);
+        rb.linearVelocity = new Vector2(moveInput * moveSpeed, rb.linearVelocity.y);
 
         if (animator != null)
             animator.SetFloat("Speed", Mathf.Abs(moveInput));
@@ -96,7 +96,7 @@ public class PlayerController : MonoBehaviour
         {
             if (isGrounded || extraJumps > 0)
             {
-                rb.velocity = new Vector2(rb.velocity.x, jumpForce);
+                rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpForce);
 
                 if (!isGrounded)
                     extraJumps--;
@@ -216,7 +216,7 @@ public class PlayerController : MonoBehaviour
     private void Die()
     {
         isDead = true;
-        rb.velocity = Vector2.zero; // para o movimento
+        rb.linearVelocity = Vector2.zero; // para o movimento
 
         if (animator != null)
             animator.SetTrigger("Death"); // toca animação de morte

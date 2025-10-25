@@ -33,7 +33,6 @@ public class PlayerHealth : MonoBehaviour
     [Header("SFX de Dano")]
     public AudioSource damageSound;
 
-    // 🔹 Referência pro Animator
     private Animator anim;
     private bool isDead = false;
 
@@ -54,7 +53,7 @@ public class PlayerHealth : MonoBehaviour
 
     public void TakeDamage(int damage)
     {
-        if (!canTakeDamage || isDead) return;
+        if ((shieldActive || !canTakeDamage) || isDead) return;
 
         currentHealth -= damage;
 
@@ -75,7 +74,6 @@ public class PlayerHealth : MonoBehaviour
         CheckDeath();
     }
 
-    // ✅ Método adicionado para morte instantânea (usado pelos espinhos)
     public void InstantDeath()
     {
         if (isDead) return;
@@ -135,7 +133,12 @@ public class PlayerHealth : MonoBehaviour
         canTakeDamage = false;
 
         if (shieldEffect != null)
+        {
             shieldEffect.SetActive(true);
+            ParticleSystem ps = shieldEffect.GetComponent<ParticleSystem>();
+            if (ps != null)
+                ps.Play();
+        }
 
         Invoke(nameof(DeactivateShield), shieldDuration);
     }
@@ -146,7 +149,12 @@ public class PlayerHealth : MonoBehaviour
         canTakeDamage = true;
 
         if (shieldEffect != null)
+        {
+            ParticleSystem ps = shieldEffect.GetComponent<ParticleSystem>();
+            if (ps != null)
+                ps.Stop();
             shieldEffect.SetActive(false);
+        }
     }
 
     void CheckDeath()
@@ -165,16 +173,13 @@ public class PlayerHealth : MonoBehaviour
         if (deathEffect != null)
             deathEffect.Play();
 
-        // 🔹 Toca a animação de morte
         if (anim != null)
             anim.SetTrigger("Death");
 
-        // Desativa o PlayerController
         PlayerController pc = GetComponent<PlayerController>();
         if (pc != null)
             pc.enabled = false;
 
-        // Mostra Game Over após o delay da animação
         StartCoroutine(ShowGameOverAfterDelay(1.2f));
     }
 

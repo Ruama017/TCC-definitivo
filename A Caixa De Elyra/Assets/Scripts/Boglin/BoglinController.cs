@@ -5,6 +5,7 @@ public class BoglinController : MonoBehaviour
     [Header("Referências")]
     public Transform player;
     public Animator anim;
+    public Rigidbody2D rb;
 
     [Header("Estados")]
     public BoglinBaseState currentState;
@@ -14,7 +15,6 @@ public class BoglinController : MonoBehaviour
     [Header("Ataque e Detecção")]
     public Transform AttackPoint;
     public Transform SmokeSpawn;
-    public Transform DetectionRange;
     public float attackRange = 1f;
     public float moveSpeed = 2f;
 
@@ -23,16 +23,20 @@ public class BoglinController : MonoBehaviour
     public int currentHealth;
 
     [Header("Alma")]
-    public GameObject boglinSoulPrefab; 
-    public MonsterCounter monsterCounter; 
+    public GameObject boglinSoulPrefab;
+    public MonsterCounter monsterCounter;
 
     void Start()
     {
         currentHealth = maxHealth;
-        SwitchState(walkState); // Estado inicial
+
+        if (rb == null)
+            rb = GetComponent<Rigidbody2D>();
+
+        SwitchState(walkState);
     }
 
-    void Update()
+    void FixedUpdate()
     {
         if (currentState != null)
             currentState.UpdateState(this);
@@ -41,16 +45,12 @@ public class BoglinController : MonoBehaviour
     public void TakeDamage(int damage)
     {
         currentHealth -= damage;
-
         if (currentHealth <= 0)
-        {
             Die();
-        }
     }
 
     void Die()
     {
-        // Instancia a alma e manda para o contador
         if (boglinSoulPrefab != null && monsterCounter != null)
         {
             GameObject soul = Instantiate(boglinSoulPrefab, transform.position, Quaternion.identity);
@@ -73,14 +73,17 @@ public class BoglinController : MonoBehaviour
             currentState.EnterState(this);
     }
 
+    // Movimento usando MovePosition (garantido)
     public void MoveTowards(Vector3 target)
     {
-        Vector2 direction = (target - transform.position).normalized;
-        transform.position += (Vector3)(direction * moveSpeed * Time.deltaTime);
+        Vector2 newPos = Vector2.MoveTowards(rb.position, target, moveSpeed * Time.fixedDeltaTime);
+        rb.MovePosition(newPos);
 
         if (anim != null)
             anim.SetBool("isWalking", true);
 
+        // Virar sprite
+        Vector2 direction = (target - transform.position).normalized;
         if (direction.x > 0)
             transform.localScale = new Vector3(1, 1, 1);
         else if (direction.x < 0)
