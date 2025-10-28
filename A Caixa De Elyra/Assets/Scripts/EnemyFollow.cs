@@ -2,33 +2,44 @@ using UnityEngine;
 
 public class EnemyFollow : MonoBehaviour
 {
-    public Transform player;    // Referência ao player
-    public float speed = 2f;    // Velocidade do inimigo
-    public float stopDistance = 1.5f; // Distância mínima para parar de chegar muito perto
+    public float speed = 2f;            // velocidade de movimento
+    public float detectionRange = 5f;   // distância máxima pra começar a seguir
+    public float stopDistance = 1f;     // distância mínima pra parar de se aproximar
+    private Transform player;           // referência ao jogador
+    private Rigidbody2D rb;             // corpo do inimigo
+
+    void Start()
+    {
+        player = GameObject.FindGameObjectWithTag("Player").transform;
+        rb = GetComponent<Rigidbody2D>();
+    }
 
     void Update()
     {
-        if (player == null)
-            return;
+        if (player == null) return;
 
-        // Calcula a distância entre inimigo e player
         float distance = Vector2.Distance(transform.position, player.position);
 
-        // Se estiver longe o suficiente, segue
-        if (distance > stopDistance)
+        if (distance < detectionRange && distance > stopDistance)
         {
-            // Move em direção ao player
-            transform.position = Vector2.MoveTowards(
-                transform.position,
-                player.position,
-                speed * Time.deltaTime
-            );
-        }
+            // direção normalizada em direção ao player
+            Vector2 direction = (player.position - transform.position).normalized;
+            
+            // move o inimigo na direção do jogador
+            rb.MovePosition(rb.position + direction * speed * Time.deltaTime);
 
-        // Opcional: virar na direção do player (flip do sprite)
-        if (player.position.x > transform.position.x)
-            transform.localScale = new Vector3(1, 1, 1);  // olhando pra direita
-        else
-            transform.localScale = new Vector3(-1, 1, 1); // olhando pra esquerda
+            // opcional: vira o inimigo de acordo com o lado do player
+            if (direction.x > 0)
+                transform.localScale = new Vector3(1, 1, 1);
+            else
+                transform.localScale = new Vector3(-1, 1, 1);
+        }
+    }
+
+    void OnDrawGizmosSelected()
+    {
+        // Mostra o raio de detecção no editor
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(transform.position, detectionRange);
     }
 }

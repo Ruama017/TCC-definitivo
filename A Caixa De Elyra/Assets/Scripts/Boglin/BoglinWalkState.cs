@@ -5,7 +5,7 @@ public class BoglinWalkState : BoglinBaseState
     public override void EnterState(BoglinController boglin)
     {
         if (boglin.anim != null)
-            boglin.anim.SetBool("isWalking", true);
+            boglin.anim.SetBool("IsWalking", true);
     }
 
     public override void UpdateState(BoglinController boglin)
@@ -14,9 +14,10 @@ public class BoglinWalkState : BoglinBaseState
 
         float distance = Vector2.Distance(boglin.transform.position, boglin.player.position);
 
+        // Troca para AttackState se estiver no alcance
         if (distance <= boglin.attackRange)
         {
-            boglin.SwitchState(boglin.attackState);
+            boglin.SwitchState(boglin.GetAttackState());
             return;
         }
 

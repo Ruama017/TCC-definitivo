@@ -34,11 +34,20 @@ public class PlayerAttackHitbox : MonoBehaviour
     {
         if (!isActive) return;
 
+        // Detecta Voglin (fase 2)
+        VoglinController voglin = collision.GetComponent<VoglinController>();
+        if (voglin != null)
+        {
+            voglin.TakeDamage(damage);
+            DeactivateHitbox();
+            return;
+        }
+
+        // Detecta Boglin (fase 1)
         BoglinController boglin = collision.GetComponent<BoglinController>();
         if (boglin != null)
         {
             boglin.TakeDamage(damage);
-            // Desativa a hitbox imediatamente para não aplicar dano múltiplas vezes no mesmo ataque
             DeactivateHitbox();
         }
     }

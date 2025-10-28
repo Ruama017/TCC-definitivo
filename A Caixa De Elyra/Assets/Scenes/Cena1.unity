@@ -978,7 +978,7 @@ Animator:
   m_GameObject: {fileID: 55523623}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 80e089482ad97d843823ee62c47d6b79, type: 2}
+  m_Controller: {fileID: 9100000, guid: ccbe532f2a091de49919eda359fb1a22, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -1054,7 +1054,7 @@ Transform:
   m_GameObject: {fileID: 55523623}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -31.57, y: -17.01, z: 0}
+  m_LocalPosition: {x: 5.3, y: -17.01, z: 0}
   m_LocalScale: {x: 1.2169, y: 1.2169, z: 1.2169}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1079,13 +1079,10 @@ MonoBehaviour:
   anim: {fileID: 55523626}
   rb: {fileID: 55523624}
   AttackPoint: {fileID: 2017275203}
-  SmokeSpawn: {fileID: 1643648308}
-  attackRange: 1.5
+  attackRange: 5
   moveSpeed: 2
   maxHealth: 5
   currentHealth: 0
-  boglinSoulPrefab: {fileID: 1291680023537676349, guid: 25371d7a98958f245b8d55ea9dcf6270, type: 3}
-  monsterCounter: {fileID: 1741007274}
 --- !u!1 &64259546
 GameObject:
   m_ObjectHideFlags: 0
@@ -3472,7 +3469,7 @@ Transform:
   m_GameObject: {fileID: 231306197}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 44.08, y: -1.547, z: 0.0066}
+  m_LocalPosition: {x: 44.073, y: -1.547, z: 0.0066}
   m_LocalScale: {x: 2.8722982, y: 2.8722982, z: 2.8722982}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4062,7 +4059,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: -0.0100065805}
+  m_Offset: {x: 0, y: -0.010507036}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -4072,7 +4069,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 0.5873333, y: 0.20432019}
+  m_Size: {x: 0.5873333, y: 0.20331928}
   m_EdgeRadius: 0
 --- !u!212 &264687107
 SpriteRenderer:
@@ -4342,7 +4339,7 @@ Transform:
   m_GameObject: {fileID: 287090103}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.06, y: 0, z: 0}
+  m_LocalPosition: {x: 3.41, y: -0.23, z: 0}
   m_LocalScale: {x: 4, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -5854,7 +5851,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: -0.008397061}
+  m_Offset: {x: 0, y: -0.009397946}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -5864,7 +5861,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 0.5873333, y: 0.20753923}
+  m_Size: {x: 0.5873333, y: 0.20553745}
   m_EdgeRadius: 0
 --- !u!1 &436938942
 GameObject:
@@ -22977,7 +22974,7 @@ Transform:
   m_GameObject: {fileID: 1643648307}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.71, y: 0, z: 0}
+  m_LocalPosition: {x: -2.54, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -27883,7 +27880,7 @@ Transform:
   m_GameObject: {fileID: 2017275202}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.03, y: -0.05, z: 0}
+  m_LocalPosition: {x: -3.16, y: -0.28, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -28322,7 +28319,7 @@ Transform:
   m_GameObject: {fileID: 2043660635}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 45.75, y: -1.547, z: 0.0066}
+  m_LocalPosition: {x: 45.713, y: -1.547, z: 0.0066}
   m_LocalScale: {x: 2.8722982, y: 2.8722982, z: 2.8722982}
   m_ConstrainProportionsScale: 0
   m_Children: []

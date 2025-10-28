@@ -829,6 +829,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 2546528364483604350, guid: 7e1f1fe19291fa14885e0fca0c00a364, type: 3}
+      propertyPath: m_SortingOrder
+      value: 11
+      objectReference: {fileID: 0}
     - target: {fileID: 3615951885531261839, guid: 7e1f1fe19291fa14885e0fca0c00a364, type: 3}
       propertyPath: crystalIcon
       value: 
@@ -2049,6 +2053,7 @@ GameObject:
   - component: {fileID: 621994733}
   - component: {fileID: 621994732}
   - component: {fileID: 621994731}
+  - component: {fileID: 621994735}
   m_Layer: 0
   m_Name: Neblina
   m_TagString: Untagged
@@ -2146,7 +2151,7 @@ ParticleSystemRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 10
   m_RenderMode: 0
   m_MeshDistribution: 0
   m_SortMode: 0
@@ -6911,12 +6916,29 @@ Transform:
   m_GameObject: {fileID: 621994730}
   serializedVersion: 2
   m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 326.6, y: -18, z: -4.4}
+  m_LocalPosition: {x: 372.11, y: -18, z: -4.4}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
+--- !u!114 &621994735
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 621994730}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 72a98c6bda1dca24faddec858534bef8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damagePerSecond: 1
+  slowMultiplier: 0.5
+  jumpMultiplier: 0.6
+  toxicColor: {r: 0.4, g: 1, b: 0.4, a: 1}
+  colorTransitionSpeed: 2
 --- !u!1 &663243136
 GameObject:
   m_ObjectHideFlags: 0
@@ -14936,11 +14958,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1564051786062243000, guid: 02a903ba20f8b3940a091ccec4238f80, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 4.63
+      value: 4.1
       objectReference: {fileID: 0}
     - target: {fileID: 1564051786062243000, guid: 02a903ba20f8b3940a091ccec4238f80, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 5.02
+      value: 19.7
       objectReference: {fileID: 0}
     - target: {fileID: 1564051786062243000, guid: 02a903ba20f8b3940a091ccec4238f80, type: 3}
       propertyPath: m_LocalPosition.z
@@ -14998,7 +15020,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6292888529010589641, guid: ab247dfd8309ecf44bfc0c200643584c, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 10.9
+      value: -0.49
       objectReference: {fileID: 0}
     - target: {fileID: 6292888529010589641, guid: ab247dfd8309ecf44bfc0c200643584c, type: 3}
       propertyPath: m_LocalPosition.z
@@ -15056,7 +15078,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3105758566779268156, guid: b35e8f594f156cc418c47d671fbe70c5, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 12.66
+      value: 9.7
       objectReference: {fileID: 0}
     - target: {fileID: 3105758566779268156, guid: b35e8f594f156cc418c47d671fbe70c5, type: 3}
       propertyPath: m_LocalPosition.y

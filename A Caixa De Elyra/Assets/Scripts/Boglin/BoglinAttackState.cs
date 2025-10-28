@@ -4,11 +4,14 @@ public class BoglinAttackState : BoglinBaseState
 {
     public float attackCooldown = 1.5f;
     private float lastAttackTime;
+    public float attackRadius = 1f;
+    public int attackDamage = 1;
 
     public override void EnterState(BoglinController boglin)
     {
         if (boglin.anim != null)
             boglin.anim.SetTrigger("Attack");
+
         lastAttackTime = Time.time - attackCooldown;
     }
 
@@ -20,26 +23,35 @@ public class BoglinAttackState : BoglinBaseState
 
         if (distance > boglin.attackRange)
         {
-            boglin.SwitchState(boglin.walkState);
+            boglin.SwitchState(boglin.GetWalkState());
             return;
         }
 
         // Ataca se passou o cooldown
         if (Time.time >= lastAttackTime + attackCooldown)
         {
-            // Aqui você pode instanciar fumaça ou ataque
-            if (boglin.SmokeSpawn != null)
+            // Debug
+            Debug.Log("Boglin atacou!");
+
+            // Acerta o player diretamente (não depende de layer)
+            PlayerHealth ph = boglin.player.GetComponent<PlayerHealth>();
+            if (ph != null)
             {
-                // Exemplo: instanciando o ataque de fumaça
-                // Instantiate(boglin.smokePrefab, boglin.SmokeSpawn.position, Quaternion.identity);
+                ph.TakeDamage(attackDamage);
             }
 
             lastAttackTime = Time.time;
+
+            // Aciona animação novamente
+            if (boglin.anim != null)
+                boglin.anim.SetTrigger("Attack");
         }
     }
 
     public override void ExitState(BoglinController boglin)
     {
-        // Reseta triggers se precisar
+        // Se quiser, pode resetar triggers
+        if (boglin.anim != null)
+            boglin.anim.ResetTrigger("Attack");
     }
 }
