@@ -167,6 +167,10 @@ public class PlayerHealth : MonoBehaviour
     {
         isDead = true;
 
+        // Ajuste de posição para encostar no chão
+        float deathOffsetY = -0.3f; // ajuste conforme necessário
+        transform.position += new Vector3(0, deathOffsetY, 0);
+
         if (deathSound != null)
             deathSound.Play();
 

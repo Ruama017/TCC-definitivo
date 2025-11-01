@@ -34,7 +34,7 @@ public class PlayerAttackHitbox : MonoBehaviour
     {
         if (!isActive) return;
 
-        // Detecta Voglin (fase 2)
+        // Voglin
         VoglinController voglin = collision.GetComponent<VoglinController>();
         if (voglin != null)
         {
@@ -43,12 +43,22 @@ public class PlayerAttackHitbox : MonoBehaviour
             return;
         }
 
-        // Detecta Boglin (fase 1)
+        // Boglin
         BoglinController boglin = collision.GetComponent<BoglinController>();
         if (boglin != null)
         {
             boglin.TakeDamage(damage);
             DeactivateHitbox();
+            return;
+        }
+
+        // Hera de espinhos (script HeraDamage)
+        HeraDamage hera = collision.GetComponent<HeraDamage>();
+        if (hera != null)
+        {
+            hera.TakeDamage(damage); // ou o método correto do seu script
+            DeactivateHitbox();
+            return;
         }
     }
 }

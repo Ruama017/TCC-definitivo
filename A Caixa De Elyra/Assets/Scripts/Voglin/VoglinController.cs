@@ -20,16 +20,19 @@ public class VoglinController : MonoBehaviour
     private float attackTimer = 0f;
 
     [Header("Health & Soul")]
-    [SerializeField] private int maxHealth = 3; // reduzida para teste
+    [SerializeField] private int maxHealth = 3;
     private int currentHealth;
     [SerializeField] private GameObject soulPrefab;
     [SerializeField] private Transform soulSpawnPoint;
+
+    [Header("Audio")]
     [SerializeField] private AudioClip deathSound;
     private AudioSource audioSource;
 
     private Transform player;
     private Animator anim;
     private bool facingRight = true;
+    private bool isDead = false;
 
     private enum VoglinState { Patrol, Follow, Attack }
     private VoglinState currentState = VoglinState.Patrol;
@@ -46,6 +49,8 @@ public class VoglinController : MonoBehaviour
 
     private void Update()
     {
+        if (isDead) return;
+
         // TESTE: causar dano apertando K
         if (Input.GetKeyDown(KeyCode.K))
         {
@@ -165,6 +170,8 @@ public class VoglinController : MonoBehaviour
 
     public void TakeDamage(int damage)
     {
+        if (isDead) return;
+
         currentHealth -= damage;
         Debug.Log("Voglin recebeu dano! Vida atual: " + currentHealth);
 
@@ -174,13 +181,19 @@ public class VoglinController : MonoBehaviour
 
     private void Die()
     {
+        isDead = true;
+        anim.SetTrigger("Die"); // 🎬 toca a animação de morte
+
+        // 🎧 toca o som de morte
         if (deathSound != null && audioSource != null)
             audioSource.PlayOneShot(deathSound);
 
+        // 👻 instancia a alma
         if (soulPrefab != null && soulSpawnPoint != null)
             Instantiate(soulPrefab, soulSpawnPoint.position, Quaternion.identity);
 
-        Destroy(gameObject);
+        // 🕒 destrói o inimigo após o som/ animação
+        Destroy(gameObject, 1.5f);
     }
 
     private void Flip()

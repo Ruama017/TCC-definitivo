@@ -46,29 +46,35 @@ public class PlayerController : MonoBehaviour
         if (attackHitbox != null)
             attackHitbox.SetActive(false); // Começa desativado
 
-        // inicializa variáveis dos boosts
         normalSpeed = moveSpeed;
         normalJumpForce = jumpForce;
 
-        // inicializa vida
         if (playerHealth != null)
             currentHealth = playerHealth.currentHealth;
     }
 
     private void Update()
     {
-        if (isDead) return; // impede qualquer ação após morrer
+        if (isDead) return;
 
         Move();
         Jump();
         Attack();
         Flip();
 
-        // Atualiza animação de pulo pelo movimento vertical (mais preciso)
+        // 💡 Atualiza animações de forma mais precisa
         if (animator != null)
         {
-            bool isJumpingAnim = rb.linearVelocity.y != 0 && !isGrounded;
-            animator.SetBool("IsJumping", isJumpingAnim);
+            animator.SetFloat("Speed", Mathf.Abs(rb.linearVelocity.x)); // andando
+            animator.SetBool("IsGrounded", isGrounded);
+            animator.SetFloat("yVelocity", rb.linearVelocity.y);
+
+            // 💡 Troca entre pulo e queda automaticamente
+            bool isJumping = !isGrounded && rb.linearVelocity.y > 0.1f;
+            bool isFalling = !isGrounded && rb.linearVelocity.y < -0.1f;
+
+            animator.SetBool("IsJumping", isJumping);
+            animator.SetBool("IsFalling", isFalling);
         }
 
         // Checa se morreu
@@ -82,9 +88,6 @@ public class PlayerController : MonoBehaviour
     {
         float moveInput = Input.GetAxisRaw("Horizontal");
         rb.linearVelocity = new Vector2(moveInput * moveSpeed, rb.linearVelocity.y);
-
-        if (animator != null)
-            animator.SetFloat("Speed", Mathf.Abs(moveInput));
     }
 
     void Jump()
@@ -100,6 +103,10 @@ public class PlayerController : MonoBehaviour
 
                 if (!isGrounded)
                     extraJumps--;
+
+                // 💡 adiciona o trigger pra animação de pulo iniciar no exato momento
+                if (animator != null)
+                    animator.SetTrigger("Jump");
             }
         }
     }
@@ -126,7 +133,7 @@ public class PlayerController : MonoBehaviour
         if (attackHitbox != null)
             attackHitbox.SetActive(false);
 
-        isAttacking = false; // libera para novo ataque
+        isAttacking = false;
     }
 
     void Flip()
@@ -216,12 +223,11 @@ public class PlayerController : MonoBehaviour
     private void Die()
     {
         isDead = true;
-        rb.linearVelocity = Vector2.zero; // para o movimento
+        rb.linearVelocity = Vector2.zero;
 
         if (animator != null)
-            animator.SetTrigger("Death"); // toca animação de morte
+            animator.SetTrigger("Death");
 
-        // Desativa o hitbox de ataque
         if (attackHitbox != null)
             attackHitbox.SetActive(false);
     }

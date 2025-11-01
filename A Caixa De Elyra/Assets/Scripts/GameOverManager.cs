@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using System.Collections;
 
 public class GameOverManager : MonoBehaviour
 {
@@ -10,6 +11,7 @@ public class GameOverManager : MonoBehaviour
     public PlayerHealth playerHealth;
 
     private AudioSource audioSource;
+    private bool isGameOverTriggered = false;
 
     void Start()
     {
@@ -22,10 +24,19 @@ public class GameOverManager : MonoBehaviour
 
     void Update()
     {
-        if (playerHealth.currentHealth <= 0 && playerHealth.currentCrystals == 0)
+        if (playerHealth.currentHealth <= 0 && playerHealth.currentCrystals == 0 && !isGameOverTriggered)
         {
-            GameOver();
+            isGameOverTriggered = true;
+            StartCoroutine(GameOverDelay());
         }
+    }
+
+    IEnumerator GameOverDelay()
+    {
+        // Espera 1.2 segundos para deixar a animação de morte tocar
+        yield return new WaitForSeconds(1.2f);
+
+        GameOver();
     }
 
     void GameOver()
@@ -41,7 +52,7 @@ public class GameOverManager : MonoBehaviour
             // Congela a cena
             Time.timeScale = 0f;
 
-            if(audioSource != null)
+            if (audioSource != null)
                 audioSource.Play();
         }
     }
