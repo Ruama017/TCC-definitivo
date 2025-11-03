@@ -129,6 +129,32 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WindowsStoreApps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -409,7 +435,19 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Toglin andando_0: -1190633639213354565
+      Toglin andando_1: 2213316137712376690
+      Toglin andando_10: -4973741949696144016
+      Toglin andando_11: 6022787716518234607
+      Toglin andando_2: -2516284657056369783
+      Toglin andando_3: -7695760181290845581
+      Toglin andando_4: -4259898961719400390
+      Toglin andando_5: 9117314502964453951
+      Toglin andando_6: -5670052365775838179
+      Toglin andando_7: 2801705815234396956
+      Toglin andando_8: 88450155739545192
+      Toglin andando_9: 7420744375816873765
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: e962e2ca3422b2b4e97c85fa6ac97958
+guid: 944d17daa7bd203458140ef925463702
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -3903104084570133948
-    second: etiqueta_proibido_pisar_321_1_59d489f605a44a30fdfedc81c1893480-removebg-preview_0
+      213: 4493724999505884214
+    second: super bota (1)_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -126,13 +126,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: etiqueta_proibido_pisar_321_1_59d489f605a44a30fdfedc81c1893480-removebg-preview_0
+      name: super bota (1)_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 500
-        height: 500
+        x: 125
+        y: 111
+        width: 422
+        height: 394
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -141,8 +141,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 44a22ddb38365d9c0800000000000000
-      internalID: -3903104084570133948
+      spriteID: 63437d9041bec5e30800000000000000
+      internalID: 4493724999505884214
       vertices: []
       indices: 
       edges: []
@@ -160,8 +160,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      etiqueta_proibido_pisar_321_1_59d489f605a44a30fdfedc81c1893480-removebg-preview_0: -3903104084570133948
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

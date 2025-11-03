@@ -6,52 +6,42 @@ using UnityEngine;
 [RequireComponent(typeof(SpriteRenderer))]
 public class EnemyToglin : MonoBehaviour
 {
-    [Header("Detecção / Movimento")]
-    public float speed = 2.5f;                 // velocidade horizontal
-    public float stoppingDistance = 0.4f;      // distancia pra parar antes de encostar
+    [Header("Movimento")]
+    public float speed = 2.5f;
+    public float stoppingDistance = 0.4f;
     public Transform playerTransform;
 
-    [Header("Knockback")]
-    public float knockbackForce = 3f;          // força horizontal do rebote
-    public float knockbackDuration = 0.18f;    // tempo do recuo
-
-    [Header("Dano")]
-    public int damage = 1;
+    [Header("Dano normal (sem stomp)")]
+    public int touchDamage = 1;
     public float damageInterval = 1f;
 
-    [Header("Comportamento")]
-    public bool staysAsRockIfPlayerLeaves = false;
+    [Header("Stomp (pisar)")]
+    public bool canBeStomped = true;
+    public int stompsToKill = 3;
+    public GameObject soulPrefab;
+    public float vanishDelay = 0.15f;
 
-    [Header("Sprites")]
-    public Sprite rockSprite;                  // opcional: sprite fixa de pedra (se deixar vazio usa a sprite inicial)
+    [Header("Referências")]
+    public AudioClip vanishSfx;
 
-    // estados internos
-    private bool awake = false;
-    private bool isRecoiling = false;
-    private float lastDamageTime = -999f;
-
-    // componentes
     private Rigidbody2D rb;
-    private Animator anim;
     private SpriteRenderer sr;
-
-    // escala original pra controlar flip corretamente
+    private Animator anim;
+    private bool awake = false;
+    private bool isDead = false;
+    private float lastDamageTime;
+    private int currentStomps = 0;
     private float initialScaleX;
-    private Sprite initialSprite;
 
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
-        anim = GetComponent<Animator>();
         sr = GetComponent<SpriteRenderer>();
+        anim = GetComponent<Animator>();
 
-        // configurações físicas seguras
-        rb.gravityScale = 0f; // se preferir que o inimigo sofra gravidade, coloque 1 e remova manipulações Y.
+        rb.gravityScale = 0f;
         rb.constraints = RigidbodyConstraints2D.FreezeRotation;
-
-        // guarda escala/sprite iniciais
         initialScaleX = transform.localScale.x;
-        if (sr != null) initialSprite = sr.sprite;
     }
 
     private void Start()
@@ -62,125 +52,96 @@ public class EnemyToglin : MonoBehaviour
             if (p != null) playerTransform = p.transform;
         }
 
-        // começa camuflado: Animator desligado e sprite de pedra
-        if (anim != null) anim.enabled = false;
-        ApplyRockSprite();
-        rb.velocity = Vector2.zero;
+        anim.enabled = false; // começa camuflado
     }
 
     private void FixedUpdate()
     {
-        if (!awake || playerTransform == null || isRecoiling) return;
+        if (!awake || isDead || playerTransform == null) return;
 
-        Vector2 pos = rb.position;
-        Vector2 target = playerTransform.position;
-        Vector2 fullDir = (target - pos);
-        float dist = fullDir.magnitude;
-
-        // só move horizontalmente para evitar "voar" por causa de colisões verticais
-        float dirX = Mathf.Sign(fullDir.x); // -1, 0 ou +1
-
-        if (Mathf.Abs(fullDir.x) > 0.01f && dist > stoppingDistance)
+        float dist = Vector2.Distance(transform.position, playerTransform.position);
+        if (dist > stoppingDistance)
         {
-            // Mantemos a velocidade Y atual (evita "flutuar"). Só ajustamos X.
-            rb.velocity = new Vector2(dirX * speed, rb.velocity.y);
+            Vector2 dir = (playerTransform.position - transform.position).normalized;
+            rb.velocity = new Vector2(dir.x * speed, rb.velocity.y);
 
-            // flip correto usando a escala inicial para não inverter feições
-            Vector3 s = transform.localScale;
-            s.x = Mathf.Abs(initialScaleX) * dirX;
-            transform.localScale = s;
+            // vira sprite pro lado correto
+            if (dir.x != 0)
+            {
+                Vector3 s = transform.localScale;
+                s.x = Mathf.Sign(dir.x) * Mathf.Abs(initialScaleX);
+                transform.localScale = s;
+            }
         }
         else
         {
-            // para o movimento horizontal quando perto ou sem direção
             rb.velocity = new Vector2(0f, rb.velocity.y);
         }
     }
 
-    // ---------------- wake / sleep ----------------
     public void WakeUp()
     {
-        if (awake) return;
+        if (awake || isDead) return;
         awake = true;
-
-        // liga o animator e garante que a animação Idle comece do início (sem frames "abaixando")
-        if (anim != null)
-        {
-            anim.enabled = true;
-            anim.Play("Idle", 0, 0f); // toca Idle desde o início — substitua o nome se for diferente
-        }
-
-        // espera a animação de levantar e começa a andar
-        StartCoroutine(StartWalkingAfterDelay(0.7f));
+        anim.enabled = true;
+        anim.Play("Toglin_Idle", 0, 0f);
+        StartCoroutine(StartWalkingAfterDelay(0.8f));
     }
 
     private IEnumerator StartWalkingAfterDelay(float delay)
     {
         yield return new WaitForSeconds(delay);
-        if (anim != null) anim.SetBool("isWalking", true);
+        anim.Play("Toglin_And_Atac");
     }
 
     public void Sleep()
     {
-        if (!staysAsRockIfPlayerLeaves)
-        {
-            awake = false;
-            // para movimento
-            rb.velocity = Vector2.zero;
-            // reseta parametros do animator e desliga
-            if (anim != null)
-            {
-                anim.SetBool("isWalking", false);
-                anim.SetBool("isAwake", false);
-                anim.enabled = false;
-            }
-            // volta a sprite de pedra (ou a sprite inicial caso rockSprite esteja null)
-            ApplyRockSprite();
-
-            // limpa estado de recuo pra evitar travar
-            isRecoiling = false;
-        }
+        if (isDead) return;
+        awake = false;
+        anim.enabled = false;
+        rb.velocity = Vector2.zero;
     }
 
-    private void ApplyRockSprite()
-    {
-        if (sr == null) return;
-        if (rockSprite != null) sr.sprite = rockSprite;
-        else sr.sprite = initialSprite;
-    }
-
-    // ---------------- dano / colisão ----------------
-    // usamos colisão física normal (não trigger) para manter "corpos" colidindo
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.collider.CompareTag("Player"))
-        {
-            TryDealDamage(collision.collider.gameObject);
+        if (isDead) return;
+        if (!collision.collider.CompareTag("Player")) return;
 
-            // aplica knockback HORIZONTAL (somente X) para evitar elevar o inimigo
-            float sign = Mathf.Sign(transform.position.x - collision.transform.position.x);
-            Vector2 knockDir = new Vector2(sign, 0f).normalized;
-            StartCoroutine(Knockback(knockDir));
+        PlayerSuper ps = collision.collider.GetComponent<PlayerSuper>();
+        bool playerIsSuper = ps != null && ps.isSuper;
+
+        // detecta stomp se o player estiver com super e acima do Toglin
+        bool stomped = canBeStomped && playerIsSuper && collision.transform.position.y > transform.position.y + 0.25f;
+
+        if (stomped)
+        {
+            currentStomps++;
+
+            if (ps != null)
+                ps.BounceOnStomp(); // player dá bounce
+
+            if (currentStomps >= stompsToKill)
+            {
+                TransformIntoSoul();
+            }
+            else
+            {
+                StartCoroutine(FlashOnStomp());
+            }
+        }
+        else
+        {
+            // só causa dano se o player não estiver com super
+            if (!playerIsSuper)
+                TryDealDamage(collision.collider.gameObject);
         }
     }
 
-    private void OnCollisionStay2D(Collision2D collision)
+    private IEnumerator FlashOnStomp()
     {
-        if (collision.collider.CompareTag("Player"))
-        {
-            TryDealDamage(collision.collider.gameObject);
-        }
-    }
-
-    private IEnumerator Knockback(Vector2 direction)
-    {
-        isRecoiling = true;
-        // força horizontal temporária
-        rb.velocity = direction * knockbackForce;
-        yield return new WaitForSeconds(knockbackDuration);
-        // para o recuo (mantém Y como estava)
-        rb.velocity = new Vector2(0f, rb.velocity.y);
-        isRecoiling = false;
+        sr.color = Color.white * 1.5f;
+        yield return new WaitForSeconds(0.12f);
+        sr.color = Color.white;
     }
 
     private void TryDealDamage(GameObject player)
@@ -189,9 +150,26 @@ public class EnemyToglin : MonoBehaviour
         lastDamageTime = Time.time;
 
         var ph = player.GetComponent<PlayerHealth>();
-        if (ph != null)
-        {
-            ph.TakeDamage(damage);
-        }
+        if (ph != null) ph.TakeDamage(touchDamage);
+    }
+
+    private void TransformIntoSoul()
+    {
+        if (isDead) return;
+        isDead = true;
+
+        rb.velocity = Vector2.zero;
+        rb.isKinematic = true;
+
+        foreach (var c in GetComponents<Collider2D>()) c.enabled = false;
+        anim.enabled = false;
+
+        if (vanishSfx != null)
+            AudioSource.PlayClipAtPoint(vanishSfx, transform.position);
+
+        if (soulPrefab != null)
+            Instantiate(soulPrefab, transform.position, Quaternion.identity);
+
+        Destroy(gameObject);
     }
 }
