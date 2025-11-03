@@ -10,7 +10,10 @@ public class GameOverManager : MonoBehaviour
     public Button menuButton;
     public PlayerHealth playerHealth;
 
-    private AudioSource audioSource;
+    [Header("Áudio de Game Over")]
+    public AudioSource gameOverMusic;   // arraste a trilha de Game Over aqui
+    public float fadeDuration = 1.0f;   // duração do fade-in em segundos
+
     private bool isGameOverTriggered = false;
 
     void Start()
@@ -19,7 +22,8 @@ public class GameOverManager : MonoBehaviour
         continueButton.onClick.AddListener(RestartLevel);
         menuButton.onClick.AddListener(GoToMenu);
 
-        audioSource = GetComponent<AudioSource>();
+        if (gameOverMusic != null)
+            gameOverMusic.volume = 0f; // começa silenciado
     }
 
     void Update()
@@ -52,9 +56,25 @@ public class GameOverManager : MonoBehaviour
             // Congela a cena
             Time.timeScale = 0f;
 
-            if (audioSource != null)
-                audioSource.Play();
+            // Toca a música de Game Over com fade
+            if (gameOverMusic != null)
+            {
+                gameOverMusic.Play();
+                StartCoroutine(FadeInMusic(gameOverMusic, fadeDuration));
+            }
         }
+    }
+
+    IEnumerator FadeInMusic(AudioSource audioSource, float duration)
+    {
+        float currentTime = 0;
+        while (currentTime < duration)
+        {
+            currentTime += Time.unscaledDeltaTime; // usar unscaledDeltaTime porque Time.timeScale = 0
+            audioSource.volume = Mathf.Lerp(0f, 1f, currentTime / duration);
+            yield return null;
+        }
+        audioSource.volume = 1f; // garante volume máximo no final
     }
 
     public void ShowGameOver()

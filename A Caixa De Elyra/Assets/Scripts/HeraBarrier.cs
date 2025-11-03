@@ -5,9 +5,14 @@ public class HeraBarrier : MonoBehaviour
 {
     public int damage = 1;
     public Animator animator;
-    public float destroyDelay = 0.5f;
 
     private bool isDestroyed = false;
+    private Collider2D col;
+
+    private void Start()
+    {
+        col = GetComponent<Collider2D>();
+    }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
@@ -18,12 +23,10 @@ public class HeraBarrier : MonoBehaviour
         {
             if (player.IsAttacking && !isDestroyed)
             {
-                // Player atacou: animação e destruição
                 StartCoroutine(DestroyHera());
             }
             else if (!player.IsAttacking && playerHealth != null)
             {
-                // Player não atacou: leva dano
                 playerHealth.TakeDamage(damage);
             }
         }
@@ -33,11 +36,37 @@ public class HeraBarrier : MonoBehaviour
     {
         isDestroyed = true;
 
+        // 1️⃣ Desativa colisores e comportamento
+        if (col != null) col.enabled = false;
+
+        // 2️⃣ Dispara a animação
         if (animator != null)
-            animator.SetTrigger("Destroyed"); // trigger "Destroy" na animação
+            animator.SetTrigger("Destroyed");
 
-        yield return new WaitForSeconds(destroyDelay);
+        // 3️⃣ Espera pelo fim da animação de forma simples (só o tempo do clip real)
+        if (animator != null)
+        {
+            AnimationClip clip = null;
+            foreach (var c in animator.runtimeAnimatorController.animationClips)
+            {
+                if (c.name == "Destroyed")
+                {
+                    clip = c;
+                    break;
+                }
+            }
 
+            if (clip != null)
+                yield return new WaitForSeconds(clip.length);
+            else
+                yield return new WaitForSeconds(0.5f);
+        }
+        else
+        {
+            yield return new WaitForSeconds(0.5f);
+        }
+
+        // 4️⃣ Destrói o objeto só depois da animação
         Destroy(gameObject);
     }
 }

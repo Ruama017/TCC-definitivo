@@ -21,12 +21,18 @@ public class BoglinController : MonoBehaviour
     public int maxHealth = 5;
     public int currentHealth;
 
+    [Header("Som de Morte")]
+    public AudioClip deathSound; // som que toca ao morrer
+    private AudioSource audioSource; // fonte de áudio
+
     void Start()
     {
         currentHealth = maxHealth;
 
         if (rb == null)
             rb = GetComponent<Rigidbody2D>();
+
+        audioSource = GetComponent<AudioSource>(); // pega o AudioSource do inimigo
 
         // Criar instâncias dos estados
         walkState = new BoglinWalkState();
@@ -51,7 +57,12 @@ public class BoglinController : MonoBehaviour
 
     void Die()
     {
-        Destroy(gameObject);
+        // toca o som de morte (se existir)
+        if (audioSource != null && deathSound != null)
+            audioSource.PlayOneShot(deathSound);
+
+        // destrói o inimigo após o som terminar
+        Destroy(gameObject, deathSound != null ? deathSound.length : 0f);
     }
 
     public void SwitchState(BoglinBaseState newState)

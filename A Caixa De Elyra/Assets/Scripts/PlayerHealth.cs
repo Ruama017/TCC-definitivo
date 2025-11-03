@@ -27,7 +27,7 @@ public class PlayerHealth : MonoBehaviour
 
     [Header("Game Over")]
     public GameObject gameOverPanel;
-    public AudioSource deathSound;
+    public AudioSource deathSound;      // som da morte do player
     public ParticleSystem deathEffect;
 
     [Header("SFX de Dano")]

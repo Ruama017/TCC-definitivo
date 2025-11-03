@@ -12,6 +12,9 @@ public class PlayerController : MonoBehaviour
     public GameObject attackHitbox; // Arraste aqui o objeto filho da hitbox da espada
     public float attackDuration = 0.2f; // tempo que a hitbox fica ativa
 
+    [Header("SFX de Pulo")]
+    public AudioSource jumpSound; // Som do pulo
+
     private Rigidbody2D rb;
     private bool isGrounded;
     private int extraJumps;
@@ -65,13 +68,13 @@ public class PlayerController : MonoBehaviour
         // 💡 Atualiza animações de forma mais precisa
         if (animator != null)
         {
-            animator.SetFloat("Speed", Mathf.Abs(rb.linearVelocity.x)); // andando
+            animator.SetFloat("Speed", Mathf.Abs(rb.velocity.x)); // andando
             animator.SetBool("IsGrounded", isGrounded);
-            animator.SetFloat("yVelocity", rb.linearVelocity.y);
+            animator.SetFloat("yVelocity", rb.velocity.y);
 
             // 💡 Troca entre pulo e queda automaticamente
-            bool isJumping = !isGrounded && rb.linearVelocity.y > 0.1f;
-            bool isFalling = !isGrounded && rb.linearVelocity.y < -0.1f;
+            bool isJumping = !isGrounded && rb.velocity.y > 0.1f;
+            bool isFalling = !isGrounded && rb.velocity.y < -0.1f;
 
             animator.SetBool("IsJumping", isJumping);
             animator.SetBool("IsFalling", isFalling);
@@ -87,7 +90,7 @@ public class PlayerController : MonoBehaviour
     void Move()
     {
         float moveInput = Input.GetAxisRaw("Horizontal");
-        rb.linearVelocity = new Vector2(moveInput * moveSpeed, rb.linearVelocity.y);
+        rb.velocity = new Vector2(moveInput * moveSpeed, rb.velocity.y);
     }
 
     void Jump()
@@ -99,18 +102,23 @@ public class PlayerController : MonoBehaviour
         {
             if (isGrounded || extraJumps > 0)
             {
-                rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpForce);
+                rb.velocity = new Vector2(rb.velocity.x, jumpForce);
 
                 if (!isGrounded)
                     extraJumps--;
 
-                // 💡 adiciona o trigger pra animação de pulo iniciar no exato momento
+                // Animação de pulo
                 if (animator != null)
                     animator.SetTrigger("Jump");
+
+                // 💥 Som do pulo
+                if (jumpSound != null)
+                    jumpSound.Play();
             }
         }
     }
 
+    // ======================== ATAQUE AJUSTADO ========================
     void Attack()
     {
         if (Input.GetKeyDown(KeyCode.M) && !isAttacking)
@@ -118,23 +126,33 @@ public class PlayerController : MonoBehaviour
             isAttacking = true;
 
             if (animator != null)
+            {
+                animator.ResetTrigger("Attack"); // garante que o trigger reinicia
                 animator.SetTrigger("Attack");
 
+                // ⚡ força atualização imediata do Animator
+                animator.Update(0f);
+            }
+
+            // ativa a hitbox sem esperar outro frame
             if (attackHitbox != null)
             {
                 attackHitbox.SetActive(true);
-                Invoke(nameof(DisableHitbox), attackDuration);
+                StartCoroutine(DisableHitboxAfterDelay(attackDuration));
             }
         }
     }
 
-    void DisableHitbox()
+    private IEnumerator DisableHitboxAfterDelay(float delay)
     {
+        yield return new WaitForSeconds(delay);
+
         if (attackHitbox != null)
             attackHitbox.SetActive(false);
 
         isAttacking = false;
     }
+    // ================================================================
 
     void Flip()
     {
@@ -223,7 +241,7 @@ public class PlayerController : MonoBehaviour
     private void Die()
     {
         isDead = true;
-        rb.linearVelocity = Vector2.zero;
+        rb.velocity = Vector2.zero;
 
         if (animator != null)
             animator.SetTrigger("Death");
