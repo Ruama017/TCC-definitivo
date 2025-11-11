@@ -68,13 +68,13 @@ public class PlayerController : MonoBehaviour
         // 💡 Atualiza animações de forma mais precisa
         if (animator != null)
         {
-            animator.SetFloat("Speed", Mathf.Abs(rb.velocity.x)); // andando
+            animator.SetFloat("Speed", Mathf.Abs(rb.linearVelocity.x)); // andando
             animator.SetBool("IsGrounded", isGrounded);
-            animator.SetFloat("yVelocity", rb.velocity.y);
+            animator.SetFloat("yVelocity", rb.linearVelocity.y);
 
             // 💡 Troca entre pulo e queda automaticamente
-            bool isJumping = !isGrounded && rb.velocity.y > 0.1f;
-            bool isFalling = !isGrounded && rb.velocity.y < -0.1f;
+            bool isJumping = !isGrounded && rb.linearVelocity.y > 0.1f;
+            bool isFalling = !isGrounded && rb.linearVelocity.y < -0.1f;
 
             animator.SetBool("IsJumping", isJumping);
             animator.SetBool("IsFalling", isFalling);
@@ -90,7 +90,7 @@ public class PlayerController : MonoBehaviour
     void Move()
     {
         float moveInput = Input.GetAxisRaw("Horizontal");
-        rb.velocity = new Vector2(moveInput * moveSpeed, rb.velocity.y);
+        rb.linearVelocity = new Vector2(moveInput * moveSpeed, rb.linearVelocity.y);
     }
 
     void Jump()
@@ -102,7 +102,7 @@ public class PlayerController : MonoBehaviour
         {
             if (isGrounded || extraJumps > 0)
             {
-                rb.velocity = new Vector2(rb.velocity.x, jumpForce);
+                rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpForce);
 
                 if (!isGrounded)
                     extraJumps--;
@@ -241,7 +241,7 @@ public class PlayerController : MonoBehaviour
     private void Die()
     {
         isDead = true;
-        rb.velocity = Vector2.zero;
+        rb.linearVelocity = Vector2.zero;
 
         if (animator != null)
             animator.SetTrigger("Death");

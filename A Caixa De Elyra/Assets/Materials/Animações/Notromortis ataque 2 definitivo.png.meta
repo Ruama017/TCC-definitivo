@@ -360,7 +360,16 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Notromortis ataque 2 definitivo_0: -3072656721417946263
+      Notromortis ataque 2 definitivo_1: -3615868085086642717
+      Notromortis ataque 2 definitivo_2: -7531010972455906222
+      Notromortis ataque 2 definitivo_3: -6715370612821424118
+      Notromortis ataque 2 definitivo_4: -8240161132597659468
+      Notromortis ataque 2 definitivo_5: -911958763030490834
+      Notromortis ataque 2 definitivo_6: 8918927883576770568
+      Notromortis ataque 2 definitivo_7: 6391562204898815134
+      Notromortis ataque 2 definitivo_8: -4497015389723851460
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

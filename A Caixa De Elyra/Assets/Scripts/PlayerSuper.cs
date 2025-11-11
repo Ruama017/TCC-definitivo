@@ -48,7 +48,7 @@ public class PlayerSuper : MonoBehaviour
 
     public void BounceOnStomp()
     {
-        rb.velocity = new Vector2(rb.velocity.x, 0f);
+        rb.linearVelocity = new Vector2(rb.linearVelocity.x, 0f);
         rb.AddForce(Vector2.up * stompBounceForce, ForceMode2D.Impulse);
     }
 }

@@ -11,6 +11,6 @@ public class VoglinTestMove : MonoBehaviour
 
     void Update()
     {
-        rb.velocity = new Vector2(2, 0); // move pra direita
+        rb.linearVelocity = new Vector2(2, 0); // move pra direita
     }
 }

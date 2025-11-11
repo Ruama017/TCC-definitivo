@@ -2,15 +2,22 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement; 
 using TMPro;
+using System.Collections;
+using System.Collections.Generic;
 
 public class PlayerHealth : MonoBehaviour
 {
     [Header("Vida do Player")]
-    public int maxHealth = 5;
+    public int maxHealth = 5;             
     public int currentHealth;
     public Image[] hearts;
     public Sprite fullHeart;
     public Sprite emptyHeart;
+
+    [Header("Corações Extras (Fase 3)")]
+    public GameObject extraHeartPrefab;   
+    public Transform extraHeartsParent;   
+    public List<Image> extraHearts = new List<Image>();
 
     [Header("Cristais")]
     public int maxCrystals = 10;
@@ -27,11 +34,20 @@ public class PlayerHealth : MonoBehaviour
 
     [Header("Game Over")]
     public GameObject gameOverPanel;
-    public AudioSource deathSound;      // som da morte do player
+    public AudioSource deathSound;      
     public ParticleSystem deathEffect;
 
     [Header("SFX de Dano")]
     public AudioSource damageSound;
+
+    [Header("Status Negativo")]
+    private bool isPoisoned = false;
+    private bool isWeakened = false;
+
+    [Header("Bota / Super")]
+    public bool hasBootSuper = false;       // controla se o player pegou a bota
+    public float superDuration = 5f;        // duração do super
+    private float superTimer = 0f;
 
     private Animator anim;
     private bool isDead = false;
@@ -40,6 +56,7 @@ public class PlayerHealth : MonoBehaviour
     {
         currentHealth = maxHealth;
         UpdateHearts();
+        UpdateExtraHearts();
         UpdateCrystalUI();
 
         anim = GetComponent<Animator>();
@@ -51,26 +68,52 @@ public class PlayerHealth : MonoBehaviour
             shieldEffect.SetActive(false);
     }
 
+    void Update()
+    {
+        // Conta o tempo do super da bota
+        if (hasBootSuper)
+        {
+            superTimer -= Time.deltaTime;
+            if (superTimer <= 0f)
+            {
+                hasBootSuper = false;
+                superTimer = 0f;
+            }
+        }
+    }
+
+    // ----------------------
+    // MÉTODOS DE DANO E VIDA
+    // ----------------------
     public void TakeDamage(int damage)
     {
         if ((shieldActive || !canTakeDamage) || isDead) return;
 
-        currentHealth -= damage;
+        if (isWeakened)
+            damage = Mathf.CeilToInt(damage * 1.2f);
+
+        // Primeiro aplica dano aos corações extras
+        for (int i = extraHearts.Count - 1; i >= 0 && damage > 0; i--)
+        {
+            if (extraHearts[i].gameObject.activeSelf)
+            {
+                extraHearts[i].gameObject.SetActive(false);
+                damage--;
+            }
+        }
+
+        // Depois aos corações fixos
+        while (damage > 0 && currentHealth > 0)
+        {
+            currentHealth--;
+            damage--;
+        }
 
         if (damageSound != null)
             damageSound.Play();
 
-        while (damage > 0 && currentCrystals > 0)
-        {
-            currentCrystals--;
-            currentHealth++;
-            damage--;
-        }
-
-        if (currentHealth < 0) currentHealth = 0;
-
         UpdateHearts();
-        UpdateCrystalUI();
+        UpdateExtraHearts();
         CheckDeath();
     }
 
@@ -79,6 +122,9 @@ public class PlayerHealth : MonoBehaviour
         if (isDead) return;
 
         currentHealth = 0;
+        foreach (Image img in extraHearts)
+            img.gameObject.SetActive(false);
+
         UpdateHearts();
         Die();
     }
@@ -97,14 +143,30 @@ public class PlayerHealth : MonoBehaviour
     void UpdateHearts()
     {
         for (int i = 0; i < hearts.Length; i++)
+            hearts[i].sprite = (i < currentHealth) ? fullHeart : emptyHeart;
+    }
+
+    void UpdateExtraHearts()
+    {
+        foreach (Image img in extraHearts)
+            if (img.gameObject.activeSelf)
+                img.sprite = fullHeart;
+    }
+
+    public void AddExtraHearts(int amount)
+    {
+        for (int i = 0; i < amount; i++)
         {
-            if (i < currentHealth)
-                hearts[i].sprite = fullHeart;
-            else
-                hearts[i].sprite = emptyHeart;
+            GameObject h = Instantiate(extraHeartPrefab, extraHeartsParent);
+            Image img = h.GetComponent<Image>();
+            img.sprite = fullHeart;
+            extraHearts.Add(img);
         }
     }
 
+    // ----------------------
+    // MÉTODOS DE CRISTAIS
+    // ----------------------
     public void CollectCrystal(int amount)
     {
         if (isDead) return;
@@ -125,6 +187,9 @@ public class PlayerHealth : MonoBehaviour
             crystalAmountTMP.text = currentCrystals.ToString();
     }
 
+    // ----------------------
+    // MÉTODOS DE ESCUDO
+    // ----------------------
     public void ActivateShield()
     {
         if (shieldActive || isDead) return;
@@ -157,18 +222,28 @@ public class PlayerHealth : MonoBehaviour
         }
     }
 
+    // ----------------------
+    // GAME OVER
+    // ----------------------
     void CheckDeath()
     {
-        if (currentHealth <= 0 && !isDead)
+        if (currentHealth <= 0 && !isDead && AllExtraHeartsGone())
             Die();
+    }
+
+    bool AllExtraHeartsGone()
+    {
+        foreach (Image img in extraHearts)
+            if (img.gameObject.activeSelf)
+                return false;
+        return true;
     }
 
     void Die()
     {
         isDead = true;
 
-        // Ajuste de posição para encostar no chão
-        float deathOffsetY = -0.3f; // ajuste conforme necessário
+        float deathOffsetY = -0.3f;
         transform.position += new Vector3(0, deathOffsetY, 0);
 
         if (deathSound != null)
@@ -187,7 +262,7 @@ public class PlayerHealth : MonoBehaviour
         StartCoroutine(ShowGameOverAfterDelay(1.2f));
     }
 
-    private System.Collections.IEnumerator ShowGameOverAfterDelay(float delay)
+    private IEnumerator ShowGameOverAfterDelay(float delay)
     {
         yield return new WaitForSeconds(delay);
 
@@ -202,6 +277,16 @@ public class PlayerHealth : MonoBehaviour
         Time.timeScale = 1f;
         currentHealth = maxHealth;
         currentCrystals = 0;
+        isPoisoned = false;
+        isWeakened = false;
+
+        foreach (Image img in extraHearts)
+            Destroy(img.gameObject);
+
+        extraHearts.Clear();
+        hasBootSuper = false;
+        superTimer = 0f;
+
         UpdateHearts();
         UpdateCrystalUI();
 
@@ -212,5 +297,54 @@ public class PlayerHealth : MonoBehaviour
     {
         Time.timeScale = 1f;
         SceneManager.LoadScene(menuSceneName);
+    }
+
+    // ----------------------
+    // VENENO E FRAQUEZA
+    // ----------------------
+    public void ApplyPoison(float duration, float tickDamage, float tickInterval)
+    {
+        if (!isPoisoned)
+            StartCoroutine(PoisonCoroutine(duration, tickDamage, tickInterval));
+    }
+
+    IEnumerator PoisonCoroutine(float duration, float tickDamage, float tickInterval)
+    {
+        isPoisoned = true;
+        float elapsed = 0f;
+        while (elapsed < duration)
+        {
+            TakeDamage(Mathf.CeilToInt(tickDamage));
+            yield return new WaitForSeconds(tickInterval);
+            elapsed += tickInterval;
+        }
+        isPoisoned = false;
+    }
+
+    public void ApplyWeakness(float duration)
+    {
+        if (!isWeakened)
+            StartCoroutine(WeaknessCoroutine(duration));
+    }
+
+    IEnumerator WeaknessCoroutine(float duration)
+    {
+        isWeakened = true;
+        yield return new WaitForSeconds(duration);
+        isWeakened = false;
+    }
+
+    // ----------------------
+    // MÉTODO PÚBLICO PARA PEGAR A BOTA
+    // ----------------------
+    public void CollectBoot()
+    {
+        hasBootSuper = true;
+        superTimer = superDuration;
+    }
+
+    public bool IsSuperActive()
+    {
+        return hasBootSuper;
     }
 }
