@@ -1,25 +1,34 @@
 fileFormatVersion: 2
-guid: dc4ccdf9741cce3449aca06bd61b4d84
+guid: 1e529b94df780794281ce05f04e9adba
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -7615241073545676361
-    second: Notromortis idle (1)_0
+      213: -3072656721417946263
+    second: Notromortis ataque 2 definitivo_0
   - first:
-      213: -7246482441938598806
-    second: Notromortis idle (1)_1
+      213: -3615868085086642717
+    second: Notromortis ataque 2 definitivo_1
   - first:
-      213: 64967351177742551
-    second: Notromortis idle (1)_2
+      213: -7531010972455906222
+    second: Notromortis ataque 2 definitivo_2
   - first:
-      213: 6717807771331028368
-    second: Notromortis idle (1)_3
+      213: -6715370612821424118
+    second: Notromortis ataque 2 definitivo_3
   - first:
-      213: 5247817833537644715
-    second: Notromortis idle (1)_4
+      213: -8240161132597659468
+    second: Notromortis ataque 2 definitivo_4
   - first:
-      213: 1849183786754447527
-    second: Notromortis idle (1)_5
+      213: -911958763030490834
+    second: Notromortis ataque 2 definitivo_5
+  - first:
+      213: 8918927883576770568
+    second: Notromortis ataque 2 definitivo_6
+  - first:
+      213: 6391562204898815134
+    second: Notromortis ataque 2 definitivo_7
+  - first:
+      213: -4497015389723851460
+    second: Notromortis ataque 2 definitivo_8
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -141,13 +150,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Notromortis idle (1)_0
+      name: Notromortis ataque 2 definitivo_0
       rect:
         serializedVersion: 2
-        x: 779
-        y: 13334
-        width: 4892
-        height: 3317
+        x: 399
+        y: 4449
+        width: 1202
+        height: 1102
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -156,20 +165,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 7b97854479a315690800000000000000
-      internalID: -7615241073545676361
+      spriteID: 96bba23ddfabb55d0800000000000000
+      internalID: -3072656721417946263
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Notromortis idle (1)_1
+      name: Notromortis ataque 2 definitivo_1
       rect:
         serializedVersion: 2
-        x: 7169
-        y: 13349
-        width: 3632
-        height: 3347
+        x: 2394
+        y: 4419
+        width: 1212
+        height: 1162
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -178,20 +187,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: a640521dc925f6b90800000000000000
-      internalID: -7246482441938598806
+      spriteID: 3ed1db1622bd1ddc0800000000000000
+      internalID: -3615868085086642717
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Notromortis idle (1)_2
+      name: Notromortis ataque 2 definitivo_2
       rect:
         serializedVersion: 2
-        x: 1139
-        y: 7349
-        width: 3677
-        height: 3362
+        x: 4384
+        y: 4424
+        width: 1227
+        height: 1157
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -200,20 +209,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 7d882f0367fc6e000800000000000000
-      internalID: 64967351177742551
+      spriteID: 254523beb697c7790800000000000000
+      internalID: -7531010972455906222
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Notromortis idle (1)_3
+      name: Notromortis ataque 2 definitivo_3
       rect:
         serializedVersion: 2
-        x: 7139
-        y: 7319
-        width: 3677
-        height: 3317
+        x: 399
+        y: 2429
+        width: 1227
+        height: 1122
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -222,20 +231,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 0956b8753927a3d50800000000000000
-      internalID: 6717807771331028368
+      spriteID: a088ea7d1063ec2a0800000000000000
+      internalID: -6715370612821424118
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Notromortis idle (1)_4
+      name: Notromortis ataque 2 definitivo_4
       rect:
         serializedVersion: 2
-        x: 884
-        y: 1334
-        width: 4352
-        height: 3377
+        x: 2384
+        y: 2419
+        width: 1227
+        height: 1112
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -244,20 +253,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: ba8a8f5f38ef3d840800000000000000
-      internalID: 5247817833537644715
+      spriteID: 4b8398fab1115ad80800000000000000
+      internalID: -8240161132597659468
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Notromortis idle (1)_5
+      name: Notromortis ataque 2 definitivo_5
       rect:
         serializedVersion: 2
-        x: 6854
-        y: 1334
-        width: 4592
-        height: 3362
+        x: 4384
+        y: 2454
+        width: 1222
+        height: 1082
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -266,8 +275,74 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 7a819ed4bde99a910800000000000000
-      internalID: 1849183786754447527
+      spriteID: e2153c736521853f0800000000000000
+      internalID: -911958763030490834
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Notromortis ataque 2 definitivo_6
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 454
+        width: 1222
+        height: 1087
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8008be5d7a566cb70800000000000000
+      internalID: 8918927883576770568
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Notromortis ataque 2 definitivo_7
+      rect:
+        serializedVersion: 2
+        x: 2399
+        y: 824
+        width: 7
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e9c6ece16f363b850800000000000000
+      internalID: 6391562204898815134
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Notromortis ataque 2 definitivo_8
+      rect:
+        serializedVersion: 2
+        x: 2404
+        y: 469
+        width: 1202
+        height: 1082
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c358b0a44546791c0800000000000000
+      internalID: -4497015389723851460
       vertices: []
       indices: 
       edges: []
@@ -285,13 +360,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      Notromortis idle (1)_0: -7615241073545676361
-      Notromortis idle (1)_1: -7246482441938598806
-      Notromortis idle (1)_2: 64967351177742551
-      Notromortis idle (1)_3: 6717807771331028368
-      Notromortis idle (1)_4: 5247817833537644715
-      Notromortis idle (1)_5: 1849183786754447527
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
