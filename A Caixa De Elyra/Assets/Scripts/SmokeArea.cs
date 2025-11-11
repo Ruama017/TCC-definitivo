@@ -2,23 +2,38 @@ using UnityEngine;
 
 public class SmokeArea : MonoBehaviour
 {
-    void OnTriggerEnter2D(Collider2D other)
+    public float oxygenDrainRate = 10f;  // quanto de oxigênio drena por segundo
+
+    private OxygenManager playerOxygen;
+
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (other.CompareTag("Player"))
+        if (collision.CompareTag("Player"))
         {
-            var oxygen = other.GetComponent<OxygenManager>();
-            if(oxygen != null)
-                oxygen.EnterSmoke();
+            Debug.Log("Player entrou na fumaça!");
+            playerOxygen = collision.GetComponent<OxygenManager>();
         }
     }
 
-    void OnTriggerExit2D(Collider2D other)
+    private void OnTriggerStay2D(Collider2D collision)
     {
-        if (other.CompareTag("Player"))
+        if (collision.CompareTag("Player"))
         {
-            var oxygen = other.GetComponent<OxygenManager>();
-            if(oxygen != null)
-                oxygen.ExitSmoke();
+            Debug.Log("Player dentro da fumaça!");
+            
+            if (playerOxygen != null)
+            {
+                playerOxygen.DecreaseOxygen(oxygenDrainRate * Time.deltaTime);
+            }
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Player"))
+        {
+            Debug.Log("Player saiu da fumaça!");
+            playerOxygen = null;
         }
     }
 }
