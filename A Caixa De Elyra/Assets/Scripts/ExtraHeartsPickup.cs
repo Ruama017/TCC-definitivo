@@ -7,11 +7,14 @@ public class ExtraHeartsPickup : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        PlayerHealth player = other.GetComponent<PlayerHealth>();
-        if (player != null && SceneManager.GetActiveScene().name == "Fase3")
+        if (other.CompareTag("Player") && SceneManager.GetActiveScene().name == "Cena3")
         {
-            player.AddExtraHearts(extraHearts);
-            Destroy(gameObject);
+            PlayerHealth player = other.GetComponent<PlayerHealth>();
+            if (player != null)
+            {
+                player.AddExtraHearts(extraHearts); // adiciona no HUD
+                Destroy(gameObject); // destrói coletável
+            }
         }
     }
 }

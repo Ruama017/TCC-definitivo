@@ -8,15 +8,15 @@ using System.Collections.Generic;
 public class PlayerHealth : MonoBehaviour
 {
     [Header("Vida do Player")]
-    public int maxHealth = 5;             
+    public int maxHealth = 5;
     public int currentHealth;
     public Image[] hearts;
     public Sprite fullHeart;
     public Sprite emptyHeart;
 
     [Header("Corações Extras (Fase 3)")]
-    public GameObject extraHeartPrefab;   
-    public Transform extraHeartsParent;   
+    public GameObject extraHeartPrefab;   // Prefab do coração UI
+    public Transform extraHeartsParent;   // Parent dentro do Canvas
     public List<Image> extraHearts = new List<Image>();
 
     [Header("Cristais")]
@@ -27,14 +27,14 @@ public class PlayerHealth : MonoBehaviour
     public TMP_Text crystalAmountTMP;
 
     [Header("Escudo")]
-    public bool canTakeDamage = true;       
-    public float shieldDuration = 15f;      
+    public bool canTakeDamage = true;
+    public float shieldDuration = 15f;
     private bool shieldActive = false;
-    public GameObject shieldEffect;         
+    public GameObject shieldEffect;
 
     [Header("Game Over")]
     public GameObject gameOverPanel;
-    public AudioSource deathSound;      
+    public AudioSource deathSound;
     public ParticleSystem deathEffect;
 
     [Header("SFX de Dano")]
@@ -45,8 +45,8 @@ public class PlayerHealth : MonoBehaviour
     private bool isWeakened = false;
 
     [Header("Bota / Super")]
-    public bool hasBootSuper = false;       // controla se o player pegou a bota
-    public float superDuration = 5f;        // duração do super
+    public bool hasBootSuper = false;
+    public float superDuration = 5f;
     private float superTimer = 0f;
 
     private Animator anim;
@@ -70,7 +70,7 @@ public class PlayerHealth : MonoBehaviour
 
     void Update()
     {
-        // Conta o tempo do super da bota
+        // Controle do super da bota
         if (hasBootSuper)
         {
             superTimer -= Time.deltaTime;
@@ -92,7 +92,7 @@ public class PlayerHealth : MonoBehaviour
         if (isWeakened)
             damage = Mathf.CeilToInt(damage * 1.2f);
 
-        // Primeiro aplica dano aos corações extras
+        // Aplica dano primeiro aos corações extras
         for (int i = extraHearts.Count - 1; i >= 0 && damage > 0; i--)
         {
             if (extraHearts[i].gameObject.activeSelf)
@@ -102,7 +102,7 @@ public class PlayerHealth : MonoBehaviour
             }
         }
 
-        // Depois aos corações fixos
+        // Depois aos corações normais
         while (damage > 0 && currentHealth > 0)
         {
             currentHealth--;
@@ -149,19 +149,36 @@ public class PlayerHealth : MonoBehaviour
     void UpdateExtraHearts()
     {
         foreach (Image img in extraHearts)
-            if (img.gameObject.activeSelf)
+        {
+            if (img != null && img.gameObject.activeSelf)
                 img.sprite = fullHeart;
+        }
     }
 
     public void AddExtraHearts(int amount)
     {
         for (int i = 0; i < amount; i++)
         {
+            // Instancia coração como filho do Canvas
             GameObject h = Instantiate(extraHeartPrefab, extraHeartsParent);
+
+            // Ajusta escala e posição
+            RectTransform rt = h.GetComponent<RectTransform>();
+            if (rt != null)
+            {
+                rt.localScale = Vector3.one;
+                rt.localPosition = Vector3.zero;
+            }
+
             Image img = h.GetComponent<Image>();
-            img.sprite = fullHeart;
-            extraHearts.Add(img);
+            if (img != null)
+            {
+                img.sprite = fullHeart;
+                img.enabled = true;
+                extraHearts.Add(img);
+            }
         }
+        UpdateExtraHearts();
     }
 
     // ----------------------
@@ -335,7 +352,7 @@ public class PlayerHealth : MonoBehaviour
     }
 
     // ----------------------
-    // MÉTODO PÚBLICO PARA PEGAR A BOTA
+    // MÉTODOS PÚBLICOS PARA BOTA
     // ----------------------
     public void CollectBoot()
     {
