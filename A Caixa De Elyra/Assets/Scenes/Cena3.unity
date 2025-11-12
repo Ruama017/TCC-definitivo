@@ -6314,6 +6314,30 @@ PrefabInstance:
       propertyPath: 'hearts.Array.data[4]'
       value: 
       objectReference: {fileID: 1966858945}
+    - target: {fileID: 3615951885531261839, guid: 7e1f1fe19291fa14885e0fca0c00a364, type: 3}
+      propertyPath: extraHearts.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3615951885531261839, guid: 7e1f1fe19291fa14885e0fca0c00a364, type: 3}
+      propertyPath: 'extraHearts.Array.data[0]'
+      value: 
+      objectReference: {fileID: 6449771949691383268, guid: e12e5834bba54fa4296114437d698e11, type: 3}
+    - target: {fileID: 3615951885531261839, guid: 7e1f1fe19291fa14885e0fca0c00a364, type: 3}
+      propertyPath: 'extraHearts.Array.data[1]'
+      value: 
+      objectReference: {fileID: 6449771949691383268, guid: e12e5834bba54fa4296114437d698e11, type: 3}
+    - target: {fileID: 3615951885531261839, guid: 7e1f1fe19291fa14885e0fca0c00a364, type: 3}
+      propertyPath: 'extraHearts.Array.data[2]'
+      value: 
+      objectReference: {fileID: 6449771949691383268, guid: e12e5834bba54fa4296114437d698e11, type: 3}
+    - target: {fileID: 3615951885531261839, guid: 7e1f1fe19291fa14885e0fca0c00a364, type: 3}
+      propertyPath: 'extraHearts.Array.data[3]'
+      value: 
+      objectReference: {fileID: 6449771949691383268, guid: e12e5834bba54fa4296114437d698e11, type: 3}
+    - target: {fileID: 3615951885531261839, guid: 7e1f1fe19291fa14885e0fca0c00a364, type: 3}
+      propertyPath: 'extraHearts.Array.data[4]'
+      value: 
+      objectReference: {fileID: 6449771949691383268, guid: e12e5834bba54fa4296114437d698e11, type: 3}
     - target: {fileID: 4008707587220611048, guid: 7e1f1fe19291fa14885e0fca0c00a364, type: 3}
       propertyPath: m_LocalPosition.x
       value: 311.82
@@ -6369,6 +6393,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 1044183547665860284, guid: 7e1f1fe19291fa14885e0fca0c00a364, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1967478653}
+    - targetCorrespondingSourceObject: {fileID: 1044183547665860284, guid: 7e1f1fe19291fa14885e0fca0c00a364, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1967478662}
   m_SourcePrefab: {fileID: 100100000, guid: 7e1f1fe19291fa14885e0fca0c00a364, type: 3}
 --- !u!4 &356577742 stripped
 Transform:
@@ -6385,51 +6412,15 @@ GameObject:
   m_Component:
   - component: {fileID: 371838039}
   - component: {fileID: 371838038}
-  - component: {fileID: 371838037}
   - component: {fileID: 371838040}
-  m_Layer: 0
+  - component: {fileID: 371838041}
+  m_Layer: 13
   m_Name: ExtraHeartsPickup
-  m_TagString: Untagged
+  m_TagString: Collectables
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!58 &371838037
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 371838036}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_CompositeOperation: 0
-  m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
-  m_Radius: 3.1350005
 --- !u!212 &371838038
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -6473,7 +6464,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 8
+  m_SortingOrder: 11
   m_Sprite: {fileID: -5775531179356065306, guid: 3b885b7cb62b1ae488a9c3dd89c2983f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -6494,7 +6485,7 @@ Transform:
   m_GameObject: {fileID: 371838036}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 330.97, y: -20.18, z: 0}
+  m_LocalPosition: {x: 315.81, y: -20.09, z: 0}
   m_LocalScale: {x: 0.31314912, y: 0.31314912, z: 0.31314912}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -6513,6 +6504,57 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   extraHearts: 5
+--- !u!61 &371838041
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 371838036}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 6.27, y: 5.77}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Size: {x: 6.27, y: 5.77}
+  m_EdgeRadius: 0
+--- !u!1 &379805987 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 253984434144789876, guid: 701b572b9b88ef0448ca14f561aba50e, type: 3}
+  m_PrefabInstance: {fileID: 2490163526516563887}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &385077933
 GameObject:
   m_ObjectHideFlags: 0
@@ -20830,6 +20872,22 @@ MonoBehaviour:
   oxygenSlider: {fileID: 1444433578}
   playerHealth: {fileID: 1967478645}
   damageRate: 1
+--- !u!114 &1967478662
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 462197499}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d83521d3b5aef8b48869b4a85e7e1927, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isSuper: 1
+  superTimeRemaining: 0
+  superVfx: {fileID: 379805987}
+  stompBounceForce: 8
 --- !u!1 &2005423233
 GameObject:
   m_ObjectHideFlags: 0
