@@ -7,7 +7,7 @@ public class CounterManager : MonoBehaviour
 
     [Header("Contador")]
     public int totalCount = 5;     // Total de Boglins da fase
-    private int currentCount = 0;  // Quantos já foram coletados
+    public int currentCount = 0;  // Quantos já foram coletados
 
     [Header("UI")]
     public TMP_Text counterText;   // Texto do Canvas mostrando "coletados / total"
@@ -50,7 +50,7 @@ public class CounterManager : MonoBehaviour
         }
     }
 
-    private void UpdateUI()
+    public void UpdateUI()
     {
         if (counterText != null)
             counterText.text = currentCount + " / " + totalCount;

@@ -39,8 +39,10 @@ public class EnemyToglin : MonoBehaviour
         sr = GetComponent<SpriteRenderer>();
         anim = GetComponent<Animator>();
 
-        rb.gravityScale = 0f;
+        // mantém gravidade natural (para andar no chão)
+        rb.gravityScale = 1f;
         rb.constraints = RigidbodyConstraints2D.FreezeRotation;
+
         initialScaleX = transform.localScale.x;
     }
 
@@ -63,19 +65,19 @@ public class EnemyToglin : MonoBehaviour
         if (dist > stoppingDistance)
         {
             Vector2 dir = (playerTransform.position - transform.position).normalized;
-            rb.linearVelocity = new Vector2(dir.x * speed, rb.linearVelocity.y);
+            rb.velocity = new Vector2(dir.x * speed, rb.velocity.y);
 
-            // vira sprite pro lado correto
+            // Ajuste para sprite desenhado virado à ESQUERDA
             if (dir.x != 0)
             {
                 Vector3 s = transform.localScale;
-                s.x = Mathf.Sign(dir.x) * Mathf.Abs(initialScaleX);
+                s.x = (dir.x > 0 ? -1 : 1) * Mathf.Abs(initialScaleX);
                 transform.localScale = s;
             }
         }
         else
         {
-            rb.linearVelocity = new Vector2(0f, rb.linearVelocity.y);
+            rb.velocity = new Vector2(0f, rb.velocity.y);
         }
     }
 
@@ -99,7 +101,7 @@ public class EnemyToglin : MonoBehaviour
         if (isDead) return;
         awake = false;
         anim.enabled = false;
-        rb.linearVelocity = Vector2.zero;
+        rb.velocity = Vector2.zero;
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -111,7 +113,9 @@ public class EnemyToglin : MonoBehaviour
         bool playerIsSuper = ps != null && ps.isSuper;
 
         // detecta stomp se o player estiver com super e acima do Toglin
-        bool stomped = canBeStomped && playerIsSuper && collision.transform.position.y > transform.position.y + 0.25f;
+        bool stomped = canBeStomped && playerIsSuper &&
+                       collision.transform.position.y > transform.position.y + 0.25f &&
+                       collision.relativeVelocity.y <= 0f;
 
         if (stomped)
         {
@@ -158,10 +162,12 @@ public class EnemyToglin : MonoBehaviour
         if (isDead) return;
         isDead = true;
 
-        rb.linearVelocity = Vector2.zero;
+        rb.velocity = Vector2.zero;
         rb.isKinematic = true;
 
-        foreach (var c in GetComponents<Collider2D>()) c.enabled = false;
+        foreach (var c in GetComponents<Collider2D>())
+            c.enabled = false;
+
         anim.enabled = false;
 
         if (vanishSfx != null)
@@ -170,6 +176,6 @@ public class EnemyToglin : MonoBehaviour
         if (soulPrefab != null)
             Instantiate(soulPrefab, transform.position, Quaternion.identity);
 
-        Destroy(gameObject);
+        Destroy(gameObject, vanishDelay);
     }
 }

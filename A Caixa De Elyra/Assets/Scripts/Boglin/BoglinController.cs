@@ -11,58 +11,44 @@ public class BoglinController : MonoBehaviour
     public BoglinBaseState currentState;
     public BoglinWalkState walkState;
     public BoglinAttackState attackState;
+    public BoglinPatrolState patrolState;
 
-    [Header("Ataque e Detecção")]
-    public Transform AttackPoint;
-    public float attackRange = 2f;
+    [Header("Configurações de Movimento")]
     public float moveSpeed = 2f;
 
-    [Header("Saúde")]
+    [Header("Detecção e Ataque")]
+    public float detectionRange = 5f;
+    public float attackRange = 1.5f;
+    public Transform AttackPoint;
+    public Transform SmokeSpawn;
+
+    [Header("Patrulha")]
+    public Transform leftPatrolPoint;
+    public Transform rightPatrolPoint;
+
+    [Header("Saúde e Alma")]
     public int maxHealth = 5;
     public int currentHealth;
-
-    [Header("Som de Morte")]
-    public AudioClip deathSound; // som que toca ao morrer
-    private AudioSource audioSource; // fonte de áudio
+    public GameObject boglinSoulPrefab;
+    public MonsterCounter monsterCounter;
 
     void Start()
     {
         currentHealth = maxHealth;
 
-        if (rb == null)
-            rb = GetComponent<Rigidbody2D>();
-
-        audioSource = GetComponent<AudioSource>(); // pega o AudioSource do inimigo
-
-        // Criar instâncias dos estados
+        // Instancia os estados
         walkState = new BoglinWalkState();
         attackState = new BoglinAttackState();
+        patrolState = new BoglinPatrolState(leftPatrolPoint.position, rightPatrolPoint.position);
 
-        // Definir estado inicial
-        SwitchState(walkState);
+        // Começa patrulhando
+        SwitchState(patrolState);
     }
 
     void FixedUpdate()
     {
         if (currentState != null)
             currentState.UpdateState(this);
-    }
-
-    public void TakeDamage(int damage)
-    {
-        currentHealth -= damage;
-        if (currentHealth <= 0)
-            Die();
-    }
-
-    void Die()
-    {
-        // toca o som de morte (se existir)
-        if (audioSource != null && deathSound != null)
-            audioSource.PlayOneShot(deathSound);
-
-        // destrói o inimigo após o som terminar
-        Destroy(gameObject, deathSound != null ? deathSound.length : 0f);
     }
 
     public void SwitchState(BoglinBaseState newState)
@@ -76,7 +62,6 @@ public class BoglinController : MonoBehaviour
             currentState.EnterState(this);
     }
 
-    // Movimento usando MovePosition
     public void MoveTowards(Vector3 target)
     {
         Vector2 newPos = Vector2.MoveTowards(rb.position, target, moveSpeed * Time.fixedDeltaTime);
@@ -86,12 +71,10 @@ public class BoglinController : MonoBehaviour
             anim.SetBool("IsWalking", true);
 
         Vector2 direction = (target - transform.position).normalized;
-
-        // Ajuste do sprite para frente
         if (direction.x > 0)
-            transform.localScale = new Vector3(-1, 1, 1);
+            transform.localScale = new Vector3(-1, 1, 1);  // olhando pra direita
         else if (direction.x < 0)
-            transform.localScale = new Vector3(1, 1, 1);
+            transform.localScale = new Vector3(1, 1, 1);   // olhando pra esquerda
     }
 
     public void StopMoving()
@@ -100,16 +83,28 @@ public class BoglinController : MonoBehaviour
             anim.SetBool("IsWalking", false);
     }
 
+    public void TakeDamage(int damage)
+    {
+        currentHealth -= damage;
+        if (currentHealth <= 0)
+            Die();
+    }
+
+    void Die()
+    {
+        if (boglinSoulPrefab != null && monsterCounter != null)
+        {
+            GameObject soul = Instantiate(boglinSoulPrefab, transform.position, Quaternion.identity);
+            Soul soulScript = soul.GetComponent<Soul>();
+            if (soulScript != null)
+                soulScript.Initialize(monsterCounter.transform.position, monsterCounter);
+        }
+
+        Destroy(gameObject);
+    }
+
+    // Métodos de acesso pros estados
     public BoglinWalkState GetWalkState() => walkState;
     public BoglinAttackState GetAttackState() => attackState;
-
-    // Visualizar alcance de ataque no Scene
-    void OnDrawGizmos()
-    {
-        if (AttackPoint != null && attackState != null)
-        {
-            Gizmos.color = Color.red;
-            Gizmos.DrawWireSphere(AttackPoint.position, attackState.attackRadius);
-        }
-    }
+    public BoglinPatrolState GetPatrolState() => patrolState;
 }

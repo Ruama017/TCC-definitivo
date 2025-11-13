@@ -12,12 +12,24 @@ public class PortalController : MonoBehaviour
     public string nextSceneName = "fase2"; // nome da próxima fase
     [HideInInspector] public bool isActive = false;
 
+    [Header("Counter Manager")]
+    public CounterManager counterManager;  // arraste o CounterManager aqui
+
     void Start()
     {
         // Inicializa portal como inativo
         isActive = false;
         if (spriteRenderer != null && inactiveSprite != null)
             spriteRenderer.sprite = inactiveSprite;
+    }
+
+    void Update()
+    {
+        // Verifica se todas as almas foram coletadas
+        if (!isActive && counterManager != null && counterManager.AllSoulsCollected())
+        {
+            ActivatePortal();
+        }
     }
 
     /// <summary>

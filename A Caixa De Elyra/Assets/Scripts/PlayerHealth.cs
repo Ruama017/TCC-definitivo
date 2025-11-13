@@ -15,8 +15,8 @@ public class PlayerHealth : MonoBehaviour
     public Sprite emptyHeart;
 
     [Header("Corações Extras (Fase 3)")]
-    public GameObject extraHeartPrefab;   // Prefab do coração UI
-    public Transform extraHeartsParent;   // Parent dentro do Canvas
+    public GameObject extraHeartPrefab;   
+    public Transform extraHeartsParent;   
     public List<Image> extraHearts = new List<Image>();
 
     [Header("Cristais")]
@@ -27,14 +27,14 @@ public class PlayerHealth : MonoBehaviour
     public TMP_Text crystalAmountTMP;
 
     [Header("Escudo")]
-    public bool canTakeDamage = true;
-    public float shieldDuration = 15f;
+    public bool canTakeDamage = true;       
+    public float shieldDuration = 15f;      
     private bool shieldActive = false;
-    public GameObject shieldEffect;
+    public GameObject shieldEffect;         
 
     [Header("Game Over")]
     public GameObject gameOverPanel;
-    public AudioSource deathSound;
+    public AudioSource deathSound;      
     public ParticleSystem deathEffect;
 
     [Header("SFX de Dano")]
@@ -70,7 +70,6 @@ public class PlayerHealth : MonoBehaviour
 
     void Update()
     {
-        // Controle do super da bota
         if (hasBootSuper)
         {
             superTimer -= Time.deltaTime;
@@ -92,7 +91,7 @@ public class PlayerHealth : MonoBehaviour
         if (isWeakened)
             damage = Mathf.CeilToInt(damage * 1.2f);
 
-        // Aplica dano primeiro aos corações extras
+        // 1️⃣ Dano aos corações extras (fase 3)
         for (int i = extraHearts.Count - 1; i >= 0 && damage > 0; i--)
         {
             if (extraHearts[i].gameObject.activeSelf)
@@ -102,7 +101,14 @@ public class PlayerHealth : MonoBehaviour
             }
         }
 
-        // Depois aos corações normais
+        // 2️⃣ Cristais substituindo dano
+        while (damage > 0 && currentCrystals > 0)
+        {
+            currentCrystals--;
+            damage--; // substitui um coração perdido
+        }
+
+        // 3️⃣ Dano aos corações fixos (apenas se ainda houver dano)
         while (damage > 0 && currentHealth > 0)
         {
             currentHealth--;
@@ -112,8 +118,11 @@ public class PlayerHealth : MonoBehaviour
         if (damageSound != null)
             damageSound.Play();
 
+        // Atualiza UI
         UpdateHearts();
         UpdateExtraHearts();
+        UpdateCrystalUI();
+
         CheckDeath();
     }
 
@@ -149,36 +158,20 @@ public class PlayerHealth : MonoBehaviour
     void UpdateExtraHearts()
     {
         foreach (Image img in extraHearts)
-        {
-            if (img != null && img.gameObject.activeSelf)
+            if (img.gameObject.activeSelf)
                 img.sprite = fullHeart;
-        }
     }
 
     public void AddExtraHearts(int amount)
     {
         for (int i = 0; i < amount; i++)
         {
-            // Instancia coração como filho do Canvas
             GameObject h = Instantiate(extraHeartPrefab, extraHeartsParent);
-
-            // Ajusta escala e posição
-            RectTransform rt = h.GetComponent<RectTransform>();
-            if (rt != null)
-            {
-                rt.localScale = Vector3.one;
-                rt.localPosition = Vector3.zero;
-            }
-
+            h.SetActive(true); // garante que o coração apareça
             Image img = h.GetComponent<Image>();
-            if (img != null)
-            {
-                img.sprite = fullHeart;
-                img.enabled = true;
-                extraHearts.Add(img);
-            }
+            img.sprite = fullHeart;
+            extraHearts.Add(img);
         }
-        UpdateExtraHearts();
     }
 
     // ----------------------
@@ -352,7 +345,7 @@ public class PlayerHealth : MonoBehaviour
     }
 
     // ----------------------
-    // MÉTODOS PÚBLICOS PARA BOTA
+    // MÉTODO PÚBLICO PARA PEGAR A BOTA
     // ----------------------
     public void CollectBoot()
     {

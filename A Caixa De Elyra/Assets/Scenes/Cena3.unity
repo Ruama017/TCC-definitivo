@@ -5931,8 +5931,8 @@ GameObject:
   - component: {fileID: 351136702}
   - component: {fileID: 351136701}
   - component: {fileID: 351136705}
-  - component: {fileID: 351136704}
-  m_Layer: 0
+  - component: {fileID: 351136706}
+  m_Layer: 14
   m_Name: Nitromortis
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -6032,40 +6032,9 @@ Transform:
   - {fileID: 515967771}
   - {fileID: 1230804730}
   - {fileID: 2021975656}
+  - {fileID: 1013351022}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &351136704
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 351136700}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fd8afc67aed17d84f83038981126eeed, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  player: {fileID: 356577742}
-  anim: {fileID: 351136701}
-  attack1Hitbox: {fileID: 515967767}
-  attack2Hitbox: {fileID: 1230804726}
-  poisonProjectilePrefab: {fileID: 3856293844262109837, guid: fee4864887e11fd4ba044b75a89726b9, type: 3}
-  mouthSpawnPoint: {fileID: 2021975656}
-  clawAttack:
-    attackDuration: 1
-    hitStart: 0.3
-    hitEnd: 0.6
-    projectileSpawn: 0.5
-  mouthAttack:
-    attackDuration: 1
-    hitStart: 0.3
-    hitEnd: 0.6
-    projectileSpawn: 0.5
-  detectionRange: 10
-  clawRange: 2.5
-  mouthChance: 0.18
-  attackCooldown: 2.5
 --- !u!82 &351136705
 AudioSource:
   m_ObjectHideFlags: 0
@@ -6163,6 +6132,37 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &351136706
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 351136700}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 283ba6b6eb3797b4a97bff80cbc57c2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 356577742}
+  anim: {fileID: 351136701}
+  attack1Hitbox: {fileID: 515967767}
+  attack2Hitbox: {fileID: 1230804726}
+  poisonProjectilePrefab: {fileID: 3856293844262109837, guid: fee4864887e11fd4ba044b75a89726b9, type: 3}
+  mouthSpawnPoint: {fileID: 2021975656}
+  clawAttack:
+    attackDuration: 1
+    hitStart: 0.3
+    hitEnd: 0.6
+    projectileSpawn: 0.5
+  mouthAttack:
+    attackDuration: 1
+    hitStart: 0.3
+    hitEnd: 0.6
+    projectileSpawn: 0.5
+  detectionRange: 20
+  clawRange: 8
+  minCooldown: 0.2
 --- !u!1 &353177780
 GameObject:
   m_ObjectHideFlags: 0
@@ -7207,7 +7207,7 @@ GameObject:
   - component: {fileID: 515967770}
   - component: {fileID: 515967769}
   - component: {fileID: 515967768}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: Attack1_HitBox
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13799,6 +13799,84 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!1 &1013351021
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1013351022}
+  - component: {fileID: 1013351023}
+  m_Layer: 14
+  m_Name: Barrier
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1013351022
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1013351021}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 351136703}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &1013351023
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1013351021}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0.9744251, y: 0.21391487}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Size: {x: 10.079451, y: 11.790728}
+  m_EdgeRadius: 0
 --- !u!1 &1049322496
 GameObject:
   m_ObjectHideFlags: 0
@@ -14063,7 +14141,7 @@ GameObject:
   - component: {fileID: 1230804729}
   - component: {fileID: 1230804728}
   - component: {fileID: 1230804727}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: Attack2_HitBox
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -21217,7 +21295,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2021975656}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: ' ClawAttackPoint'
   m_TagString: Untagged
   m_Icon: {fileID: 0}
