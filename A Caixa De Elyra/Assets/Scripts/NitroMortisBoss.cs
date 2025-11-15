@@ -18,11 +18,18 @@ public class NitroMortisBoss : MonoBehaviour
     public AttackTiming mouthAttack;
 
     [Header("Ranges")]
-    public float detectionRange = 20f; // aumentado para testes
+    public float detectionRange = 20f;
     public float clawRange = 6f;
 
     [Header("Cooldown")]
-    public float minCooldown = 0.2f; // intervalo mínimo entre ataques
+    public float minCooldown = 0.2f;
+
+    [Header("Thorne")]
+    public ThorneBossController thorne; // arraste o Thorne aqui
+
+    [Header("Vida")]
+    public int maxHealth = 15;
+    private int currentHealth;
 
     private bool isAttacking = false;
     private float attackTimer = 0f;
@@ -32,20 +39,20 @@ public class NitroMortisBoss : MonoBehaviour
 
     private bool facingLeft = true;
 
+    void Start()
+    {
+        currentHealth = maxHealth;
+    }
+
     void Update()
     {
         if (!player) return;
 
         float dist = Vector2.Distance(transform.position, player.position);
 
-        // DEBUG
-        Debug.Log($"[DEBUG] Dist: {dist} | isAttacking: {isAttacking}");
-
         // Decide atacar mesmo se player estiver à esquerda ou direita
         if (!isAttacking && dist <= detectionRange)
-        {
             DecideAttack(dist);
-        }
 
         if (isAttacking)
             AttackLogic();
@@ -63,14 +70,12 @@ public class NitroMortisBoss : MonoBehaviour
             currentAttack = AttackType.Claw;
             currentTiming = clawAttack;
             anim.SetTrigger("ClawAttack");
-            Debug.Log("[DEBUG] Decidiu usar GARRA! Dist: " + dist);
         }
         else
         {
             currentAttack = AttackType.Mouth;
             currentTiming = mouthAttack;
             anim.SetTrigger("MouthAttack");
-            Debug.Log("[DEBUG] Decidiu usar BOCA! Dist: " + dist);
         }
     }
 
@@ -82,15 +87,10 @@ public class NitroMortisBoss : MonoBehaviour
         if (attackTimer >= currentTiming.hitStart && attackTimer < currentTiming.hitEnd)
         {
             if (currentAttack == AttackType.Claw && !attack1Hitbox.activeSelf)
-            {
                 attack1Hitbox.SetActive(true);
-                Debug.Log("[DEBUG] Hitbox GARRA ATIVADA");
-            }
+
             if (currentAttack == AttackType.Mouth && !attack2Hitbox.activeSelf)
-            {
                 attack2Hitbox.SetActive(true);
-                Debug.Log("[DEBUG] Hitbox BOCA ATIVADA");
-            }
         }
 
         // Desativa hitboxes
@@ -107,7 +107,6 @@ public class NitroMortisBoss : MonoBehaviour
         {
             SpawnProjectile();
             currentTiming.projectileSpawn = -999f;
-            Debug.Log("[DEBUG] Projétil lançado!");
         }
 
         // Fim do ataque
@@ -124,9 +123,7 @@ public class NitroMortisBoss : MonoBehaviour
         attack1Hitbox.SetActive(false);
         attack2Hitbox.SetActive(false);
 
-        // Reseta spawn do projétil
         mouthAttack.projectileSpawn = 0.5f;
-        Debug.Log("[DEBUG] Ataque finalizado");
     }
 
     void SpawnProjectile()
@@ -150,5 +147,24 @@ public class NitroMortisBoss : MonoBehaviour
         Vector3 scale = transform.localScale;
         scale.x *= -1;
         transform.localScale = scale;
+    }
+
+    // ===================== VIDA & MORTE =====================
+    public void TakeDamage(int damage, bool isSuper)
+    {
+        int dmg = isSuper ? damage * 3 : damage; // mais dano se player tiver Super
+        currentHealth -= dmg;
+
+        if (currentHealth <= 0)
+            Die();
+    }
+
+    private void Die()
+    {
+        gameObject.SetActive(false);
+
+        // Libera o Thorne
+        if (thorne != null)
+            thorne.ActivateBoss();
     }
 }

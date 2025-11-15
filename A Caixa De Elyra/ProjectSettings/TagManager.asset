@@ -12,6 +12,8 @@ TagManager:
   - Enemy
   - ground
   - Collectables
+  - Thorne
+  - PlayerSuper
   layers:
   - Default
   - TransparentFX

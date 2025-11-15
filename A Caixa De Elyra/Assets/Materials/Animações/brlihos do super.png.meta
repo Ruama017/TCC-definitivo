@@ -1,0 +1,451 @@
+fileFormatVersion: 2
+guid: 5873781441087e74ea84173a165d8b7a
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -8630411227121717461
+    second: brlihos do super_0
+  - first:
+      213: 990426142728801113
+    second: brlihos do super_1
+  - first:
+      213: -5146964182299056356
+    second: brlihos do super_2
+  - first:
+      213: -2579607074618841094
+    second: brlihos do super_3
+  - first:
+      213: 7665092411387798871
+    second: brlihos do super_4
+  - first:
+      213: 3467683143930930125
+    second: brlihos do super_5
+  - first:
+      213: 7915619704971288688
+    second: brlihos do super_6
+  - first:
+      213: 3699744822670890256
+    second: brlihos do super_7
+  - first:
+      213: -2641869782351968770
+    second: brlihos do super_8
+  - first:
+      213: -4220382680891491156
+    second: brlihos do super_9
+  - first:
+      213: 7574544570673881522
+    second: brlihos do super_10
+  - first:
+      213: 207832373232559334
+    second: brlihos do super_11
+  - first:
+      213: 8754080343044732377
+    second: brlihos do super_12
+  - first:
+      213: -6622127545623521057
+    second: brlihos do super_13
+  - first:
+      213: 4772338179590033903
+    second: brlihos do super_14
+  - first:
+      213: 525692438663652924
+    second: brlihos do super_15
+  - first:
+      213: 2394450161199571397
+    second: brlihos do super_16
+  - first:
+      213: -3873238053317355409
+    second: brlihos do super_17
+  - first:
+      213: 8066886906598816029
+    second: brlihos do super_18
+  - first:
+      213: 826681798555028669
+    second: brlihos do super_19
+  - first:
+      213: -1564958257233313621
+    second: brlihos do super_20
+  - first:
+      213: -341650746841089228
+    second: brlihos do super_21
+  - first:
+      213: -5798541593353442791
+    second: brlihos do super_22
+  - first:
+      213: 3134155899929569647
+    second: brlihos do super_23
+  - first:
+      213: 2989758999546655077
+    second: brlihos do super_24
+  - first:
+      213: 7994148863692580766
+    second: brlihos do super_25
+  - first:
+      213: -1080195537272777680
+    second: brlihos do super_26
+  - first:
+      213: 5632416977398364025
+    second: brlihos do super_27
+  - first:
+      213: -1963208136110210622
+    second: brlihos do super_28
+  - first:
+      213: 2870461344269549702
+    second: brlihos do super_29
+  - first:
+      213: -5081569855340190097
+    second: brlihos do super_30
+  - first:
+      213: -6752023906998372960
+    second: brlihos do super_31
+  - first:
+      213: 8044829759684181458
+    second: brlihos do super_32
+  - first:
+      213: 9142287084714831607
+    second: brlihos do super_33
+  - first:
+      213: -1288212716600382736
+    second: brlihos do super_34
+  - first:
+      213: -2392142638629070699
+    second: brlihos do super_35
+  - first:
+      213: 3724378454557660958
+    second: brlihos do super_36
+  - first:
+      213: -8827955666826146765
+    second: brlihos do super_37
+  - first:
+      213: 8672804605717297463
+    second: brlihos do super_38
+  - first:
+      213: -3245914769625548629
+    second: brlihos do super_39
+  - first:
+      213: 6917659026790962576
+    second: brlihos do super_40
+  - first:
+      213: 4504241779593396184
+    second: brlihos do super_41
+  - first:
+      213: -5388183853819577686
+    second: brlihos do super_42
+  - first:
+      213: 1299375163692579169
+    second: brlihos do super_43
+  - first:
+      213: -8354686621751117458
+    second: brlihos do super_44
+  - first:
+      213: 9111455585641715949
+    second: brlihos do super_45
+  - first:
+      213: -801279924684571600
+    second: brlihos do super_46
+  - first:
+      213: 381492394770942132
+    second: brlihos do super_47
+  - first:
+      213: -619914158786059668
+    second: brlihos do super_48
+  - first:
+      213: 1289903265820372173
+    second: brlihos do super_49
+  - first:
+      213: 644298229659362431
+    second: brlihos do super_50
+  - first:
+      213: 7074178162232466425
+    second: brlihos do super_51
+  - first:
+      213: -5340123410924434060
+    second: brlihos do super_52
+  - first:
+      213: -465640603730615867
+    second: brlihos do super_53
+  - first:
+      213: -2061480548131228818
+    second: brlihos do super_54
+  - first:
+      213: -2809899460815288321
+    second: brlihos do super_55
+  - first:
+      213: -8921180552321859919
+    second: brlihos do super_56
+  - first:
+      213: -6228572344797288189
+    second: brlihos do super_57
+  - first:
+      213: -2044296912435723708
+    second: brlihos do super_58
+  - first:
+      213: 7682939193555067356
+    second: brlihos do super_59
+  - first:
+      213: -1367474604274557279
+    second: brlihos do super_60
+  - first:
+      213: -6984523432144701388
+    second: brlihos do super_61
+  - first:
+      213: 4348149758859124037
+    second: brlihos do super_62
+  - first:
+      213: 6090524286355578451
+    second: brlihos do super_63
+  - first:
+      213: 5649721158577377514
+    second: brlihos do super_64
+  - first:
+      213: 5211725870665366754
+    second: brlihos do super_65
+  - first:
+      213: 9151739998056648279
+    second: brlihos do super_66
+  - first:
+      213: 397030224276309040
+    second: brlihos do super_67
+  - first:
+      213: -4330885408813983539
+    second: brlihos do super_68
+  - first:
+      213: -605951170077097150
+    second: brlihos do super_69
+  - first:
+      213: 279635983791738401
+    second: brlihos do super_70
+  - first:
+      213: -4458775237402181960
+    second: brlihos do super_71
+  - first:
+      213: -8115602995525341173
+    second: brlihos do super_72
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: brlihos do super_1
+      rect:
+        serializedVersion: 2
+        x: 257
+        y: 2214
+        width: 607
+        height: 577
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 72360a72900b5f441a9fda59bc3b93fc
+      internalID: -1250084828
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: brlihos do super_0
+      rect:
+        serializedVersion: 2
+        x: 1217
+        y: 2220
+        width: 670
+        height: 594
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 78fccf6c44c7d7d4ba84cac6487c0500
+      internalID: 1409125084
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: brlihos do super_2
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 1237
+        width: 566
+        height: 590
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ae358d60b24575241805b5df2e752118
+      internalID: 1279704902
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: brlihos do super_3
+      rect:
+        serializedVersion: 2
+        x: 1298
+        y: 1270
+        width: 480
+        height: 507
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 49246b7f259c4d64aa9f7d19fe8dbdb7
+      internalID: 1847393035
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: brlihos do super_4
+      rect:
+        serializedVersion: 2
+        x: 165
+        y: 179
+        width: 672
+        height: 623
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fe0295b187740e84f97121becc1893db
+      internalID: 1783338700
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 7970f4f180eea9944abcb34aa1ad3e1f
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      brlihos do super_0: 1409125084
+      brlihos do super_1: -1250084828
+      brlihos do super_2: 1279704902
+      brlihos do super_3: 1847393035
+      brlihos do super_4: 1783338700
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

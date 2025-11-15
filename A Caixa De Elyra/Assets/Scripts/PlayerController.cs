@@ -38,6 +38,11 @@ public class PlayerController : MonoBehaviour
     public PlayerHealth playerHealth; // arraste no inspector
     private int currentHealth;
 
+    // ======== SUPER ========
+    [Header("Super")]
+    public bool hasSuper = false;        // true se o player coletou o Super
+    public GameObject superEffect;       // efeitos de brilhos
+
     // expõe isAttacking para outros scripts
     public bool IsAttacking => isAttacking;
 
@@ -65,16 +70,15 @@ public class PlayerController : MonoBehaviour
         Attack();
         Flip();
 
-        // 💡 Atualiza animações de forma mais precisa
+        // Atualiza animações
         if (animator != null)
         {
-            animator.SetFloat("Speed", Mathf.Abs(rb.linearVelocity.x)); // andando
+            animator.SetFloat("Speed", Mathf.Abs(rb.velocity.x)); // andando
             animator.SetBool("IsGrounded", isGrounded);
-            animator.SetFloat("yVelocity", rb.linearVelocity.y);
+            animator.SetFloat("yVelocity", rb.velocity.y);
 
-            // 💡 Troca entre pulo e queda automaticamente
-            bool isJumping = !isGrounded && rb.linearVelocity.y > 0.1f;
-            bool isFalling = !isGrounded && rb.linearVelocity.y < -0.1f;
+            bool isJumping = !isGrounded && rb.velocity.y > 0.1f;
+            bool isFalling = !isGrounded && rb.velocity.y < -0.1f;
 
             animator.SetBool("IsJumping", isJumping);
             animator.SetBool("IsFalling", isFalling);
@@ -90,7 +94,7 @@ public class PlayerController : MonoBehaviour
     void Move()
     {
         float moveInput = Input.GetAxisRaw("Horizontal");
-        rb.linearVelocity = new Vector2(moveInput * moveSpeed, rb.linearVelocity.y);
+        rb.velocity = new Vector2(moveInput * moveSpeed, rb.velocity.y);
     }
 
     void Jump()
@@ -102,23 +106,21 @@ public class PlayerController : MonoBehaviour
         {
             if (isGrounded || extraJumps > 0)
             {
-                rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpForce);
+                rb.velocity = new Vector2(rb.velocity.x, jumpForce);
 
                 if (!isGrounded)
                     extraJumps--;
 
-                // Animação de pulo
                 if (animator != null)
                     animator.SetTrigger("Jump");
 
-                // 💥 Som do pulo
                 if (jumpSound != null)
                     jumpSound.Play();
             }
         }
     }
 
-    // ======================== ATAQUE AJUSTADO ========================
+    // ======================== ATAQUE ========================
     void Attack()
     {
         if (Input.GetKeyDown(KeyCode.M) && !isAttacking)
@@ -127,14 +129,11 @@ public class PlayerController : MonoBehaviour
 
             if (animator != null)
             {
-                animator.ResetTrigger("Attack"); // garante que o trigger reinicia
+                animator.ResetTrigger("Attack");
                 animator.SetTrigger("Attack");
-
-                // ⚡ força atualização imediata do Animator
                 animator.Update(0f);
             }
 
-            // ativa a hitbox sem esperar outro frame
             if (attackHitbox != null)
             {
                 attackHitbox.SetActive(true);
@@ -148,11 +147,29 @@ public class PlayerController : MonoBehaviour
         yield return new WaitForSeconds(delay);
 
         if (attackHitbox != null)
+        {
+            Collider2D[] hits = Physics2D.OverlapBoxAll(attackHitbox.transform.position, attackHitbox.transform.localScale, 0f);
+            foreach (Collider2D hit in hits)
+            {
+                if (hit.CompareTag("Player")) continue;
+
+                // Dano nos bosses
+                ThorneBossController thorne = hit.GetComponent<ThorneBossController>();
+                NitroMortisBoss nitro = hit.GetComponent<NitroMortisBoss>();
+
+                if (thorne != null)
+                    thorne.TakeDamage(1, hasSuper);
+
+                if (nitro != null)
+                    nitro.TakeDamage(1, hasSuper);
+            }
+
             attackHitbox.SetActive(false);
+        }
 
         isAttacking = false;
     }
-    // ================================================================
+    // ========================================================
 
     void Flip()
     {
@@ -173,7 +190,7 @@ public class PlayerController : MonoBehaviour
             isGrounded = false;
     }
 
-    // ======== MÉTODOS DE SPEED BOOST ========
+    // ======== SPEED BOOST ========
     public void StartSpeedBoost(float multiplier, float duration)
     {
         if (speedBoostCoroutine != null)
@@ -200,7 +217,7 @@ public class PlayerController : MonoBehaviour
         speedBoostCoroutine = null;
     }
 
-    // ======== MÉTODOS DE JUMP BOOST ========
+    // ======== JUMP BOOST ========
     public void StartJumpBoost(float multiplier, float duration)
     {
         if (jumpBoostCoroutine != null)
@@ -237,11 +254,31 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    // ======== MÉTODO DE MORTE ========
+    // ======== SUPER ========
+    public void ActivateSuper(float duration)
+    {
+        hasSuper = true;
+
+        if (superEffect != null)
+            superEffect.SetActive(true);
+
+        StartCoroutine(DeactivateSuperAfterTime(duration));
+    }
+
+    private IEnumerator DeactivateSuperAfterTime(float time)
+    {
+        yield return new WaitForSeconds(time);
+        hasSuper = false;
+
+        if (superEffect != null)
+            superEffect.SetActive(false);
+    }
+
+    // ======== MORTE ========
     private void Die()
     {
         isDead = true;
-        rb.linearVelocity = Vector2.zero;
+        rb.velocity = Vector2.zero;
 
         if (animator != null)
             animator.SetTrigger("Death");
