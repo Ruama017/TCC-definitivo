@@ -16195,17 +16195,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 356577742}
-  moveSpeed: 3
-  attackRange: 2
   anim: {fileID: 1759577826}
+  speed: 3
+  attackRange: 2
+  teleportInterval: 5
+  fadeDuration: 1
+  maxHealth: 20
   attackHitbox: {fileID: 2116207091}
   attackDuration: 0.3
-  attackDamage: 1
-  superAttackDamage: 3
-  maxHealth: 20
-  teleportInterval: 5
   deathSound: {fileID: 0}
-  fadeDuration: 1
+  sr: {fileID: 1759577828}
 --- !u!82 &1759577832
 AudioSource:
   m_ObjectHideFlags: 0
