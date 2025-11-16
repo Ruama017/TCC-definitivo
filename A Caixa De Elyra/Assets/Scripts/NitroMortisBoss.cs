@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Collections;
 
 public class NitroMortisBoss : MonoBehaviour
 {
@@ -6,8 +7,8 @@ public class NitroMortisBoss : MonoBehaviour
     public Animator anim;
 
     [Header("Hitboxes")]
-    public GameObject attack1Hitbox; // garra
-    public GameObject attack2Hitbox; // boca
+    public GameObject attack1Hitbox; // Garra
+    public GameObject attack2Hitbox; // Boca
 
     [Header("Projectile")]
     public GameObject poisonProjectilePrefab;
@@ -25,11 +26,16 @@ public class NitroMortisBoss : MonoBehaviour
     public float minCooldown = 0.2f;
 
     [Header("Thorne")]
-    public ThorneBossController thorne; // arraste o Thorne aqui
+    public ThorneBossController thorne; // Arraste o Thorne aqui
 
     [Header("Vida")]
     public int maxHealth = 15;
     private int currentHealth;
+
+    [Header("Alma e efeitos de morte")]
+    public GameObject soulPrefab;
+    public float fadeDuration = 1f;
+    public int blinkCount = 3;
 
     private bool isAttacking = false;
     private float attackTimer = 0f;
@@ -38,19 +44,22 @@ public class NitroMortisBoss : MonoBehaviour
     private AttackType currentAttack = AttackType.None;
 
     private bool facingLeft = true;
+    private bool isDead = false;
+
+    private SpriteRenderer sr;
 
     void Start()
     {
         currentHealth = maxHealth;
+        sr = GetComponent<SpriteRenderer>();
     }
 
     void Update()
     {
-        if (!player) return;
+        if (isDead || !player) return;
 
         float dist = Vector2.Distance(transform.position, player.position);
 
-        // Decide atacar mesmo se player estiver à esquerda ou direita
         if (!isAttacking && dist <= detectionRange)
             DecideAttack(dist);
 
@@ -152,19 +161,50 @@ public class NitroMortisBoss : MonoBehaviour
     // ===================== VIDA & MORTE =====================
     public void TakeDamage(int damage, bool isSuper)
     {
-        int dmg = isSuper ? damage * 3 : damage; // mais dano se player tiver Super
+        if (isDead) return;
+
+        int dmg = isSuper ? damage * 3 : damage; // Mais dano se player tiver Super
         currentHealth -= dmg;
 
         if (currentHealth <= 0)
-            Die();
+            StartCoroutine(DieCoroutine());
     }
 
-    private void Die()
+    private IEnumerator DieCoroutine()
     {
-        gameObject.SetActive(false);
+        isDead = true;
+        anim.SetTrigger("Death");
+
+        // Spawn da alma
+        if (soulPrefab != null)
+            Instantiate(soulPrefab, transform.position, Quaternion.identity);
+
+        // Pisca 3 vezes
+        for (int i = 0; i < blinkCount; i++)
+        {
+            sr.enabled = false;
+            yield return new WaitForSeconds(0.2f);
+            sr.enabled = true;
+            yield return new WaitForSeconds(0.2f);
+        }
+
+        // Fade antes de sumir
+        float timer = 0f;
+        Color originalColor = sr.color;
+        while (timer < fadeDuration)
+        {
+            timer += Time.deltaTime;
+            sr.color = new Color(originalColor.r, originalColor.g, originalColor.b, Mathf.Lerp(1, 0, timer / fadeDuration));
+            yield return null;
+        }
+
+        sr.color = originalColor;
 
         // Libera o Thorne
         if (thorne != null)
             thorne.ActivateBoss();
+
+        gameObject.SetActive(false);
+        Debug.Log("[DEBUG] NitroMortis MORREU!");
     }
 }

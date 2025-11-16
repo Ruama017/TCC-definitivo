@@ -148,6 +148,7 @@ public class PlayerController : MonoBehaviour
 
         if (attackHitbox != null)
         {
+            // Pega todos os colliders dentro da hitbox
             Collider2D[] hits = Physics2D.OverlapBoxAll(attackHitbox.transform.position, attackHitbox.transform.localScale, 0f);
             foreach (Collider2D hit in hits)
             {
@@ -158,10 +159,16 @@ public class PlayerController : MonoBehaviour
                 NitroMortisBoss nitro = hit.GetComponent<NitroMortisBoss>();
 
                 if (thorne != null)
+                {
                     thorne.TakeDamage(1, hasSuper);
+                    Debug.Log("[DEBUG] Ataque do player atingiu Thorne! Super: " + hasSuper);
+                }
 
                 if (nitro != null)
-                    nitro.TakeDamage(1, hasSuper);
+                {
+                    nitro.TakeDamage(1, hasSuper); // chama o TakeDamage correto
+                    Debug.Log("[DEBUG] Ataque do player atingiu NitroMortis! Super: " + hasSuper);
+                }
             }
 
             attackHitbox.SetActive(false);
