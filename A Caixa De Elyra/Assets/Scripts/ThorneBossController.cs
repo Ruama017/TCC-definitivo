@@ -1,199 +1,149 @@
 using UnityEngine;
-using System.Collections;
 
 public class ThorneBossController : MonoBehaviour
 {
+    [Header("Player")]
     public Transform player;
-    public Animator anim;
-    public float speed = 3f;
-    public float attackRange = 2f;
 
-    [Header("Teleport")]
-    public float teleportInterval = 15f;
-    public float fadeDuration = 0.5f;
-    private float teleportTimer = 0f;
-
-    [Header("Vida")]
-    public int maxHealth = 10;
+    [Header("Stats")]
+    public int maxHealth = 50;
     private int currentHealth;
 
-    [Header("Ataque")]
-    public GameObject attackHitbox;
-    public float attackDuration = 0.3f;
+    public float speed = 2.5f;
+    public float attackRange = 2f;
+    public int damage = 3;
 
-    [Header("Som")]
-    public AudioSource deathSound;
+    [Header("Animator")]
+    private Animator anim;
 
-    [Header("Referência do Sprite")]
-    public SpriteRenderer sr;
+    [Header("Attack Hitbox")]
+    public GameObject attackHitbox;   // <<< arraste aqui o AttackHitbox no inspetor
+
+    private bool isAttacking = false;
+    private bool isTeleporting = false;
+
+    private float nextTeleportTime = 0f;
+    public float teleportCooldown = 15f;
 
     private bool isDead = false;
-    private bool facingLeft = true; // seu sprite olha para a ESQUERDA
-
-    // ====================== ATIVAR BOSS ======================
-    private bool isActive = false;
-
-    public void ActivateBoss()
-    {
-        isActive = true;
-        teleportTimer = 0f;
-        anim.SetBool("Walking", false);
-    }
-
-    void OnEnable()
-    {
-        isActive = false; // começa desligado
-    }
 
     void Start()
     {
         currentHealth = maxHealth;
+        anim = GetComponent<Animator>();
 
         if (attackHitbox != null)
-            attackHitbox.SetActive(false);
+            attackHitbox.SetActive(false); // garante que comece desligada
     }
 
     void Update()
     {
-        if (isDead || player == null || !isActive) return;
+        if (isDead) return;
+        if (player == null) return;
 
-        teleportTimer += Time.deltaTime;
+        HandleTeleport();
+        HandleCombat();
+    }
 
-        // TELEPORTE
-        if (teleportTimer >= teleportInterval)
-        {
-            teleportTimer = 0f;
-            StartCoroutine(Teleport());
-        }
+    void HandleCombat()
+    {
+        if (isTeleporting) return;
 
-        // MOVIMENTO
-        float dist = Vector2.Distance(transform.position, player.position);
+        float distance = Vector2.Distance(transform.position, player.position);
 
-        if (dist > attackRange)
-        {
-            MoveTowardsPlayer();
-        }
+        if (distance <= attackRange)
+            StartAttack();
         else
-        {
-            Attack();
-        }
+            WalkTowardsPlayer();
 
         FlipTowardsPlayer();
     }
 
-    // =========================== MOVIMENTO ===========================
-    void MoveTowardsPlayer()
+    void WalkTowardsPlayer()
     {
-        anim.SetBool("Walking", true);
+        anim.SetBool("attack", false);
+        anim.SetBool("isWalking", true);
 
-        Vector2 target = new Vector2(player.position.x, transform.position.y);
-        transform.position = Vector2.MoveTowards(transform.position, target, speed * Time.deltaTime);
+        Vector2 dir = (player.position - transform.position).normalized;
+        transform.position += (Vector3)(dir * speed * Time.deltaTime);
     }
 
-    // ============================ ATAQUE =============================
-    void Attack()
+    void StartAttack()
     {
-        anim.SetBool("Walking", false);
+        if (isAttacking) return;
 
-        if (!anim.GetCurrentAnimatorStateInfo(0).IsName("Attack_Thorne"))
+        isAttacking = true;
+        anim.SetBool("isWalking", false);
+        anim.SetBool("attack", true);
+
+        StartCoroutine(AttackRoutine());
+    }
+
+    System.Collections.IEnumerator AttackRoutine()
+    {
+        // Liga a hitbox no início do ataque
+        if (attackHitbox != null)
+            attackHitbox.SetActive(true);
+
+        float animTime = anim.GetCurrentAnimatorStateInfo(0).length;
+
+        yield return new WaitForSeconds(animTime);
+
+        // Desliga a hitbox quando o ataque acaba
+        if (attackHitbox != null)
+            attackHitbox.SetActive(false);
+
+        anim.SetBool("attack", false);
+        isAttacking = false;
+    }
+
+    void HandleTeleport()
+    {
+        if (Time.time >= nextTeleportTime)
         {
-            anim.SetTrigger("Attack");
-            StartCoroutine(ActivateAttackHitbox());
+            nextTeleportTime = Time.time + teleportCooldown;
+            StartCoroutine(TeleportRoutine());
         }
     }
 
-    IEnumerator ActivateAttackHitbox()
+    System.Collections.IEnumerator TeleportRoutine()
     {
-        yield return new WaitForSeconds(0.1f);
-        attackHitbox.SetActive(true);
+        isTeleporting = true;
+        anim.SetTrigger("teleport");
 
-        yield return new WaitForSeconds(attackDuration);
-        attackHitbox.SetActive(false);
+        yield return new WaitForSeconds(0.4f);
+
+        Vector3 offset = new Vector3(2.5f * Mathf.Sign(player.localScale.x), 0, 0);
+        transform.position = player.position - offset;
+
+        yield return new WaitForSeconds(0.2f);
+
+        isTeleporting = false;
     }
 
-    // ======================= TELEPORTE COMPLETO ======================
-    IEnumerator Teleport()
-    {
-        // fade out
-        yield return StartCoroutine(Fade(0f));
-
-        // teleporta atrás do player
-        Vector3 newPos = player.position;
-        if (facingLeft)
-            newPos.x -= 2f; // aparece atrás
-        else
-            newPos.x += 2f;
-
-        transform.position = newPos;
-
-        // fade in
-        yield return StartCoroutine(Fade(1f));
-    }
-
-    IEnumerator Fade(float targetAlpha)
-    {
-        float startAlpha = sr.color.a;
-        float t = 0;
-
-        while (t < fadeDuration)
-        {
-            t += Time.deltaTime;
-            float a = Mathf.Lerp(startAlpha, targetAlpha, t / fadeDuration);
-            sr.color = new Color(sr.color.r, sr.color.g, sr.color.b, a);
-            yield return null;
-        }
-    }
-
-    // ============================ FLIP ===============================
     void FlipTowardsPlayer()
     {
-        float dir = player.position.x - transform.position.x;
-
-        if (dir > 0 && facingLeft) // player à direita
-        {
-            facingLeft = false;
-            transform.localScale = new Vector3(-1, 1, 1);
-        }
-        else if (dir < 0 && !facingLeft) // player à esquerda
-        {
-            facingLeft = true;
+        if (player.position.x < transform.position.x)
             transform.localScale = new Vector3(1, 1, 1);
-        }
+        else
+            transform.localScale = new Vector3(-1, 1, 1);
     }
 
-    // ===================== DANO E MORTE =============================
-    public void TakeDamage(int amount, bool superActive)
+    public void TakeDamage(int dmg)
     {
         if (isDead) return;
 
-        if (superActive)
-            amount *= 3; // SUPER dá 3x mais dano
-
-        currentHealth -= amount;
+        currentHealth -= dmg;
 
         if (currentHealth <= 0)
-        {
-            StartCoroutine(DeathEffect());
-        }
+            Die();
     }
 
-    IEnumerator DeathEffect()
+    void Die()
     {
         isDead = true;
-
-        if (deathSound != null)
-            deathSound.Play();
-
-        // piscar
-        for (int i = 0; i < 6; i++)
-        {
-            sr.enabled = !sr.enabled;
-            yield return new WaitForSeconds(0.15f);
-        }
-
-        // desaparecer
-        yield return StartCoroutine(Fade(0f));
-
-        Destroy(gameObject);
+        anim.SetBool("attack", false);
+        anim.SetBool("isWalking", false);
+        Destroy(gameObject, 3f);
     }
 }
