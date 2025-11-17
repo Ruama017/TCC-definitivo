@@ -1,16 +1,34 @@
 fileFormatVersion: 2
-guid: cda313e3571198c45928075bc0e34d04
+guid: fe8131de2f22955488d80d29904da18b
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 4807710171239599639
-    second: thorne ataque_0
+      213: -1171291183283914361
+    second: super_0
   - first:
-      213: 1296220325664261484
-    second: thorne ataque_1
+      213: -6624548256160539486
+    second: super_1
   - first:
-      213: -6569675422587421583
-    second: thorne ataque_2
+      213: 5443455927841838035
+    second: super_2
+  - first:
+      213: 6444881484860845296
+    second: super_3
+  - first:
+      213: 1799905800851845195
+    second: super_4
+  - first:
+      213: 5225382463893009066
+    second: super_5
+  - first:
+      213: 8579666023183141813
+    second: super_6
+  - first:
+      213: 633876533922648424
+    second: super_7
+  - first:
+      213: 6339535151431258174
+    second: super_8
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -132,13 +150,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: thorne ataque_0
+      name: super_0
       rect:
         serializedVersion: 2
-        x: 439
-        y: 1354
-        width: 802
-        height: 797
+        x: 189
+        y: 284
+        width: 7
+        height: 7
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -147,20 +165,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 71ec4cbadea68b240800000000000000
-      internalID: 4807710171239599639
+      spriteID: 789b0d3efdcbebfe0800000000000000
+      internalID: -1171291183283914361
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: thorne ataque_1
+      name: super_1
       rect:
         serializedVersion: 2
-        x: 1794
-        y: 1359
-        width: 697
-        height: 997
+        x: 279
+        y: 279
+        width: 7
+        height: 7
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -169,20 +187,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: c650cddb4891df110800000000000000
-      internalID: 1296220325664261484
+      spriteID: 2ac1e1a9570e014a0800000000000000
+      internalID: -6624548256160539486
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: thorne ataque_2
+      name: super_2
       rect:
         serializedVersion: 2
-        x: 4
-        y: 109
-        width: 1222
-        height: 657
+        x: 189
+        y: 179
+        width: 87
+        height: 102
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -191,8 +209,140 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 17cff03c203d3d4a0800000000000000
-      internalID: -6569675422587421583
+      spriteID: 3d3d181635a0b8b40800000000000000
+      internalID: 5443455927841838035
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: super_3
+      rect:
+        serializedVersion: 2
+        x: 309
+        y: 254
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0fc6f946091d07950800000000000000
+      internalID: 6444881484860845296
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: super_4
+      rect:
+        serializedVersion: 2
+        x: 174
+        y: 239
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b4070f02acc8af810800000000000000
+      internalID: 1799905800851845195
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: super_5
+      rect:
+        serializedVersion: 2
+        x: 269
+        y: 234
+        width: 17
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aa2f5e76aa9448840800000000000000
+      internalID: 5225382463893009066
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: super_6
+      rect:
+        serializedVersion: 2
+        x: 299
+        y: 224
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5bbc1538ac8111770800000000000000
+      internalID: 8579666023183141813
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: super_7
+      rect:
+        serializedVersion: 2
+        x: 164
+        y: 199
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8615ae3695bfbc800800000000000000
+      internalID: 633876533922648424
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: super_8
+      rect:
+        serializedVersion: 2
+        x: 284
+        y: 199
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e309926c1ad8af750800000000000000
+      internalID: 6339535151431258174
       vertices: []
       indices: 
       edges: []
@@ -210,10 +360,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      thorne ataque_0: 4807710171239599639
-      thorne ataque_1: 1296220325664261484
-      thorne ataque_2: -6569675422587421583
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
