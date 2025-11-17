@@ -14,14 +14,12 @@ public class ThorneBossController : MonoBehaviour
     private float teleportTimer = 0f;
 
     [Header("Vida")]
-    public int maxHealth = 50;   // AGORA MUITO MAIS VIDA
+    public int maxHealth = 10;
     private int currentHealth;
 
     [Header("Ataque")]
     public GameObject attackHitbox;
-    public float attackCooldown = 0.8f; // intervalo entre ataques
     public float attackDuration = 0.3f;
-    private bool isAttacking = false;
 
     [Header("Som")]
     public AudioSource deathSound;
@@ -30,18 +28,21 @@ public class ThorneBossController : MonoBehaviour
     public SpriteRenderer sr;
 
     private bool isDead = false;
-    private bool facingLeft = true;
+    private bool facingLeft = true; // seu sprite olha para a ESQUERDA
+
+    // ====================== ATIVAR BOSS ======================
     private bool isActive = false;
 
     public void ActivateBoss()
     {
         isActive = true;
         teleportTimer = 0f;
+        anim.SetBool("Walking", false);
     }
 
     void OnEnable()
     {
-        isActive = false;
+        isActive = false; // começa desligado
     }
 
     void Start()
@@ -58,23 +59,23 @@ public class ThorneBossController : MonoBehaviour
 
         teleportTimer += Time.deltaTime;
 
+        // TELEPORTE
         if (teleportTimer >= teleportInterval)
         {
             teleportTimer = 0f;
             StartCoroutine(Teleport());
         }
 
+        // MOVIMENTO
         float dist = Vector2.Distance(transform.position, player.position);
 
         if (dist > attackRange)
         {
-            anim.SetBool("Walking", true);
             MoveTowardsPlayer();
         }
         else
         {
-            anim.SetBool("Walking", false);
-            TryAttack();
+            Attack();
         }
 
         FlipTowardsPlayer();
@@ -83,42 +84,49 @@ public class ThorneBossController : MonoBehaviour
     // =========================== MOVIMENTO ===========================
     void MoveTowardsPlayer()
     {
+        anim.SetBool("Walking", true);
+
         Vector2 target = new Vector2(player.position.x, transform.position.y);
         transform.position = Vector2.MoveTowards(transform.position, target, speed * Time.deltaTime);
     }
 
     // ============================ ATAQUE =============================
-    void TryAttack()
+    void Attack()
     {
-        if (!isAttacking)
-            StartCoroutine(Attack());
+        anim.SetBool("Walking", false);
+
+        if (!anim.GetCurrentAnimatorStateInfo(0).IsName("Attack_Thorne"))
+        {
+            anim.SetTrigger("Attack");
+            StartCoroutine(ActivateAttackHitbox());
+        }
     }
 
-    IEnumerator Attack()
+    IEnumerator ActivateAttackHitbox()
     {
-        isAttacking = true;
-
-        anim.SetTrigger("Attack");
         yield return new WaitForSeconds(0.1f);
         attackHitbox.SetActive(true);
 
         yield return new WaitForSeconds(attackDuration);
         attackHitbox.SetActive(false);
-
-        yield return new WaitForSeconds(attackCooldown);
-
-        isAttacking = false;
     }
 
     // ======================= TELEPORTE COMPLETO ======================
     IEnumerator Teleport()
     {
+        // fade out
         yield return StartCoroutine(Fade(0f));
 
+        // teleporta atrás do player
         Vector3 newPos = player.position;
-        newPos.x += facingLeft ? -2f : 2f;
+        if (facingLeft)
+            newPos.x -= 2f; // aparece atrás
+        else
+            newPos.x += 2f;
+
         transform.position = newPos;
 
+        // fade in
         yield return StartCoroutine(Fade(1f));
     }
 
@@ -141,12 +149,12 @@ public class ThorneBossController : MonoBehaviour
     {
         float dir = player.position.x - transform.position.x;
 
-        if (dir > 0 && facingLeft)
+        if (dir > 0 && facingLeft) // player à direita
         {
             facingLeft = false;
             transform.localScale = new Vector3(-1, 1, 1);
         }
-        else if (dir < 0 && !facingLeft)
+        else if (dir < 0 && !facingLeft) // player à esquerda
         {
             facingLeft = true;
             transform.localScale = new Vector3(1, 1, 1);
@@ -159,12 +167,14 @@ public class ThorneBossController : MonoBehaviour
         if (isDead) return;
 
         if (superActive)
-            amount *= 3;
+            amount *= 3; // SUPER dá 3x mais dano
 
         currentHealth -= amount;
 
         if (currentHealth <= 0)
+        {
             StartCoroutine(DeathEffect());
+        }
     }
 
     IEnumerator DeathEffect()
@@ -174,12 +184,14 @@ public class ThorneBossController : MonoBehaviour
         if (deathSound != null)
             deathSound.Play();
 
+        // piscar
         for (int i = 0; i < 6; i++)
         {
             sr.enabled = !sr.enabled;
             yield return new WaitForSeconds(0.15f);
         }
 
+        // desaparecer
         yield return StartCoroutine(Fade(0f));
 
         Destroy(gameObject);
