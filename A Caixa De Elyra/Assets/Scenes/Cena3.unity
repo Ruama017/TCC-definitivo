@@ -16202,6 +16202,7 @@ MonoBehaviour:
   fadeDuration: 1
   maxHealth: 20
   attackHitbox: {fileID: 2116207091}
+  attackCooldown: 0.8
   attackDuration: 0.3
   deathSound: {fileID: 0}
   sr: {fileID: 1759577828}
