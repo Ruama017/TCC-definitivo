@@ -42,16 +42,20 @@ public class PlayerAttackHitbox : MonoBehaviour
             return;
         }
 
-        // NitroMortisBoss (player só pode derrotar com Super)
-        NitroMortisBoss nitro = collision.GetComponent<NitroMortisBoss>();
-        if (nitro != null)
-        {
-            // Aqui você decide se o player tem o super ou não
-            bool playerHasSuper = GetComponentInParent<PlayerController>().hasSuper;
-            nitro.TakeDamage(playerHasSuper);
-            Debug.Log("[DEBUG] Player atingiu NitroMortis! Super ativo: " + playerHasSuper);
-            return;
-        }
+        // NitroMortis (boss real)
+      NitroMortis nitro = collision.GetComponentInParent<NitroMortis>();
+      if (nitro != null)
+{
+      bool playerHasSuper = GetComponentInParent<PlayerController>().hasSuper;
+
+    if (playerHasSuper)
+        nitro.TakeDamage(damage);
+
+    Debug.Log("[DEBUG] Player atingiu NitroMortis! Super ativo: " + playerHasSuper);
+
+    return;
+}
+
 
         // ThorneBossController
         ThorneBossController thorne = collision.GetComponent<ThorneBossController>();

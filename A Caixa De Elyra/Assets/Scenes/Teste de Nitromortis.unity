@@ -5933,9 +5933,10 @@ GameObject:
   - component: {fileID: 351136705}
   - component: {fileID: 351136707}
   - component: {fileID: 351136708}
+  - component: {fileID: 351136709}
   m_Layer: 14
   m_Name: Nitromortis
-  m_TagString: Boss
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6181,7 +6182,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d15cc07e4da21bb4dbe572f948a15004, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 5
+  maxHealth: 2
   meleeRange: 10
   rangedRange: 19
   clawHitbox: {fileID: 515967769}
@@ -6190,6 +6191,33 @@ MonoBehaviour:
   projectilePrefab: {fileID: 6152473566378833249, guid: 4888f028c876b894d9103a2bb4de2295, type: 3}
   projectileSpawn: {fileID: 1230804730}
   projectileDelay: 0.4
+--- !u!50 &351136709
+Rigidbody2D:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 351136700}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDamping: 0
+  m_AngularDamping: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &353177780
 GameObject:
   m_ObjectHideFlags: 0
@@ -6316,6 +6344,10 @@ PrefabInstance:
     - target: {fileID: 1451387664069068979, guid: 7e1f1fe19291fa14885e0fca0c00a364, type: 3}
       propertyPath: m_Layer
       value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 1451387664069068979, guid: 7e1f1fe19291fa14885e0fca0c00a364, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1451387664069068979, guid: 7e1f1fe19291fa14885e0fca0c00a364, type: 3}
       propertyPath: m_TagString
