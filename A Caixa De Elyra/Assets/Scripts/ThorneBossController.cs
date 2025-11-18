@@ -3,175 +3,165 @@ using System.Collections;
 
 public class ThorneBossController : MonoBehaviour
 {
-    public Transform player;
-    public Animator anim;
-    public float speed = 3f;
+    [Header("Configuração")]
+    public float moveSpeed = 3f;
     public float attackRange = 2f;
+    public int maxHealth = 10;
 
-    [Header("Teleport")]
-    public float teleportInterval = 15f;
-    public float fadeDuration = 0.5f;
-    private float teleportTimer = 0f;
-
-    [Header("Vida")]
-    public int maxHealth = 50; // Thorne é mais forte
+    private Transform player;
+    private Animator anim;
     private int currentHealth;
 
-    [Header("Ataque")]
-    public GameObject attackHitbox;
-    public float attackDuration = 0.3f;
-
-    [Header("Som")]
-    public AudioSource deathSound;
-
-    [Header("Referência do Sprite")]
-    public SpriteRenderer sr;
-
+    private bool isAttacking = false;
     private bool isDead = false;
-    private bool canTeleport = true;
-    private bool facingLeft = true; // sprite olha para esquerda
 
-    void Start()
+    private bool teleportBehindNext = true; // alterna atrás → frente → atrás...
+
+    [Header("Ataque da Espada")]
+    public Collider2D swordHitbox;       // collider da espada
+    public int swordDamage = 1;
+    public float swordHitboxDelay = 0.3f;     
+    public float swordHitboxDuration = 0.25f; 
+
+    // ----------------------------------------------------------
+    // Função para ativar o Thorne após NitroMortis morrer
+    // ----------------------------------------------------------
+    public void ActivateThorne()
     {
         currentHealth = maxHealth;
+        player = GameObject.FindGameObjectWithTag("Player").transform;
+        anim = GetComponent<Animator>();
+        isDead = false;
+        isAttacking = false;
 
-        if (attackHitbox != null)
-            attackHitbox.SetActive(false);
+        if (swordHitbox != null)
+            swordHitbox.enabled = false; // garante que a hitbox começa desativada
 
-        // começa invisível até NitroMortis morrer
-        gameObject.SetActive(false);
+        StartCoroutine(TeleportCycle());
     }
 
     void Update()
     {
         if (isDead || player == null) return;
 
-        teleportTimer += Time.deltaTime;
-
-        // TELEPORTE
-        if (teleportTimer >= teleportInterval)
-        {
-            teleportTimer = 0f;
-            StartCoroutine(Teleport());
-        }
-
-        // MOVIMENTO
-        float dist = Vector2.Distance(transform.position, player.position);
-
-        if (dist > attackRange)
-        {
-            MoveTowardsPlayer();
-        }
-        else
-        {
-            Attack();
-        }
-
+        MoveAndAttack();
         FlipTowardsPlayer();
     }
 
-    void MoveTowardsPlayer()
+    // ----------------------------------------------------------
+    // MOVIMENTAÇÃO + ATAQUE
+    // ----------------------------------------------------------
+    void MoveAndAttack()
     {
-        anim.SetBool("isWalking", true);
-        Vector2 target = new Vector2(player.position.x, transform.position.y);
-        transform.position = Vector2.MoveTowards(transform.position, target, speed * Time.deltaTime);
-    }
+        float distance = Vector2.Distance(transform.position, player.position);
 
-    void Attack()
-    {
-        anim.SetBool("isWalking", false);
-
-        if (!anim.GetCurrentAnimatorStateInfo(0).IsName("Attack_Thorne"))
+        if (distance > attackRange)
         {
-            anim.SetTrigger("attack");
-            StartCoroutine(ActivateAttackHitbox());
+            anim.SetBool("isWalking", true);
+
+            Vector2 dir = (player.position - transform.position).normalized;
+            transform.position += (Vector3)dir * moveSpeed * Time.deltaTime;
+        }
+        else
+        {
+            anim.SetBool("isWalking", false);
+
+            if (!isAttacking)
+                StartCoroutine(Attack());
         }
     }
 
-    IEnumerator ActivateAttackHitbox()
+    // ----------------------------------------------------------
+    // ATAQUE COM HITBOX CORRIGIDA
+    // ----------------------------------------------------------
+    IEnumerator Attack()
     {
-        yield return new WaitForSeconds(0.1f);
-        attackHitbox.SetActive(true);
+        isAttacking = true;
 
-        yield return new WaitForSeconds(attackDuration);
-        attackHitbox.SetActive(false);
+        anim.SetTrigger("attack");
+
+        // espera até o momento da espada acertar
+        yield return new WaitForSeconds(swordHitboxDelay);
+
+        // Ativa apenas o collider (GameObject deve estar ativo)
+        if (swordHitbox != null)
+            swordHitbox.enabled = true;
+
+        yield return new WaitForSeconds(swordHitboxDuration);
+
+        if (swordHitbox != null)
+            swordHitbox.enabled = false;
+
+        yield return new WaitForSeconds(0.2f); // restante da animação
+
+        isAttacking = false;
     }
 
-    IEnumerator Teleport()
+    // ----------------------------------------------------------
+    // CICLO DE TELEPORTE
+    // ----------------------------------------------------------
+    IEnumerator TeleportCycle()
     {
-        yield return StartCoroutine(Fade(0f));
-
-        Vector3 newPos = player.position;
-        newPos.x += facingLeft ? -2f : 2f;
-
-        transform.position = newPos;
-
-        yield return StartCoroutine(Fade(1f));
-    }
-
-    IEnumerator Fade(float targetAlpha)
-    {
-        float startAlpha = sr.color.a;
-        float t = 0;
-
-        while (t < fadeDuration)
+        while (!isDead)
         {
-            t += Time.deltaTime;
-            float a = Mathf.Lerp(startAlpha, targetAlpha, t / fadeDuration);
-            sr.color = new Color(sr.color.r, sr.color.g, sr.color.b, a);
-            yield return null;
+            yield return new WaitForSeconds(15f);
+
+            anim.SetTrigger("teleport"); 
+
+            yield return new WaitForSeconds(0.1f);
+
+            Vector3 newPos;
+
+            if (teleportBehindNext)
+            {
+                float offset = -2f * Mathf.Sign(player.position.x - transform.position.x);
+                newPos = player.position + new Vector3(offset, 0, 0);
+            }
+            else
+            {
+                float offset = 2f * Mathf.Sign(player.position.x - transform.position.x);
+                newPos = player.position + new Vector3(offset, 0, 0);
+            }
+
+            transform.position = newPos;
+
+            teleportBehindNext = !teleportBehindNext;
+
+            yield return new WaitForSeconds(0.1f);
         }
     }
 
+    // ----------------------------------------------------------
+    // FLIP (SPRITE VIRADO PARA ESQUERDA)
+    // ----------------------------------------------------------
     void FlipTowardsPlayer()
     {
-        float dir = player.position.x - transform.position.x;
-
-        if (dir > 0 && facingLeft)
-        {
-            facingLeft = false;
-            transform.localScale = new Vector3(-1, 1, 1);
-        }
-        else if (dir < 0 && !facingLeft)
-        {
-            facingLeft = true;
-            transform.localScale = new Vector3(1, 1, 1);
-        }
+        if (player.position.x < transform.position.x)
+            transform.localScale = new Vector3(1, 1, 1);  // olha para esquerda
+        else
+            transform.localScale = new Vector3(-1, 1, 1); // olha para direita
     }
 
-    // ======= TakeDamage ajustado =======
-    public void TakeDamage(int amount, bool superActive)
+    // ----------------------------------------------------------
+    // DANO E MORTE
+    // ----------------------------------------------------------
+    public void TakeDamage(int damage, bool playerHasSuper)
     {
-        if (isDead) return;
+        if (!playerHasSuper || isDead) return;
 
-        if (superActive) amount *= 3;
-
-        currentHealth -= amount;
+        currentHealth -= damage;
+        anim.SetTrigger("Hit");
 
         if (currentHealth <= 0)
-            StartCoroutine(DeathEffect());
+            StartCoroutine(Die());
     }
 
-    IEnumerator DeathEffect()
+    IEnumerator Die()
     {
         isDead = true;
 
-        if (deathSound != null)
-            deathSound.Play();
+        yield return new WaitForSeconds(1f);
 
-        for (int i = 0; i < 6; i++)
-        {
-            sr.enabled = !sr.enabled;
-            yield return new WaitForSeconds(0.15f);
-        }
-
-        yield return StartCoroutine(Fade(0f));
         Destroy(gameObject);
-    }
-
-    // ======= Ativa o Thorne após NitroMortis morrer =======
-    public void ActivateBoss()
-    {
-        gameObject.SetActive(true);
     }
 }

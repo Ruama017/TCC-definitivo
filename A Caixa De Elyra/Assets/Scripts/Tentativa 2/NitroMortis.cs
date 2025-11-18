@@ -16,13 +16,16 @@ public class NitroMortis : MonoBehaviour
 
     [Header("Ataque 1 - Garra")]
     public Collider2D clawHitbox; 
-    public float clawHitboxDelay = 0.3f;      // momento da hitbox
-    public float clawHitboxDuration = 0.25f;  // quanto tempo fica ativa
+    public float clawHitboxDelay = 0.3f;      
+    public float clawHitboxDuration = 0.25f;  
 
     [Header("Ataque 2 - Boca")]
     public GameObject projectilePrefab;
     public Transform projectileSpawn; 
     public float projectileDelay = 0.4f;   
+
+    [Header("Thorne")]
+    public ThorneBossController thorne; // ARRASTE O THORNE PELO INSPECTOR
 
     private bool isAttacking = false;
     private bool isDead = false;
@@ -49,15 +52,11 @@ public class NitroMortis : MonoBehaviour
         {
             if (distance <= meleeRange)
                 StartCoroutine(ClawAttack());
-
             else if (distance <= rangedRange)
                 StartCoroutine(MouthAttack());
         }
     }
 
-    // -----------------------------------------
-    // FLIP
-    // -----------------------------------------
     void FlipTowardsPlayer()
     {
         if (player.position.x > transform.position.x)
@@ -66,15 +65,11 @@ public class NitroMortis : MonoBehaviour
             transform.localScale = new Vector3(1, 1, 1);
     }
 
-    // -----------------------------------------
-    // ATAQUE 1 – GARRA (SEM EVENTOS)
-    // -----------------------------------------
     IEnumerator ClawAttack()
     {
         isAttacking = true;
         anim.SetTrigger("ClawAttack");
 
-        // Ativar a hitbox no momento certo
         yield return new WaitForSeconds(clawHitboxDelay);
 
         clawHitbox.enabled = true;
@@ -83,14 +78,11 @@ public class NitroMortis : MonoBehaviour
 
         clawHitbox.enabled = false;
 
-        yield return new WaitForSeconds(0.4f); // tempo restante da animação
+        yield return new WaitForSeconds(0.4f);
 
         isAttacking = false;
     }
 
-    // -----------------------------------------
-    // ATAQUE 2 – BOCA (SEM EVENTOS)
-    // -----------------------------------------
     IEnumerator MouthAttack()
     {
         isAttacking = true;
@@ -113,9 +105,6 @@ public class NitroMortis : MonoBehaviour
         p.GetComponent<Rigidbody2D>().velocity = dir * 6f;
     }
 
-    // -----------------------------------------
-    // DANO E MORTE
-    // -----------------------------------------
     public void TakeDamage(int dmg)
     {
         if (isDead) return;
@@ -139,6 +128,13 @@ public class NitroMortis : MonoBehaviour
             yield return new WaitForSeconds(0.15f);
             sr.enabled = true;
             yield return new WaitForSeconds(0.15f);
+        }
+
+        // Ativa o Thorne via referência pública
+        if (thorne != null)
+        {
+            thorne.gameObject.SetActive(true);
+            thorne.ActivateThorne();
         }
 
         Destroy(gameObject);

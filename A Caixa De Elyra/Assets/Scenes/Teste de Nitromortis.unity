@@ -6182,7 +6182,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d15cc07e4da21bb4dbe572f948a15004, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 2
+  maxHealth: 8
   meleeRange: 10
   rangedRange: 19
   clawHitbox: {fileID: 515967769}
@@ -6191,6 +6191,7 @@ MonoBehaviour:
   projectilePrefab: {fileID: 6152473566378833249, guid: 4888f028c876b894d9103a2bb4de2295, type: 3}
   projectileSpawn: {fileID: 1230804730}
   projectileDelay: 0.4
+  thorne: {fileID: 1759577831}
 --- !u!50 &351136709
 Rigidbody2D:
   serializedVersion: 5
@@ -15470,13 +15471,14 @@ GameObject:
   m_Component:
   - component: {fileID: 1532708507}
   - component: {fileID: 1532708508}
+  - component: {fileID: 1532708509}
   m_Layer: 0
   m_Name: AttackHitbox
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1532708507
 Transform:
   m_ObjectHideFlags: 0
@@ -15486,7 +15488,7 @@ Transform:
   m_GameObject: {fileID: 1532708506}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -3.63, y: 1.46, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -15499,7 +15501,7 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1532708506}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Density: 1
   m_Material: {fileID: 0}
@@ -15526,7 +15528,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: -2.9360595, y: 1.7127001}
+  m_Offset: {x: -0.7790029, y: 0.23235035}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -15536,8 +15538,21 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 6.872119, y: 5.2409673}
+  m_Size: {x: 9.325251, y: 8.201668}
   m_EdgeRadius: 0
+--- !u!114 &1532708509
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1532708506}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1bb8850d4586f6f46972c49e2204fe19, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 2
 --- !u!1 &1536890610
 GameObject:
   m_ObjectHideFlags: 0
@@ -16240,7 +16255,6 @@ Transform:
   m_LocalScale: {x: 1.0122696, y: 1.0122696, z: 1.0122696}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 2116207092}
   - {fileID: 1532708507}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -16272,17 +16286,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15bf299aafb544945817391f2cab1f61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 356577742}
-  anim: {fileID: 1759577826}
-  speed: 3
+  moveSpeed: 3
   attackRange: 5
-  teleportInterval: 15
-  fadeDuration: 1
-  maxHealth: 20
-  attackHitbox: {fileID: 2116207091}
-  attackDuration: 0.3
-  deathSound: {fileID: 0}
-  sr: {fileID: 1759577828}
+  maxHealth: 5
+  swordHitbox: {fileID: 1532708508}
+  swordDamage: 1
+  swordHitboxDelay: 0.3
+  swordHitboxDuration: 0.25
 --- !u!82 &1759577832
 AudioSource:
   m_ObjectHideFlags: 0
@@ -22481,37 +22491,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!1 &2116207091
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2116207092}
-  m_Layer: 0
-  m_Name: AttackPoint
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &2116207092
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2116207091}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.07, y: 2.6, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1759577829}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &2490163526516563887
 PrefabInstance:
   m_ObjectHideFlags: 0
