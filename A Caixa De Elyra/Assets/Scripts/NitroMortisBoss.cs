@@ -7,8 +7,8 @@ public class NitroMortisBoss : MonoBehaviour
     public Animator anim;
 
     [Header("Hitboxes")]
-    public GameObject clawAttackCollider; // garra
-    public GameObject mouthAttackCollider; // boca
+    public GameObject clawAttackCollider;
+    public GameObject mouthAttackCollider;
 
     [Header("Projectile")]
     public GameObject poisonProjectilePrefab;
@@ -25,7 +25,7 @@ public class NitroMortisBoss : MonoBehaviour
     public float projectileSpawnTime = 0.5f;
 
     [Header("Ranges")]
-    public float detectionRange = 20f; 
+    public float detectionRange = 20f;
     public float clawRange = 6f;
 
     [Header("Health")]
@@ -33,7 +33,7 @@ public class NitroMortisBoss : MonoBehaviour
     private int currentHealth;
 
     [Header("Thorne")]
-    public ThorneBossController thorneBoss; // só ativa depois da morte
+    public ThorneBossController thorneBoss;
 
     private bool isDead = false;
     private bool isAttacking = false;
@@ -52,7 +52,7 @@ public class NitroMortisBoss : MonoBehaviour
             mouthAttackCollider.SetActive(false);
 
         if (thorneBoss != null)
-            thorneBoss.gameObject.SetActive(false); // só aparece depois
+            thorneBoss.gameObject.SetActive(false);
     }
 
     void Update()
@@ -73,7 +73,6 @@ public class NitroMortisBoss : MonoBehaviour
             AttackLogic();
     }
 
-    // ===================== ATAQUES =====================
     void StartClawAttack()
     {
         isAttacking = true;
@@ -96,25 +95,30 @@ public class NitroMortisBoss : MonoBehaviour
 
         if (currentAttack == AttackType.Claw)
         {
-            if (attackTimer >= clawHitStart && attackTimer < clawHitEnd && clawAttackCollider != null)
+            if (attackTimer >= clawHitStart && attackTimer < clawHitEnd)
                 clawAttackCollider.SetActive(true);
-            if (attackTimer >= clawHitEnd && clawAttackCollider != null)
+
+            if (attackTimer >= clawHitEnd)
                 clawAttackCollider.SetActive(false);
+
             if (attackTimer >= clawDuration)
                 EndAttack();
         }
 
         if (currentAttack == AttackType.Mouth)
         {
-            if (attackTimer >= mouthHitStart && attackTimer < mouthHitEnd && mouthAttackCollider != null)
+            if (attackTimer >= mouthHitStart && attackTimer < mouthHitEnd)
                 mouthAttackCollider.SetActive(true);
-            if (attackTimer >= mouthHitEnd && mouthAttackCollider != null)
+
+            if (attackTimer >= mouthHitEnd)
                 mouthAttackCollider.SetActive(false);
+
             if (attackTimer >= projectileSpawnTime)
             {
                 SpawnProjectile();
-                projectileSpawnTime = 999f; // garante só 1 vez
+                projectileSpawnTime = 999f;
             }
+
             if (attackTimer >= mouthDuration)
                 EndAttack();
         }
@@ -126,17 +130,15 @@ public class NitroMortisBoss : MonoBehaviour
         currentAttack = AttackType.None;
         attackTimer = 0f;
 
-        if (clawAttackCollider != null)
-            clawAttackCollider.SetActive(false);
-        if (mouthAttackCollider != null)
-            mouthAttackCollider.SetActive(false);
+        clawAttackCollider.SetActive(false);
+        mouthAttackCollider.SetActive(false);
 
-        projectileSpawnTime = 0.5f; // reseta para próximo ataque
+        projectileSpawnTime = 0.5f;
     }
 
     void SpawnProjectile()
     {
-        if (poisonProjectilePrefab != null && mouthSpawnPoint != null && player != null)
+        if (poisonProjectilePrefab != null && mouthSpawnPoint != null)
         {
             GameObject proj = Instantiate(poisonProjectilePrefab, mouthSpawnPoint.position, Quaternion.identity);
             proj.GetComponent<PoisonProjectile>().SetDirection(player.position - mouthSpawnPoint.position);
@@ -144,11 +146,12 @@ public class NitroMortisBoss : MonoBehaviour
     }
 
     // ===================== DANO =====================
+    // Player só dá dano SE estiver usando o super
     public void TakeDamage(bool superActive)
     {
         if (!superActive || isDead) return;
 
-        currentHealth -= 1;
+        currentHealth--;
 
         if (currentHealth <= 0)
             StartCoroutine(DeathEffect());
@@ -159,14 +162,11 @@ public class NitroMortisBoss : MonoBehaviour
         isDead = true;
         anim.enabled = false;
 
-        // opcional: efeito visual de morte
         yield return new WaitForSeconds(0.5f);
 
-        // ativa o Thorne
         if (thorneBoss != null)
             thorneBoss.gameObject.SetActive(true);
 
-        // destrói o NitroMortis depois de 0.5s
         Destroy(gameObject, 0.5f);
     }
 }

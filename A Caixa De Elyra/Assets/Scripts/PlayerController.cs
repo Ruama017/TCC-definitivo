@@ -155,7 +155,7 @@ public class PlayerController : MonoBehaviour
 
                 // Dano nos bosses
                 ThorneBossController thorne = hit.GetComponent<ThorneBossController>();
-                NitroMortisBoss nitro = hit.GetComponent<NitroMortisBoss>();
+                NitroMortis nitro = hit.GetComponent<NitroMortis>();
 
                 if (thorne != null)
                 {
@@ -165,8 +165,10 @@ public class PlayerController : MonoBehaviour
 
                 if (nitro != null)
                 {
-                    nitro.TakeDamage(hasSuper); // CORRIGIDO: só passa o bool super
-                    Debug.Log("[DEBUG] Ataque do player atingiu NitroMortis! Super: " + hasSuper);
+                    int dano = 1; // dano base
+                    if (hasSuper) dano = 2; // se tiver Super, aumenta dano
+                    nitro.TakeDamage(dano);
+                    Debug.Log("[DEBUG] Ataque do player atingiu NitroMortis! Dano: " + dano);
                 }
             }
 

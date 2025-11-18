@@ -24,7 +24,7 @@ public class CutsceneManager : MonoBehaviour
     [Header("Logo final")]
     public Image logoImage;
     public float tempoLogo = 2f;
-    public string nomeCenaJogo = "Nivel1";
+    public string nomeCenaJogo = "Cena1"; // cena final
 
     public Cena[] cenas = new Cena[4];
 
@@ -32,10 +32,27 @@ public class CutsceneManager : MonoBehaviour
     private Coroutine fadeCoroutine;
     private Coroutine textoCoroutine;
 
+    [Header("Som das letras")]
+    public AudioClip somLetra;       // arraste no inspector o som da letra
+    public AudioSource audioLetra;   // arraste no inspector o AudioSource que vai tocar o som
+
+    [Header("Painel de informações")]
+    public GameObject painelInfo; // arraste o painel no inspector
+
     void Start()
     {
+        // Inicia a cutscene normalmente
         if (musicaFundo != null) musicaFundo.Play();
         MostrarCena(cenaAtual);
+    }
+
+    // Método chamado pelo botão "Avançar" do painel
+    public void AvancarParaNivel1()
+    {
+        if (painelInfo != null)
+            painelInfo.SetActive(false);
+
+        SceneManager.LoadScene(nomeCenaJogo);
     }
 
     // Botão para pular toda a cutscene
@@ -67,7 +84,7 @@ public class CutsceneManager : MonoBehaviour
     {
         foreach (var texto in cena.textos)
         {
-            yield return StartCoroutine(FadeText(texto, cena.fadeTexto, cena.delayEntreTextos));
+            yield return StartCoroutine(MostrarTextoLetraPorLetra(texto, cena.fadeTexto, cena.delayEntreTextos));
         }
 
         // Quando termina os textos, espera um pouco e avança para a próxima imagem automaticamente
@@ -81,20 +98,38 @@ public class CutsceneManager : MonoBehaviour
         cutsceneImage.gameObject.SetActive(false);
         cutsceneText.gameObject.SetActive(false);
 
+        // Ativa o painel de fundo preto durante a logo
+        fadePanel.gameObject.SetActive(true);
+        fadePanel.color = new Color(0, 0, 0, 1); // totalmente preto
+
         logoImage.gameObject.SetActive(true);
         yield return StartCoroutine(FadeImage(logoImage, 0, 1, tempoFade));
         yield return new WaitForSeconds(tempoLogo);
         yield return StartCoroutine(FadeImage(logoImage, 1, 0, tempoFade));
 
-        SceneManager.LoadScene(nomeCenaJogo);
+        logoImage.gameObject.SetActive(false);
+
+        // Aguarda um frame com o painel preto antes de mostrar o painel de informações
+        yield return null;
+
+        // Mostra o painel de informações antes de ir para a cena
+        if (painelInfo != null)
+        {
+            painelInfo.SetActive(true);
+        }
+        else
+        {
+            // Se não houver painel, carrega direto a cena
+            SceneManager.LoadScene(nomeCenaJogo);
+        }
     }
 
-    IEnumerator FadeText(string texto, float fadeDuration, float displayTime)
+    IEnumerator MostrarTextoLetraPorLetra(string texto, float fadeDuration, float displayTime)
     {
-        cutsceneText.text = texto;
+        cutsceneText.text = "";
         Color c = cutsceneText.color;
 
-        // Fade in
+        // Fade in inicial do texto
         float t = 0;
         while (t < 1)
         {
@@ -104,10 +139,21 @@ public class CutsceneManager : MonoBehaviour
             yield return null;
         }
 
+        // Digita letra por letra
+        foreach (char letra in texto)
+        {
+            cutsceneText.text += letra;
+            if (audioLetra != null && somLetra != null)
+            {
+                audioLetra.PlayOneShot(somLetra);
+            }
+            yield return new WaitForSeconds(0.05f); // tempo entre letras
+        }
+
         // Mantém visível
         yield return new WaitForSeconds(displayTime);
 
-        // Fade out
+        // Fade out final
         t = 0;
         while (t < 1)
         {
@@ -144,5 +190,3 @@ public class CutsceneManager : MonoBehaviour
         }
     }
 }
-
-
