@@ -54,8 +54,11 @@ public class ThorneBossController : MonoBehaviour
     // ----------------------------------------------------------
     void MoveAndAttack()
     {
+        if (isDead || player == null) return;
+
         float distance = Vector2.Distance(transform.position, player.position);
 
+        // Se estiver dentro do range de ataque, para de se mover e só ataca
         if (distance > attackRange)
         {
             anim.SetBool("isWalking", true);

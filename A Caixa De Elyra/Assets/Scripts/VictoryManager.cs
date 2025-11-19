@@ -24,9 +24,14 @@ public class VictoryManager : MonoBehaviour
     }
 
     public void PlayVictorySequence()
-    {
-        StartCoroutine(VictoryFlow());
-    }
+{
+    victoryCanvas.SetActive(true);
+
+    // PAUSA O JOGO
+    Time.timeScale = 0f;
+
+    Debug.Log("Tela de vitória ativada.");
+}
 
     IEnumerator VictoryFlow()
     {

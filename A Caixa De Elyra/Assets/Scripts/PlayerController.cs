@@ -1,5 +1,5 @@
 using UnityEngine;
-using System.Collections; // necessário para Coroutine
+using System.Collections;
 
 public class PlayerController : MonoBehaviour
 {
@@ -9,41 +9,40 @@ public class PlayerController : MonoBehaviour
 
     [Header("Ataque")]
     public Animator animator;
-    public GameObject attackHitbox; // Arraste aqui o objeto filho da hitbox da espada
-    public float attackDuration = 0.2f; // tempo que a hitbox fica ativa
+    public GameObject attackHitbox; 
+    public float attackDuration = 0.2f;
 
     [Header("SFX de Pulo")]
-    public AudioSource jumpSound; // Som do pulo
+    public AudioSource jumpSound;
 
     private Rigidbody2D rb;
     private bool isGrounded;
     private int extraJumps;
     public int extraJumpValue = 1;
 
-    private bool isAttacking = false; // evita múltiplos ataques ao mesmo tempo
-    private bool isDead = false;      // controla se o player morreu
+    private bool isAttacking = false;
+    private bool isDead = false;
 
-    // ======== SPEED BOOST ========
     [Header("Speed Boost")]
     private float normalSpeed;
     private Coroutine speedBoostCoroutine;
 
-    // ======== JUMP BOOST ========
     [Header("Jump Boost")]
     private float normalJumpForce;
     private Coroutine jumpBoostCoroutine;
 
-    // ======== VIDA ========
     [Header("Player Health")]
-    public PlayerHealth playerHealth; // arraste no inspector
+    public PlayerHealth playerHealth; 
     private int currentHealth;
 
-    // ======== SUPER ========
-    [Header("Super")]
-    public bool hasSuper = false;        // true se o player coletou o Super
-    public GameObject superEffect;       // efeitos de brilhos
+    [Header("Super - Bota")]
+    public bool hasSuper = false;        
+    public GameObject superEffect;       
 
-    // expõe isAttacking para outros scripts
+    [Header("Super - Ataque")]
+    public bool hasAttackSuper = false;  
+    public GameObject attackSuperEffect; 
+
     public bool IsAttacking => isAttacking;
 
     private void Start()
@@ -52,7 +51,7 @@ public class PlayerController : MonoBehaviour
         extraJumps = extraJumpValue;
 
         if (attackHitbox != null)
-            attackHitbox.SetActive(false); // Começa desativado
+            attackHitbox.SetActive(false);
 
         normalSpeed = moveSpeed;
         normalJumpForce = jumpForce;
@@ -70,10 +69,9 @@ public class PlayerController : MonoBehaviour
         Attack();
         Flip();
 
-        // Atualiza animações
         if (animator != null)
         {
-            animator.SetFloat("Speed", Mathf.Abs(rb.velocity.x)); // andando
+            animator.SetFloat("Speed", Mathf.Abs(rb.velocity.x));
             animator.SetBool("IsGrounded", isGrounded);
             animator.SetFloat("yVelocity", rb.velocity.y);
 
@@ -84,7 +82,6 @@ public class PlayerController : MonoBehaviour
             animator.SetBool("IsFalling", isFalling);
         }
 
-        // Checa se morreu
         if (playerHealth != null && playerHealth.currentHealth <= 0 && !isDead)
         {
             Die();
@@ -120,7 +117,6 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    // ======================== ATAQUE ========================
     void Attack()
     {
         if (Input.GetKeyDown(KeyCode.M) && !isAttacking)
@@ -153,22 +149,19 @@ public class PlayerController : MonoBehaviour
             {
                 if (hit.CompareTag("Player")) continue;
 
-                // Dano nos bosses
                 ThorneBossController thorne = hit.GetComponent<ThorneBossController>();
                 NitroMortis nitro = hit.GetComponent<NitroMortis>();
 
                 if (thorne != null)
                 {
                     thorne.TakeDamage(1, hasSuper);
-                    Debug.Log("[DEBUG] Ataque do player atingiu Thorne! Super: " + hasSuper);
                 }
 
                 if (nitro != null)
                 {
-                    int dano = 1; // dano base
-                    if (hasSuper) dano = 2; // se tiver Super, aumenta dano
+                    int dano = 1;
+                    if (hasSuper) dano = 2;
                     nitro.TakeDamage(dano);
-                    Debug.Log("[DEBUG] Ataque do player atingiu NitroMortis! Dano: " + dano);
                 }
             }
 
@@ -177,7 +170,6 @@ public class PlayerController : MonoBehaviour
 
         isAttacking = false;
     }
-    // ========================================================
 
     void Flip()
     {
@@ -198,7 +190,6 @@ public class PlayerController : MonoBehaviour
             isGrounded = false;
     }
 
-    // ======== SPEED BOOST ========
     public void StartSpeedBoost(float multiplier, float duration)
     {
         if (speedBoostCoroutine != null)
@@ -225,7 +216,6 @@ public class PlayerController : MonoBehaviour
         speedBoostCoroutine = null;
     }
 
-    // ======== JUMP BOOST ========
     public void StartJumpBoost(float multiplier, float duration)
     {
         if (jumpBoostCoroutine != null)
@@ -252,7 +242,6 @@ public class PlayerController : MonoBehaviour
         jumpBoostCoroutine = null;
     }
 
-    // ======== MÉTODO DE DANO ========
     public void TakeDamage(int damage)
     {
         if (playerHealth != null)
@@ -262,7 +251,7 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    // ======== SUPER ========
+    // ======== SUPER DA BOTA ========
     public void ActivateSuper(float duration)
     {
         hasSuper = true;
@@ -282,7 +271,26 @@ public class PlayerController : MonoBehaviour
             superEffect.SetActive(false);
     }
 
-    // ======== MORTE ========
+    // ======== SUPER DO ATAQUE ========
+    public void ActivateAttackSuper(float duration)
+    {
+        hasAttackSuper = true;
+
+        if (attackSuperEffect != null)
+            attackSuperEffect.SetActive(true);
+
+        StartCoroutine(DeactivateAttackSuperAfterTime(duration));
+    }
+
+    private IEnumerator DeactivateAttackSuperAfterTime(float time)
+    {
+        yield return new WaitForSeconds(time);
+        hasAttackSuper = false;
+
+        if (attackSuperEffect != null)
+            attackSuperEffect.SetActive(false);
+    }
+
     private void Die()
     {
         isDead = true;

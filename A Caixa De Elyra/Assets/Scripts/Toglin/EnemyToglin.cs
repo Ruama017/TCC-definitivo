@@ -112,10 +112,9 @@ public class EnemyToglin : MonoBehaviour
         PlayerSuper ps = collision.collider.GetComponent<PlayerSuper>();
         bool playerIsSuper = ps != null && ps.isSuper;
 
-        // detecta stomp se o player estiver com super e acima do Toglin
+        // ✔ Correção: Só é stomp se o player TIVER super + estiver acima
         bool stomped = canBeStomped && playerIsSuper &&
-                       collision.transform.position.y > transform.position.y + 0.25f &&
-                       collision.relativeVelocity.y <= 0f;
+                       collision.transform.position.y > transform.position.y + 0.25f;
 
         if (stomped)
         {
@@ -135,7 +134,7 @@ public class EnemyToglin : MonoBehaviour
         }
         else
         {
-            // só causa dano se o player não estiver com super
+            // Só dá dano se o player NÃO estiver super
             if (!playerIsSuper)
                 TryDealDamage(collision.collider.gameObject);
         }
