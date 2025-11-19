@@ -15,6 +15,7 @@ TagManager:
   - Thorne
   - PlayerSuper
   - Boss
+  - CaixaElyra
   layers:
   - Default
   - TransparentFX

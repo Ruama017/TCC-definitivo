@@ -20,11 +20,11 @@ public class ThorneBossController : MonoBehaviour
     [Header("Ataque da Espada")]
     public Collider2D swordHitbox;       // collider da espada
     public int swordDamage = 1;
-    public float swordHitboxDelay = 0.3f;     
-    public float swordHitboxDuration = 0.25f; 
+    public float swordHitboxDelay = 0.3f;
+    public float swordHitboxDuration = 0.25f;
 
     // ----------------------------------------------------------
-    // Função para ativar o Thorne após NitroMortis morrer
+    // Inicialização ao ser ativado pelo Nitro
     // ----------------------------------------------------------
     public void ActivateThorne()
     {
@@ -37,6 +37,7 @@ public class ThorneBossController : MonoBehaviour
         if (swordHitbox != null)
             swordHitbox.enabled = false; // garante que a hitbox começa desativada
 
+        gameObject.SetActive(true); // garante que está ativo
         StartCoroutine(TeleportCycle());
     }
 
@@ -58,32 +59,27 @@ public class ThorneBossController : MonoBehaviour
         if (distance > attackRange)
         {
             anim.SetBool("isWalking", true);
-
             Vector2 dir = (player.position - transform.position).normalized;
             transform.position += (Vector3)dir * moveSpeed * Time.deltaTime;
         }
         else
         {
             anim.SetBool("isWalking", false);
-
             if (!isAttacking)
                 StartCoroutine(Attack());
         }
     }
 
     // ----------------------------------------------------------
-    // ATAQUE COM HITBOX CORRIGIDA
+    // ATAQUE COM HITBOX
     // ----------------------------------------------------------
     IEnumerator Attack()
     {
         isAttacking = true;
-
         anim.SetTrigger("attack");
 
-        // espera até o momento da espada acertar
         yield return new WaitForSeconds(swordHitboxDelay);
 
-        // Ativa apenas o collider (GameObject deve estar ativo)
         if (swordHitbox != null)
             swordHitbox.enabled = true;
 
@@ -92,8 +88,7 @@ public class ThorneBossController : MonoBehaviour
         if (swordHitbox != null)
             swordHitbox.enabled = false;
 
-        yield return new WaitForSeconds(0.2f); // restante da animação
-
+        yield return new WaitForSeconds(0.2f);
         isAttacking = false;
     }
 
@@ -106,12 +101,11 @@ public class ThorneBossController : MonoBehaviour
         {
             yield return new WaitForSeconds(15f);
 
-            anim.SetTrigger("teleport"); 
+            anim.SetTrigger("teleport");
 
             yield return new WaitForSeconds(0.1f);
 
             Vector3 newPos;
-
             if (teleportBehindNext)
             {
                 float offset = -2f * Mathf.Sign(player.position.x - transform.position.x);
@@ -124,7 +118,6 @@ public class ThorneBossController : MonoBehaviour
             }
 
             transform.position = newPos;
-
             teleportBehindNext = !teleportBehindNext;
 
             yield return new WaitForSeconds(0.1f);
@@ -132,14 +125,14 @@ public class ThorneBossController : MonoBehaviour
     }
 
     // ----------------------------------------------------------
-    // FLIP (SPRITE VIRADO PARA ESQUERDA)
+    // FLIP
     // ----------------------------------------------------------
     void FlipTowardsPlayer()
     {
         if (player.position.x < transform.position.x)
-            transform.localScale = new Vector3(1, 1, 1);  // olha para esquerda
+            transform.localScale = new Vector3(1, 1, 1);
         else
-            transform.localScale = new Vector3(-1, 1, 1); // olha para direita
+            transform.localScale = new Vector3(-1, 1, 1);
     }
 
     // ----------------------------------------------------------
@@ -160,7 +153,14 @@ public class ThorneBossController : MonoBehaviour
     {
         isDead = true;
 
-        yield return new WaitForSeconds(1f);
+        SpriteRenderer sr = GetComponent<SpriteRenderer>();
+        for (int i = 0; i < 3; i++)
+        {
+            sr.enabled = false;
+            yield return new WaitForSeconds(0.15f);
+            sr.enabled = true;
+            yield return new WaitForSeconds(0.15f);
+        }
 
         Destroy(gameObject);
     }

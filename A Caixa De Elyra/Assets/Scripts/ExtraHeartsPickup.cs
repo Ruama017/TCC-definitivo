@@ -9,7 +9,9 @@ public class ExtraHeartsPickup : MonoBehaviour
     {
         if (other.CompareTag("Player") && SceneManager.GetActiveScene().name == "Cena3")
         {
-            PlayerHealth player = other.GetComponent<PlayerHealth>();
+            // CORREÇÃO AQUI ↓↓↓↓↓↓
+            PlayerHealth player = other.GetComponentInParent<PlayerHealth>();
+
             if (player != null)
             {
                 player.AddExtraHearts(extraHearts); // adiciona no HUD
