@@ -38,6 +38,7 @@ public class PlayerController : MonoBehaviour
     [Header("Super - Bota")]
     public bool hasSuper = false;        
     public GameObject superEffect;       
+    public PlayerSuper playerSuper;
 
     [Header("Super - Ataque")]
     public bool hasAttackSuper = false;  
@@ -58,11 +59,17 @@ public class PlayerController : MonoBehaviour
 
         if (playerHealth != null)
             currentHealth = playerHealth.currentHealth;
+
+        if (playerSuper == null)
+            playerSuper = GetComponentInChildren<PlayerSuper>();
     }
 
     private void Update()
     {
         if (isDead) return;
+
+        if (playerSuper != null)
+            hasSuper = playerSuper.isSuper;
 
         Move();
         Jump();
@@ -71,7 +78,13 @@ public class PlayerController : MonoBehaviour
 
         if (animator != null)
         {
-            animator.SetFloat("Speed", Mathf.Abs(rb.velocity.x));
+            // --- ÚNICA MUDANÇA QUE VOCÊ QUERIA ---
+            if (!isGrounded)
+                animator.SetFloat("Speed", 0f); // evita walk no ar
+            else
+                animator.SetFloat("Speed", Mathf.Abs(rb.velocity.x));
+            // --------------------------------------
+
             animator.SetBool("IsGrounded", isGrounded);
             animator.SetFloat("yVelocity", rb.velocity.y);
 
@@ -153,9 +166,7 @@ public class PlayerController : MonoBehaviour
                 NitroMortis nitro = hit.GetComponent<NitroMortis>();
 
                 if (thorne != null)
-                {
                     thorne.TakeDamage(1, hasSuper);
-                }
 
                 if (nitro != null)
                 {
@@ -251,7 +262,6 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    // ======== SUPER DA BOTA ========
     public void ActivateSuper(float duration)
     {
         hasSuper = true;
@@ -271,7 +281,6 @@ public class PlayerController : MonoBehaviour
             superEffect.SetActive(false);
     }
 
-    // ======== SUPER DO ATAQUE ========
     public void ActivateAttackSuper(float duration)
     {
         hasAttackSuper = true;

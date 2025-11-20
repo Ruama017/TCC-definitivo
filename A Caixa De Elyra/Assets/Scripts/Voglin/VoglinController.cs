@@ -100,10 +100,11 @@ public class VoglinController : MonoBehaviour
 
         Transform targetPoint = patrolPoints[currentPatrolIndex];
         float dirX = targetPoint.position.x - transform.position.x;
-        float moveDir = Mathf.Sign(dirX);
+        float flipThreshold = 0.1f; // buffer de distância para evitar micro-flips
 
-        if (moveDir > 0 && !facingRight) Flip();
-        else if (moveDir < 0 && facingRight) Flip();
+        // Flip só se estiver distante o suficiente
+        if (dirX > flipThreshold && !facingRight) Flip();
+        else if (dirX < -flipThreshold && facingRight) Flip();
 
         transform.position = Vector2.MoveTowards(
             transform.position,
@@ -192,7 +193,7 @@ public class VoglinController : MonoBehaviour
         if (soulPrefab != null && soulSpawnPoint != null)
             Instantiate(soulPrefab, soulSpawnPoint.position, Quaternion.identity);
 
-        // 🕒 destrói o inimigo após o som/ animação
+        // 🕒 destrói o inimigo após o som/animação
         Destroy(gameObject, 1.5f);
     }
 

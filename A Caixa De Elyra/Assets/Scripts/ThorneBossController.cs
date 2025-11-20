@@ -6,7 +6,7 @@ public class ThorneBossController : MonoBehaviour
     [Header("Configuração")]
     public float moveSpeed = 3f;
     public float attackRange = 2f;
-    public int maxHealth = 10;
+    public int maxHealth = 3; // precisa de 3 hits para morrer
 
     private Transform player;
     private Animator anim;
@@ -22,6 +22,10 @@ public class ThorneBossController : MonoBehaviour
     public int swordDamage = 1;
     public float swordHitboxDelay = 0.3f;
     public float swordHitboxDuration = 0.25f;
+
+    // Propriedades públicas para o PlayerAttackHitbox
+    public int CurrentHealth => currentHealth;
+    public bool IsAlive => !isDead;
 
     // ----------------------------------------------------------
     // Inicialização ao ser ativado pelo Nitro
@@ -49,16 +53,12 @@ public class ThorneBossController : MonoBehaviour
         FlipTowardsPlayer();
     }
 
-    // ----------------------------------------------------------
-    // MOVIMENTAÇÃO + ATAQUE
-    // ----------------------------------------------------------
     void MoveAndAttack()
     {
         if (isDead || player == null) return;
 
         float distance = Vector2.Distance(transform.position, player.position);
 
-        // Se estiver dentro do range de ataque, para de se mover e só ataca
         if (distance > attackRange)
         {
             anim.SetBool("isWalking", true);
@@ -73,9 +73,6 @@ public class ThorneBossController : MonoBehaviour
         }
     }
 
-    // ----------------------------------------------------------
-    // ATAQUE COM HITBOX
-    // ----------------------------------------------------------
     IEnumerator Attack()
     {
         isAttacking = true;
@@ -95,9 +92,6 @@ public class ThorneBossController : MonoBehaviour
         isAttacking = false;
     }
 
-    // ----------------------------------------------------------
-    // CICLO DE TELEPORTE
-    // ----------------------------------------------------------
     IEnumerator TeleportCycle()
     {
         while (!isDead)
@@ -127,9 +121,6 @@ public class ThorneBossController : MonoBehaviour
         }
     }
 
-    // ----------------------------------------------------------
-    // FLIP
-    // ----------------------------------------------------------
     void FlipTowardsPlayer()
     {
         if (player.position.x < transform.position.x)
@@ -145,7 +136,8 @@ public class ThorneBossController : MonoBehaviour
     {
         if (!playerHasSuper || isDead) return;
 
-        currentHealth -= damage;
+        // Cada hit retira 1 de vida, mesmo com super ativo
+        currentHealth -= 1;
         anim.SetTrigger("Hit");
 
         if (currentHealth <= 0)

@@ -6,6 +6,14 @@ public class PlayerAttackHitbox : MonoBehaviour
     public int damage = 1;              // Dano base do player
     public float activeTime = 0.2f;     // Tempo que considera para ataques rápidos
 
+    private PlayerController playerController;
+
+    private void Awake()
+    {
+        // Garante que a referência ao PlayerController do pai seja correta
+        playerController = GetComponentInParent<PlayerController>();
+    }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         TryDamage(collision);
@@ -18,6 +26,9 @@ public class PlayerAttackHitbox : MonoBehaviour
 
     private void TryDamage(Collider2D collision)
     {
+        if (playerController == null)
+            return;
+
         // Voglin
         VoglinController voglin = collision.GetComponent<VoglinController>();
         if (voglin != null)
@@ -43,26 +54,26 @@ public class PlayerAttackHitbox : MonoBehaviour
         }
 
         // NitroMortis (boss real)
-      NitroMortis nitro = collision.GetComponentInParent<NitroMortis>();
-      if (nitro != null)
-{
-      bool playerHasSuper = GetComponentInParent<PlayerController>().hasSuper;
+        NitroMortis nitro = collision.GetComponentInParent<NitroMortis>();
+        if (nitro != null)
+        {
+            bool playerHasSuper = playerController.hasSuper;
+            int danoFinal = damage;
+            if (playerHasSuper)
+                danoFinal = damage * 2; // dobra o dano se super ativo
 
-    if (playerHasSuper)
-        nitro.TakeDamage(damage);
+            nitro.TakeDamage(danoFinal);
 
-    Debug.Log("[DEBUG] Player atingiu NitroMortis! Super ativo: " + playerHasSuper);
-
-    return;
-}
-
+            Debug.Log("[DEBUG] Player atingiu NitroMortis! Super ativo: " + playerHasSuper);
+            return;
+        }
 
         // ThorneBossController
         ThorneBossController thorne = collision.GetComponent<ThorneBossController>();
         if (thorne != null)
         {
-            bool playerHasSuper = GetComponentInParent<PlayerController>().hasSuper;
-            thorne.TakeDamage(damage, playerHasSuper);
+            bool playerHasSuper = playerController.hasSuper; // <- pega super
+            thorne.TakeDamage(damage, playerHasSuper);        // <- passa os 2 parâmetros
             Debug.Log("[DEBUG] Player atingiu Thorne! Dano: " + damage + ", Super ativo: " + playerHasSuper);
             return;
         }

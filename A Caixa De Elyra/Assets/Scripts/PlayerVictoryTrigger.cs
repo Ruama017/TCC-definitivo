@@ -2,16 +2,24 @@ using UnityEngine;
 
 public class PlayerVictoryTrigger : MonoBehaviour
 {
-    private void OnTriggerEnter2D(Collider2D other)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (other.CompareTag("CaixaElyra"))
+        // Verifica se quem entrou no trigger é o Player
+        if (collision.CompareTag("Player"))
         {
-            Debug.Log("PLAYER PEGOU A CAIXA DE ELYRA → VITÓRIA!");
-
-            if (VictoryManager.instance != null)
-                VictoryManager.instance.PlayVictorySequence();
-            else
-                Debug.LogError("VictoryManager não encontrado na cena!");
+            // Verifica se é a Caixa de Elyra
+            if (gameObject.CompareTag("CaixaElyra"))
+            {
+                // Tenta disparar a sequência de vitória
+                if (VictoryManager.instance != null)
+                {
+                    VictoryManager.instance.TryTriggerVictory();
+                }
+                else
+                {
+                    Debug.LogError("[PlayerVictoryTrigger] VictoryManager.instance está NULL!");
+                }
+            }
         }
     }
 }

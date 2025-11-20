@@ -30,6 +30,10 @@ public class NitroMortis : MonoBehaviour
     private bool isAttacking = false;
     private bool isDead = false;
 
+    // ====== Propriedades públicas para PlayerAttackHitbox ======
+    public int CurrentHealth => currentHealth;
+    public bool IsAlive => !isDead;
+
     void Start()
     {
         currentHealth = maxHealth;
@@ -105,11 +109,13 @@ public class NitroMortis : MonoBehaviour
         p.GetComponent<Rigidbody2D>().velocity = dir * 6f;
     }
 
+    // =================== DANO ===================
     public void TakeDamage(int dmg)
     {
         if (isDead) return;
 
-        currentHealth -= dmg;
+        // Aplica 1 de dano por hit, mesmo com super ativo
+        currentHealth -= 1;
         anim.SetTrigger("Hit");
 
         if (currentHealth <= 0)

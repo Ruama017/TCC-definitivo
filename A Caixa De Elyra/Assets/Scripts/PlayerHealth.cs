@@ -344,17 +344,18 @@ public class PlayerHealth : MonoBehaviour
         isWeakened = false;
     }
 
-    // ----------------------
-    // MÉTODO PÚBLICO PARA PEGAR A BOTA
-    // ----------------------
-    public void CollectBoot()
-    {
-        hasBootSuper = true;
-        superTimer = superDuration;
-    }
+   // ----------------------
+ // MÉTODO PÚBLICO PARA PEGAR A BOTA
+ // ----------------------
+ public void CollectBoot()
+ {
+    hasBootSuper = true;
+    superTimer = superDuration;
+ }
 
-    public bool IsSuperActive()
-    {
-        return hasBootSuper;
-    }
+ public bool IsSuperActive()
+ {
+    return hasBootSuper && superTimer > 0f;
+ }
+
 }

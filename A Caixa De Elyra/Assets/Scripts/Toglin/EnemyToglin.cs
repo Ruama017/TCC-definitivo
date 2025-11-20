@@ -39,7 +39,6 @@ public class EnemyToglin : MonoBehaviour
         sr = GetComponent<SpriteRenderer>();
         anim = GetComponent<Animator>();
 
-        // mantém gravidade natural (para andar no chão)
         rb.gravityScale = 1f;
         rb.constraints = RigidbodyConstraints2D.FreezeRotation;
 
@@ -54,7 +53,7 @@ public class EnemyToglin : MonoBehaviour
             if (p != null) playerTransform = p.transform;
         }
 
-        anim.enabled = false; // começa camuflado
+        anim.enabled = false;
     }
 
     private void FixedUpdate()
@@ -67,7 +66,6 @@ public class EnemyToglin : MonoBehaviour
             Vector2 dir = (playerTransform.position - transform.position).normalized;
             rb.velocity = new Vector2(dir.x * speed, rb.velocity.y);
 
-            // Ajuste para sprite desenhado virado à ESQUERDA
             if (dir.x != 0)
             {
                 Vector3 s = transform.localScale;
@@ -104,24 +102,26 @@ public class EnemyToglin : MonoBehaviour
         rb.velocity = Vector2.zero;
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    // ----------------------------
+    // DANO CONTÍNUO
+    // ----------------------------
+    private void OnCollisionStay2D(Collision2D collision)
     {
         if (isDead) return;
         if (!collision.collider.CompareTag("Player")) return;
 
-        PlayerSuper ps = collision.collider.GetComponent<PlayerSuper>();
-        bool playerIsSuper = ps != null && ps.isSuper;
+        PlayerHealth ph = collision.collider.GetComponent<PlayerHealth>();
+        bool playerHasBoot = ph != null && ph.IsSuperActive();
 
-        // ✔ Correção: Só é stomp se o player TIVER super + estiver acima
-        bool stomped = canBeStomped && playerIsSuper &&
+        bool stomped = canBeStomped && playerHasBoot &&
                        collision.transform.position.y > transform.position.y + 0.25f;
 
         if (stomped)
         {
             currentStomps++;
 
-            if (ps != null)
-                ps.BounceOnStomp(); // player dá bounce
+            var ps = collision.collider.GetComponent<PlayerSuper>();
+            if (ps != null) ps.BounceOnStomp();
 
             if (currentStomps >= stompsToKill)
             {
@@ -134,8 +134,8 @@ public class EnemyToglin : MonoBehaviour
         }
         else
         {
-            // Só dá dano se o player NÃO estiver super
-            if (!playerIsSuper)
+            // Dano contínuo
+            if (!playerHasBoot)
                 TryDealDamage(collision.collider.gameObject);
         }
     }

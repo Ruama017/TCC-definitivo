@@ -23,13 +23,14 @@ public class PlayerSuper : MonoBehaviour
 
     public void ActivateSuper(float duration)
     {
+        isSuper = true; // ✅ garante que já está true na coleta
+
         if (superCoroutine != null) StopCoroutine(superCoroutine);
         superCoroutine = StartCoroutine(SuperRoutine(duration));
     }
 
     private IEnumerator SuperRoutine(float duration)
     {
-        isSuper = true;
         superTimeRemaining = duration;
 
         if (superVfx != null && vfxInstance == null)
@@ -48,7 +49,7 @@ public class PlayerSuper : MonoBehaviour
 
     public void BounceOnStomp()
     {
-        rb.linearVelocity = new Vector2(rb.linearVelocity.x, 0f);
+        rb.velocity = new Vector2(rb.velocity.x, 0f);
         rb.AddForce(Vector2.up * stompBounceForce, ForceMode2D.Impulse);
     }
 }

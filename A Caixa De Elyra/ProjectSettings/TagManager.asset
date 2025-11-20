@@ -16,6 +16,7 @@ TagManager:
   - PlayerSuper
   - Boss
   - CaixaElyra
+  - Powerup
   layers:
   - Default
   - TransparentFX
