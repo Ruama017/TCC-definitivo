@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      curtscene vitoria 1_0: 7720055303384947584
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

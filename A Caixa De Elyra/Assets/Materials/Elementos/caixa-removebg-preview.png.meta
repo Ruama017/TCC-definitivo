@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      caixa-removebg-preview_0: 7459375000729695061
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
