@@ -78,12 +78,9 @@ public class PlayerController : MonoBehaviour
 
         if (animator != null)
         {
-            // --- ÚNICA MUDANÇA QUE VOCÊ QUERIA ---
-            if (!isGrounded)
-                animator.SetFloat("Speed", 0f); // evita walk no ar
-            else
-                animator.SetFloat("Speed", Mathf.Abs(rb.velocity.x));
-            // --------------------------------------
+            // --- ALTERAÇÃO ---
+            animator.SetFloat("Speed", Mathf.Abs(rb.velocity.x));
+            // -----------------
 
             animator.SetBool("IsGrounded", isGrounded);
             animator.SetFloat("yVelocity", rb.velocity.y);
