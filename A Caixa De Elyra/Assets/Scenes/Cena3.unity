@@ -14328,12 +14328,13 @@ MonoBehaviour:
   cutsceneImage: {fileID: 327310814}
   cutsceneText: {fileID: 355708653}
   cutsceneSprites:
+  - {fileID: 6594592747211894627, guid: d8d8bfff312d19b4e866fa70e6b3d242, type: 3}
   - {fileID: 7720055303384947584, guid: 7401635d6881f584e9a4ca7d5a1ce0e4, type: 3}
   - {fileID: 6850420201779256420, guid: bdbbd5f210efca1408e22630322747a6, type: 3}
   timePerImage: 4
   cutsceneMusic: {fileID: 24267302}
-  restartButton: {fileID: 0}
-  menuButton: {fileID: 0}
+  restartButton: {fileID: 417215449}
+  menuButton: {fileID: 505073995}
 --- !u!4 &653578393
 Transform:
   m_ObjectHideFlags: 0
@@ -18420,6 +18421,7 @@ GameObject:
   - component: {fileID: 1662770520}
   - component: {fileID: 1662770519}
   - component: {fileID: 1662770518}
+  - component: {fileID: 1662770521}
   m_Layer: 0
   m_Name: Caixa de Elyra
   m_TagString: CaixaElyra
@@ -18537,12 +18539,24 @@ Transform:
   m_GameObject: {fileID: 1662770517}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 309.48, y: -20.13, z: 0}
+  m_LocalPosition: {x: 311.6, y: -20.13, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1662770521
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1662770517}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a211c396132c9e44393dcacee4c55d80, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1679748301
 GameObject:
   m_ObjectHideFlags: 0
