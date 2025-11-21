@@ -23,6 +23,11 @@ public class ThorneBossController : MonoBehaviour
     public float swordHitboxDelay = 0.3f;
     public float swordHitboxDuration = 0.25f;
 
+    [Header("Sons")]
+    public AudioSource audioSource;
+    public AudioClip attackSound;
+    public AudioClip deathSound;
+
     // Propriedades públicas para o PlayerAttackHitbox
     public int CurrentHealth => currentHealth;
     public bool IsAlive => !isDead;
@@ -77,6 +82,10 @@ public class ThorneBossController : MonoBehaviour
     {
         isAttacking = true;
         anim.SetTrigger("attack");
+
+        // Toca som de ataque
+        if (audioSource != null && attackSound != null)
+            audioSource.PlayOneShot(attackSound);
 
         yield return new WaitForSeconds(swordHitboxDelay);
 
@@ -147,6 +156,10 @@ public class ThorneBossController : MonoBehaviour
     IEnumerator Die()
     {
         isDead = true;
+
+        // Toca som de morte
+        if (audioSource != null && deathSound != null)
+            audioSource.PlayOneShot(deathSound);
 
         SpriteRenderer sr = GetComponent<SpriteRenderer>();
         for (int i = 0; i < 3; i++)

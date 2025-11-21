@@ -17,16 +17,15 @@ public class VoglinProjectile : MonoBehaviour
         transform.Translate(direction * speed * Time.deltaTime);
     }
 
+    // Atualizado: SetDirection garante que o sprite acompanhe corretamente a direção
     public void SetDirection(Vector2 dir)
     {
         direction = dir.normalized;
+
         // virar sprite conforme direção X
-        if (dir.x < 0)
-        {
-            Vector3 s = transform.localScale;
-            s.x *= -1;
-            transform.localScale = s;
-        }
+        Vector3 s = transform.localScale;
+        s.x = dir.x < 0 ? -Mathf.Abs(s.x) : Mathf.Abs(s.x);
+        transform.localScale = s;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

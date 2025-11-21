@@ -27,6 +27,10 @@ public class NitroMortis : MonoBehaviour
     [Header("Thorne")]
     public ThorneBossController thorne; // ARRASTE O THORNE PELO INSPECTOR
 
+    [Header("Sons")]
+    public AudioClip attackSfx;
+    public AudioClip deathSfx;
+
     private bool isAttacking = false;
     private bool isDead = false;
 
@@ -78,6 +82,10 @@ public class NitroMortis : MonoBehaviour
 
         clawHitbox.enabled = true;
 
+        // Toca som de ataque
+        if (attackSfx != null)
+            AudioSource.PlayClipAtPoint(attackSfx, transform.position);
+
         yield return new WaitForSeconds(clawHitboxDuration);
 
         clawHitbox.enabled = false;
@@ -97,6 +105,10 @@ public class NitroMortis : MonoBehaviour
 
         ShootProjectile();
 
+        // Toca som de ataque
+        if (attackSfx != null)
+            AudioSource.PlayClipAtPoint(attackSfx, transform.position);
+
         yield return new WaitForSeconds(0.4f);
 
         isAttacking = false;
@@ -106,7 +118,7 @@ public class NitroMortis : MonoBehaviour
     {
         GameObject p = Instantiate(projectilePrefab, projectileSpawn.position, Quaternion.identity);
         Vector2 dir = (player.position - transform.position).normalized;
-        p.GetComponent<Rigidbody2D>().linearVelocity = dir * 6f;
+        p.GetComponent<Rigidbody2D>().velocity = dir * 6f;
     }
 
     // =================== DANO ===================
@@ -125,6 +137,10 @@ public class NitroMortis : MonoBehaviour
     IEnumerator Die()
     {
         isDead = true;
+
+        // Toca som de morte
+        if (deathSfx != null)
+            AudioSource.PlayClipAtPoint(deathSfx, transform.position);
 
         SpriteRenderer sr = GetComponent<SpriteRenderer>();
 

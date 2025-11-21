@@ -154,19 +154,31 @@ public class VoglinController : MonoBehaviour
         if (attackTimer <= 0f)
         {
             attackTimer = attackCooldown;
-            FireProjectile(direction);
+            FireProjectile();
         }
     }
 
-    private void FireProjectile(Vector2 dir)
+    // 🔹 FireProjectile garantido com prefab e spawn
+    private void FireProjectile()
     {
-        if (projectilePrefab == null || projectileSpawn == null) return;
+        if (projectilePrefab == null)
+        {
+            Debug.LogWarning("Projectile Prefab não está definido!");
+            return;
+        }
+        if (projectileSpawn == null)
+        {
+            Debug.LogWarning("Projectile Spawn não está definido!");
+            return;
+        }
 
         GameObject proj = Instantiate(projectilePrefab, projectileSpawn.position, Quaternion.identity);
         VoglinProjectile vp = proj.GetComponent<VoglinProjectile>();
-        if (vp != null) vp.SetDirection(dir);
-
-        proj.transform.right = dir;
+        if (vp != null)
+        {
+            float dirX = facingRight ? 1f : -1f;
+            vp.SetDirection(new Vector2(dirX, 0));
+        }
     }
 
     public void TakeDamage(int damage)

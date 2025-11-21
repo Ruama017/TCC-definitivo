@@ -14,6 +14,8 @@ public class PlayerHealth : MonoBehaviour
     public Sprite fullHeart;
     public Sprite emptyHeart;
 
+    private int partialDamage = 0; // acumula dano parcial antes de perder um coração
+
     [Header("Corações Extras (Fase 3)")]
     public GameObject extraHeartPrefab;   
     public Transform extraHeartsParent;   
@@ -111,8 +113,14 @@ public class PlayerHealth : MonoBehaviour
         // 3️⃣ Dano aos corações fixos (apenas se ainda houver dano)
         while (damage > 0 && currentHealth > 0)
         {
-            currentHealth--;
+            partialDamage++;        // acumula dano parcial
             damage--;
+
+            if (partialDamage >= 2) // perde 1 coração a cada 2 danos
+            {
+                currentHealth--;
+                partialDamage = 0;  // reseta o contador
+            }
         }
 
         if (damageSound != null)
@@ -296,6 +304,7 @@ public class PlayerHealth : MonoBehaviour
         extraHearts.Clear();
         hasBootSuper = false;
         superTimer = 0f;
+        partialDamage = 0; // reseta dano parcial ao reiniciar
 
         UpdateHearts();
         UpdateCrystalUI();
@@ -345,17 +354,17 @@ public class PlayerHealth : MonoBehaviour
     }
 
    // ----------------------
- // MÉTODO PÚBLICO PARA PEGAR A BOTA
- // ----------------------
- public void CollectBoot()
- {
-    hasBootSuper = true;
-    superTimer = superDuration;
- }
+   // MÉTODO PÚBLICO PARA PEGAR A BOTA
+   // ----------------------
+    public void CollectBoot()
+    {
+        hasBootSuper = true;
+        superTimer = superDuration;
+    }
 
- public bool IsSuperActive()
- {
-    return hasBootSuper && superTimer > 0f;
- }
+    public bool IsSuperActive()
+    {
+        return hasBootSuper && superTimer > 0f;
+    }
 
 }

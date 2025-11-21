@@ -21,7 +21,8 @@ public class EnemyToglin : MonoBehaviour
     public GameObject soulPrefab;
     public float vanishDelay = 0.15f;
 
-    [Header("Referências")]
+    [Header("Sons")]
+    public AudioClip attackSfx;
     public AudioClip vanishSfx;
 
     private Rigidbody2D rb;
@@ -64,7 +65,7 @@ public class EnemyToglin : MonoBehaviour
         if (dist > stoppingDistance)
         {
             Vector2 dir = (playerTransform.position - transform.position).normalized;
-            rb.linearVelocity = new Vector2(dir.x * speed, rb.linearVelocity.y);
+            rb.velocity = new Vector2(dir.x * speed, rb.velocity.y);
 
             if (dir.x != 0)
             {
@@ -75,7 +76,7 @@ public class EnemyToglin : MonoBehaviour
         }
         else
         {
-            rb.linearVelocity = new Vector2(0f, rb.linearVelocity.y);
+            rb.velocity = new Vector2(0f, rb.velocity.y);
         }
     }
 
@@ -99,7 +100,7 @@ public class EnemyToglin : MonoBehaviour
         if (isDead) return;
         awake = false;
         anim.enabled = false;
-        rb.linearVelocity = Vector2.zero;
+        rb.velocity = Vector2.zero;
     }
 
     // ----------------------------
@@ -153,7 +154,14 @@ public class EnemyToglin : MonoBehaviour
         lastDamageTime = Time.time;
 
         var ph = player.GetComponent<PlayerHealth>();
-        if (ph != null) ph.TakeDamage(touchDamage);
+        if (ph != null)
+        {
+            ph.TakeDamage(touchDamage);
+
+            // Toca som de ataque
+            if (attackSfx != null)
+                AudioSource.PlayClipAtPoint(attackSfx, transform.position);
+        }
     }
 
     private void TransformIntoSoul()
@@ -161,7 +169,7 @@ public class EnemyToglin : MonoBehaviour
         if (isDead) return;
         isDead = true;
 
-        rb.linearVelocity = Vector2.zero;
+        rb.velocity = Vector2.zero;
         rb.isKinematic = true;
 
         foreach (var c in GetComponents<Collider2D>())
@@ -169,6 +177,7 @@ public class EnemyToglin : MonoBehaviour
 
         anim.enabled = false;
 
+        // Som de vanish/morte
         if (vanishSfx != null)
             AudioSource.PlayClipAtPoint(vanishSfx, transform.position);
 
