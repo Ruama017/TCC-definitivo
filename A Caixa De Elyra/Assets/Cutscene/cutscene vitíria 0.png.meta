@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      "cutscene vit\xEDria 0_0": 6594592747211894627
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
