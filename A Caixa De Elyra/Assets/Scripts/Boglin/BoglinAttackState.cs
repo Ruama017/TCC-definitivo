@@ -40,6 +40,11 @@ public class BoglinAttackState : BoglinBaseState
                 ph.TakeDamage(attackDamage);
             }
 
+            // --- ADIÇÃO: toca som de ataque ---
+            if (boglin.attackSound != null)
+                boglin.attackSound.Play();
+            // ---------------------------------
+
             lastAttackTime = Time.time;
 
             // Aciona animação novamente
@@ -50,7 +55,6 @@ public class BoglinAttackState : BoglinBaseState
 
     public override void ExitState(BoglinController boglin)
     {
-        // Se quiser, pode resetar triggers
         if (boglin.anim != null)
             boglin.anim.ResetTrigger("Attack");
     }

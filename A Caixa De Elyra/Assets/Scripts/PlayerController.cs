@@ -15,6 +15,14 @@ public class PlayerController : MonoBehaviour
     [Header("SFX de Pulo")]
     public AudioSource jumpSound;
 
+    // --- ADIÇÃO: sons extras ---
+    [Header("SFX Extras")]
+    public AudioSource attackSound;
+    public AudioSource hurtSound;
+    public AudioSource deathSound;
+    public AudioSource superSpeedSound;
+    // ----------------------------
+
     private Rigidbody2D rb;
     private bool isGrounded;
     private int extraJumps;
@@ -78,10 +86,7 @@ public class PlayerController : MonoBehaviour
 
         if (animator != null)
         {
-            // --- ALTERAÇÃO ---
             animator.SetFloat("Speed", Mathf.Abs(rb.linearVelocity.x));
-            // -----------------
-
             animator.SetBool("IsGrounded", isGrounded);
             animator.SetFloat("yVelocity", rb.linearVelocity.y);
 
@@ -132,6 +137,11 @@ public class PlayerController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.M) && !isAttacking)
         {
             isAttacking = true;
+
+            // --- SFX: ataque ---
+            if (attackSound != null)
+                attackSound.Play();
+            // -------------------
 
             if (animator != null)
             {
@@ -203,6 +213,11 @@ public class PlayerController : MonoBehaviour
         if (speedBoostCoroutine != null)
             StopCoroutine(speedBoostCoroutine);
 
+        // --- SFX: super speed ---
+        if (superSpeedSound != null)
+            superSpeedSound.Play();
+        // ------------------------
+
         speedBoostCoroutine = StartCoroutine(SpeedBoost(multiplier, duration));
     }
 
@@ -252,6 +267,11 @@ public class PlayerController : MonoBehaviour
 
     public void TakeDamage(int damage)
     {
+        // --- SFX: dano ---
+        if (hurtSound != null)
+            hurtSound.Play();
+        // -----------------
+
         if (playerHealth != null)
         {
             playerHealth.TakeDamage(damage);
@@ -301,6 +321,11 @@ public class PlayerController : MonoBehaviour
     {
         isDead = true;
         rb.linearVelocity = Vector2.zero;
+
+        // --- SFX: morte ---
+        if (deathSound != null)
+            deathSound.Play();
+        // ------------------
 
         if (animator != null)
             animator.SetTrigger("Death");

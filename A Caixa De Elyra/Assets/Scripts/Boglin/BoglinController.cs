@@ -32,16 +32,20 @@ public class BoglinController : MonoBehaviour
     public GameObject boglinSoulPrefab;
     public MonsterCounter monsterCounter;
 
+    // --- ADIÇÃO: sons ---
+    [Header("Sons do Boglin")]
+    public AudioSource attackSound;
+    public AudioSource deathSound;
+    // ---------------------
+
     void Start()
     {
         currentHealth = maxHealth;
 
-        // Instancia os estados
         walkState = new BoglinWalkState();
         attackState = new BoglinAttackState();
         patrolState = new BoglinPatrolState(leftPatrolPoint.position, rightPatrolPoint.position);
 
-        // Começa patrulhando
         SwitchState(patrolState);
     }
 
@@ -72,15 +76,22 @@ public class BoglinController : MonoBehaviour
 
         Vector2 direction = (target - transform.position).normalized;
         if (direction.x > 0)
-            transform.localScale = new Vector3(-1, 1, 1);  // olhando pra direita
+            transform.localScale = new Vector3(-1, 1, 1);
         else if (direction.x < 0)
-            transform.localScale = new Vector3(1, 1, 1);   // olhando pra esquerda
+            transform.localScale = new Vector3(1, 1, 1);
     }
 
     public void StopMoving()
     {
         if (anim != null)
             anim.SetBool("IsWalking", false);
+    }
+
+    public void PlayAttackSound()
+    {
+        // --- ADIÇÃO: tocar som no ataque ---
+        if (attackSound != null)
+            attackSound.Play();
     }
 
     public void TakeDamage(int damage)
@@ -92,6 +103,11 @@ public class BoglinController : MonoBehaviour
 
     void Die()
     {
+        // --- ADIÇÃO: som de morte ---
+        if (deathSound != null)
+            deathSound.Play();
+        // -----------------------------
+
         if (boglinSoulPrefab != null && monsterCounter != null)
         {
             GameObject soul = Instantiate(boglinSoulPrefab, transform.position, Quaternion.identity);
@@ -103,7 +119,6 @@ public class BoglinController : MonoBehaviour
         Destroy(gameObject);
     }
 
-    // Métodos de acesso pros estados
     public BoglinWalkState GetWalkState() => walkState;
     public BoglinAttackState GetAttackState() => attackState;
     public BoglinPatrolState GetPatrolState() => patrolState;
