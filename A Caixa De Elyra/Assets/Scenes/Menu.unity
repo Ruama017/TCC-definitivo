@@ -1013,7 +1013,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc3754e48cf49e6498dcb07e9fc6f958, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  menuMusic: {fileID: 8300000, guid: 538d206ad6f06a54e98ae43cc5e487c5, type: 3}
+  menuMusic: {fileID: 8300000, guid: 07fb4adcd29bee14f9049c9594bc67ad, type: 3}
   gameMusic: {fileID: 0}
 --- !u!82 &1408934215
 AudioSource:
@@ -1172,7 +1172,7 @@ AudioSource:
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
