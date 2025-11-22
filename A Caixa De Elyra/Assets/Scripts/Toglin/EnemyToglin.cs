@@ -65,7 +65,7 @@ public class EnemyToglin : MonoBehaviour
         if (dist > stoppingDistance)
         {
             Vector2 dir = (playerTransform.position - transform.position).normalized;
-            rb.velocity = new Vector2(dir.x * speed, rb.velocity.y);
+            rb.linearVelocity = new Vector2(dir.x * speed, rb.linearVelocity.y);
 
             if (dir.x != 0)
             {
@@ -76,7 +76,7 @@ public class EnemyToglin : MonoBehaviour
         }
         else
         {
-            rb.velocity = new Vector2(0f, rb.velocity.y);
+            rb.linearVelocity = new Vector2(0f, rb.linearVelocity.y);
         }
     }
 
@@ -100,7 +100,7 @@ public class EnemyToglin : MonoBehaviour
         if (isDead) return;
         awake = false;
         anim.enabled = false;
-        rb.velocity = Vector2.zero;
+        rb.linearVelocity = Vector2.zero;
     }
 
     // ----------------------------
@@ -169,7 +169,7 @@ public class EnemyToglin : MonoBehaviour
         if (isDead) return;
         isDead = true;
 
-        rb.velocity = Vector2.zero;
+        rb.linearVelocity = Vector2.zero;
         rb.isKinematic = true;
 
         foreach (var c in GetComponents<Collider2D>())

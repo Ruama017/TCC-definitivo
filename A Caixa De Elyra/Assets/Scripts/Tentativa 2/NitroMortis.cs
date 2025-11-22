@@ -118,7 +118,7 @@ public class NitroMortis : MonoBehaviour
     {
         GameObject p = Instantiate(projectilePrefab, projectileSpawn.position, Quaternion.identity);
         Vector2 dir = (player.position - transform.position).normalized;
-        p.GetComponent<Rigidbody2D>().velocity = dir * 6f;
+        p.GetComponent<Rigidbody2D>().linearVelocity = dir * 6f;
     }
 
     // =================== DANO ===================

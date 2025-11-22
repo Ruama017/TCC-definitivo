@@ -13761,7 +13761,7 @@ GameObject:
   - component: {fileID: 579969077}
   m_Layer: 5
   m_Name: Canvas_Config
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -17866,6 +17866,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Plataforma Normal (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 6298195138361582644, guid: fad10a07f6c35f0459f9d2aebd906a2c, type: 3}
+      propertyPath: m_TagString
+      value: Ground
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -19607,6 +19611,75 @@ Transform:
   - {fileID: 824247769}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &973688733
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 7350315627939268786, guid: 09e309e63ddbe8a4a814d96b6df31ce0, type: 3}
+      propertyPath: m_Name
+      value: Cristal (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7972306541532969981, guid: 09e309e63ddbe8a4a814d96b6df31ce0, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 7.8497124
+      objectReference: {fileID: 0}
+    - target: {fileID: 7972306541532969981, guid: 09e309e63ddbe8a4a814d96b6df31ce0, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 7.8497124
+      objectReference: {fileID: 0}
+    - target: {fileID: 7972306541532969981, guid: 09e309e63ddbe8a4a814d96b6df31ce0, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 7.8497124
+      objectReference: {fileID: 0}
+    - target: {fileID: 7972306541532969981, guid: 09e309e63ddbe8a4a814d96b6df31ce0, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 243.18
+      objectReference: {fileID: 0}
+    - target: {fileID: 7972306541532969981, guid: 09e309e63ddbe8a4a814d96b6df31ce0, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -17.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 7972306541532969981, guid: 09e309e63ddbe8a4a814d96b6df31ce0, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7972306541532969981, guid: 09e309e63ddbe8a4a814d96b6df31ce0, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7972306541532969981, guid: 09e309e63ddbe8a4a814d96b6df31ce0, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7972306541532969981, guid: 09e309e63ddbe8a4a814d96b6df31ce0, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7972306541532969981, guid: 09e309e63ddbe8a4a814d96b6df31ce0, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7972306541532969981, guid: 09e309e63ddbe8a4a814d96b6df31ce0, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7972306541532969981, guid: 09e309e63ddbe8a4a814d96b6df31ce0, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7972306541532969981, guid: 09e309e63ddbe8a4a814d96b6df31ce0, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 09e309e63ddbe8a4a814d96b6df31ce0, type: 3}
 --- !u!1 &975618866
 GameObject:
   m_ObjectHideFlags: 0
@@ -19704,7 +19777,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3430023725513200519, guid: b86485632ee0e0b4f9dbab7532f9fad8, type: 3}
       propertyPath: m_LocalScale.x
-      value: 44.644817
+      value: 69.75753
       objectReference: {fileID: 0}
     - target: {fileID: 3430023725513200519, guid: b86485632ee0e0b4f9dbab7532f9fad8, type: 3}
       propertyPath: m_LocalScale.y
@@ -19716,11 +19789,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3430023725513200519, guid: b86485632ee0e0b4f9dbab7532f9fad8, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 808.8
+      value: 807.3
       objectReference: {fileID: 0}
     - target: {fileID: 3430023725513200519, guid: b86485632ee0e0b4f9dbab7532f9fad8, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -34.2
+      value: -37.6
       objectReference: {fileID: 0}
     - target: {fileID: 3430023725513200519, guid: b86485632ee0e0b4f9dbab7532f9fad8, type: 3}
       propertyPath: m_LocalPosition.z
@@ -20522,6 +20595,10 @@ PrefabInstance:
     - target: {fileID: 6298195138361582644, guid: fad10a07f6c35f0459f9d2aebd906a2c, type: 3}
       propertyPath: m_Name
       value: Plataforma Normal (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6298195138361582644, guid: fad10a07f6c35f0459f9d2aebd906a2c, type: 3}
+      propertyPath: m_TagString
+      value: Ground
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -35896,6 +35973,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Plataforma Normal (6)
       objectReference: {fileID: 0}
+    - target: {fileID: 2189783037188643987, guid: b4d0a88758db328409720e504bdae867, type: 3}
+      propertyPath: m_TagString
+      value: Ground
+      objectReference: {fileID: 0}
     - target: {fileID: 5339243899365703648, guid: b4d0a88758db328409720e504bdae867, type: 3}
       propertyPath: m_LocalPosition.x
       value: 582.3781
@@ -38385,6 +38466,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Plataforma Normal (12)
       objectReference: {fileID: 0}
+    - target: {fileID: 2189783037188643987, guid: b4d0a88758db328409720e504bdae867, type: 3}
+      propertyPath: m_TagString
+      value: Ground
+      objectReference: {fileID: 0}
     - target: {fileID: 5339243899365703648, guid: b4d0a88758db328409720e504bdae867, type: 3}
       propertyPath: m_LocalPosition.x
       value: 579.7
@@ -40849,6 +40934,10 @@ PrefabInstance:
     - target: {fileID: 2189783037188643987, guid: b4d0a88758db328409720e504bdae867, type: 3}
       propertyPath: m_Name
       value: Plataforma Normal (13)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2189783037188643987, guid: b4d0a88758db328409720e504bdae867, type: 3}
+      propertyPath: m_TagString
+      value: Ground
       objectReference: {fileID: 0}
     - target: {fileID: 5339243899365703648, guid: b4d0a88758db328409720e504bdae867, type: 3}
       propertyPath: m_LocalPosition.x
@@ -45365,3 +45454,4 @@ SceneRoots:
   - {fileID: 2028955979}
   - {fileID: 453959719}
   - {fileID: 1284096153}
+  - {fileID: 973688733}
