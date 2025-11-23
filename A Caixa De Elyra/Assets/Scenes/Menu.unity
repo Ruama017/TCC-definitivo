@@ -897,17 +897,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 875109675}
   m_CullTransparentMesh: 1
---- !u!114 &1115331836 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 5857520632049456882, guid: d28d328371eff584589ffaac609af37a, type: 3}
-  m_PrefabInstance: {fileID: 4105575046351376983}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1235213359
 GameObject:
   m_ObjectHideFlags: 0
@@ -1299,7 +1288,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   painelConfig: {fileID: 178793707}
-  sliderVolume: {fileID: 1115331836}
+  sliderVolume: {fileID: 0}
   musicaFundo: {fileID: 0}
 --- !u!4 &2048264833
 Transform:
@@ -1505,6 +1494,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3013371923644367717, guid: d28d328371eff584589ffaac609af37a, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4010703890963109345, guid: d28d328371eff584589ffaac609af37a, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4467365330031352673, guid: d28d328371eff584589ffaac609af37a, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -1525,8 +1522,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Painel Config.
       objectReference: {fileID: 0}
+    - target: {fileID: 6003456119307114437, guid: d28d328371eff584589ffaac609af37a, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 454317044634521036, guid: d28d328371eff584589ffaac609af37a, type: 3}
+    - {fileID: 1718677136624610742, guid: d28d328371eff584589ffaac609af37a, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d28d328371eff584589ffaac609af37a, type: 3}
