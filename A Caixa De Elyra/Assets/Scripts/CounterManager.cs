@@ -1,5 +1,5 @@
 using UnityEngine;
-using TMPro; // Para TextMeshPro
+using TMPro;
 
 public class CounterManager : MonoBehaviour
 {
@@ -19,12 +19,26 @@ public class CounterManager : MonoBehaviour
     {
         // Singleton
         if (Instance == null)
-        {
             Instance = this;
-        }
         else
         {
             Destroy(gameObject);
+            return;
+        }
+
+        // Se não tiver sido arrastado pelo Inspector, procura na cena
+        if (counterText == null)
+        {
+            counterText = FindObjectOfType<TMP_Text>();
+            if (counterText == null)
+                Debug.LogWarning("❌ CounterManager: Não encontrou TMP_Text na cena!");
+        }
+
+        if (portal == null)
+        {
+            portal = FindObjectOfType<PortalController>();
+            if (portal == null)
+                Debug.LogWarning("❌ CounterManager: Não encontrou PortalController na cena!");
         }
     }
 
