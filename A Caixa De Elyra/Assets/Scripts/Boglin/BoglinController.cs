@@ -32,11 +32,9 @@ public class BoglinController : MonoBehaviour
     public GameObject boglinSoulPrefab;
     public MonsterCounter monsterCounter;
 
-    // --- ADIÇÃO: sons ---
     [Header("Sons do Boglin")]
     public AudioSource attackSound;
     public AudioSource deathSound;
-    // ---------------------
 
     void Start()
     {
@@ -44,7 +42,11 @@ public class BoglinController : MonoBehaviour
 
         walkState = new BoglinWalkState();
         attackState = new BoglinAttackState();
-        patrolState = new BoglinPatrolState(leftPatrolPoint.position, rightPatrolPoint.position);
+        patrolState = new BoglinPatrolState(
+            leftPatrolPoint.position,
+            rightPatrolPoint.position,
+            transform.position.y
+        );
 
         SwitchState(patrolState);
     }
@@ -68,16 +70,18 @@ public class BoglinController : MonoBehaviour
 
     public void MoveTowards(Vector3 target)
     {
-        Vector2 newPos = Vector2.MoveTowards(rb.position, target, moveSpeed * Time.fixedDeltaTime);
+        // só mexe no X
+        Vector2 targetPos = new Vector2(target.x, rb.position.y);
+        Vector2 newPos = Vector2.MoveTowards(rb.position, targetPos, moveSpeed * Time.fixedDeltaTime);
         rb.MovePosition(newPos);
 
         if (anim != null)
             anim.SetBool("IsWalking", true);
 
-        Vector2 direction = (target - transform.position).normalized;
-        if (direction.x > 0)
+        // flip horizontal
+        if (target.x > transform.position.x)
             transform.localScale = new Vector3(-1, 1, 1);
-        else if (direction.x < 0)
+        else
             transform.localScale = new Vector3(1, 1, 1);
     }
 
@@ -89,7 +93,6 @@ public class BoglinController : MonoBehaviour
 
     public void PlayAttackSound()
     {
-        // --- ADIÇÃO: tocar som no ataque ---
         if (attackSound != null)
             attackSound.Play();
     }
@@ -103,18 +106,11 @@ public class BoglinController : MonoBehaviour
 
     void Die()
     {
-        // --- ADIÇÃO: som de morte ---
         if (deathSound != null)
             deathSound.Play();
-        // -----------------------------
 
-        if (boglinSoulPrefab != null && monsterCounter != null)
-        {
-            GameObject soul = Instantiate(boglinSoulPrefab, transform.position, Quaternion.identity);
-            Soul soulScript = soul.GetComponent<Soul>();
-            if (soulScript != null)
-                soulScript.Initialize(monsterCounter.transform.position, monsterCounter);
-        }
+        if (boglinSoulPrefab != null)
+            Instantiate(boglinSoulPrefab, transform.position, Quaternion.identity);
 
         Destroy(gameObject);
     }

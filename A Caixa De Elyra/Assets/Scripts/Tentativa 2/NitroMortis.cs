@@ -82,7 +82,6 @@ public class NitroMortis : MonoBehaviour
 
         clawHitbox.enabled = true;
 
-        // Toca som de ataque
         if (attackSfx != null)
             AudioSource.PlayClipAtPoint(attackSfx, transform.position);
 
@@ -105,7 +104,6 @@ public class NitroMortis : MonoBehaviour
 
         ShootProjectile();
 
-        // Toca som de ataque
         if (attackSfx != null)
             AudioSource.PlayClipAtPoint(attackSfx, transform.position);
 
@@ -118,16 +116,19 @@ public class NitroMortis : MonoBehaviour
     {
         GameObject p = Instantiate(projectilePrefab, projectileSpawn.position, Quaternion.identity);
         Vector2 dir = (player.position - transform.position).normalized;
-        p.GetComponent<Rigidbody2D>().linearVelocity = dir * 6f;
+        p.GetComponent<Rigidbody2D>().velocity = dir * 6f;
     }
 
     // =================== DANO ===================
-    public void TakeDamage(int dmg)
+    public void TakeDamage(bool playerHasSuper = false)
     {
         if (isDead) return;
 
-        // Aplica 1 de dano por hit, mesmo com super ativo
-        currentHealth -= 1;
+        int appliedDamage = playerHasSuper ? 2 : 1;
+
+        currentHealth -= appliedDamage;
+        Debug.Log("Dano aplicado: " + appliedDamage + " | Vida atual: " + currentHealth);
+
         anim.SetTrigger("Hit");
 
         if (currentHealth <= 0)
@@ -138,7 +139,6 @@ public class NitroMortis : MonoBehaviour
     {
         isDead = true;
 
-        // Toca som de morte
         if (deathSfx != null)
             AudioSource.PlayClipAtPoint(deathSfx, transform.position);
 
@@ -152,7 +152,6 @@ public class NitroMortis : MonoBehaviour
             yield return new WaitForSeconds(0.15f);
         }
 
-        // Ativa o Thorne via referência pública
         if (thorne != null)
         {
             thorne.gameObject.SetActive(true);

@@ -13,12 +13,10 @@ public class BoglinWalkState : BoglinBaseState
         if (boglin.player == null) return;
 
         float distance = Vector2.Distance(boglin.transform.position, boglin.player.position);
-        Debug.Log($"Distância do player: {distance:F2}");
 
-        // Se estiver muito longe → volta a patrulhar
+        // Se estiver muito longe → volta para patrulhar
         if (distance > boglin.detectionRange)
         {
-            Debug.Log("🔄 Voltando para patrulhar...");
             boglin.SwitchState(boglin.GetPatrolState());
             return;
         }
@@ -26,13 +24,13 @@ public class BoglinWalkState : BoglinBaseState
         // Se estiver perto o suficiente → ataca
         if (distance <= boglin.attackRange)
         {
-            Debug.Log("⚔️ Trocando para AttackState!");
             boglin.SwitchState(boglin.GetAttackState());
             return;
         }
 
-        // Caso contrário, persegue o player
-        boglin.MoveTowards(boglin.player.position);
+        // Caso contrário, persegue o player mantendo o Y do Boglin
+        Vector3 targetPos = new Vector3(boglin.player.position.x, boglin.rb.position.y, 0);
+        boglin.MoveTowards(targetPos);
     }
 
     public override void ExitState(BoglinController boglin)

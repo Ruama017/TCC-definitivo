@@ -57,14 +57,10 @@ public class PlayerAttackHitbox : MonoBehaviour
         NitroMortis nitro = collision.GetComponentInParent<NitroMortis>();
         if (nitro != null)
         {
-            bool playerHasSuper = playerController.hasSuper;
-            int danoFinal = damage;
-            if (playerHasSuper)
-                danoFinal = damage * 2; // dobra o dano se super ativo
+            // Passa apenas o bool do super
+            nitro.TakeDamage(playerController.hasSuper);
 
-            nitro.TakeDamage(danoFinal);
-
-            Debug.Log("[DEBUG] Player atingiu NitroMortis! Super ativo: " + playerHasSuper);
+            Debug.Log("[DEBUG] Player atingiu NitroMortis! Super ativo: " + playerController.hasSuper);
             return;
         }
 
@@ -72,8 +68,8 @@ public class PlayerAttackHitbox : MonoBehaviour
         ThorneBossController thorne = collision.GetComponent<ThorneBossController>();
         if (thorne != null)
         {
-            bool playerHasSuper = playerController.hasSuper; // <- pega super
-            thorne.TakeDamage(damage, playerHasSuper);        // <- passa os 2 parâmetros
+            bool playerHasSuper = playerController.hasSuper; // pega super
+            thorne.TakeDamage(damage, playerHasSuper);       // passa os 2 parâmetros
             Debug.Log("[DEBUG] Player atingiu Thorne! Dano: " + damage + ", Super ativo: " + playerHasSuper);
             return;
         }

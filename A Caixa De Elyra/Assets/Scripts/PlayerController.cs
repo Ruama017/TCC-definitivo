@@ -86,12 +86,12 @@ public class PlayerController : MonoBehaviour
 
         if (animator != null)
         {
-            animator.SetFloat("Speed", Mathf.Abs(rb.linearVelocity.x));
+            animator.SetFloat("Speed", Mathf.Abs(rb.velocity.x));
             animator.SetBool("IsGrounded", isGrounded);
-            animator.SetFloat("yVelocity", rb.linearVelocity.y);
+            animator.SetFloat("yVelocity", rb.velocity.y);
 
-            bool isJumping = !isGrounded && rb.linearVelocity.y > 0.1f;
-            bool isFalling = !isGrounded && rb.linearVelocity.y < -0.1f;
+            bool isJumping = !isGrounded && rb.velocity.y > 0.1f;
+            bool isFalling = !isGrounded && rb.velocity.y < -0.1f;
 
             animator.SetBool("IsJumping", isJumping);
             animator.SetBool("IsFalling", isFalling);
@@ -106,7 +106,7 @@ public class PlayerController : MonoBehaviour
     void Move()
     {
         float moveInput = Input.GetAxisRaw("Horizontal");
-        rb.linearVelocity = new Vector2(moveInput * moveSpeed, rb.linearVelocity.y);
+        rb.velocity = new Vector2(moveInput * moveSpeed, rb.velocity.y);
     }
 
     void Jump()
@@ -118,7 +118,7 @@ public class PlayerController : MonoBehaviour
         {
             if (isGrounded || extraJumps > 0)
             {
-                rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpForce);
+                rb.velocity = new Vector2(rb.velocity.x, jumpForce);
 
                 if (!isGrounded)
                     extraJumps--;
@@ -177,9 +177,8 @@ public class PlayerController : MonoBehaviour
 
                 if (nitro != null)
                 {
-                    int dano = 1;
-                    if (hasSuper) dano = 2;
-                    nitro.TakeDamage(dano);
+                    // ✅ Alteração: agora passa apenas bool
+                    nitro.TakeDamage(hasSuper);
                 }
             }
 
@@ -267,10 +266,8 @@ public class PlayerController : MonoBehaviour
 
     public void TakeDamage(int damage)
     {
-        // --- SFX: dano ---
         if (hurtSound != null)
             hurtSound.Play();
-        // -----------------
 
         if (playerHealth != null)
         {
@@ -320,12 +317,10 @@ public class PlayerController : MonoBehaviour
     private void Die()
     {
         isDead = true;
-        rb.linearVelocity = Vector2.zero;
+        rb.velocity = Vector2.zero;
 
-        // --- SFX: morte ---
         if (deathSound != null)
             deathSound.Play();
-        // ------------------
 
         if (animator != null)
             animator.SetTrigger("Death");

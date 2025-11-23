@@ -4,12 +4,16 @@ public class BoglinPatrolState : BoglinBaseState
 {
     private int currentPoint = 0;
     private Vector3[] patrolPoints;
-    private float waitTime = 2f;
+    private float waitTime = 0f;
     private float waitTimer;
 
-    public BoglinPatrolState(Vector3 leftPoint, Vector3 rightPoint)
+    public BoglinPatrolState(Vector3 leftPoint, Vector3 rightPoint, float fixedY)
     {
-        patrolPoints = new Vector3[] { leftPoint, rightPoint };
+        patrolPoints = new Vector3[]
+        {
+            new Vector3(leftPoint.x, fixedY, 0),
+            new Vector3(rightPoint.x, fixedY, 0)
+        };
     }
 
     public override void EnterState(BoglinController boglin)
@@ -22,29 +26,30 @@ public class BoglinPatrolState : BoglinBaseState
 
     public override void UpdateState(BoglinController boglin)
     {
-        if (boglin.player == null) return;
-
-        float distanceToPlayer = Vector2.Distance(boglin.transform.position, boglin.player.position);
-
-        // Se o player estiver dentro do alcance de ataque
-        if (distanceToPlayer <= boglin.attackRange)
+        if (boglin.player != null)
         {
-            boglin.SwitchState(boglin.GetAttackState());
-            return;
+            float distanceToPlayer = Vector2.Distance(boglin.transform.position, boglin.player.position);
+
+            // Se o player estiver dentro do alcance de ataque
+            if (distanceToPlayer <= boglin.attackRange)
+            {
+                boglin.SwitchState(boglin.GetAttackState());
+                return;
+            }
+
+            // Se estiver dentro do alcance de perseguição, muda para WalkState
+            if (distanceToPlayer <= boglin.detectionRange)
+            {
+                boglin.SwitchState(boglin.GetWalkState());
+                return;
+            }
         }
 
-        // Se estiver dentro do alcance de perseguição, muda pro WalkState
-        if (distanceToPlayer <= boglin.detectionRange)
-        {
-            boglin.SwitchState(boglin.GetWalkState());
-            return;
-        }
-
-        // Patrulha normal entre pontos
+        // Patrulha padrão
         Vector3 target = patrolPoints[currentPoint];
         boglin.MoveTowards(target);
 
-        if (Vector2.Distance(boglin.transform.position, target) < 0.1f)
+        if (Mathf.Abs(boglin.transform.position.x - target.x) < 0.1f)
         {
             waitTimer += Time.deltaTime;
 
