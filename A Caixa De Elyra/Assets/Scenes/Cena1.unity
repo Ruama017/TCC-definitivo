@@ -27172,6 +27172,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4977937078872182021, guid: 51b64ae5799b18745a9dd9578d80b3f2, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 7045777694113753024, guid: 545d381ba9ef8c7498174746b9ecdf81, type: 3}
     - target: {fileID: 5284334712775153871, guid: 51b64ae5799b18745a9dd9578d80b3f2, type: 3}
       propertyPath: m_Sprite
       value: 
@@ -27239,6 +27243,22 @@ PrefabInstance:
     - target: {fileID: 7625486172665650396, guid: 51b64ae5799b18745a9dd9578d80b3f2, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8039377692560964195, guid: 51b64ae5799b18745a9dd9578d80b3f2, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 115.8949
+      objectReference: {fileID: 0}
+    - target: {fileID: 8039377692560964195, guid: 51b64ae5799b18745a9dd9578d80b3f2, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 87.3074
+      objectReference: {fileID: 0}
+    - target: {fileID: 8039377692560964195, guid: 51b64ae5799b18745a9dd9578d80b3f2, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 417.7265
+      objectReference: {fileID: 0}
+    - target: {fileID: 8039377692560964195, guid: 51b64ae5799b18745a9dd9578d80b3f2, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 323.6324
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -30015,7 +30035,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1267201037}
   - component: {fileID: 1267201036}
-  - component: {fileID: 1267201038}
   m_Layer: 0
   m_Name: blocos do pilar da ponte_0
   m_TagString: Untagged
@@ -30093,52 +30112,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!61 &1267201038
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1267201035}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_CompositeOperation: 0
-  m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 3.2099998, y: 8.16}
-    newSize: {x: 3.2099998, y: 8.16}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  m_Size: {x: 3.2099998, y: 8.16}
-  m_EdgeRadius: 0
 --- !u!1 &1269810831
 GameObject:
   m_ObjectHideFlags: 0
