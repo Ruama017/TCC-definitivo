@@ -15,13 +15,11 @@ public class PlayerController : MonoBehaviour
     [Header("SFX de Pulo")]
     public AudioSource jumpSound;
 
-    // --- ADIÇÃO: sons extras ---
     [Header("SFX Extras")]
     public AudioSource attackSound;
     public AudioSource hurtSound;
     public AudioSource deathSound;
     public AudioSource superSpeedSound;
-    // ----------------------------
 
     private Rigidbody2D rb;
     private bool isGrounded;
@@ -143,13 +141,14 @@ public class PlayerController : MonoBehaviour
                 attackSound.Play();
             // -------------------
 
+            // --- Trigger de animação ---
             if (animator != null)
             {
                 animator.ResetTrigger("Attack");
                 animator.SetTrigger("Attack");
-                animator.Update(0f);
             }
 
+            // --- Ativa o hitbox imediatamente ---
             if (attackHitbox != null)
             {
                 attackHitbox.SetActive(true);
@@ -176,10 +175,7 @@ public class PlayerController : MonoBehaviour
                     thorne.TakeDamage(1, hasSuper);
 
                 if (nitro != null)
-                {
-                    // ✅ Alteração: agora passa apenas bool
                     nitro.TakeDamage(hasSuper);
-                }
             }
 
             attackHitbox.SetActive(false);
@@ -212,10 +208,8 @@ public class PlayerController : MonoBehaviour
         if (speedBoostCoroutine != null)
             StopCoroutine(speedBoostCoroutine);
 
-        // --- SFX: super speed ---
         if (superSpeedSound != null)
             superSpeedSound.Play();
-        // ------------------------
 
         speedBoostCoroutine = StartCoroutine(SpeedBoost(multiplier, duration));
     }

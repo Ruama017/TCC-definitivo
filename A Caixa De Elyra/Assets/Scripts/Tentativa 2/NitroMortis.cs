@@ -34,9 +34,9 @@ public class NitroMortis : MonoBehaviour
     private bool isAttacking = false;
     private bool isDead = false;
 
-    // ====== Propriedades públicas para PlayerAttackHitbox ======
+    // ====== Propriedades públicas ======
     public int CurrentHealth => currentHealth;
-    public bool IsAlive => !isDead;
+    public bool IsDead => isDead; // <<< NOVA PROPRIEDADE PÚBLICA
 
     void Start()
     {
@@ -137,7 +137,7 @@ public class NitroMortis : MonoBehaviour
 
     IEnumerator Die()
     {
-        isDead = true;
+        isDead = true; // <<< AQUI é atualizado antes de qualquer outra ação
 
         if (deathSfx != null)
             AudioSource.PlayClipAtPoint(deathSfx, transform.position);

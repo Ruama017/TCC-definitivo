@@ -1,5 +1,4 @@
 using UnityEngine;
-using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using TMPro;
 using System.Collections;
@@ -9,12 +8,12 @@ public class VictoryManager : MonoBehaviour
     public static VictoryManager instance;
 
     [Header("Canvases")]
-    public GameObject victoryCanvas;      // Tela de vitória
-    public GameObject cutsceneCanvas;     // Cutscene
+    public GameObject victoryCanvas;
+    public GameObject cutsceneCanvas;
 
     [Header("Cutscene")]
-    public Image cutsceneImage;           // Imagem da cutscene
-    public TextMeshProUGUI cutsceneText;  // Texto da cutscene
+    public Image cutsceneImage;
+    public TextMeshProUGUI cutsceneText;
     public Sprite[] cutsceneSprites;
     public float timePerImage = 4f;
     public AudioSource cutsceneMusic;
@@ -44,24 +43,14 @@ public class VictoryManager : MonoBehaviour
             menuButton.onClick.AddListener(ReturnToMenu);
     }
 
-    /// <summary>
-    /// Chamar quando o player entrar na Caixa de Elyra
-    /// </summary>
-    public void TryTriggerVictory()
+    public void TriggerVictorySequence()
     {
-        // Só continua se todos os monstros já foram coletados
-        if (!CounterManager.Instance.AllSoulsCollected())
-            return;
-
         StartCoroutine(VictoryFlow());
     }
 
-    /// <summary>
-    /// Sequência de vitória
-    /// </summary>
     private IEnumerator VictoryFlow()
     {
-        // 1: Ativa a cutscene primeiro
+        // 1. Ativa cutscene
         if (cutsceneCanvas != null)
             cutsceneCanvas.SetActive(true);
 
@@ -76,27 +65,28 @@ public class VictoryManager : MonoBehaviour
             if (cutsceneText != null)
                 cutsceneText.text = "Cena " + (i + 1);
 
-            yield return new WaitForSecondsRealtime(timePerImage); // usa real time para ignorar timeScale
+            yield return new WaitForSecondsRealtime(timePerImage);
         }
 
-        // 2: Ativa a tela de vitória
+        // 2. Ativa tela de vitória
+        if (cutsceneCanvas != null)
+            cutsceneCanvas.SetActive(false);
+
         if (victoryCanvas != null)
             victoryCanvas.SetActive(true);
 
-        // Pausa o jogo
-        Time.timeScale = 0f;
+        Time.timeScale = 0f; // pausa o jogo
     }
 
     private void RestartGame()
     {
-        // Despausa o jogo antes de reiniciar
         Time.timeScale = 1f;
-        SceneManager.LoadScene("Cena1"); // primeira fase
+        UnityEngine.SceneManagement.SceneManager.LoadScene("Cena1");
     }
 
     private void ReturnToMenu()
     {
         Time.timeScale = 1f;
-        SceneManager.LoadScene("Menu"); // colocar o nome da cena do menu
+        UnityEngine.SceneManagement.SceneManager.LoadScene("Menu");
     }
 }

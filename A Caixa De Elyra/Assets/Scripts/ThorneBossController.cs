@@ -28,9 +28,10 @@ public class ThorneBossController : MonoBehaviour
     public AudioClip attackSound;
     public AudioClip deathSound;
 
-    // Propriedades públicas para o PlayerAttackHitbox
+    // Propriedades públicas para outros scripts
     public int CurrentHealth => currentHealth;
     public bool IsAlive => !isDead;
+    public bool IsDead => isDead; // <<< PROPRIEDADE ADICIONADA
 
     // ----------------------------------------------------------
     // Inicialização ao ser ativado pelo Nitro
