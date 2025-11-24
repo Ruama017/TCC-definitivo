@@ -155,22 +155,28 @@ public class ThorneBossController : MonoBehaviour
     }
 
     IEnumerator Die()
+{
+    isDead = true;
+
+    // Marca o Thorne como morto ANTES de destruir
+    if (VictoryManager.instance != null)
+        VictoryManager.instance.ThorneIsDead = true;
+
+    // Toca som de morte
+    if (audioSource != null && deathSound != null)
+        audioSource.PlayOneShot(deathSound);
+
+    SpriteRenderer sr = GetComponent<SpriteRenderer>();
+    for (int i = 0; i < 3; i++)
     {
-        isDead = true;
-
-        // Toca som de morte
-        if (audioSource != null && deathSound != null)
-            audioSource.PlayOneShot(deathSound);
-
-        SpriteRenderer sr = GetComponent<SpriteRenderer>();
-        for (int i = 0; i < 3; i++)
-        {
-            sr.enabled = false;
-            yield return new WaitForSeconds(0.15f);
-            sr.enabled = true;
-            yield return new WaitForSeconds(0.15f);
-        }
-
-        Destroy(gameObject);
+        sr.enabled = false;
+        yield return new WaitForSeconds(0.15f);
+        sr.enabled = true;
+        yield return new WaitForSeconds(0.15f);
     }
+
+    // Agora pode destruir
+    Destroy(gameObject);
+}
+
 }

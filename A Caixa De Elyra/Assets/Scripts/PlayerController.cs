@@ -144,43 +144,41 @@ public class PlayerController : MonoBehaviour
             // --- Trigger de animação ---
             if (animator != null)
             {
-                animator.ResetTrigger("Attack");
-                animator.SetTrigger("Attack");
+                animator.SetTrigger("Attack"); // dispara a animação imediatamente
             }
 
-            // --- Ativa o hitbox imediatamente ---
+            // --- Ativa a hitbox com delay para sincronizar ---
             if (attackHitbox != null)
             {
-                attackHitbox.SetActive(true);
-                StartCoroutine(DisableHitboxAfterDelay(attackDuration));
+                StartCoroutine(ActivateHitboxWithDelay(0.08f)); // ajuste o delay conforme necessário
             }
         }
     }
 
-    private IEnumerator DisableHitboxAfterDelay(float delay)
+    private IEnumerator ActivateHitboxWithDelay(float delay)
     {
         yield return new WaitForSeconds(delay);
 
-        if (attackHitbox != null)
+        attackHitbox.SetActive(true);
+        yield return new WaitForSeconds(attackDuration);
+
+        // Aplica dano
+        Collider2D[] hits = Physics2D.OverlapBoxAll(attackHitbox.transform.position, attackHitbox.transform.localScale, 0f);
+        foreach (Collider2D hit in hits)
         {
-            Collider2D[] hits = Physics2D.OverlapBoxAll(attackHitbox.transform.position, attackHitbox.transform.localScale, 0f);
-            foreach (Collider2D hit in hits)
-            {
-                if (hit.CompareTag("Player")) continue;
+            if (hit.CompareTag("Player")) continue;
 
-                ThorneBossController thorne = hit.GetComponent<ThorneBossController>();
-                NitroMortis nitro = hit.GetComponent<NitroMortis>();
+            ThorneBossController thorne = hit.GetComponent<ThorneBossController>();
+            NitroMortis nitro = hit.GetComponent<NitroMortis>();
 
-                if (thorne != null)
-                    thorne.TakeDamage(1, hasSuper);
+            if (thorne != null)
+                thorne.TakeDamage(1, hasSuper);
 
-                if (nitro != null)
-                    nitro.TakeDamage(hasSuper);
-            }
-
-            attackHitbox.SetActive(false);
+            if (nitro != null)
+                nitro.TakeDamage(hasSuper);
         }
 
+        attackHitbox.SetActive(false);
         isAttacking = false;
     }
 

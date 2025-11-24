@@ -1,6 +1,6 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
-using TMPro;
 using System.Collections;
 
 public class VictoryManager : MonoBehaviour
@@ -8,19 +8,21 @@ public class VictoryManager : MonoBehaviour
     public static VictoryManager instance;
 
     [Header("Canvases")]
-    public GameObject victoryCanvas;
-    public GameObject cutsceneCanvas;
+    public GameObject victoryCanvas;      // Tela de vitória
+    public GameObject cutsceneCanvas;     // Cutscene
 
     [Header("Cutscene")]
-    public Image cutsceneImage;
-    public TextMeshProUGUI cutsceneText;
+    public Image cutsceneImage;           // Imagem da cutscene
     public Sprite[] cutsceneSprites;
     public float timePerImage = 4f;
     public AudioSource cutsceneMusic;
 
     [Header("Botões")]
-    public Button restartButton;
-    public Button menuButton;
+    public UnityEngine.UI.Button restartButton;
+    public UnityEngine.UI.Button menuButton;
+
+    [Header("Flags")]
+    public bool ThorneIsDead = false;     // Flag pública para morte do Thorne
 
     private void Awake()
     {
@@ -43,50 +45,55 @@ public class VictoryManager : MonoBehaviour
             menuButton.onClick.AddListener(ReturnToMenu);
     }
 
+    /// <summary>
+    /// Dispara a cutscene + vitória
+    /// </summary>
     public void TriggerVictorySequence()
     {
+        if (!CounterManager.Instance.AllSoulsCollected())
+        {
+            Debug.Log("[VictoryManager] Nem todos os monstros foram coletados. Vitória bloqueada.");
+            return;
+        }
+
         StartCoroutine(VictoryFlow());
     }
 
     private IEnumerator VictoryFlow()
     {
-        // 1. Ativa cutscene
+        // 1: Ativa a cutscene
         if (cutsceneCanvas != null)
             cutsceneCanvas.SetActive(true);
 
         if (cutsceneMusic != null)
             cutsceneMusic.Play();
 
+        // Loop apenas pelas imagens
         for (int i = 0; i < cutsceneSprites.Length; i++)
         {
             if (cutsceneImage != null)
                 cutsceneImage.sprite = cutsceneSprites[i];
 
-            if (cutsceneText != null)
-                cutsceneText.text = "Cena " + (i + 1);
-
             yield return new WaitForSecondsRealtime(timePerImage);
         }
 
-        // 2. Ativa tela de vitória
-        if (cutsceneCanvas != null)
-            cutsceneCanvas.SetActive(false);
-
+        // 2: Ativa a tela de vitória
         if (victoryCanvas != null)
             victoryCanvas.SetActive(true);
 
-        Time.timeScale = 0f; // pausa o jogo
+        // Pausa o jogo
+        Time.timeScale = 0f;
     }
 
     private void RestartGame()
     {
         Time.timeScale = 1f;
-        UnityEngine.SceneManagement.SceneManager.LoadScene("Cena1");
+        SceneManager.LoadScene("Cena1"); // primeira fase
     }
 
     private void ReturnToMenu()
     {
         Time.timeScale = 1f;
-        UnityEngine.SceneManagement.SceneManager.LoadScene("Menu");
+        SceneManager.LoadScene("Menu");
     }
 }

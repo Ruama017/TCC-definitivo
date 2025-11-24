@@ -2,41 +2,32 @@ using UnityEngine;
 
 public class PlayerVictoryTrigger : MonoBehaviour
 {
-    [Header("Referências")]
-    public ThorneBossController bossThorne; // opcional, pode deixar vazio
-
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        // Verifica se quem entrou no trigger é o Player
         if (!collision.CompareTag("Player"))
             return;
 
+        // Confere se este objeto é a própria Caixa de Elyra
         if (!gameObject.CompareTag("CaixaElyra"))
             return;
 
-        // Se não tiver no Inspector, tenta achar automaticamente
-        if (bossThorne == null)
+        // Segurança: garantir que existe VictoryManager
+        if (VictoryManager.instance == null)
         {
-            bossThorne = FindObjectOfType<ThorneBossController>();
-            if (bossThorne == null)
-            {
-                Debug.LogError("[PlayerVictoryTrigger] Boss Thorne não encontrado na cena!");
-                return;
-            }
+            Debug.LogError("[PlayerVictoryTrigger] VictoryManager.instance está NULL!");
+            return;
         }
 
-        if (!bossThorne.IsDead)
+        // Precisa verificar se o Thorne já morreu
+        if (!VictoryManager.instance.ThorneIsDead)
         {
             Debug.Log("[PlayerVictoryTrigger] Thorne ainda vivo. Caixa bloqueada.");
             return;
         }
 
-        if (VictoryManager.instance != null)
-        {
-            VictoryManager.instance.TriggerVictorySequence();
-        }
-        else
-        {
-            Debug.LogError("[PlayerVictoryTrigger] VictoryManager.instance está NULL!");
-        }
+        // Se chegou aqui, está tudo ok → dispara a vitória
+        Debug.Log("[PlayerVictoryTrigger] Caixa ativada! Disparando cutscene e vitória.");
+        VictoryManager.instance.TriggerVictorySequence();
     }
 }
