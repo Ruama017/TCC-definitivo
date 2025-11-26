@@ -1876,6 +1876,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: FallingPlatform
       objectReference: {fileID: 0}
+    - target: {fileID: 3258916522860922944, guid: 0641b058138fc6f48ad9bbcfe9662a5d, type: 3}
+      propertyPath: m_TagString
+      value: Ground
+      objectReference: {fileID: 0}
     - target: {fileID: 5277198938046893969, guid: 0641b058138fc6f48ad9bbcfe9662a5d, type: 3}
       propertyPath: m_LocalScale.x
       value: 2.0217
@@ -26251,6 +26255,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: FallingPlatform (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 3258916522860922944, guid: 0641b058138fc6f48ad9bbcfe9662a5d, type: 3}
+      propertyPath: m_TagString
+      value: Ground
+      objectReference: {fileID: 0}
     - target: {fileID: 5277198938046893969, guid: 0641b058138fc6f48ad9bbcfe9662a5d, type: 3}
       propertyPath: m_LocalScale.x
       value: 2.0217
@@ -31590,7 +31598,7 @@ GameObject:
   - component: {fileID: 1267201038}
   m_Layer: 0
   m_Name: blocos do pilar da ponte_0
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

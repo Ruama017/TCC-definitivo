@@ -5922,6 +5922,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Plataforma Normal (21)
       objectReference: {fileID: 0}
+    - target: {fileID: 2189783037188643987, guid: b4d0a88758db328409720e504bdae867, type: 3}
+      propertyPath: m_TagString
+      value: Ground
+      objectReference: {fileID: 0}
     - target: {fileID: 3881282736660786873, guid: b4d0a88758db328409720e504bdae867, type: 3}
       propertyPath: m_SortingOrder
       value: 5
@@ -14930,6 +14934,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Plataforma Normal (10)
       objectReference: {fileID: 0}
+    - target: {fileID: 2189783037188643987, guid: b4d0a88758db328409720e504bdae867, type: 3}
+      propertyPath: m_TagString
+      value: Ground
+      objectReference: {fileID: 0}
     - target: {fileID: 5339243899365703648, guid: b4d0a88758db328409720e504bdae867, type: 3}
       propertyPath: m_LocalPosition.x
       value: 1169.8396
@@ -18690,6 +18698,10 @@ PrefabInstance:
     - target: {fileID: 7029863356369966918, guid: 8c510f7288e584e4ea2a6047557a114a, type: 3}
       propertyPath: m_Name
       value: FallingPlatform 1 (10)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7029863356369966918, guid: 8c510f7288e584e4ea2a6047557a114a, type: 3}
+      propertyPath: m_TagString
+      value: Ground
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -28211,6 +28223,10 @@ PrefabInstance:
     - target: {fileID: 6298195138361582644, guid: fad10a07f6c35f0459f9d2aebd906a2c, type: 3}
       propertyPath: m_Name
       value: Plataforma Normal (8)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6298195138361582644, guid: fad10a07f6c35f0459f9d2aebd906a2c, type: 3}
+      propertyPath: m_TagString
+      value: Ground
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -40897,6 +40913,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Plataforma Normal (7)
       objectReference: {fileID: 0}
+    - target: {fileID: 6298195138361582644, guid: fad10a07f6c35f0459f9d2aebd906a2c, type: 3}
+      propertyPath: m_TagString
+      value: Ground
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -41839,6 +41859,10 @@ PrefabInstance:
     - target: {fileID: 7029863356369966918, guid: 8c510f7288e584e4ea2a6047557a114a, type: 3}
       propertyPath: m_Name
       value: FallingPlatform 1 (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7029863356369966918, guid: 8c510f7288e584e4ea2a6047557a114a, type: 3}
+      propertyPath: m_TagString
+      value: Ground
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -47951,6 +47975,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Plataforma Normal (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 2189783037188643987, guid: b4d0a88758db328409720e504bdae867, type: 3}
+      propertyPath: m_TagString
+      value: Ground
+      objectReference: {fileID: 0}
     - target: {fileID: 3881282736660786873, guid: b4d0a88758db328409720e504bdae867, type: 3}
       propertyPath: m_SortingOrder
       value: 4
@@ -52966,6 +52994,10 @@ PrefabInstance:
     - target: {fileID: 6298195138361582644, guid: fad10a07f6c35f0459f9d2aebd906a2c, type: 3}
       propertyPath: m_Name
       value: Plataforma Normal (9)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6298195138361582644, guid: fad10a07f6c35f0459f9d2aebd906a2c, type: 3}
+      propertyPath: m_TagString
+      value: Ground
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
