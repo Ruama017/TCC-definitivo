@@ -27753,6 +27753,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1015523452775235430, guid: ee91485c22ac87a449acfd78eb64adc0, type: 3}
+      propertyPath: m_SortingOrder
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 3833329871230931876, guid: ee91485c22ac87a449acfd78eb64adc0, type: 3}
       propertyPath: m_Name
       value: HeraBarrier
@@ -75886,6 +75890,10 @@ PrefabInstance:
     - target: {fileID: 677076847802913479, guid: 3945fa4643195ac4d866ae2d5bb154da, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7753960795454774546, guid: 3945fa4643195ac4d866ae2d5bb154da, type: 3}
+      propertyPath: m_SortingOrder
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

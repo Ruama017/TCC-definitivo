@@ -130,28 +130,26 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    // ---------------------------------------------------------
+    //                  ATAQUE CORRIGIDO
+    // ---------------------------------------------------------
     void Attack()
     {
         if (Input.GetKeyDown(KeyCode.M) && !isAttacking)
         {
             isAttacking = true;
 
-            // --- SFX: ataque ---
+            // Som do ataque
             if (attackSound != null)
                 attackSound.Play();
-            // -------------------
 
-            // --- Trigger de animação ---
+            // Trigger de animação funcionando corretamente
             if (animator != null)
-            {
-                animator.SetTrigger("Attack"); // dispara a animação imediatamente
-            }
+                animator.SetTrigger("Attack");
 
-            // --- Ativa a hitbox com delay para sincronizar ---
+            // Delay para sincronizar com a animação
             if (attackHitbox != null)
-            {
-                StartCoroutine(ActivateHitboxWithDelay(0.08f)); // ajuste o delay conforme necessário
-            }
+                StartCoroutine(ActivateHitboxWithDelay(0.08f));
         }
     }
 
@@ -162,8 +160,12 @@ public class PlayerController : MonoBehaviour
         attackHitbox.SetActive(true);
         yield return new WaitForSeconds(attackDuration);
 
-        // Aplica dano
-        Collider2D[] hits = Physics2D.OverlapBoxAll(attackHitbox.transform.position, attackHitbox.transform.localScale, 0f);
+        Collider2D[] hits = Physics2D.OverlapBoxAll(
+            attackHitbox.transform.position,
+            attackHitbox.transform.localScale,
+            0f
+        );
+
         foreach (Collider2D hit in hits)
         {
             if (hit.CompareTag("Player")) continue;
@@ -181,12 +183,17 @@ public class PlayerController : MonoBehaviour
         attackHitbox.SetActive(false);
         isAttacking = false;
     }
+    // ---------------------------------------------------------
 
     void Flip()
     {
         float moveInput = Input.GetAxisRaw("Horizontal");
         if (moveInput != 0)
-            transform.localScale = new Vector3(Mathf.Sign(moveInput) * Mathf.Abs(transform.localScale.x), transform.localScale.y, 1);
+            transform.localScale = new Vector3(
+                Mathf.Sign(moveInput) * Mathf.Abs(transform.localScale.x),
+                transform.localScale.y,
+                1
+            );
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
