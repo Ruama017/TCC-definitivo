@@ -7,6 +7,13 @@ using System.Collections.Generic;
 
 public class PlayerHealth : MonoBehaviour
 {
+    // ------------------------------------------
+    // 🔵 EVENT CHANNELS (Observer Simples)
+    // ------------------------------------------
+    public static event System.Action<int, int> OnHealthChanged;
+    public static event System.Action<int> OnCrystalChanged;
+    // ------------------------------------------
+
     [Header("Vida do Player")]
     public int maxHealth = 5;
     public int currentHealth;
@@ -14,7 +21,7 @@ public class PlayerHealth : MonoBehaviour
     public Sprite fullHeart;
     public Sprite emptyHeart;
 
-    private int partialDamage = 0; // acumula dano parcial antes de perder um coração
+    private int partialDamage = 0;
 
     [Header("Corações Extras (Fase 3)")]
     public GameObject extraHeartPrefab;   
@@ -29,14 +36,14 @@ public class PlayerHealth : MonoBehaviour
     public TMP_Text crystalAmountTMP;
 
     [Header("Escudo")]
-    public bool canTakeDamage = true;       
-    public float shieldDuration = 15f;      
+    public bool canTakeDamage = true;
+    public float shieldDuration = 15f;
     private bool shieldActive = false;
-    public GameObject shieldEffect;         
+    public GameObject shieldEffect;
 
     [Header("Game Over")]
     public GameObject gameOverPanel;
-    public AudioSource deathSound;      
+    public AudioSource deathSound;
     public ParticleSystem deathEffect;
 
     [Header("SFX de Dano")]
@@ -60,6 +67,10 @@ public class PlayerHealth : MonoBehaviour
         UpdateHearts();
         UpdateExtraHearts();
         UpdateCrystalUI();
+
+        // 🔵 Dispara estado inicial
+        OnHealthChanged?.Invoke(currentHealth, maxHealth);
+        OnCrystalChanged?.Invoke(currentCrystals);
 
         anim = GetComponent<Animator>();
 
@@ -124,6 +135,10 @@ public class PlayerHealth : MonoBehaviour
         UpdateExtraHearts();
         UpdateCrystalUI();
 
+        // 🔵 Evento de mudança de vida e cristais
+        OnHealthChanged?.Invoke(currentHealth, maxHealth);
+        OnCrystalChanged?.Invoke(currentCrystals);
+
         CheckDeath();
     }
 
@@ -136,6 +151,10 @@ public class PlayerHealth : MonoBehaviour
             img.gameObject.SetActive(false);
 
         UpdateHearts();
+
+        // 🔵 Evento
+        OnHealthChanged?.Invoke(currentHealth, maxHealth);
+
         Die();
     }
 
@@ -148,6 +167,9 @@ public class PlayerHealth : MonoBehaviour
             currentHealth = maxHealth;
 
         UpdateHearts();
+
+        // 🔵 Evento
+        OnHealthChanged?.Invoke(currentHealth, maxHealth);
     }
 
     void UpdateHearts()
@@ -184,6 +206,9 @@ public class PlayerHealth : MonoBehaviour
             currentCrystals = maxCrystals;
 
         UpdateCrystalUI();
+
+        // 🔵 Evento
+        OnCrystalChanged?.Invoke(currentCrystals);
     }
 
     void UpdateCrystalUI()
@@ -292,6 +317,10 @@ public class PlayerHealth : MonoBehaviour
 
         UpdateHearts();
         UpdateCrystalUI();
+
+        // 🔵 Eventos ao reiniciar
+        OnHealthChanged?.Invoke(currentHealth, maxHealth);
+        OnCrystalChanged?.Invoke(currentCrystals);
 
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }

@@ -5,6 +5,9 @@ public class CounterManager : MonoBehaviour
 {
     public static CounterManager Instance; // Singleton
 
+    //  Evento Observer
+    public static event System.Action<int, int> OnCountChanged;
+
     [Header("Contador")]
     public int totalCount = 5;     // Total de Boglins da fase
     public int currentCount = 0;  // Quantos já foram coletados
@@ -31,20 +34,23 @@ public class CounterManager : MonoBehaviour
         {
             counterText = FindObjectOfType<TMP_Text>();
             if (counterText == null)
-                Debug.LogWarning("❌ CounterManager: Não encontrou TMP_Text na cena!");
+                Debug.LogWarning(" CounterManager: Não encontrou TMP_Text na cena!");
         }
 
         if (portal == null)
         {
             portal = FindObjectOfType<PortalController>();
             if (portal == null)
-                Debug.LogWarning("❌ CounterManager: Não encontrou PortalController na cena!");
+                Debug.LogWarning(" CounterManager: Não encontrou PortalController na cena!");
         }
     }
 
     private void Start()
     {
         UpdateUI();
+
+        //  Dispara evento inicial
+        OnCountChanged?.Invoke(currentCount, totalCount);
     }
 
     /// <summary>
@@ -55,6 +61,9 @@ public class CounterManager : MonoBehaviour
         currentCount++;
 
         UpdateUI();
+
+        // Dispara evento Observer
+        OnCountChanged?.Invoke(currentCount, totalCount);
 
         // Ativa portal se todos os Boglins forem coletados
         if (currentCount >= totalCount)
