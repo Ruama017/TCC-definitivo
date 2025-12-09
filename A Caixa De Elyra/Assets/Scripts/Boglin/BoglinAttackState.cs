@@ -40,10 +40,10 @@ public class BoglinAttackState : BoglinBaseState
                 ph.TakeDamage(attackDamage);
             }
 
-            // --- ADIÇÃO: toca som de ataque ---
+            // ADIÇÃO: toca som de ataque
             if (boglin.attackSound != null)
                 boglin.attackSound.Play();
-            // ---------------------------------
+           
 
             lastAttackTime = Time.time;
 
