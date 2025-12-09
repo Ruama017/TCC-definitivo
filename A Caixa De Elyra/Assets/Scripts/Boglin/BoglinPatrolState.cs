@@ -3,8 +3,9 @@ using UnityEngine;
 public class BoglinPatrolState : BoglinBaseState
 {
     private int currentPoint = 0;
+    private int direction = 1; // 1 = indo para direita, -1 = voltando para esquerda
     private Vector3[] patrolPoints;
-    private float waitTime = 0f;
+    private float waitTime = 0.1f;
     private float waitTimer;
 
     public BoglinPatrolState(Vector3 leftPoint, Vector3 rightPoint, float fixedY)
@@ -30,14 +31,12 @@ public class BoglinPatrolState : BoglinBaseState
         {
             float distanceToPlayer = Vector2.Distance(boglin.transform.position, boglin.player.position);
 
-            // Se o player estiver dentro do alcance de ataque
             if (distanceToPlayer <= boglin.attackRange)
             {
                 boglin.SwitchState(boglin.GetAttackState());
                 return;
             }
 
-            // Se estiver dentro do alcance de perseguição, muda para WalkState
             if (distanceToPlayer <= boglin.detectionRange)
             {
                 boglin.SwitchState(boglin.GetWalkState());
@@ -45,17 +44,22 @@ public class BoglinPatrolState : BoglinBaseState
             }
         }
 
-        // Patrulha padrão
         Vector3 target = patrolPoints[currentPoint];
         boglin.MoveTowards(target);
 
-        if (Mathf.Abs(boglin.transform.position.x - target.x) < 0.1f)
+        if (Vector3.Distance(boglin.transform.position, target) < 0.05f)
         {
             waitTimer += Time.deltaTime;
 
             if (waitTimer >= waitTime)
             {
-                currentPoint = (currentPoint + 1) % patrolPoints.Length;
+                // Inverte direção ao chegar no ponto final ou inicial
+                if (currentPoint == 0)
+                    direction = 1;
+                else if (currentPoint == patrolPoints.Length - 1)
+                    direction = -1;
+
+                currentPoint += direction;
                 waitTimer = 0;
             }
         }
