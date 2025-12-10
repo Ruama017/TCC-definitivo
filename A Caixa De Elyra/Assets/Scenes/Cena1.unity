@@ -4061,6 +4061,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 259702470}
     - target: {fileID: 2105741328140881296, guid: d979d1bf00f286a46a8df92e6e1e1fd1, type: 3}
+      propertyPath: maxHealth
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 2105741328140881296, guid: d979d1bf00f286a46a8df92e6e1e1fd1, type: 3}
       propertyPath: deathSound
       value: 
       objectReference: {fileID: 146130602}
@@ -5647,7 +5651,7 @@ Transform:
   m_GameObject: {fileID: 225826508}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -31.6, y: -31.7, z: 0.4017}
+  m_LocalPosition: {x: -31.6, y: -29.08, z: 0.4017}
   m_LocalScale: {x: 1.9333869, y: 1.9333869, z: 1.9333869}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -11679,7 +11683,7 @@ Camera:
   far clip plane: 1000
   field of view: 34
   orthographic: 1
-  orthographic size: 17.2
+  orthographic size: 25
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -11704,7 +11708,7 @@ Transform:
   m_GameObject: {fileID: 519420028}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.1068077, y: -7.009246, z: -10}
+  m_LocalPosition: {x: 46.213966, y: -53.65079, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -12148,7 +12152,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1003028267053118197, guid: d979d1bf00f286a46a8df92e6e1e1fd1, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -67.43
+      value: -68.17
       objectReference: {fileID: 0}
     - target: {fileID: 1003028267053118197, guid: d979d1bf00f286a46a8df92e6e1e1fd1, type: 3}
       propertyPath: m_LocalPosition.z
@@ -12186,6 +12190,10 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 259702470}
+    - target: {fileID: 2105741328140881296, guid: d979d1bf00f286a46a8df92e6e1e1fd1, type: 3}
+      propertyPath: maxHealth
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 2105741328140881296, guid: d979d1bf00f286a46a8df92e6e1e1fd1, type: 3}
       propertyPath: deathSound
       value: 
@@ -12431,7 +12439,7 @@ MonoBehaviour:
     CustomLookAtTarget: 0
   Lens:
     FieldOfView: 34
-    OrthographicSize: 17.2
+    OrthographicSize: 25
     NearClipPlane: 0.3
     FarClipPlane: 1000
     Dutch: 0
@@ -12458,7 +12466,7 @@ Transform:
   m_GameObject: {fileID: 551706799}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.1068077, y: -7.009246, z: -10}
+  m_LocalPosition: {x: 46.213966, y: -53.65079, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -16678,8 +16686,8 @@ Transform:
   m_GameObject: {fileID: 711609944}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -31.319998, y: -49.55, z: 0.4017}
-  m_LocalScale: {x: 1.940197, y: 1.940197, z: 3.3134384}
+  m_LocalPosition: {x: -31.3659, y: -48.1269, z: 0.4017}
+  m_LocalScale: {x: 1.968718, y: 2.2890444, z: 3.3134384}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1614603846}
@@ -27740,6 +27748,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 259702470}
     - target: {fileID: 2105741328140881296, guid: d979d1bf00f286a46a8df92e6e1e1fd1, type: 3}
+      propertyPath: maxHealth
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 2105741328140881296, guid: d979d1bf00f286a46a8df92e6e1e1fd1, type: 3}
       propertyPath: deathSound
       value: 
       objectReference: {fileID: 1136857996}
@@ -27767,6 +27779,10 @@ PrefabInstance:
       propertyPath: rightPatrolPoint
       value: 
       objectReference: {fileID: 894883935}
+    - target: {fileID: 3470825443398222396, guid: d979d1bf00f286a46a8df92e6e1e1fd1, type: 3}
+      propertyPath: m_SortingOrder
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 9140465372705145851, guid: d979d1bf00f286a46a8df92e6e1e1fd1, type: 3}
       propertyPath: m_Name
       value: Boglin4
@@ -29181,6 +29197,10 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 259702470}
+    - target: {fileID: 2105741328140881296, guid: d979d1bf00f286a46a8df92e6e1e1fd1, type: 3}
+      propertyPath: maxHealth
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 2105741328140881296, guid: d979d1bf00f286a46a8df92e6e1e1fd1, type: 3}
       propertyPath: deathSound
       value: 
@@ -31186,7 +31206,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1003028267053118197, guid: d979d1bf00f286a46a8df92e6e1e1fd1, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -96.04
+      value: -96.51
       objectReference: {fileID: 0}
     - target: {fileID: 1003028267053118197, guid: d979d1bf00f286a46a8df92e6e1e1fd1, type: 3}
       propertyPath: m_LocalPosition.z
@@ -31224,6 +31244,10 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 259702470}
+    - target: {fileID: 2105741328140881296, guid: d979d1bf00f286a46a8df92e6e1e1fd1, type: 3}
+      propertyPath: maxHealth
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 2105741328140881296, guid: d979d1bf00f286a46a8df92e6e1e1fd1, type: 3}
       propertyPath: deathSound
       value: 
@@ -32569,7 +32593,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1003028267053118197, guid: d979d1bf00f286a46a8df92e6e1e1fd1, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.72
+      value: 0.28
       objectReference: {fileID: 0}
     - target: {fileID: 1003028267053118197, guid: d979d1bf00f286a46a8df92e6e1e1fd1, type: 3}
       propertyPath: m_LocalPosition.z
@@ -32607,6 +32631,10 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 259702470}
+    - target: {fileID: 2105741328140881296, guid: d979d1bf00f286a46a8df92e6e1e1fd1, type: 3}
+      propertyPath: maxHealth
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 2105741328140881296, guid: d979d1bf00f286a46a8df92e6e1e1fd1, type: 3}
       propertyPath: deathSound
       value: 
@@ -38514,6 +38542,10 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 259702470}
+    - target: {fileID: 2105741328140881296, guid: d979d1bf00f286a46a8df92e6e1e1fd1, type: 3}
+      propertyPath: maxHealth
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 2105741328140881296, guid: d979d1bf00f286a46a8df92e6e1e1fd1, type: 3}
       propertyPath: deathSound
       value: 
@@ -53912,7 +53944,7 @@ PrefabInstance:
       objectReference: {fileID: 259702470}
     - target: {fileID: 2105741328140881296, guid: d979d1bf00f286a46a8df92e6e1e1fd1, type: 3}
       propertyPath: maxHealth
-      value: 7
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 2105741328140881296, guid: d979d1bf00f286a46a8df92e6e1e1fd1, type: 3}
       propertyPath: moveSpeed
@@ -54088,11 +54120,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4008707587220611048, guid: 7e1f1fe19291fa14885e0fca0c00a364, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -19.5428
+      value: 16.2
       objectReference: {fileID: 0}
     - target: {fileID: 4008707587220611048, guid: 7e1f1fe19291fa14885e0fca0c00a364, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -16.6063
+      value: -67.6
       objectReference: {fileID: 0}
     - target: {fileID: 4008707587220611048, guid: 7e1f1fe19291fa14885e0fca0c00a364, type: 3}
       propertyPath: m_LocalPosition.z
@@ -54136,7 +54168,7 @@ PrefabInstance:
       objectReference: {fileID: 1793332575}
     - target: {fileID: 6462439719471439227, guid: 7e1f1fe19291fa14885e0fca0c00a364, type: 3}
       propertyPath: jumpForce
-      value: 14
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 6462439719471439227, guid: 7e1f1fe19291fa14885e0fca0c00a364, type: 3}
       propertyPath: jumpSound

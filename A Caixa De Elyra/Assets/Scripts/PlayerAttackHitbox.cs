@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Collections.Generic;
 
 public class PlayerAttackHitbox : MonoBehaviour
 {
@@ -7,9 +8,18 @@ public class PlayerAttackHitbox : MonoBehaviour
 
     private PlayerController playerController;
 
+    // lista para evitar dano múltiplo no mesmo ataque
+    private HashSet<Collider2D> alreadyHit = new HashSet<Collider2D>();
+
     private void Awake()
     {
         playerController = GetComponentInParent<PlayerController>();
+    }
+
+    private void OnEnable()
+    {
+        // sempre limpa lista quando o ataque começa
+        alreadyHit.Clear();
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -26,6 +36,12 @@ public class PlayerAttackHitbox : MonoBehaviour
     {
         if (playerController == null)
             return;
+
+        // impede hits repetidos no mesmo ataque
+        if (alreadyHit.Contains(collision))
+            return;
+
+        alreadyHit.Add(collision);
 
         // Voglin
         VoglinController voglin = collision.GetComponent<VoglinController>();
