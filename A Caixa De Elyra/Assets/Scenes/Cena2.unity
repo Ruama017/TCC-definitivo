@@ -4671,7 +4671,7 @@ MonoBehaviour:
   projectilePrefab: {fileID: 3304887008864034435, guid: 9900d31913d3dbb4482a5fba7415c6b4, type: 3}
   projectileSpawn: {fileID: 191952412}
   attackCooldown: 3
-  maxHealth: 7
+  maxHealth: 4
   soulPrefab: {fileID: 1291680023537676349, guid: 25371d7a98958f245b8d55ea9dcf6270, type: 3}
   soulSpawnPoint: {fileID: 1152640082}
   deathSound: {fileID: 8300000, guid: 690bab5b5ea2e4c4098331b31f909725, type: 3}
@@ -13330,7 +13330,7 @@ MonoBehaviour:
   projectilePrefab: {fileID: 3304887008864034435, guid: 9900d31913d3dbb4482a5fba7415c6b4, type: 3}
   projectileSpawn: {fileID: 353437594}
   attackCooldown: 5
-  maxHealth: 7
+  maxHealth: 4
   soulPrefab: {fileID: 1291680023537676349, guid: 25371d7a98958f245b8d55ea9dcf6270, type: 3}
   soulSpawnPoint: {fileID: 1934070531}
   deathSound: {fileID: 8300000, guid: 690bab5b5ea2e4c4098331b31f909725, type: 3}
@@ -17580,7 +17580,7 @@ Camera:
   far clip plane: 1000
   field of view: 34
   orthographic: 1
-  orthographic size: 17.2
+  orthographic size: 25
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -17605,7 +17605,7 @@ Transform:
   m_GameObject: {fileID: 519420028}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 160.24962, y: -7.1029463, z: -10}
+  m_LocalPosition: {x: 169.61397, y: -2.7507944, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -18471,7 +18471,7 @@ MonoBehaviour:
     CustomLookAtTarget: 0
   Lens:
     FieldOfView: 34
-    OrthographicSize: 17.2
+    OrthographicSize: 25
     NearClipPlane: 0.3
     FarClipPlane: 1000
     Dutch: 0
@@ -18498,7 +18498,7 @@ Transform:
   m_GameObject: {fileID: 551706799}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 160.24962, y: -7.1029463, z: -10}
+  m_LocalPosition: {x: 169.61397, y: -2.7507944, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -18694,6 +18694,10 @@ PrefabInstance:
     - target: {fileID: 2130365792371597885, guid: 8c510f7288e584e4ea2a6047557a114a, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4494035519262484564, guid: 8c510f7288e584e4ea2a6047557a114a, type: 3}
+      propertyPath: m_SortingOrder
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 7029863356369966918, guid: 8c510f7288e584e4ea2a6047557a114a, type: 3}
       propertyPath: m_Name
@@ -18945,6 +18949,10 @@ PrefabInstance:
     - target: {fileID: 2189783037188643987, guid: b4d0a88758db328409720e504bdae867, type: 3}
       propertyPath: m_TagString
       value: Ground
+      objectReference: {fileID: 0}
+    - target: {fileID: 3881282736660786873, guid: b4d0a88758db328409720e504bdae867, type: 3}
+      propertyPath: m_SortingOrder
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 5339243899365703648, guid: b4d0a88758db328409720e504bdae867, type: 3}
       propertyPath: m_LocalPosition.x
@@ -24861,7 +24869,7 @@ MonoBehaviour:
   projectilePrefab: {fileID: 3304887008864034435, guid: 9900d31913d3dbb4482a5fba7415c6b4, type: 3}
   projectileSpawn: {fileID: 800599550}
   attackCooldown: 5
-  maxHealth: 7
+  maxHealth: 4
   soulPrefab: {fileID: 1291680023537676349, guid: 25371d7a98958f245b8d55ea9dcf6270, type: 3}
   soulSpawnPoint: {fileID: 1692042927}
   deathSound: {fileID: 8300000, guid: 690bab5b5ea2e4c4098331b31f909725, type: 3}
@@ -26257,6 +26265,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2522407745160587242, guid: fad10a07f6c35f0459f9d2aebd906a2c, type: 3}
+      propertyPath: m_SortingOrder
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 4326505673739474216, guid: fad10a07f6c35f0459f9d2aebd906a2c, type: 3}
       propertyPath: m_LocalPosition.x
       value: 549.3
@@ -28180,13 +28192,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2522407745160587242, guid: fad10a07f6c35f0459f9d2aebd906a2c, type: 3}
+      propertyPath: m_SortingOrder
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 4326505673739474216, guid: fad10a07f6c35f0459f9d2aebd906a2c, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 614.6428
+      value: 618
       objectReference: {fileID: 0}
     - target: {fileID: 4326505673739474216, guid: fad10a07f6c35f0459f9d2aebd906a2c, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.2863282
+      value: -6
       objectReference: {fileID: 0}
     - target: {fileID: 4326505673739474216, guid: fad10a07f6c35f0459f9d2aebd906a2c, type: 3}
       propertyPath: m_LocalPosition.z
@@ -28719,7 +28735,7 @@ MonoBehaviour:
   projectilePrefab: {fileID: 3304887008864034435, guid: 9900d31913d3dbb4482a5fba7415c6b4, type: 3}
   projectileSpawn: {fileID: 929607131}
   attackCooldown: 5
-  maxHealth: 7
+  maxHealth: 4
   soulPrefab: {fileID: 1291680023537676349, guid: 25371d7a98958f245b8d55ea9dcf6270, type: 3}
   soulSpawnPoint: {fileID: 2123556686}
   deathSound: {fileID: 8300000, guid: 690bab5b5ea2e4c4098331b31f909725, type: 3}
@@ -31627,13 +31643,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2522407745160587242, guid: fad10a07f6c35f0459f9d2aebd906a2c, type: 3}
+      propertyPath: m_SortingOrder
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 4326505673739474216, guid: fad10a07f6c35f0459f9d2aebd906a2c, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 559.3
+      value: 597.51
       objectReference: {fileID: 0}
     - target: {fileID: 4326505673739474216, guid: fad10a07f6c35f0459f9d2aebd906a2c, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3.5
+      value: -14.8
       objectReference: {fileID: 0}
     - target: {fileID: 4326505673739474216, guid: fad10a07f6c35f0459f9d2aebd906a2c, type: 3}
       propertyPath: m_LocalPosition.z
@@ -40869,13 +40889,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2522407745160587242, guid: fad10a07f6c35f0459f9d2aebd906a2c, type: 3}
+      propertyPath: m_SortingOrder
+      value: 20
+      objectReference: {fileID: 0}
     - target: {fileID: 4326505673739474216, guid: fad10a07f6c35f0459f9d2aebd906a2c, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 606.11194
+      value: 607.6
       objectReference: {fileID: 0}
     - target: {fileID: 4326505673739474216, guid: fad10a07f6c35f0459f9d2aebd906a2c, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 5.3057475
+      value: 1.3
       objectReference: {fileID: 0}
     - target: {fileID: 4326505673739474216, guid: fad10a07f6c35f0459f9d2aebd906a2c, type: 3}
       propertyPath: m_LocalPosition.z
@@ -41137,7 +41161,7 @@ PrefabInstance:
       objectReference: {fileID: 1333314966998364648, guid: fc0c11e6fa59c7149af0d4790eb684e9, type: 3}
     - target: {fileID: 6462439719471439227, guid: 7e1f1fe19291fa14885e0fca0c00a364, type: 3}
       propertyPath: jumpForce
-      value: 13
+      value: 25
       objectReference: {fileID: 0}
     - target: {fileID: 6462439719471439227, guid: 7e1f1fe19291fa14885e0fca0c00a364, type: 3}
       propertyPath: jumpSound
@@ -41145,7 +41169,7 @@ PrefabInstance:
       objectReference: {fileID: 2027870404}
     - target: {fileID: 6462439719471439227, guid: 7e1f1fe19291fa14885e0fca0c00a364, type: 3}
       propertyPath: moveSpeed
-      value: 10
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 6462439719471439227, guid: 7e1f1fe19291fa14885e0fca0c00a364, type: 3}
       propertyPath: deathSound
@@ -42549,7 +42573,7 @@ MonoBehaviour:
   projectilePrefab: {fileID: 3304887008864034435, guid: 9900d31913d3dbb4482a5fba7415c6b4, type: 3}
   projectileSpawn: {fileID: 1373693984}
   attackCooldown: 3
-  maxHealth: 7
+  maxHealth: 4
   soulPrefab: {fileID: 1291680023537676349, guid: 25371d7a98958f245b8d55ea9dcf6270, type: 3}
   soulSpawnPoint: {fileID: 1711534786}
   deathSound: {fileID: 8300000, guid: 690bab5b5ea2e4c4098331b31f909725, type: 3}
@@ -45013,7 +45037,7 @@ MonoBehaviour:
   projectilePrefab: {fileID: 3304887008864034435, guid: 9900d31913d3dbb4482a5fba7415c6b4, type: 3}
   projectileSpawn: {fileID: 1356560694}
   attackCooldown: 5
-  maxHealth: 7
+  maxHealth: 4
   soulPrefab: {fileID: 1291680023537676349, guid: 25371d7a98958f245b8d55ea9dcf6270, type: 3}
   soulSpawnPoint: {fileID: 1612974555}
   deathSound: {fileID: 8300000, guid: 690bab5b5ea2e4c4098331b31f909725, type: 3}
@@ -46320,7 +46344,7 @@ MonoBehaviour:
   projectilePrefab: {fileID: 3304887008864034435, guid: 9900d31913d3dbb4482a5fba7415c6b4, type: 3}
   projectileSpawn: {fileID: 1397824361}
   attackCooldown: 3
-  maxHealth: 7
+  maxHealth: 4
   soulPrefab: {fileID: 1291680023537676349, guid: 25371d7a98958f245b8d55ea9dcf6270, type: 3}
   soulSpawnPoint: {fileID: 534922628}
   deathSound: {fileID: 8300000, guid: 690bab5b5ea2e4c4098331b31f909725, type: 3}
@@ -47815,7 +47839,7 @@ Transform:
   m_GameObject: {fileID: 1449634244}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 427.2, y: -42.7, z: 0}
+  m_LocalPosition: {x: 427.2, y: -41.8, z: 0}
   m_LocalScale: {x: 3.5249448, y: 3.5249448, z: 3.5249448}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -47893,6 +47917,10 @@ PrefabInstance:
     - target: {fileID: 3624030444835584626, guid: 7dafc85f77389da47aed62752072721e, type: 3}
       propertyPath: m_Name
       value: Elevador (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3624030444835584626, guid: 7dafc85f77389da47aed62752072721e, type: 3}
+      propertyPath: m_TagString
+      value: Ground
       objectReference: {fileID: 0}
     - target: {fileID: 8543599693925609419, guid: 7dafc85f77389da47aed62752072721e, type: 3}
       propertyPath: m_LocalScale.x
@@ -50429,7 +50457,7 @@ MonoBehaviour:
   projectilePrefab: {fileID: 3304887008864034435, guid: 9900d31913d3dbb4482a5fba7415c6b4, type: 3}
   projectileSpawn: {fileID: 1567641287}
   attackCooldown: 5
-  maxHealth: 7
+  maxHealth: 4
   soulPrefab: {fileID: 1291680023537676349, guid: 25371d7a98958f245b8d55ea9dcf6270, type: 3}
   soulSpawnPoint: {fileID: 532477683}
   deathSound: {fileID: 8300000, guid: 690bab5b5ea2e4c4098331b31f909725, type: 3}
@@ -51706,7 +51734,7 @@ MonoBehaviour:
   projectilePrefab: {fileID: 3304887008864034435, guid: 9900d31913d3dbb4482a5fba7415c6b4, type: 3}
   projectileSpawn: {fileID: 1610520517}
   attackCooldown: 3
-  maxHealth: 7
+  maxHealth: 4
   soulPrefab: {fileID: 1291680023537676349, guid: 25371d7a98958f245b8d55ea9dcf6270, type: 3}
   soulSpawnPoint: {fileID: 873044276}
   deathSound: {fileID: 8300000, guid: 690bab5b5ea2e4c4098331b31f909725, type: 3}
@@ -52951,13 +52979,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2522407745160587242, guid: fad10a07f6c35f0459f9d2aebd906a2c, type: 3}
+      propertyPath: m_SortingOrder
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 4326505673739474216, guid: fad10a07f6c35f0459f9d2aebd906a2c, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 624.33704
+      value: 629.2
       objectReference: {fileID: 0}
     - target: {fileID: 4326505673739474216, guid: fad10a07f6c35f0459f9d2aebd906a2c, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -7.4906344
+      value: -12.2
       objectReference: {fileID: 0}
     - target: {fileID: 4326505673739474216, guid: fad10a07f6c35f0459f9d2aebd906a2c, type: 3}
       propertyPath: m_LocalPosition.z
@@ -53240,6 +53272,10 @@ PrefabInstance:
     - target: {fileID: 2189783037188643987, guid: b4d0a88758db328409720e504bdae867, type: 3}
       propertyPath: m_TagString
       value: Ground
+      objectReference: {fileID: 0}
+    - target: {fileID: 3881282736660786873, guid: b4d0a88758db328409720e504bdae867, type: 3}
+      propertyPath: m_SortingOrder
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 5339243899365703648, guid: b4d0a88758db328409720e504bdae867, type: 3}
       propertyPath: m_LocalPosition.x
@@ -56390,7 +56426,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4494035519262484564, guid: 8c510f7288e584e4ea2a6047557a114a, type: 3}
       propertyPath: m_SortingOrder
-      value: 4
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 7029863356369966918, guid: 8c510f7288e584e4ea2a6047557a114a, type: 3}
       propertyPath: m_Name
@@ -57055,7 +57091,7 @@ MonoBehaviour:
   projectilePrefab: {fileID: 3304887008864034435, guid: 9900d31913d3dbb4482a5fba7415c6b4, type: 3}
   projectileSpawn: {fileID: 1839772287}
   attackCooldown: 5
-  maxHealth: 7
+  maxHealth: 4
   soulPrefab: {fileID: 1291680023537676349, guid: 25371d7a98958f245b8d55ea9dcf6270, type: 3}
   soulSpawnPoint: {fileID: 2050347538}
   deathSound: {fileID: 8300000, guid: 690bab5b5ea2e4c4098331b31f909725, type: 3}
@@ -57563,6 +57599,10 @@ PrefabInstance:
     - target: {fileID: 2189783037188643987, guid: b4d0a88758db328409720e504bdae867, type: 3}
       propertyPath: m_TagString
       value: Ground
+      objectReference: {fileID: 0}
+    - target: {fileID: 3881282736660786873, guid: b4d0a88758db328409720e504bdae867, type: 3}
+      propertyPath: m_SortingOrder
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 5339243899365703648, guid: b4d0a88758db328409720e504bdae867, type: 3}
       propertyPath: m_LocalPosition.x
@@ -69433,11 +69473,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2130365792371597885, guid: 8c510f7288e584e4ea2a6047557a114a, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 606.03
+      value: 615.03
       objectReference: {fileID: 0}
     - target: {fileID: 2130365792371597885, guid: 8c510f7288e584e4ea2a6047557a114a, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 6.49
+      value: 13.02
       objectReference: {fileID: 0}
     - target: {fileID: 2130365792371597885, guid: 8c510f7288e584e4ea2a6047557a114a, type: 3}
       propertyPath: m_LocalPosition.z
@@ -69471,9 +69511,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4494035519262484564, guid: 8c510f7288e584e4ea2a6047557a114a, type: 3}
+      propertyPath: m_SortingOrder
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 7029863356369966918, guid: 8c510f7288e584e4ea2a6047557a114a, type: 3}
       propertyPath: m_Name
       value: FallingPlatform 1 (25)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7029863356369966918, guid: 8c510f7288e584e4ea2a6047557a114a, type: 3}
+      propertyPath: m_TagString
+      value: Ground
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -70187,6 +70235,10 @@ PrefabInstance:
     - target: {fileID: 2189783037188643987, guid: b4d0a88758db328409720e504bdae867, type: 3}
       propertyPath: m_TagString
       value: Ground
+      objectReference: {fileID: 0}
+    - target: {fileID: 3881282736660786873, guid: b4d0a88758db328409720e504bdae867, type: 3}
+      propertyPath: m_SortingOrder
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 5339243899365703648, guid: b4d0a88758db328409720e504bdae867, type: 3}
       propertyPath: m_LocalPosition.x
@@ -75629,7 +75681,7 @@ MonoBehaviour:
   projectilePrefab: {fileID: 3304887008864034435, guid: 9900d31913d3dbb4482a5fba7415c6b4, type: 3}
   projectileSpawn: {fileID: 2714164606052982922}
   attackCooldown: 5
-  maxHealth: 7
+  maxHealth: 4
   soulPrefab: {fileID: 1291680023537676349, guid: 25371d7a98958f245b8d55ea9dcf6270, type: 3}
   soulSpawnPoint: {fileID: 1446809960}
   deathSound: {fileID: 8300000, guid: 690bab5b5ea2e4c4098331b31f909725, type: 3}
@@ -75922,6 +75974,10 @@ PrefabInstance:
     - target: {fileID: 4708891106860336723, guid: 29d3765f98b19cd4ea38d1b644c16892, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6393244763327194873, guid: 29d3765f98b19cd4ea38d1b644c16892, type: 3}
+      propertyPath: maxHealth
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 6393244763327194873, guid: 29d3765f98b19cd4ea38d1b644c16892, type: 3}
       propertyPath: 'patrolPoints.Array.data[0]'
@@ -76668,6 +76724,50 @@ PrefabInstance:
     - target: {fileID: 4911985090497441659, guid: 814dfa95d2348ab419e1d161218672d6, type: 3}
       propertyPath: m_Name
       value: "Pulm\xE3oDaMorteJr"
+      objectReference: {fileID: 0}
+    - target: {fileID: 7987891603558186499, guid: 814dfa95d2348ab419e1d161218672d6, type: 3}
+      propertyPath: SizeModule.enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7987891603558186499, guid: 814dfa95d2348ab419e1d161218672d6, type: 3}
+      propertyPath: ColorModule.enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7987891603558186499, guid: 814dfa95d2348ab419e1d161218672d6, type: 3}
+      propertyPath: SizeModule.separateAxes
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7987891603558186499, guid: 814dfa95d2348ab419e1d161218672d6, type: 3}
+      propertyPath: ColorModule.gradient.maxGradient.ctime1
+      value: 65535
+      objectReference: {fileID: 0}
+    - target: {fileID: 7987891603558186499, guid: 814dfa95d2348ab419e1d161218672d6, type: 3}
+      propertyPath: ColorModule.gradient.maxGradient.key0.b
+      value: 0.64643925
+      objectReference: {fileID: 0}
+    - target: {fileID: 7987891603558186499, guid: 814dfa95d2348ab419e1d161218672d6, type: 3}
+      propertyPath: ColorModule.gradient.maxGradient.key0.g
+      value: 0.25416154
+      objectReference: {fileID: 0}
+    - target: {fileID: 7987891603558186499, guid: 814dfa95d2348ab419e1d161218672d6, type: 3}
+      propertyPath: ColorModule.gradient.maxGradient.key0.r
+      value: 0.82641506
+      objectReference: {fileID: 0}
+    - target: {fileID: 7987891603558186499, guid: 814dfa95d2348ab419e1d161218672d6, type: 3}
+      propertyPath: ColorModule.gradient.maxGradient.key1.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7987891603558186499, guid: 814dfa95d2348ab419e1d161218672d6, type: 3}
+      propertyPath: ColorModule.gradient.maxGradient.key1.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7987891603558186499, guid: 814dfa95d2348ab419e1d161218672d6, type: 3}
+      propertyPath: ColorModule.gradient.maxGradient.key1.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7987891603558186499, guid: 814dfa95d2348ab419e1d161218672d6, type: 3}
+      propertyPath: ColorModule.gradient.maxGradient.m_ColorSpace
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

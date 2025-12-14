@@ -53,7 +53,6 @@ public class BoglinPatrolState : BoglinBaseState
 
             if (waitTimer >= waitTime)
             {
-                // Inverte direção ao chegar no ponto final ou inicial
                 if (currentPoint == 0)
                     direction = 1;
                 else if (currentPoint == patrolPoints.Length - 1)

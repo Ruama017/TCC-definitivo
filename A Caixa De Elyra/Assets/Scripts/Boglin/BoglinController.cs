@@ -51,7 +51,9 @@ public class BoglinController : MonoBehaviour
         SwitchState(patrolState);
     }
 
-    void FixedUpdate()
+    // 🔴 ANTES: FixedUpdate
+    // 🟢 AGORA: Update
+    void Update()
     {
         if (currentState != null)
             currentState.UpdateState(this);
@@ -70,7 +72,6 @@ public class BoglinController : MonoBehaviour
 
     public void MoveTowards(Vector3 target)
     {
-        // só mexe no X
         Vector2 targetPos = new Vector2(target.x, rb.position.y);
         Vector2 newPos = Vector2.MoveTowards(rb.position, targetPos, moveSpeed * Time.fixedDeltaTime);
         rb.MovePosition(newPos);
@@ -78,7 +79,6 @@ public class BoglinController : MonoBehaviour
         if (anim != null)
             anim.SetBool("IsWalking", true);
 
-        // flip horizontal
         if (target.x > transform.position.x)
             transform.localScale = new Vector3(-1, 1, 1);
         else
