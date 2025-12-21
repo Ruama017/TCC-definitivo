@@ -1,6 +1,6 @@
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.SceneManagement; 
+using UnityEngine.SceneManagement;
 using TMPro;
 using System.Collections;
 using System.Collections.Generic;
@@ -8,10 +8,11 @@ using System.Collections.Generic;
 public class PlayerHealth : MonoBehaviour
 {
     // ------------------------------------------
-    // 🔵 EVENT CHANNELS (Observer Simples)
+    // 🔵 EVENT CHANNELS (Observer desacoplado)
     // ------------------------------------------
-    public static event System.Action<int, int> OnHealthChanged;
-    public static event System.Action<int> OnCrystalChanged;
+    [Header("Event Channels")]
+    public IntIntEventChannelSO healthEvent;   // vida atual / vida máxima
+    public IntEventChannelSO crystalEvent;     // quantidade de cristais
     // ------------------------------------------
 
     [Header("Vida do Player")]
@@ -24,8 +25,8 @@ public class PlayerHealth : MonoBehaviour
     private int partialDamage = 0;
 
     [Header("Corações Extras (Fase 3)")]
-    public GameObject extraHeartPrefab;   
-    public Transform extraHeartsParent;   
+    public GameObject extraHeartPrefab;
+    public Transform extraHeartsParent;
     public List<Image> extraHearts = new List<Image>();
 
     [Header("Cristais")]
@@ -64,13 +65,17 @@ public class PlayerHealth : MonoBehaviour
     void Start()
     {
         currentHealth = maxHealth;
+
         UpdateHearts();
         UpdateExtraHearts();
         UpdateCrystalUI();
 
-        // 🔵 Dispara estado inicial
-        OnHealthChanged?.Invoke(currentHealth, maxHealth);
-        OnCrystalChanged?.Invoke(currentCrystals);
+        // 🔵 Dispara estado inicial (Observer)
+        if (healthEvent != null)
+            healthEvent.RaiseEvent(currentHealth, maxHealth);
+
+        if (crystalEvent != null)
+            crystalEvent.RaiseEvent(currentCrystals);
 
         anim = GetComponent<Animator>();
 
@@ -135,9 +140,12 @@ public class PlayerHealth : MonoBehaviour
         UpdateExtraHearts();
         UpdateCrystalUI();
 
-        // 🔵 Evento de mudança de vida e cristais
-        OnHealthChanged?.Invoke(currentHealth, maxHealth);
-        OnCrystalChanged?.Invoke(currentCrystals);
+        // 🔵 Eventos Observer
+        if (healthEvent != null)
+            healthEvent.RaiseEvent(currentHealth, maxHealth);
+
+        if (crystalEvent != null)
+            crystalEvent.RaiseEvent(currentCrystals);
 
         CheckDeath();
     }
@@ -147,13 +155,14 @@ public class PlayerHealth : MonoBehaviour
         if (isDead) return;
 
         currentHealth = 0;
+
         foreach (Image img in extraHearts)
             img.gameObject.SetActive(false);
 
         UpdateHearts();
 
-        // 🔵 Evento
-        OnHealthChanged?.Invoke(currentHealth, maxHealth);
+        if (healthEvent != null)
+            healthEvent.RaiseEvent(currentHealth, maxHealth);
 
         Die();
     }
@@ -168,8 +177,8 @@ public class PlayerHealth : MonoBehaviour
 
         UpdateHearts();
 
-        // 🔵 Evento
-        OnHealthChanged?.Invoke(currentHealth, maxHealth);
+        if (healthEvent != null)
+            healthEvent.RaiseEvent(currentHealth, maxHealth);
     }
 
     void UpdateHearts()
@@ -207,8 +216,8 @@ public class PlayerHealth : MonoBehaviour
 
         UpdateCrystalUI();
 
-        // 🔵 Evento
-        OnCrystalChanged?.Invoke(currentCrystals);
+        if (crystalEvent != null)
+            crystalEvent.RaiseEvent(currentCrystals);
     }
 
     void UpdateCrystalUI()
@@ -248,6 +257,7 @@ public class PlayerHealth : MonoBehaviour
             ParticleSystem ps = shieldEffect.GetComponent<ParticleSystem>();
             if (ps != null)
                 ps.Stop();
+
             shieldEffect.SetActive(false);
         }
     }
@@ -263,6 +273,7 @@ public class PlayerHealth : MonoBehaviour
         foreach (Image img in extraHearts)
             if (img.gameObject.activeSelf)
                 return false;
+
         return true;
     }
 
@@ -270,8 +281,7 @@ public class PlayerHealth : MonoBehaviour
     {
         isDead = true;
 
-        float deathOffsetY = -0.3f;
-        transform.position += new Vector3(0, deathOffsetY, 0);
+        transform.position += new Vector3(0, -0.3f, 0);
 
         if (deathSound != null)
             deathSound.Play();
@@ -289,7 +299,7 @@ public class PlayerHealth : MonoBehaviour
         StartCoroutine(ShowGameOverAfterDelay(1.2f));
     }
 
-    private IEnumerator ShowGameOverAfterDelay(float delay)
+    IEnumerator ShowGameOverAfterDelay(float delay)
     {
         yield return new WaitForSeconds(delay);
 
@@ -302,6 +312,7 @@ public class PlayerHealth : MonoBehaviour
     public void RestartLevel()
     {
         Time.timeScale = 1f;
+
         currentHealth = maxHealth;
         currentCrystals = 0;
         isPoisoned = false;
@@ -311,6 +322,7 @@ public class PlayerHealth : MonoBehaviour
             Destroy(img.gameObject);
 
         extraHearts.Clear();
+
         hasBootSuper = false;
         superTimer = 0f;
         partialDamage = 0;
@@ -318,9 +330,11 @@ public class PlayerHealth : MonoBehaviour
         UpdateHearts();
         UpdateCrystalUI();
 
-        // 🔵 Eventos ao reiniciar
-        OnHealthChanged?.Invoke(currentHealth, maxHealth);
-        OnCrystalChanged?.Invoke(currentCrystals);
+        if (healthEvent != null)
+            healthEvent.RaiseEvent(currentHealth, maxHealth);
+
+        if (crystalEvent != null)
+            crystalEvent.RaiseEvent(currentCrystals);
 
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
@@ -341,12 +355,14 @@ public class PlayerHealth : MonoBehaviour
     {
         isPoisoned = true;
         float elapsed = 0f;
+
         while (elapsed < duration)
         {
             TakeDamage(Mathf.CeilToInt(tickDamage));
             yield return new WaitForSeconds(tickInterval);
             elapsed += tickInterval;
         }
+
         isPoisoned = false;
     }
 

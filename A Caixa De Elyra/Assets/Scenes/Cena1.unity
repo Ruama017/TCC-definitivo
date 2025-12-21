@@ -26481,6 +26481,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 177ffb426f3ffce458a431e781b30d39, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  counterEvent: {fileID: 11400000, guid: af28ed1af65ddad4188a25af652413ed, type: 2}
   totalCount: 8
   currentCount: 0
   counterText: {fileID: 0}
@@ -55017,6 +55018,14 @@ PrefabInstance:
       propertyPath: crystalIcon
       value: 
       objectReference: {fileID: 1690153968}
+    - target: {fileID: 3615951885531261839, guid: 7e1f1fe19291fa14885e0fca0c00a364, type: 3}
+      propertyPath: healthEvent
+      value: 
+      objectReference: {fileID: 11400000, guid: a3f9550f557a1bb4a9b92dd46b633490, type: 2}
+    - target: {fileID: 3615951885531261839, guid: 7e1f1fe19291fa14885e0fca0c00a364, type: 3}
+      propertyPath: crystalEvent
+      value: 
+      objectReference: {fileID: 11400000, guid: f490545c7743d424f95f4f5a3c278713, type: 2}
     - target: {fileID: 3615951885531261839, guid: 7e1f1fe19291fa14885e0fca0c00a364, type: 3}
       propertyPath: shieldEffect
       value: 

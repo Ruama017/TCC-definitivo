@@ -7,12 +7,6 @@ public class BoglinController : MonoBehaviour
     public Animator anim;
     public Rigidbody2D rb;
 
-    [Header("Estados")]
-    public BoglinBaseState currentState;
-    public BoglinWalkState walkState;
-    public BoglinAttackState attackState;
-    public BoglinPatrolState patrolState;
-
     [Header("Configurações de Movimento")]
     public float moveSpeed = 2f;
 
@@ -39,46 +33,28 @@ public class BoglinController : MonoBehaviour
     void Start()
     {
         currentHealth = maxHealth;
-
-        walkState = new BoglinWalkState();
-        attackState = new BoglinAttackState();
-        patrolState = new BoglinPatrolState(
-            leftPatrolPoint.position,
-            rightPatrolPoint.position,
-            transform.position.y
-        );
-
-        SwitchState(patrolState);
     }
 
-    // 🔴 ANTES: FixedUpdate
-    // 🟢 AGORA: Update
     void Update()
     {
-        if (currentState != null)
-            currentState.UpdateState(this);
+        
     }
 
-    public void SwitchState(BoglinBaseState newState)
-    {
-        if (currentState != null)
-            currentState.ExitState(this);
-
-        currentState = newState;
-
-        if (currentState != null)
-            currentState.EnterState(this);
-    }
-
+    
+    // MOVIMENTO (usado pelos States)
+   
     public void MoveTowards(Vector3 target)
     {
         Vector2 targetPos = new Vector2(target.x, rb.position.y);
-        Vector2 newPos = Vector2.MoveTowards(rb.position, targetPos, moveSpeed * Time.fixedDeltaTime);
+        Vector2 newPos = Vector2.MoveTowards(
+            rb.position,
+            targetPos,
+            moveSpeed * Time.deltaTime
+        );
+
         rb.MovePosition(newPos);
 
-        if (anim != null)
-            anim.SetBool("IsWalking", true);
-
+        // Flip
         if (target.x > transform.position.x)
             transform.localScale = new Vector3(-1, 1, 1);
         else
@@ -87,19 +63,29 @@ public class BoglinController : MonoBehaviour
 
     public void StopMoving()
     {
-        if (anim != null)
-            anim.SetBool("IsWalking", false);
+        rb.velocity = Vector2.zero;
     }
 
+    
+    
+    // ATAQUE
+    
+    
     public void PlayAttackSound()
     {
         if (attackSound != null)
             attackSound.Play();
     }
 
+   
+   
+    // VIDA
+    
+    
     public void TakeDamage(int damage)
     {
         currentHealth -= damage;
+
         if (currentHealth <= 0)
             Die();
     }
@@ -114,8 +100,4 @@ public class BoglinController : MonoBehaviour
 
         Destroy(gameObject);
     }
-
-    public BoglinWalkState GetWalkState() => walkState;
-    public BoglinAttackState GetAttackState() => attackState;
-    public BoglinPatrolState GetPatrolState() => patrolState;
 }
