@@ -33111,7 +33111,7 @@ ParticleSystem:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1069085478}
   serializedVersion: 8
-  lengthInSec: 8
+  lengthInSec: 5
   simulationSpeed: 1
   stopAction: 0
   cullingMode: 0
@@ -34370,7 +34370,7 @@ ParticleSystem:
         m_RotationOrder: 4
     separateAxes: 0
   ColorModule:
-    enabled: 0
+    enabled: 1
     gradient:
       serializedVersion: 2
       minMaxState: 1
@@ -34378,7 +34378,7 @@ ParticleSystem:
       maxColor: {r: 1, g: 1, b: 1, a: 1}
       maxGradient:
         serializedVersion: 2
-        key0: {r: 1, g: 1, b: 1, a: 1}
+        key0: {r: 0.93962264, g: 0.45917407, b: 0.7403586, a: 1}
         key1: {r: 1, g: 1, b: 1, a: 1}
         key2: {r: 0, g: 0, b: 0, a: 0}
         key3: {r: 0, g: 0, b: 0, a: 0}
@@ -34403,7 +34403,7 @@ ParticleSystem:
         atime6: 0
         atime7: 0
         m_Mode: 0
-        m_ColorSpace: -1
+        m_ColorSpace: 0
         m_NumColorKeys: 2
         m_NumAlphaKeys: 2
       minGradient:
@@ -36637,7 +36637,7 @@ ParticleSystem:
         key5: {r: 0, g: 0, b: 0, a: 0}
         key6: {r: 0, g: 0, b: 0, a: 0}
         key7: {r: 0, g: 0, b: 0, a: 0}
-        ctime0: 0
+        ctime0: 3778
         ctime1: 36623
         ctime2: 0
         ctime3: 0
@@ -36687,7 +36687,7 @@ ParticleSystem:
         m_ColorSpace: -1
         m_NumColorKeys: 2
         m_NumAlphaKeys: 2
-    range: {x: 1, y: 8}
+    range: {x: 5, y: 4}
   CollisionModule:
     enabled: 0
     serializedVersion: 4
@@ -76726,6 +76726,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: "Pulm\xE3oDaMorteJr"
       objectReference: {fileID: 0}
+    - target: {fileID: 5771748372914666558, guid: 814dfa95d2348ab419e1d161218672d6, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.36
+      objectReference: {fileID: 0}
+    - target: {fileID: 5771748372914666558, guid: 814dfa95d2348ab419e1d161218672d6, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.94
+      objectReference: {fileID: 0}
+    - target: {fileID: 7250235202842453921, guid: 814dfa95d2348ab419e1d161218672d6, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 7987891603558186499, guid: 814dfa95d2348ab419e1d161218672d6, type: 3}
       propertyPath: startDelay.scalar
       value: 2
@@ -76739,12 +76751,28 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7987891603558186499, guid: 814dfa95d2348ab419e1d161218672d6, type: 3}
+      propertyPath: NoiseModule.enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7987891603558186499, guid: 814dfa95d2348ab419e1d161218672d6, type: 3}
+      propertyPath: NoiseModule.octaves
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7987891603558186499, guid: 814dfa95d2348ab419e1d161218672d6, type: 3}
+      propertyPath: NoiseModule.frequency
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7987891603558186499, guid: 814dfa95d2348ab419e1d161218672d6, type: 3}
       propertyPath: SizeModule.separateAxes
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7987891603558186499, guid: 814dfa95d2348ab419e1d161218672d6, type: 3}
       propertyPath: InitialModule.startSize.scalar
       value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7987891603558186499, guid: 814dfa95d2348ab419e1d161218672d6, type: 3}
+      propertyPath: NoiseModule.scrollSpeed.scalar
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7987891603558186499, guid: 814dfa95d2348ab419e1d161218672d6, type: 3}
       propertyPath: InitialModule.startLifetime.scalar
