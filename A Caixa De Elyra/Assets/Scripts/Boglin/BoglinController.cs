@@ -26,7 +26,7 @@ public class BoglinController : MonoBehaviour
     public AudioSource attackSound;
     public AudioSource deathSound;
 
-    // 🔵 sprite naturalmente olhando pra ESQUERDA
+    
     private int lastDirection = -1;
 
     void Start()
@@ -44,17 +44,19 @@ public class BoglinController : MonoBehaviour
     {
         float deltaX = target.x - transform.position.x;
 
-        if (Mathf.Abs(deltaX) < 0.1f)
-        {
-            rb.velocity = new Vector2(0, rb.velocity.y);
-            return;
-        }
+        Debug.Log(deltaX);
+
+        //if (Mathf.Abs(deltaX) < 0.1f)
+        //{
+        //    rb.velocity = new Vector2(0, rb.velocity.y);
+        //    return;
+        //}
 
         int direction = deltaX > 0 ? 1 : -1;
 
         rb.velocity = new Vector2(direction * moveSpeed, rb.velocity.y);
 
-        // 🔁 FLIP CORRETO (sprite olha pra esquerda)
+        
         if (direction != lastDirection)
         {
             Vector3 scale = transform.localScale;

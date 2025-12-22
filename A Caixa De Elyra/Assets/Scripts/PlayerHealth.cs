@@ -7,8 +7,8 @@ using System.Collections.Generic;
 
 public class PlayerHealth : MonoBehaviour
 {
-    // ------------------------------------------
-    // 🔵 EVENT CHANNELS (Observer desacoplado)
+    
+    // 
     // ------------------------------------------
     [Header("Event Channels")]
     public IntIntEventChannelSO healthEvent;   // vida atual / vida máxima

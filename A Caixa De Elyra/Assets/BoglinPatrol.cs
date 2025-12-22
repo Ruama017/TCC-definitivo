@@ -44,7 +44,9 @@ public class BoglinPatrol : StateMachineBehaviour
 
         // Movimento
         float distToTarget =
-            Vector2.Distance(animator.transform.position, currentTarget);
+            Vector2.Distance(boglin.transform.position, currentTarget);
+
+        Debug.Log(distToTarget);
 
         if (distToTarget > reachDistance)
         {

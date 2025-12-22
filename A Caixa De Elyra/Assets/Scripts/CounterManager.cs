@@ -3,14 +3,11 @@ using TMPro;
 
 public class CounterManager : MonoBehaviour
 {
-    // ------------------------------------------
-    // 🔵 SINGLETON
-    // ------------------------------------------
+    
+    
     public static CounterManager Instance;
 
-    // ------------------------------------------
-    // 🔵 EVENT CHANNEL (Observer)
-    // ------------------------------------------
+ 
     [Header("Event Channel")]
     public IntIntEventChannelSO counterEvent;
     // ------------------------------------------

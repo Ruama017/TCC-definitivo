@@ -20,7 +20,7 @@ public class BoglinWalk : StateMachineBehaviour
             boglin.player.position
         );
 
-        // 🔴 DISPARA ATAQUE (TRIGGER)
+        //  DISPARA ATAQUE (TRIGGER)
         if (distance <= boglin.attackRange)
         {
             animator.SetTrigger("Attack");

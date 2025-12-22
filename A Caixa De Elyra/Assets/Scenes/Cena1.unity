@@ -21496,6 +21496,62 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7549841170988379826, guid: 25725784c727f034ba156200256a35ca, type: 3}
   m_PrefabInstance: {fileID: 1846551503}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &860432447
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 860432448}
+  - component: {fileID: 860432449}
+  m_Layer: 5
+  m_Name: HUDController
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &860432448
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 860432447}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1141708739}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &860432449
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 860432447}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b91ac4df0301d4540b7326a3609f145e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  healthEvent: {fileID: 11400000, guid: a3f9550f557a1bb4a9b92dd46b633490, type: 2}
+  crystalEvent: {fileID: 11400000, guid: f490545c7743d424f95f4f5a3c278713, type: 2}
+  counterEvent: {fileID: 11400000, guid: af28ed1af65ddad4188a25af652413ed, type: 2}
+  hearts: []
+  fullHeart: {fileID: -5775531179356065306, guid: 3b885b7cb62b1ae488a9c3dd89c2983f, type: 3}
+  emptyHeart: {fileID: -4068800939289122091, guid: 315a0612ba735f646ae03867e2c2e866, type: 3}
+  crystalText: {fileID: 553642278}
+  counterText: {fileID: 2043166813}
 --- !u!1 &862988183
 GameObject:
   m_ObjectHideFlags: 0
@@ -29143,6 +29199,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 3996574433711115867, guid: 51b64ae5799b18745a9dd9578d80b3f2, type: 3}
       insertIndex: -1
       addedObject: {fileID: 591839619}
+    - targetCorrespondingSourceObject: {fileID: 3996574433711115867, guid: 51b64ae5799b18745a9dd9578d80b3f2, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 860432448}
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 1149639457788097833, guid: 51b64ae5799b18745a9dd9578d80b3f2, type: 3}
       insertIndex: -1
@@ -52543,6 +52602,17 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &2043166813 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5974840215102117410, guid: 51b64ae5799b18745a9dd9578d80b3f2, type: 3}
+  m_PrefabInstance: {fileID: 1141708737}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2043660635
 GameObject:
   m_ObjectHideFlags: 0
