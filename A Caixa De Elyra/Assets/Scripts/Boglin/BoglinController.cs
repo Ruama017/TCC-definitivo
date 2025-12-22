@@ -7,96 +7,96 @@ public class BoglinController : MonoBehaviour
     public Animator anim;
     public Rigidbody2D rb;
 
-    [Header("Configurações de Movimento")]
+    [Header("Movimento")]
     public float moveSpeed = 2f;
 
-    [Header("Detecção e Ataque")]
+    [Header("Combate")]
     public float detectionRange = 5f;
     public float attackRange = 1.5f;
-    public Transform AttackPoint;
-    public Transform SmokeSpawn;
 
     [Header("Patrulha")]
     public Transform leftPatrolPoint;
     public Transform rightPatrolPoint;
 
-    [Header("Saúde e Alma")]
+    [Header("Vida")]
     public int maxHealth = 5;
     public int currentHealth;
-    public GameObject boglinSoulPrefab;
-    public MonsterCounter monsterCounter;
 
     [Header("Sons do Boglin")]
     public AudioSource attackSound;
     public AudioSource deathSound;
 
+    // 🔵 sprite naturalmente olhando pra ESQUERDA
+    private int lastDirection = -1;
+
     void Start()
     {
         currentHealth = maxHealth;
+
+        if (anim != null)
+        {
+            anim.enabled = true;
+            anim.speed = 1f;
+        }
     }
 
-    void Update()
-    {
-        
-    }
-
-    
-    // MOVIMENTO (usado pelos States)
-   
     public void MoveTowards(Vector3 target)
     {
-        Vector2 targetPos = new Vector2(target.x, rb.position.y);
-        Vector2 newPos = Vector2.MoveTowards(
-            rb.position,
-            targetPos,
-            moveSpeed * Time.deltaTime
-        );
+        float deltaX = target.x - transform.position.x;
 
-        rb.MovePosition(newPos);
+        if (Mathf.Abs(deltaX) < 0.1f)
+        {
+            rb.velocity = new Vector2(0, rb.velocity.y);
+            return;
+        }
 
-        // Flip
-        if (target.x > transform.position.x)
-            transform.localScale = new Vector3(-1, 1, 1);
-        else
-            transform.localScale = new Vector3(1, 1, 1);
+        int direction = deltaX > 0 ? 1 : -1;
+
+        rb.velocity = new Vector2(direction * moveSpeed, rb.velocity.y);
+
+        // 🔁 FLIP CORRETO (sprite olha pra esquerda)
+        if (direction != lastDirection)
+        {
+            Vector3 scale = transform.localScale;
+
+            if (direction == -1)
+                scale.x = Mathf.Abs(scale.x);   // esquerda
+            else
+                scale.x = -Mathf.Abs(scale.x);  // direita
+
+            transform.localScale = scale;
+            lastDirection = direction;
+        }
+
+        anim.SetBool("isWalkin", true);
     }
 
     public void StopMoving()
     {
-        rb.velocity = Vector2.zero;
+        rb.velocity = new Vector2(0, rb.velocity.y);
+        anim.SetBool("isWalkin", false);
     }
 
-    
-    
-    // ATAQUE
-    
-    
     public void PlayAttackSound()
     {
         if (attackSound != null)
             attackSound.Play();
     }
-
-   
-   
-    // VIDA
-    
-    
     public void TakeDamage(int damage)
+ {
+    currentHealth -= damage;
+
+    if (currentHealth <= 0)
     {
-        currentHealth -= damage;
-
-        if (currentHealth <= 0)
-            Die();
+        Die();
     }
+}
 
-    void Die()
+
+    public void Die()
     {
         if (deathSound != null)
             deathSound.Play();
-
-        if (boglinSoulPrefab != null)
-            Instantiate(boglinSoulPrefab, transform.position, Quaternion.identity);
 
         Destroy(gameObject);
     }

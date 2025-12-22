@@ -6,63 +6,81 @@ public class BoglinPatrol : StateMachineBehaviour
 
     private Vector3 leftPoint;
     private Vector3 rightPoint;
-    private Vector3 target;
+    private Vector3 currentTarget;
 
-    private bool goingRight = true;
+    private const float reachDistance = 0.25f;
 
-    // Chamado quando entra no estado
-    override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
+    public override void OnStateEnter(
+        Animator animator,
+        AnimatorStateInfo stateInfo,
+        int layerIndex)
     {
+        Debug.Log(">>> ENTROU NO STATE: PATROL");
+
         boglin = animator.GetComponent<BoglinController>();
 
         if (boglin == null)
         {
-            Debug.LogError("BoglinController não encontrado!");
+            Debug.LogError("BoglinController NÃO encontrado");
             return;
         }
 
         leftPoint = boglin.leftPatrolPoint.position;
         rightPoint = boglin.rightPatrolPoint.position;
 
-        target = rightPoint;
+        currentTarget = rightPoint;
 
-        animator.SetBool("IsWalking", true);
+        animator.SetBool("isWalkin", true);
     }
 
-    // Chamado a cada frame enquanto estiver no estado
-    override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
+    public override void OnStateUpdate(
+        Animator animator,
+        AnimatorStateInfo stateInfo,
+        int layerIndex)
     {
         if (boglin == null) return;
 
-        // Movimento de patrulha
-        boglin.MoveTowards(target);
+        Debug.Log("PATROL UPDATE");
 
-        // Chegou no ponto?
-        if (Vector2.Distance(animator.transform.position, target) < 0.2f)
+        // Movimento
+        float distToTarget =
+            Vector2.Distance(animator.transform.position, currentTarget);
+
+        if (distToTarget > reachDistance)
         {
-            goingRight = !goingRight;
-            target = goingRight ? rightPoint : leftPoint;
+            boglin.MoveTowards(currentTarget);
+        }
+        else
+        {
+            // troca de ponto
+            currentTarget =
+                currentTarget == rightPoint ? leftPoint : rightPoint;
         }
 
-        // Se não tiver player, continua patrulhando
+        // Detecta player
         if (boglin.player == null) return;
 
-        float distanceToPlayer = Vector2.Distance(
+        float distToPlayer = Vector2.Distance(
             animator.transform.position,
-            boglin.player.position
-        );
+            boglin.player.position);
 
-        // Player detectado → sair da patrulha
-        if (distanceToPlayer <= boglin.detectionRange)
+        if (distToPlayer <= boglin.attackRange)
         {
-            animator.SetBool("IsWalking", true);
+            Debug.Log(">>> TRIGGER ATTACK DISPARADO");
+            animator.SetTrigger("Attack");
         }
     }
 
-    // Chamado ao sair do estado
-    override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
+    public override void OnStateExit(
+        Animator animator,
+        AnimatorStateInfo stateInfo,
+        int layerIndex)
     {
-        animator.SetBool("IsWalking", false);
-        boglin.StopMoving();
+        Debug.Log("<<< SAIU DO STATE: PATROL");
+
+        animator.SetBool("isWalkin", false);
+
+        if (boglin != null)
+            boglin.StopMoving();
     }
 }

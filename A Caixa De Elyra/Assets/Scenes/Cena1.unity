@@ -54954,6 +54954,14 @@ PrefabInstance:
       propertyPath: rightPatrolPoint
       value: 
       objectReference: {fileID: 1365664043}
+    - target: {fileID: 2979660489697057129, guid: d979d1bf00f286a46a8df92e6e1e1fd1, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5533703572803375477, guid: d979d1bf00f286a46a8df92e6e1e1fd1, type: 3}
+      propertyPath: m_Constraints
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 9140465372705145851, guid: d979d1bf00f286a46a8df92e6e1e1fd1, type: 3}
       propertyPath: m_Name
       value: Boglin 1
